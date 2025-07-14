@@ -52,6 +52,7 @@
             text-transform: uppercase;
             position: relative;
             display: inline-block;
+            color: var(--light); /* Ensure section titles are visible */
         }
         
         .section-title::after {
@@ -64,88 +65,88 @@
             background-color: var(--primary);
         }
         
+        .section-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Button Styling - Made smaller, red background, white text, black on hover */
         .btn {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--primary);
-            color: var(--light);
+            padding: 8px 16px; /* Smaller padding */
+            background-color: #DC2626; /* Red background */
+            color: #FFFFFF; /* White text */
             border: none;
-            border-radius: 5px;
+            border-radius: 9999px; /* Rounded-full effect */
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease; /* Only background transition */
             cursor: pointer;
             text-decoration: none;
+            box-shadow: none; /* No 3D shadow */
+            transform: none; /* No 3D transform */
         }
         
         .btn:hover {
-            background-color: var(--light);
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+            background-color: #000000; /* Black on hover */
+            transform: none; /* No 3D hover transform */
+            box-shadow: none; /* No 3D hover shadow */
         }
-        
-        /* Header Styles */
+
+        /* Header Styles - Black background, non-fixed */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.3s ease;
-        }
-        
-        header.scrolled {
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            background-color: #000000; /* Solid black background */
+            box-shadow: none; /* No shadow for black background */
+            padding: 16px 0; /* Original padding */
+            position: relative; /* Not fixed */
+            z-index: 1000; /* Keep z-index for layering */
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: center; /* Aligns items vertically in the center */
         }
         
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Logo Image Styling */
+        .header-logo-img {
+            height: 40px; /* Fixed height for the logo image */
+            vertical-align: middle; /* Align with text if any */
         }
         
-        .logo span {
-            color: var(--primary);
+        /* Desktop Navigation */
+        #main-nav { /* Specific ID for desktop nav */
+            display: flex; /* Flex for desktop nav */
+            align-items: center; /* Aligns nav items vertically */
         }
         
-        nav ul {
+        #main-nav ul {
             display: flex;
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
         
-        nav ul li {
-            margin-left: 30px;
+        #main-nav ul li {
+            margin-left: 32px; /* Spacing between nav items */
             position: relative;
         }
         
-        nav ul li a {
-            color: var(--light);
+        #main-nav ul li a {
+            color: #FFFFFF; /* White text color for nav links on black background */
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 1rem; /* Original font size */
         }
         
-        nav ul li a:hover {
-            color: var(--primary);
+        #main-nav ul li a:hover {
+            color: var(--primary); /* Red on hover */
         }
         
-        nav ul li a::after {
+        #main-nav ul li a::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -156,18 +157,11 @@
             transition: width 0.3s ease;
         }
         
-        nav ul li a:hover::after {
+        #main-nav ul li a:hover::after {
             width: 100%;
         }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+
+        /* Mobile menu elements removed, so no CSS needed for them */
         
         /* Hero Section */
         .hero {
@@ -200,6 +194,7 @@
             margin-bottom: 20px;
             line-height: 1.2;
             text-transform: uppercase;
+            color: var(--light);
         }
         
         .hero h1 span {
@@ -210,6 +205,7 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
             line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
         }
         
         #hero-canvas {
@@ -315,6 +311,7 @@
             padding-left: 30px;
             position: relative;
             font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
         }
         
         .solutions-list li::before {
@@ -368,6 +365,7 @@
             margin-bottom: 20px;
             position: relative;
             z-index: 1;
+            color: rgba(255, 255, 255, 0.8);
         }
         
         .testimonial-author {
@@ -408,6 +406,7 @@
         
         .service-item h3 {
             font-size: 1.3rem;
+            color: var(--light);
         }
         
         /* Stats Section */
@@ -503,6 +502,7 @@
             margin-bottom: 10px;
             padding: 10px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
         }
         
         /* Partners Section */
@@ -571,6 +571,7 @@
         .checkbox-group {
             text-align: left;
             margin: 20px 0;
+            color: rgba(255, 255, 255, 0.8);
         }
         
         .checkbox-group input {
@@ -663,13 +664,13 @@
             font-size: 0.9rem;
         }
         
-        /* 3D Elements */
+        /* 3D Elements - Kept for other sections as they were not part of the header revert */
         .block-3d {
             transform-style: preserve-3d;
             transition: transform 0.5s ease;
         }
         
-        /* Responsive Styles */
+        /* Responsive Styles - Removed mobile menu related media queries */
         @media (max-width: 992px) {
             .solutions-content {
                 grid-template-columns: 1fr;
@@ -683,37 +684,26 @@
             .section-title {
                 font-size: 2.5rem;
             }
+            /* Ensure desktop nav is still flex on smaller screens if needed, or adjust for tablet */
+            #main-nav {
+                display: flex; /* Keep desktop nav visible */
+            }
         }
         
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
+            /* For smaller screens, adjust header layout if necessary, but keep desktop nav visible */
+            .header-container {
+                flex-direction: column; /* Stack logo and nav vertically on very small screens */
+                align-items: center;
             }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--dark);
-                transition: all 0.3s ease;
-                z-index: 999;
+            #main-nav ul {
+                flex-direction: column; /* Stack nav links vertically */
+                margin-top: 10px; /* Add some space above nav links */
             }
-            
-            nav.active {
-                left: 0;
+            #main-nav ul li {
+                margin: 5px 0; /* Adjust vertical spacing for stacked links */
             }
-            
-            nav ul {
-                flex-direction: column;
-                padding: 30px;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-            }
-            
+
             .hero h1 {
                 font-size: 3rem;
             }
@@ -747,297 +737,298 @@
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
-            <div class="logo">Razi <span>Digital</span></div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="nav">
+            <!-- Logo placeholder -->
+            <img src="https://placehold.co/150x40/FFFFFF/000000?text=LOGO" alt="Company Logo" class="header-logo-img">
+            
+            <!-- Desktop Navigation and Get Started button -->
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services-section">Services</a></li>
+                    <li><a href="#blog-section">Blog</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
+                    <li><a href="#about-section">About Us</a></li>
                     <li><a href="#" class="btn">Get Started</a></li>
                 </ul>
             </nav>
+            <!-- Mobile menu button and mobile menu div are removed -->
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <canvas id="hero-canvas"></canvas>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Empowering <span>Trust</span> in the Digital Era.</h1>
-                <p>We are the experts you can trust to protect your digital assets and keep your data safe. With our help, you can focus on what matters most, knowing that your business is secure.</p>
-                <a href="#" class="btn">Contact Now</a>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <canvas id="hero-canvas"></canvas>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Empowering <span>Trust</span> in the Digital Era.</h1>
+                    <p>We are the experts you can trust to protect your digital assets and keep your data safe. With our help, you can focus on what matters most, knowing that your business is secure.</p>
+                    <a href="#" class="btn">Contact Now</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section class="section features">
-        <div class="container">
-            <h2 class="section-title">Trustworthy Digital Transformation</h2>
-            <p class="section-subtitle">Secure, Innovate, Thrive.</p>
-            
-            <div class="features-grid">
-                <div class="feature-card block-3d">
-                    <div class="feature-icon">
-                        <i class="fas fa-bullseye"></i>
+        <!-- Features Section -->
+        <section class="section features" id="features-section">
+            <div class="container">
+                <h2 class="section-title">Trustworthy Digital Transformation</h2>
+                <p class="section-subtitle">Secure, Innovate, Thrive.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card block-3d">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Precision</h3>
+                        <p>We approach digital defense with a high level of accuracy and attention to detail. We employ precise strategies and techniques to protect digital assets, leaving no room for vulnerabilities.</p>
                     </div>
-                    <h3>Precision</h3>
-                    <p>We approach digital defense with a high level of accuracy and attention to detail. We employ precise strategies and techniques to protect digital assets, leaving no room for vulnerabilities.</p>
-                </div>
-                <div class="feature-card block-3d">
-                    <div class="feature-icon">
-                        <i class="fas fa-eye"></i>
+                    <div class="feature-card block-3d">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Vigilance</h3>
+                        <p>We have a constant and watchful approach to cyber security. We are always alert and proactive in monitoring and identifying potential threats or risks in the digital landscape.</p>
                     </div>
-                    <h3>Vigilance</h3>
-                    <p>We have a constant and watchful approach to cyber security. We are always alert and proactive in monitoring and identifying potential threats or risks in the digital landscape.</p>
-                </div>
-                <div class="feature-card block-3d">
-                    <div class="feature-icon">
+                    <div class="feature-card block-3d">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Assurance</h3>
                     <p>We represent the confidence and peace of mind that clients can have when they choose RDDA for their digital defense needs. We provide assurance that their clients' digital assets will be protected effectively and reliably.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Mission Section -->
-    <section class="section mission">
-        <div class="container">
-            <h2 class="section-title">Crafting a Secure Digital Realm</h2>
-            <div class="mission-content">
-                <p>Join us in our mission to craft a secure digital realm for a brighter future. Discover how our vision for a safer virtual world drives us to protect your digital landscape.</p>
-                
-                <h3>Our Mission:</h3>
-                <p>At our core, our mission is to empower individuals and businesses alike by creating a secure and resilient digital environment. We are dedicated to defending against cyber threats and ensuring the safety of your digital future.</p>
-                
-                <h3>Our Vision:</h3>
-                <p>Our vision is to be the leading force in shaping a virtual world where innovation thrives without compromising security. We aspire to set new standards for digital protection, enabling a future where everyone can navigate the digital realm with confidence and peace of mind.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solutions Section -->
-    <section class="section solutions">
-        <div class="container">
-            <h2 class="section-title">Revolutionizing Digital Defense</h2>
-            <div class="solutions-content">
-                <div>
-                    <p>Our solutions are designed to protect your data, devices, and networks from a wide range of threats. We offer a variety of products and services to fit your specific requirements, so you can be confident that your digital assets are safe.</p>
+        <!-- Mission Section -->
+        <section class="section mission" id="mission-section">
+            <div class="container">
+                <h2 class="section-title">Crafting a Secure Digital Realm</h2>
+                <div class="mission-content">
+                    <p>Join us in our mission to craft a secure digital realm for a brighter future. Discover how our vision for a safer virtual world drives us to protect your digital landscape.</p>
                     
-                    <ul class="solutions-list">
-                        <li>We use artificial intelligence to identify and block malicious activity in real time.</li>
-                        <li>We offer a wide range of products and services to fit your specific needs, from endpoint protection to cloud security.</li>
-                        <li>We've streamlined our solutions to be cost-effective, ensuring that even everyday users can access top-tier digital defense without breaking the bank.</li>
-                        <li>We provide security training for our customers so they can be more aware of cyber threats.</li>
-                    </ul>
-                </div>
-                <div id="solutions-canvas"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-        <div class="container">
-            <h2 class="section-title">Client Testimonials</h2>
-            <p class="section-subtitle">What Our Valued Partners Have to Say</p>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card block-3d">
-                    <p>Partnering with rddagency has been a game-changer for our organization. Their cyber security expertise has kept us safe from evolving threats, and their responsive team is always there when we need them.</p>
-                    <div class="testimonial-author">- CTO, TechCorp</div>
-                </div>
-                <div class="testimonial-card block-3d">
-                    <p>We were looking for a cyber security partner that we could trust. rddagency has a proven track record of success and we're confident that they will continue to protect our data.</p>
-                    <div class="testimonial-author">- CEO, SecureSystems</div>
+                    <h3>Our Mission:</h3>
+                    <p>At our core, our mission is to empower individuals and businesses alike by creating a secure and resilient digital environment. We are dedicated to defending against cyber threats and ensuring the safety of your digital future.</p>
+                    
+                    <h3>Our Vision:</h3>
+                    <p>Our vision is to be the leading force in shaping a virtual world where innovation thrives without compromising security. We aspire to set new standards for digital protection, enabling a future where everyone can navigate the digital realm with confidence and peace of mind.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section class="section services">
-        <div class="container">
-            <h2 class="section-title">Our 24/7 Cyber Security Operations</h2>
-            <p class="section-subtitle">Partner with us to benefit from our robust Cyber Security Operations Center and the unwavering responsibility of our customer support team, ensuring your digital protection is our top priority.</p>
-            
-            <div class="services-grid">
-                <div class="service-item block-3d">
-                    <i class="fas fa-search"></i>
-                    <h3>Monitor and detect cyber threats</h3>
-                </div>
-                <div class="service-item block-3d">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Respond to cyber incidents</h3>
-                </div>
-                <div class="service-item block-3d">
-                    <i class="fas fa-microscope"></i>
-                    <h3>Investigate cyber incidents</h3>
-                </div>
-                <div class="service-item block-3d">
-                    <i class="fas fa-comments"></i>
-                    <h3>Advise on security best practices</h3>
-                </div>
-                <div class="service-item block-3d">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Train customers on cyber security</h3>
-                </div>
-                <div class="service-item block-3d">
-                    <i class="fas fa-bell"></i>
-                    <h3>Stay updated on latest threats</h3>
-                </div>
-                <div class="service-item block-3d">
-                    <i class="fas fa-globe"></i>
-                    <h3>Managed Web Application</h3>
-                </div>
-                <div class="service-item block-3d">
-                    <i class="fas fa-database"></i>
-                    <h3>Database Security</h3>
-                </div>
-                <div class="service-item block-3d">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Penetration Testing</h3>
+        <!-- Solutions Section -->
+        <section class="section solutions" id="solutions-section">
+            <div class="container">
+                <h2 class="section-title">Revolutionizing Digital Defense</h2>
+                <div class="solutions-content">
+                    <div>
+                        <p>Our solutions are designed to protect your data, devices, and networks from a wide range of threats. We offer a variety of products and services to fit your specific requirements, so you can be confident that your digital assets are safe.</p>
+                        
+                        <ul class="solutions-list">
+                            <li>We use artificial intelligence to identify and block malicious activity in real time.</li>
+                            <li>We offer a wide range of products and services to fit your specific needs, from endpoint protection to cloud security.</li>
+                            <li>We've streamlined our solutions to be cost-effective, ensuring that even everyday users can access top-tier digital defense without breaking the bank.</li>
+                            <li>We provide security training for our customers so they can be more aware of cyber threats.</li>
+                        </ul>
+                    </div>
+                    <canvas id="solutions-canvas"></canvas>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats Section -->
-    <section class="section stats">
-        <div class="container">
-            <h2 class="section-title">Guarding Against Threats</h2>
-            <p class="section-subtitle">A Year's Worth of 2,580 Hours Invested in Your Digital Safety.</p>
-            
-            <div class="stats-grid">
-                <div class="stat-item block-3d">
-                    <h3>10+</h3>
-                    <p>Cyber-security Experts</p>
-                </div>
-                <div class="stat-item block-3d">
-                    <h3>19+</h3>
-                    <p>Global Reach</p>
-                </div>
-                <div class="stat-item block-3d">
-                    <h3>500+</h3>
-                    <p>Security Assessments</p>
-                </div>
-                <div class="stat-item block-3d">
-                    <h3>10,000 TB</h3>
-                    <p>Data Protection</p>
-                </div>
-                <div class="stat-item block-3d">
-                    <h3>100+</h3>
-                    <p>Client Partnerships</p>
+        <!-- Testimonials Section -->
+        <section class="section testimonials" id="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Client Testimonials</h2>
+                <p class="section-subtitle">What Our Valued Partners Have to Say</p>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card block-3d">
+                        <p>Partnering with rddagency has been a game-changer for our organization. Their cyber security expertise has kept us safe from evolving threats, and their responsive team is always there when we need them.</p>
+                        <div class="testimonial-author">- CTO, TechCorp</div>
+                    </div>
+                    <div class="testimonial-card block-3d">
+                        <p>We were looking for a cyber security partner that we could trust. rddagency has a proven track record of success and we're confident that they will continue to protect our data.</p>
+                        <div class="testimonial-author">- CEO, SecureSystems</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Section -->
-    <section class="section pricing">
-        <div class="container">
-            <h2 class="section-title">Pricing Plans</h2>
-            <p class="section-subtitle">The Most Streamlined Pricing Plan for Ensuring Data Security.</p>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card block-3d">
-                    <h3>Basic Security Shield</h3>
-                    <div class="price">$500/W</div>
-                    <p>Essential protection at an affordable price. Safeguard your digital assets with our Basic Security Shield.</p>
-                    <ul class="pricing-features">
-                        <li>Antivirus and malware detection</li>
-                        <li>Real-time threat monitoring</li>
-                        <li>Firewall protection</li>
-                        <li>Email security</li>
-                        <li>24/7 customer support</li>
-                        <li>Weekly security reports</li>
-                    </ul>
-                    <a href="#" class="btn">Get a Quote</a>
-                </div>
-                <div class="pricing-card block-3d">
-                    <h3>Advanced Cyber Defense</h3>
-                    <div class="price">$1000/W</div>
-                    <p>Comprehensive security for businesses. Fortify your digital fortress with our Advanced Cyber Defense plan.</p>
-                    <ul class="pricing-features">
-                        <li>All Basic Security Shield features</li>
-                        <li>Intrusion detection system</li>
-                        <li>Data encryption</li>
-                        <li>Phishing and identity theft protection</li>
-                        <li>Priority customer support</li>
-                        <li>IDS/IPS to detection</li>
-                        <li>Penetration testing</li>
-                        <li>Weekly security audits</li>
-                    </ul>
-                    <a href="#" class="btn">Get a Quote</a>
-                </div>
-                <div class="pricing-card block-3d">
-                    <h3>Enterprise Fortification</h3>
-                    <div class="price">$2000/W</div>
-                    <p>Tailored security solutions for enterprises. Elevate your security posture with our Enterprise Fortification plan.</p>
-                    <ul class="pricing-features">
-                        <li>All Advanced Cyber Defense features</li>
-                        <li>Customized security policies</li>
-                        <li>DDoS mitigation</li>
-                        <li>Security awareness training</li>
-                        <li>Dedicated account manager</li>
-                        <li>Compliance support</li>
-                    </ul>
-                    <a href="#" class="btn">Get a Quote</a>
+        <!-- Services Section -->
+        <section class="section services" id="services-section">
+            <div class="container">
+                <h2 class="section-title">Our 24/7 Cyber Security Operations</h2>
+                <p class="section-subtitle">Partner with us to benefit from our robust Cyber Security Operations Center and the unwavering responsibility of our customer support team, ensuring your digital protection is our top priority.</p>
+                
+                <div class="services-grid">
+                    <div class="service-item block-3d">
+                        <i class="fas fa-search"></i>
+                        <h3>Monitor and detect cyber threats</h3>
+                    </div>
+                    <div class="service-item block-3d">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Respond to cyber incidents</h3>
+                    </div>
+                    <div class="service-item block-3d">
+                        <i class="fas fa-microscope"></i>
+                        <h3>Investigate cyber incidents</h3>
+                    </div>
+                    <div class="service-item block-3d">
+                        <i class="fas fa-comments"></i>
+                        <h3>Advise on security best practices</h3>
+                    </div>
+                    <div class="service-item block-3d">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Train customers on cyber security</h3>
+                    </div>
+                    <div class="service-item block-3d">
+                        <i class="fas fa-bell"></i>
+                        <h3>Stay updated on latest threats</h3>
+                    </div>
+                    <div class="service-item block-3d">
+                        <i class="fas fa-globe"></i>
+                        <h3>Managed Web Application</h3>
+                    </div>
+                    <div class="service-item block-3d">
+                        <i class="fas fa-database"></i>
+                        <h3>Database Security</h3>
+                    </div>
+                    <div class="service-item block-3d">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Penetration Testing</h3>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Partners Section -->
-    <section class="section partners">
-        <div class="container">
-            <h2 class="section-title">Our Partners</h2>
-            <p class="section-subtitle">We're Collaborating With Prominent Organizations to Achieve Remarkable Results Together.</p>
-            
-            <div class="partners-grid">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" class="partner-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" alt="Azure" class="partner-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon" class="partner-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google" class="partner-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UbuntuCoF.svg/1200px-UbuntuCoF.svg.png" alt="Ubuntu" class="partner-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Red_Hat_Logo.svg/1200px-Red_Hat_Logo.svg.png" alt="Red Hat" class="partner-logo">
+        <!-- Stats Section -->
+        <section class="section stats" id="stats-section">
+            <div class="container">
+                <h2 class="section-title">Guarding Against Threats</h2>
+                <p class="section-subtitle">A Year's Worth of 2,580 Hours Invested in Your Digital Safety.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item block-3d">
+                        <h3>10+</h3>
+                        <p>Cyber-security Experts</p>
+                    </div>
+                    <div class="stat-item block-3d">
+                        <h3>19+</h3>
+                        <p>Global Reach</p>
+                    </div>
+                    <div class="stat-item block-3d">
+                        <h3>500+</h3>
+                        <p>Security Assessments</p>
+                    </div>
+                    <div class="stat-item block-3d">
+                        <h3>10,000 TB</h3>
+                        <p>Data Protection</p>
+                    </div>
+                    <div class="stat-item block-3d">
+                        <h3>100+</h3>
+                        <p>Client Partnerships</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Newsletter Section -->
-    <section class="section newsletter">
-        <div class="container">
-            <h2 class="section-title">Sign up for Newsletter</h2>
-            <p class="section-subtitle">Don't wait until it's too late to protect your online assets. Follow our cyber security blog today and stay ahead of the curve.</p>
-            
-            <form class="newsletter-form">
-                <div class="form-group name-fields">
-                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
-                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+        <!-- Pricing Section -->
+        <section class="section pricing" id="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Pricing Plans</h2>
+                <p class="section-subtitle">The Most Streamlined Pricing Plan for Ensuring Data Security.</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card block-3d">
+                        <h3>Basic Security Shield</h3>
+                        <div class="price">$500/W</div>
+                        <p>Essential protection at an affordable price. Safeguard your digital assets with our Basic Security Shield.</p>
+                        <ul class="pricing-features">
+                            <li>Antivirus and malware detection</li>
+                            <li>Real-time threat monitoring</li>
+                            <li>Firewall protection</li>
+                            <li>Email security</li>
+                            <li>24/7 customer support</li>
+                            <li>Weekly security reports</li>
+                        </ul>
+                        <a href="#" class="btn">Get a Quote</a>
+                    </div>
+                    <div class="pricing-card block-3d">
+                        <h3>Advanced Cyber Defense</h3>
+                        <div class="price">$1000/W</div>
+                        <p>Comprehensive security for businesses. Fortify your digital fortress with our Advanced Cyber Defense plan.</p>
+                        <ul class="pricing-features">
+                            <li>All Basic Security Shield features</li>
+                            <li>Intrusion detection system</li>
+                            <li>Data encryption</li>
+                            <li>Phishing and identity theft protection</li>
+                            <li>Priority customer support</li>
+                            <li>IDS/IPS to detection</li>
+                            <li>Penetration testing</li>
+                            <li>Weekly security audits</li>
+                        </ul>
+                        <a href="#" class="btn">Get a Quote</a>
+                    </div>
+                    <div class="pricing-card block-3d">
+                        <h3>Enterprise Fortification</h3>
+                        <div class="price">$2000/W</div>
+                        <p>Tailored security solutions for enterprises. Elevate your security posture with our Enterprise Fortification plan.</p>
+                        <ul class="pricing-features">
+                            <li>All Advanced Cyber Defense features</li>
+                            <li>Customized security policies</li>
+                            <li>DDoS mitigation</li>
+                            <li>Security awareness training</li>
+                            <li>Dedicated account manager</li>
+                            <li>Compliance support</li>
+                        </ul>
+                        <a href="#" class="btn">Get a Quote</a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="personal@company.com" required>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="section partners" id="partners-section">
+            <div class="container">
+                <h2 class="section-title">Our Partners</h2>
+                <p class="section-subtitle">We're Collaborating With Prominent Organizations to Achieve Remarkable Results Together.</p>
+                
+                <div class="partners-grid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" alt="Azure" class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon" class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google" class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UbuntuCoF.svg/1200px-UbuntuCoF.svg.png" alt="Ubuntu" class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Red_Hat_Logo.svg/1200px-Red_Hat_Logo.svg.png" alt="Red Hat" class="partner-logo">
                 </div>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">I have read and agree to the Terms & Conditions</label>
-                </div>
-                <button type="submit" class="btn">Submit</button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section newsletter" id="newsletter-section">
+            <div class="container">
+                <h2 class="section-title">Sign up for Newsletter</h2>
+                <p class="section-subtitle">Don't wait until it's too late to protect your online assets. Follow our cyber security blog today and stay ahead of the curve.</p>
+                
+                <form class="newsletter-form">
+                    <div class="form-group name-fields">
+                        <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="personal@company.com" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I have read and agree to the Terms & Conditions</label>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact-section">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
@@ -1090,49 +1081,67 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const nav = document.getElementById('nav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        // No mobile menu related JavaScript needed as it's removed
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-        
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // 3D Hero Animation
+
+        // Newsletter Form Submission (Client-side only)
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) { // Check if form exists before adding listener
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+
+                const formMessage = document.getElementById('form-message'); // Ensure this element exists in HTML if needed
+                if (!this.checkValidity()) {
+                    if (formMessage) {
+                        formMessage.textContent = 'Please fill in all required fields correctly.';
+                        formMessage.style.color = 'red';
+                        formMessage.style.display = 'block';
+                    }
+                    return;
+                }
+
+                // Simulate form submission
+                if (formMessage) {
+                    formMessage.textContent = 'Thank you for subscribing! We will be in touch shortly.';
+                    formMessage.style.color = 'green';
+                    formMessage.style.display = 'block';
+                }
+
+                // Clear the form fields after a short delay
+                setTimeout(() => {
+                    newsletterForm.reset();
+                    if (formMessage) {
+                        formMessage.style.display = 'none';
+                    }
+                }, 3000);
+            });
+        }
+
+        // Three.js and GSAP animations (kept as they were not part of the header revert request)
         const heroCanvas = document.getElementById('hero-canvas');
-        
-        // Initialize Three.js scene
         let scene, camera, renderer, particles;
         
         function initHeroAnimation() {
-            // Scene
             scene = new THREE.Scene();
-            
-            // Camera
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera = new THREE.PerspectiveCamera(75, heroCanvas.clientWidth / heroCanvas.clientHeight, 0.1, 1000);
             camera.position.z = 30;
-            
-            // Renderer
             renderer = new THREE.WebGLRenderer({
                 canvas: heroCanvas,
                 antialias: true,
                 alpha: true
             });
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(heroCanvas.clientWidth, heroCanvas.clientHeight);
             
-            // Particles
             const particleCount = 1000;
             const particlesGeometry = new THREE.BufferGeometry();
             const positions = new Float32Array(particleCount * 3);
@@ -1142,100 +1151,69 @@
                 positions[i * 3] = (Math.random() - 0.5) * 200;
                 positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
                 positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
-                
-                colors[i * 3] = 1; // Red
-                colors[i * 3 + 1] = 0; // Green
-                colors[i * 3 + 2] = 0; // Blue
+                colors[i * 3] = 1; colors[i * 3 + 1] = 0; colors[i * 3 + 2] = 0;
             }
             
             particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
             particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
             
             const particlesMaterial = new THREE.PointsMaterial({
-                size: 1,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.8
+                size: 1, vertexColors: true, transparent: true, opacity: 0.8
             });
-            
             particles = new THREE.Points(particlesGeometry, particlesMaterial);
             scene.add(particles);
             
-            // Animation
-            function animate() {
-                requestAnimationFrame(animate);
-                
+            function animateHero() {
+                requestAnimationFrame(animateHero);
                 particles.rotation.x += 0.001;
                 particles.rotation.y += 0.001;
-                
                 renderer.render(scene, camera);
             }
+            animateHero();
             
-            animate();
-            
-            // Handle window resize
             window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.aspect = heroCanvas.clientWidth / heroCanvas.clientHeight;
                 camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setSize(heroCanvas.clientWidth, heroCanvas.clientHeight);
             });
         }
         
-        // 3D Solutions Animation
         const solutionsCanvas = document.getElementById('solutions-canvas');
-        
         function initSolutionsAnimation() {
-            // Scene
+            if (!solutionsCanvas || !(solutionsCanvas instanceof HTMLCanvasElement)) {
+                console.error("solutions-canvas element not found or is not a canvas element.");
+                return;
+            }
+
             const solutionsScene = new THREE.Scene();
-            
-            // Camera
             const solutionsCamera = new THREE.PerspectiveCamera(75, solutionsCanvas.clientWidth / solutionsCanvas.clientHeight, 0.1, 1000);
             solutionsCamera.position.z = 5;
-            
-            // Renderer
             const solutionsRenderer = new THREE.WebGLRenderer({
-                canvas: solutionsCanvas,
-                antialias: true,
-                alpha: true
+                canvas: solutionsCanvas, antialias: true, alpha: true
             });
             solutionsRenderer.setSize(solutionsCanvas.clientWidth, solutionsCanvas.clientHeight);
             
-            // Create a floating cube with wireframe
             const geometry = new THREE.BoxGeometry(2, 2, 2);
             const edges = new THREE.EdgesGeometry(geometry);
             const line = new THREE.LineSegments(
-                edges,
-                new THREE.LineBasicMaterial({ color: 0xff0000 })
+                edges, new THREE.LineBasicMaterial({ color: 0xff0000 })
             );
-            
             const cube = new THREE.Mesh(
-                geometry,
-                new THREE.MeshBasicMaterial({ 
-                    color: 0x000000,
-                    wireframe: true,
-                    transparent: true,
-                    opacity: 0.5
+                geometry, new THREE.MeshBasicMaterial({ 
+                    color: 0x000000, wireframe: true, transparent: true, opacity: 0.5
                 })
             );
-            
             solutionsScene.add(cube);
             solutionsScene.add(line);
             
-            // Animation
             function animateSolutions() {
                 requestAnimationFrame(animateSolutions);
-                
-                cube.rotation.x += 0.01;
-                cube.rotation.y += 0.01;
-                line.rotation.x += 0.01;
-                line.rotation.y += 0.01;
-                
+                cube.rotation.x += 0.01; cube.rotation.y += 0.01;
+                line.rotation.x += 0.01; line.rotation.y += 0.01;
                 solutionsRenderer.render(solutionsScene, solutionsCamera);
             }
-            
             animateSolutions();
             
-            // Handle canvas resize
             window.addEventListener('resize', () => {
                 solutionsCamera.aspect = solutionsCanvas.clientWidth / solutionsCanvas.clientHeight;
                 solutionsCamera.updateProjectionMatrix();
@@ -1243,56 +1221,35 @@
             });
         }
         
-        // Initialize animations when page loads
         window.addEventListener('load', () => {
             if (heroCanvas) initHeroAnimation();
             if (solutionsCanvas) initSolutionsAnimation();
             
-            // GSAP Animations
             gsap.registerPlugin(ScrollTrigger);
-            
-            // Animate sections on scroll
             gsap.utils.toArray('.block-3d').forEach(section => {
                 gsap.from(section, {
                     scrollTrigger: {
-                        trigger: section,
-                        start: "top 80%",
-                        toggleActions: "play none none none"
+                        trigger: section, start: "top 80%", toggleActions: "play none none none"
                     },
-                    y: 50,
-                    opacity: 0,
-                    duration: 1,
-                    ease: "power3.out"
+                    y: 50, opacity: 0, duration: 1, ease: "power3.out"
                 });
             });
             
-            // Animate feature cards with 3D tilt effect
             document.querySelectorAll('.feature-card').forEach(card => {
                 card.addEventListener('mousemove', (e) => {
                     const x = e.clientX - card.getBoundingClientRect().left;
                     const y = e.clientY - card.getBoundingClientRect().top;
-                    
                     const centerX = card.offsetWidth / 2;
                     const centerY = card.offsetHeight / 2;
-                    
                     const angleX = (y - centerY) / 20;
                     const angleY = (centerX - x) / 20;
-                    
                     gsap.to(card, {
-                        rotationX: angleX,
-                        rotationY: angleY,
-                        transformPerspective: 1000,
-                        ease: "power2.out",
-                        duration: 0.5
+                        rotationX: angleX, rotationY: angleY, transformPerspective: 1000, ease: "power2.out", duration: 0.5
                     });
                 });
-                
                 card.addEventListener('mouseleave', () => {
                     gsap.to(card, {
-                        rotationX: 0,
-                        rotationY: 0,
-                        ease: "power2.out",
-                        duration: 0.5
+                        rotationX: 0, rotationY: 0, ease: "power2.out", duration: 0.5
                     });
                 });
             });
