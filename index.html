@@ -1,1259 +1,1397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Razi Digital Defence Agency - Cyber Security Solutions</title>
-    <!-- Three.js for 3D graphics -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-    <!-- GSAP for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #ff0000;
-            --secondary: #000000;
-            --light: #ffffff;
-            --dark: #111111;
-            --gray: #333333;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--secondary);
-            color: var(--light);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            font-size: 3rem;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            position: relative;
-            display: inline-block;
-            color: var(--light); /* Ensure section titles are visible */
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100px;
-            height: 5px;
-            background-color: var(--primary);
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: rgba(255, 255, 255, 0.7);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RDD Agency (Razi Digital Agency) — Elite global cybersecurity firm protecting Fortune 500 companies, governments, and critical infrastructure. Penetration testing, SOC, red teaming, zero-day research. Worldwide operations.">
+<meta name="keywords" content="cybersecurity agency, hire cybersecurity firm, penetration testing company, red team operations, SOC as a service, threat intelligence, incident response, RDD Agency, Razi Digital Agency">
+<meta name="author" content="RDD Agency — Razi Digital Agency">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="RDD Agency — Elite Global Cybersecurity Operations">
+<meta property="og:description" content="World-class cybersecurity trusted by Fortune 500 enterprises and governments worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rddagency.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.rddagency.com">
+<title>RDD Agency — Razi Digital Agency | Elite Global Cybersecurity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RESET & VARIABLES
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E01A1A; --red-dark:#A01010; --red-glow:rgba(224,26,26,0.15);
+  --black:#0A0A0A; --black-2:#111; --black-3:#181818; --black-4:#222;
+  --white:#F5F5F0; --white-dim:rgba(245,245,240,.72); --white-mute:rgba(245,245,240,.35);
+  --border:rgba(245,245,240,.1); --border-red:rgba(224,26,26,.4);
+  --mono:'Space Mono',monospace; --sans:'Barlow',sans-serif; --cond:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+a,button{cursor:pointer!important;pointer-events:auto!important}
+input,textarea{cursor:text!important}
+select{cursor:pointer!important}
+img{max-width:100%;display:block}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--red-dark);border-radius:2px}
 
-        /* Button Styling - Made smaller, red background, white text, black on hover */
-        .btn {
-            display: inline-block;
-            padding: 8px 16px; /* Smaller padding */
-            background-color: #DC2626; /* Red background */
-            color: #FFFFFF; /* White text */
-            border: none;
-            border-radius: 9999px; /* Rounded-full effect */
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease; /* Only background transition */
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: none; /* No 3D shadow */
-            transform: none; /* No 3D transform */
-        }
-        
-        .btn:hover {
-            background-color: #000000; /* Black on hover */
-            transform: none; /* No 3D hover transform */
-            box-shadow: none; /* No 3D hover shadow */
-        }
+/* ============================================================
+   CUSTOM CURSOR — pointer-events:none so it NEVER blocks clicks
+============================================================ */
+#cursor,#cursor-ring{position:fixed;border-radius:50%;pointer-events:none!important;z-index:99999;transform:translate(-50%,-50%)}
+#cursor{width:10px;height:10px;background:var(--red);z-index:100000;transition:width .15s,height .15s,background .15s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,26,26,.5);z-index:99999;transition:width .2s,height .2s,border-color .2s}
+#cursor.hov{width:14px;height:14px;background:var(--red-dark)}
+#cursor-ring.hov{width:50px;height:50px;border-color:var(--red);border-width:2px}
 
-        /* Header Styles - Black background, non-fixed */
-        header {
-            background-color: #000000; /* Solid black background */
-            box-shadow: none; /* No shadow for black background */
-            padding: 16px 0; /* Original padding */
-            position: relative; /* Not fixed */
-            z-index: 1000; /* Keep z-index for layering */
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Aligns items vertically in the center */
-        }
-        
-        /* Logo Image Styling */
-        .header-logo-img {
-            height: 40px; /* Fixed height for the logo image */
-            vertical-align: middle; /* Align with text if any */
-        }
-        
-        /* Desktop Navigation */
-        #main-nav { /* Specific ID for desktop nav */
-            display: flex; /* Flex for desktop nav */
-            align-items: center; /* Aligns nav items vertically */
-        }
-        
-        #main-nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        #main-nav ul li {
-            margin-left: 32px; /* Spacing between nav items */
-            position: relative;
-        }
-        
-        #main-nav ul li a {
-            color: #FFFFFF; /* White text color for nav links on black background */
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 1rem; /* Original font size */
-        }
-        
-        #main-nav ul li a:hover {
-            color: var(--primary); /* Red on hover */
-        }
-        
-        #main-nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        #main-nav ul li a:hover::after {
-            width: 100%;
-        }
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes pulseOrb{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.7}}
+@keyframes marqueeAnim{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fillBar{from{width:0}}
+@keyframes pulseCta{0%{box-shadow:0 0 0 0 rgba(224,26,26,.7)}70%{box-shadow:0 0 0 14px rgba(224,26,26,0)}100%{box-shadow:0 0 0 0 rgba(224,26,26,0)}}
+@keyframes popIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+@keyframes pingDot{0%,100%{opacity:1}50%{opacity:.3}}
 
-        /* Mobile menu elements removed, so no CSS needed for them */
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-transform: uppercase;
-            color: var(--light);
-        }
-        
-        .hero h1 span {
-            color: var(--primary);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        
-        /* Features Section */
-        .features {
-            background-color: var(--dark);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background-color: var(--secondary);
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.2);
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background-color: var(--primary);
-            z-index: -1;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover::before {
-            width: 100%;
-            opacity: 0.1;
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--light);
-        }
-        
-        /* Mission Section */
-        .mission {
-            background-color: var(--secondary);
-            text-align: center;
-        }
-        
-        .mission-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .mission h3 {
-            font-size: 2rem;
-            margin: 30px 0 20px;
-            color: var(--primary);
-        }
-        
-        /* Solutions Section */
-        .solutions {
-            background-color: var(--dark);
-        }
-        
-        .solutions-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .solutions-list {
-            list-style: none;
-        }
-        
-        .solutions-list li {
-            margin-bottom: 20px;
-            padding-left: 30px;
-            position: relative;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .solutions-list li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-        
-        #solutions-canvas {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--secondary);
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: var(--dark);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '\201C';
-            font-family: Georgia, serif;
-            font-size: 5rem;
-            color: var(--primary);
-            opacity: 0.2;
-            position: absolute;
-            top: 10px;
-            left: 20px;
-        }
-        
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
-        /* Services Section */
-        .services {
-            background-color: var(--dark);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .service-item {
-            background-color: var(--secondary);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.2);
-        }
-        
-        .service-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .service-item h3 {
-            font-size: 1.3rem;
-            color: var(--light);
-        }
-        
-        /* Stats Section */
-        .stats {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            text-align: center;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .stat-item {
-            padding: 30px;
-            background-color: rgba(255, 0, 0, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            background-color: var(--secondary);
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .pricing-card {
-            background-color: var(--dark);
-            padding: 40px 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.2);
-        }
-        
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background-color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .pricing-card:hover::before {
-            height: 10px;
-        }
-        
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--light);
-        }
-        
-        .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .pricing-features {
-            margin-bottom: 30px;
-            list-style: none;
-        }
-        
-        .pricing-features li {
-            margin-bottom: 10px;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        /* Partners Section */
-        .partners {
-            background-color: var(--dark);
-            text-align: center;
-        }
-        
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            align-items: center;
-        }
-        
-        .partner-logo {
-            max-width: 100%;
-            height: auto;
-            filter: grayscale(100%) brightness(2);
-            transition: all 0.3s ease;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 5px;
-        }
-        
-        .partner-logo:hover {
-            filter: grayscale(0%) brightness(1);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Newsletter Section */
-        .newsletter {
-            background-color: var(--secondary);
-            text-align: center;
-        }
-        
-        .newsletter-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            background-color: var(--dark);
-            border: 1px solid var(--gray);
-            border-radius: 5px;
-            color: var(--light);
-            font-size: 1rem;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .name-fields {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .checkbox-group {
-            text-align: left;
-            margin: 20px 0;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .checkbox-group input {
-            margin-right: 10px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            padding: 80px 0 30px;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--light);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        
-        .footer-logo span {
-            color: var(--primary);
-        }
-        
-        .footer-about p {
-            margin-bottom: 20px;
-            opacity: 0.8;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--gray);
-            color: var(--light);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .footer-links h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--light);
-            text-transform: uppercase;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .footer-links ul li a:hover {
-            color: var(--primary);
-            padding-left: 5px;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--gray);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-        
-        /* 3D Elements - Kept for other sections as they were not part of the header revert */
-        .block-3d {
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
-        }
-        
-        /* Responsive Styles - Removed mobile menu related media queries */
-        @media (max-width: 992px) {
-            .solutions-content {
-                grid-template-columns: 1fr;
-            }
-            
-            #solutions-canvas {
-                height: 300px;
-                order: -1;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            /* Ensure desktop nav is still flex on smaller screens if needed, or adjust for tablet */
-            #main-nav {
-                display: flex; /* Keep desktop nav visible */
-            }
-        }
-        
-        @media (max-width: 768px) {
-            /* For smaller screens, adjust header layout if necessary, but keep desktop nav visible */
-            .header-container {
-                flex-direction: column; /* Stack logo and nav vertically on very small screens */
-                align-items: center;
-            }
-            #main-nav ul {
-                flex-direction: column; /* Stack nav links vertically */
-                margin-top: 10px; /* Add some space above nav links */
-            }
-            #main-nav ul li {
-                margin: 5px 0; /* Adjust vertical spacing for stacked links */
-            }
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+.rev-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.rev-l.vis{opacity:1;transform:none}
+.rev-r{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease}
+.rev-r.vis{opacity:1;transform:none}
+/* stagger: each child gets a delay via nth-child */
+.stag>*{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.stag.vis>*{opacity:1;transform:none}
+.stag.vis>*:nth-child(1){transition-delay:.05s}
+.stag.vis>*:nth-child(2){transition-delay:.13s}
+.stag.vis>*:nth-child(3){transition-delay:.21s}
+.stag.vis>*:nth-child(4){transition-delay:.29s}
+.stag.vis>*:nth-child(5){transition-delay:.37s}
+.stag.vis>*:nth-child(6){transition-delay:.45s}
 
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .section {
-                padding: 80px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .name-fields {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            .price {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+/* ============================================================
+   SECTION HELPERS
+============================================================ */
+.section-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.section-tag::before{content:'';display:inline-block;width:26px;height:1px;background:var(--red)}
+.section-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,5vw,4.2rem);text-transform:uppercase;line-height:.95;color:var(--white)}
+.section-title em{color:var(--red);font-style:normal}
+section{padding:5.5rem 4rem;position:relative}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;z-index:2}
+.nav-logo-mark{width:38px;height:38px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:13px;letter-spacing:.05em;color:#fff;clip-path:polygon(0 0,100% 0,100% 74%,88% 100%,0 100%)}
+.nav-logo-text{font-family:var(--cond);font-weight:900;font-size:1.05rem;letter-spacing:.12em;color:var(--white);text-transform:uppercase}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:2rem;z-index:2}
+.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;padding:.3rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:.6rem 1.4rem!important;display:inline-block!important;transform:skewX(-8deg);transition:background .2s,transform .2s!important}
+.nav-cta span{display:inline-block;transform:skewX(8deg)}
+.nav-cta:hover{background:var(--red-dark)!important;transform:skewX(-8deg) scale(1.04)!important}
+.nav-cta::after{display:none!important}
+/* Hamburger */
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;z-index:9002}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* Mobile menu overlay */
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.99);z-index:9001;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--cond);font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mob-menu a:hover{color:var(--red)}
+
+/* ============================================================
+   FLOATING HIRE US
+============================================================ */
+#hire-float{position:fixed;bottom:2rem;right:2rem;z-index:8500;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.hire-btn{background:var(--red);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:.6rem;animation:pulseCta 2s infinite;white-space:nowrap;border:none}
+.hire-btn:hover{background:var(--red-dark);animation:none;transform:scale(1.05)}
+.hire-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1s infinite;flex-shrink:0}
+.hire-dismiss{background:var(--black-4);border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.6rem;padding:.28rem .65rem;letter-spacing:.08em;cursor:pointer!important;transition:color .2s;align-self:flex-end}
+.hire-dismiss:hover{color:var(--white)}
+
+/* ============================================================
+   EXIT-INTENT POPUP
+============================================================ */
+#exit-popup{display:none;position:fixed;inset:0;z-index:99000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:1rem}
+#exit-popup.show{display:flex}
+.pop-box{background:var(--black-2);border:1px solid var(--border-red);max-width:520px;width:100%;padding:3rem 2.5rem;position:relative;animation:popIn .4s cubic-bezier(.34,1.56,.64,1) forwards}
+.pop-close{position:absolute;top:1rem;right:1rem;background:none;border:1px solid var(--border);color:var(--white-mute);width:32px;height:32px;font-size:1rem;cursor:pointer!important;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pop-close:hover{border-color:var(--red);color:var(--white)}
+.pop-tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.pop-title{font-family:var(--cond);font-weight:900;font-size:clamp(1.8rem,4vw,2.4rem);text-transform:uppercase;line-height:1;color:var(--white);margin-bottom:.75rem}
+.pop-title span{color:var(--red)}
+.pop-sub{font-size:.92rem;font-weight:300;color:var(--white-dim);line-height:1.7;margin-bottom:1.8rem}
+.pop-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.pop-cta{background:var(--red);color:#fff;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.8rem;text-decoration:none;border:none;cursor:pointer!important;transition:background .2s}
+.pop-cta:hover{background:var(--red-dark)}
+.pop-skip{background:none;border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.7rem;padding:.8rem 1.4rem;cursor:pointer!important;transition:all .2s}
+.pop-skip:hover{border-color:var(--white-mute);color:var(--white)}
+.pop-urgency{font-family:var(--mono);font-size:.65rem;color:var(--red);margin-top:1rem;letter-spacing:.08em}
+
+/* ============================================================
+   HERO
+============================================================ */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 4rem;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,245,240,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(245,245,240,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.12) 2px,rgba(0,0,0,.12) 4px);pointer-events:none;opacity:.35}
+.hero-orb{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(224,26,26,.12) 0%,transparent 70%);top:-120px;right:-120px;animation:pulseOrb 6s ease-in-out infinite;pointer-events:none}
+.hero-orb2{position:absolute;width:380px;height:380px;background:radial-gradient(circle,rgba(224,26,26,.06) 0%,transparent 70%);bottom:0;left:8%;animation:pulseOrb 9s ease-in-out infinite reverse;pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:920px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);border:1px solid var(--border-red);padding:.38rem .9rem;margin-bottom:2rem;animation:fadeUp .8s ease both}
+.hero-blink{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite;flex-shrink:0;pointer-events:none}
+h1.hero-title{font-family:var(--cond);font-weight:900;font-size:clamp(3.2rem,8vw,8rem);line-height:.92;text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:fadeUp .9s .2s ease both}
+.hero-title .l1,.hero-title .l3{color:var(--white)}
+.hero-title .l2{-webkit-text-stroke:2px var(--red);-webkit-text-fill-color:transparent;letter-spacing:-.02em}
+.hero-sub{font-size:1.05rem;font-weight:300;color:var(--white-dim);max-width:560px;line-height:1.78;margin-bottom:3rem;opacity:0;animation:fadeUp .9s .4s ease both}
+.hero-btns{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .6s ease both}
+.btn-red{background:var(--red);color:#fff;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.2rem;text-decoration:none;display:inline-block;transition:all .2s;border:none}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.2rem;text-decoration:none;display:inline-block;border:1px solid var(--border);transition:all .2s}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);opacity:0;animation:fadeUp .9s .8s ease both;flex-wrap:wrap}
+.stat-item{display:flex;flex-direction:column;gap:.2rem}
+.stat-num{font-family:var(--cond);font-weight:900;font-size:2.6rem;line-height:1;color:var(--white)}
+.stat-num b{color:var(--red);font-weight:900}
+.stat-lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute)}
+/* Terminal */
+.hero-terminal{position:absolute;right:4rem;bottom:5rem;width:320px;background:var(--black-2);border:1px solid var(--border);font-family:var(--mono);font-size:.7rem;z-index:2;opacity:0;animation:fadeIn 1s 1.2s both;pointer-events:none}
+.term-bar{background:var(--black-4);padding:.55rem .9rem;display:flex;align-items:center;gap:.45rem;border-bottom:1px solid var(--border)}
+.term-dot{width:9px;height:9px;border-radius:50%}
+.term-title{font-size:.63rem;color:var(--white-mute);letter-spacing:.1em;margin:0 auto}
+.term-body{padding:.9rem;min-height:130px;line-height:1.9;overflow:hidden}
+.tg{color:#4EC94E}.tr{color:var(--red)}.td{color:var(--white-mute)}.tw{color:var(--white)}
+.tcursor::after{content:'█';animation:blink 1s infinite;color:var(--red)}
+
+/* ============================================================
+   MARQUEE
+============================================================ */
+.marquee{padding:1.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--black-2)}
+.marquee-track{display:flex;gap:3rem;animation:marqueeAnim 26s linear infinite;width:max-content}
+.marquee-item{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);white-space:nowrap}
+.marquee-item::after{content:'//';color:var(--red);margin-left:2rem}
+
+/* ============================================================
+   ABOUT
+============================================================ */
+#about{background:var(--black-2);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text p{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85;margin-top:1.4rem}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:2.5rem}
+.hl-item{background:var(--black-2);padding:1.4rem;border-top:2px solid transparent;transition:border-color .3s}
+.hl-item:hover{border-top-color:var(--red)}
+.hl-num{font-family:var(--cond);font-weight:900;font-size:1.9rem;color:var(--red)}
+.hl-lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-top:.25rem}
+.about-visual{display:flex;align-items:center;justify-content:center}
+.globe-wrap{position:relative;width:300px;height:300px}
+.globe-wrap svg{width:100%;height:100%}
+.gr1{animation:spin 20s linear infinite;transform-origin:center}
+.gr2{animation:spin 13s linear infinite reverse;transform-origin:center}
+.pd{animation:pingDot 2s ease-in-out infinite}
+.pd:nth-child(2){animation-delay:.6s}
+.pd:nth-child(3){animation-delay:1.2s}
+
+/* ============================================================
+   SERVICES
+============================================================ */
+#services{background:var(--black)}
+.services-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem}
+.services-desc{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.svc-card{background:var(--black);padding:2.2rem 1.8rem;border-top:2px solid transparent;transition:all .3s;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--red-glow),transparent);opacity:0;transition:opacity .3s;pointer-events:none}
+.svc-card:hover{border-top-color:var(--red)}
+.svc-card:hover::before{opacity:1}
+.svc-num{font-family:var(--mono);font-size:.63rem;color:var(--red);letter-spacing:.1em;margin-bottom:.7rem}
+.svc-name{font-family:var(--cond);font-weight:700;font-size:1.3rem;text-transform:uppercase;color:var(--white);margin-bottom:.7rem;line-height:1.1}
+.svc-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1.1rem}
+.svc-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;padding:.22rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+
+/* ============================================================
+   WHY RDD — NEW CLIENT-WINNING SECTION
+============================================================ */
+#why-rdd{background:var(--black-2)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.why-card{background:var(--black-2);padding:2.2rem 2rem;border-bottom:2px solid transparent;transition:border-color .3s}
+.why-card:hover{border-bottom-color:var(--red)}
+.why-icon{font-size:1.8rem;margin-bottom:1rem}
+.why-title{font-family:var(--cond);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--white);margin-bottom:.6rem}
+.why-desc{font-size:.88rem;font-weight:300;color:var(--white-mute);line-height:1.75}
+
+/* ============================================================
+   PRICING — NEW CLIENT-WINNING SECTION
+============================================================ */
+#pricing{background:var(--black)}
+.pricing-intro{max-width:620px;margin-bottom:3.5rem}
+.pricing-intro p{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8;margin-top:1rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.price-card{background:var(--black);padding:2.5rem 2rem;border-top:2px solid transparent;transition:all .3s;position:relative}
+.price-card.featured{background:var(--black-2);border-top-color:var(--red)}
+.price-badge{position:absolute;top:-1px;right:2rem;background:var(--red);color:#fff;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem}
+.price-tier{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.8rem}
+.price-name{font-family:var(--cond);font-weight:900;font-size:1.6rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.price-cost{font-family:var(--cond);font-weight:900;font-size:2.6rem;color:var(--white);line-height:1;margin-bottom:.3rem}
+.price-cost span{font-size:1rem;color:var(--white-mute);font-family:var(--sans);font-weight:300}
+.price-note{font-family:var(--mono);font-size:.65rem;color:var(--white-mute);margin-bottom:1.5rem}
+.price-features{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+.price-feature{font-size:.88rem;font-weight:300;color:var(--white-dim);display:flex;align-items:flex-start;gap:.6rem;line-height:1.5}
+.price-feature::before{content:'✓';color:var(--red);font-weight:700;flex-shrink:0;margin-top:.05rem}
+.price-cta{background:transparent;border:1px solid var(--border);color:var(--white);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.6rem;text-decoration:none;display:inline-block;transition:all .2s;cursor:pointer!important}
+.price-cta:hover,.price-card.featured .price-cta{background:var(--red);border-color:var(--red);color:#fff}
+.price-card.featured .price-cta:hover{background:var(--red-dark)}
+
+/* ============================================================
+   PROCESS
+============================================================ */
+#process{background:var(--black-2)}
+.process-hd{text-align:center;max-width:580px;margin:0 auto 4rem}
+.process-hd .section-tag{justify-content:center}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.steps::before{content:'';position:absolute;top:35px;left:10%;right:10%;height:1px;background:var(--border);pointer-events:none}
+.step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;padding:0 .5rem}
+.step-n{width:70px;height:70px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1.5rem;color:var(--white);background:var(--black-2);margin-bottom:1.4rem;transition:all .3s}
+.step:hover .step-n{background:var(--red);border-color:var(--red);color:#fff}
+.step-name{font-family:var(--cond);font-weight:700;font-size:.95rem;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
+.step-desc{font-size:.78rem;color:var(--white-mute);font-weight:300;max-width:130px;line-height:1.6}
+
+/* ============================================================
+   THREAT INTEL
+============================================================ */
+#threat-intel{background:var(--black);padding:5.5rem 4rem}
+.threat-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start;margin-top:3rem}
+.threat-feed{background:var(--black-2);border:1px solid var(--border)}
+.feed-hd{background:var(--black-4);padding:.75rem 1.1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.feed-hd-title{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white)}
+.feed-live{font-family:var(--mono);font-size:.62rem;color:var(--red);display:flex;align-items:center;gap:.4rem}
+.feed-body{padding:.9rem;height:300px;overflow:hidden}
+.threat-entry{padding:.65rem 0;border-bottom:1px solid var(--border);display:flex;gap:.9rem;animation:slideIn .45s ease}
+.tsev{padding:.12rem .45rem;font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;align-self:start;margin-top:.1rem}
+.crit{background:var(--red);color:#fff}
+.high{background:#B85A00;color:#fff}
+.med{background:#6B5500;color:#fff}
+.tinfo{flex:1}
+.ttype{color:var(--white);font-weight:700;font-size:.7rem;font-family:var(--mono)}
+.tdetail{color:var(--white-mute);margin-top:.15rem;font-size:.65rem;line-height:1.5;font-family:var(--mono)}
+.ttime{color:var(--red);font-size:.6rem;margin-top:.15rem;font-family:var(--mono)}
+.tstats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.tstat-card{background:var(--black-2);padding:1.6rem 1.3rem;display:flex;flex-direction:column;gap:.35rem}
+.tstat-lbl{font-family:var(--mono);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute)}
+.tstat-val{font-family:var(--cond);font-weight:900;font-size:2.2rem;color:var(--white);line-height:1}
+.tstat-val b{color:var(--red)}
+.tstat-trend{font-family:var(--mono);font-size:.63rem;color:#4EC94E}
+.tbar{height:4px;background:var(--black-4);margin-top:.7rem;border-radius:2px;overflow:hidden}
+.tbar-fill{height:100%;background:var(--red);border-radius:2px;animation:fillBar 2s ease both}
+
+/* ============================================================
+   CLIENTS + CASE STUDIES
+============================================================ */
+#clients{background:var(--black-2)}
+.client-logos{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);margin-top:3rem}
+.cl-logo{background:var(--black-2);padding:1.8rem 1rem;display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1rem;letter-spacing:.1em;color:var(--white-mute);text-transform:uppercase;border-top:2px solid transparent;transition:all .3s;text-align:center;line-height:1.4}
+.cl-logo:hover{border-top-color:var(--red);color:var(--white);background:var(--black-3)}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:1px}
+.case-card{background:var(--black-2);padding:2.2rem 1.8rem;border-top:2px solid transparent;transition:border-color .3s}
+.case-card:hover{border-top-color:var(--red)}
+.case-ind{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+.case-title{font-family:var(--cond);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--white);margin-bottom:.8rem;line-height:1.2}
+.case-res{display:flex;align-items:flex-start;gap:.5rem;font-family:var(--mono);font-size:.72rem;color:var(--white-dim);margin-bottom:.45rem;line-height:1.5}
+.case-res::before{content:'→';color:var(--red);flex-shrink:0}
+
+/* ============================================================
+   ROI CALCULATOR — NEW CLIENT-WINNING SECTION
+============================================================ */
+#roi{background:var(--black)}
+.roi-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
+.roi-form{display:flex;flex-direction:column;gap:1.4rem}
+.roi-group{display:flex;flex-direction:column;gap:.45rem}
+.roi-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute)}
+.roi-input{background:var(--black-3);border:1px solid var(--border);color:var(--white);font-family:var(--sans);font-size:.95rem;padding:.75rem 1rem;outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none;cursor:text!important}
+.roi-input:focus{border-color:var(--red)}
+.roi-result{background:var(--black-2);border:1px solid var(--border-red);padding:2rem;display:flex;flex-direction:column;gap:1.5rem}
+.roi-metric{display:flex;flex-direction:column;gap:.3rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
+.roi-metric:last-child{border-bottom:none;padding-bottom:0}
+.roi-metric-lbl{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute)}
+.roi-metric-val{font-family:var(--cond);font-weight:900;font-size:2rem;color:var(--red);line-height:1}
+.roi-metric-sub{font-size:.82rem;color:var(--white-dim);font-weight:300}
+
+/* ============================================================
+   TEAM
+============================================================ */
+#team{background:var(--black-2)}
+.team-intro{max-width:580px;margin-bottom:3.5rem}
+.team-intro p{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8;margin-top:1rem}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.team-card{background:var(--black-2);padding:1.8rem 1.4rem;border-top:2px solid transparent;transition:border-color .3s}
+.team-card:hover{border-top-color:var(--red)}
+.team-av{width:56px;height:56px;background:var(--black-4);margin-bottom:1.1rem;display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1.1rem;color:var(--red)}
+.team-name{font-family:var(--cond);font-weight:700;font-size:1.05rem;text-transform:uppercase;color:var(--white)}
+.team-role{font-family:var(--mono);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.28rem}
+.team-cert{font-size:.75rem;color:var(--white-mute);margin-top:.55rem;line-height:1.6;font-weight:300}
+
+/* ============================================================
+   TESTIMONIALS
+============================================================ */
+#testimonials{background:var(--black)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem}
+.testi-card{background:var(--black);padding:2.2rem 1.8rem}
+.testi-q{font-size:.97rem;font-weight:300;color:var(--white-dim);line-height:1.8;font-style:italic;margin-bottom:1.4rem;border-left:2px solid var(--red);padding-left:1.1rem}
+.testi-name{font-family:var(--cond);font-weight:700;font-size:.98rem;text-transform:uppercase;color:var(--white)}
+.testi-role{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute);margin-top:.2rem}
+
+/* ============================================================
+   GLOBAL PRESENCE
+============================================================ */
+#global{background:var(--black-2)}
+.global-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
+.offices{display:flex;flex-direction:column}
+.office-row{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0;border-bottom:1px solid var(--border);transition:all .2s}
+.office-row:hover .oc{color:var(--red)}
+.oc{font-family:var(--cond);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:var(--white);transition:color .2s}
+.oco{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--white-mute);text-transform:uppercase;margin-top:.15rem}
+.os{font-family:var(--mono);font-size:.6rem;color:var(--red);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:.4rem}
+.dl{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite;display:inline-block;flex-shrink:0}
+.map-nums{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:2rem}
+.map-num{text-align:center;padding:1.1rem;border:1px solid var(--border)}
+.map-n{font-family:var(--cond);font-weight:900;font-size:1.7rem;color:var(--white)}
+.map-l{font-family:var(--mono);font-size:.6rem;color:var(--white-mute);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+
+/* ============================================================
+   CTA BAND
+============================================================ */
+#cta-band{background:var(--red);padding:5rem 4rem;text-align:center;position:relative;overflow:hidden}
+#cta-band::before{content:'SECURE YOUR ENTERPRISE';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(3rem,9vw,10rem);color:rgba(0,0,0,.07);white-space:nowrap;pointer-events:none}
+.cta-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,5vw,5rem);text-transform:uppercase;color:#fff;line-height:.95;margin-bottom:1.4rem;position:relative}
+.cta-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.82);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;position:relative}
+.btn-white{background:#fff;color:var(--black)!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;display:inline-block;transition:all .2s;position:relative;z-index:1}
+.btn-white:hover{background:var(--black);color:#fff!important}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+#contact{background:var(--black-2);display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.contact-info{display:flex;flex-direction:column;gap:2rem}
+.ci-label{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.25rem}
+.ci-val{font-size:.97rem;color:var(--white-dim);font-weight:300;line-height:1.65}
+.ci-val a{color:inherit;text-decoration:none;transition:color .2s}
+.ci-val a:hover{color:var(--white)}
+.cf{display:flex;flex-direction:column;gap:1.1rem}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f-group{display:flex;flex-direction:column;gap:.45rem}
+.f-label{font-family:var(--mono);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute)}
+.f-input,.f-select,.f-textarea{background:var(--black-3);border:1px solid var(--border);color:var(--white);font-family:var(--sans);font-size:.9rem;font-weight:300;padding:.78rem 1rem;outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none}
+.f-select{cursor:pointer!important}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-color:var(--red)}
+.f-input::placeholder,.f-textarea::placeholder{color:var(--white-mute)}
+.f-textarea{resize:vertical;min-height:110px}
+.f-select option{background:var(--black-3)}
+.btn-submit{background:var(--red);color:#fff;font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:.95rem 2rem;border:none;cursor:pointer!important;align-self:flex-start;transition:all .2s}
+.btn-submit:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-submit:disabled{opacity:.55;cursor:not-allowed!important}
+
+/* ============================================================
+   FOOTER — ROOT CAUSE FIX:
+   - footer children must NOT use .stag/.reveal (removed those classes)
+   - all columns are visible at all times, no opacity:0 applied
+   - position:static (default) — NOT fixed, NOT absolute
+============================================================ */
+footer{
+  background:var(--black);
+  border-top:1px solid var(--border);
+  padding:4.5rem 4rem 2.5rem;
+  /* position is default (static) — no fixed/absolute/sticky */
+  /* z-index intentionally low so nothing overlaps */
+}
+.foot-top{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1fr;
+  gap:3rem;
+  padding-bottom:3rem;
+  border-bottom:1px solid var(--border);
+  /* NO opacity, NO transform, NO animation — always visible */
+}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-logo{display:flex;align-items:center;gap:.75rem}
+.foot-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75;max-width:275px}
+.foot-certs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.foot-cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;padding:.28rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.foot-socials{display:flex;gap:.65rem;margin-top:.5rem}
+.foot-social{
+  width:34px;height:34px;
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.63rem;
+  color:var(--white-mute);text-decoration:none;
+  transition:all .2s;
+  cursor:pointer!important;pointer-events:auto!important;
+}
+.foot-social:hover{border-color:var(--red);color:var(--red)}
+
+/* Footer column headings */
+.foot-col h4{
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--white);     /* fully visible white */
+  margin-bottom:1.3rem;
+  display:block;
+  opacity:1;              /* ensure never hidden */
+}
+/* Footer links */
+.foot-col .foot-links{
+  display:flex;
+  flex-direction:column;
+  gap:.65rem;
+  list-style:none;
+}
+.foot-col .foot-links a{
+  font-size:.87rem;
+  font-weight:300;
+  color:var(--white-mute);
+  text-decoration:none;
+  transition:color .2s;
+  display:block;           /* full-width click target */
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  opacity:1;               /* ensure never hidden */
+}
+.foot-col .foot-links a:hover{color:var(--red)}
+
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute)}
+.foot-copy b{color:var(--red);font-weight:400}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:color .2s;cursor:pointer!important;pointer-events:auto!important}
+.foot-legal a:hover{color:var(--red)}
+
+/* ============================================================
+   MOBILE / TABLET — FULL RESPONSIVE
+============================================================ */
+
+/* Tablet: 1024px */
+@media(max-width:1024px){
+  section{padding:5rem 2.5rem}
+  nav{padding:1.3rem 2.5rem}
+  #hero{padding:8rem 2.5rem 4rem}
+  #threat-intel{padding:5rem 2.5rem}
+  #cta-band{padding:4.5rem 2.5rem}
+  #contact{padding:5rem 2.5rem;grid-template-columns:1fr}
+  #about{grid-template-columns:1fr}
+  .about-visual{display:none}
+  .services-intro{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid .price-card:last-child{grid-column:1/-1;max-width:calc(50% - .5px)}
+  .steps{grid-template-columns:1fr 1fr;gap:2rem}
+  .steps::before{display:none}
+  .threat-layout{grid-template-columns:1fr}
+  .client-logos{grid-template-columns:repeat(3,1fr)}
+  .cases{grid-template-columns:1fr 1fr}
+  .roi-layout{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .global-layout{grid-template-columns:1fr}
+  .hero-terminal{display:none}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+
+/* Mobile: 768px */
+@media(max-width:768px){
+  section{padding:4rem 1.25rem}
+  nav{padding:1.1rem 1.25rem}
+  #hero{padding:7rem 1.25rem 3.5rem}
+  #threat-intel{padding:4rem 1.25rem}
+  #cta-band{padding:4rem 1.25rem}
+  #contact{padding:4rem 1.25rem;grid-template-columns:1fr}
+  footer{padding:3.5rem 1.25rem 2rem}
+
+  /* Nav: hide links, show hamburger */
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+
+  /* Hero */
+  .hero-stats{gap:1.8rem}
+  .hero-stats .stat-num{font-size:2.1rem}
+
+  /* Sections: single column */
+  #about{grid-template-columns:1fr}
+  .about-highlights{grid-template-columns:1fr 1fr}
+  .services-intro{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .pricing-grid .price-card:last-child{grid-column:auto;max-width:none}
+  .steps{grid-template-columns:1fr 1fr;gap:1.8rem}
+  .threat-layout{grid-template-columns:1fr}
+  .client-logos{grid-template-columns:repeat(2,1fr)}
+  .cases{grid-template-columns:1fr}
+  .roi-layout{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .global-layout{grid-template-columns:1fr}
+
+  /* Footer: full single-column */
+  .foot-top{grid-template-columns:1fr;gap:2.5rem}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  .foot-legal{gap:1rem}
+  .foot-col h4{margin-top:.5rem}
+
+  /* Floating hire */
+  #hire-float{bottom:1rem;right:1rem}
+  .hire-btn{font-size:.65rem;padding:.75rem 1.2rem}
+
+  /* ROI */
+  .map-nums{grid-template-columns:1fr 1fr}
+}
+
+/* Small mobile: 480px */
+@media(max-width:480px){
+  .hero-stats{flex-direction:column;gap:1.4rem}
+  .about-highlights{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr}
+  .client-logos{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .services-intro .section-title{font-size:2.4rem}
+  .map-nums{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <!-- Logo placeholder -->
-            <img src="https://placehold.co/150x40/FFFFFF/000000?text=LOGO" alt="Company Logo" class="header-logo-img">
-            
-            <!-- Desktop Navigation and Get Started button -->
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#services-section">Services</a></li>
-                    <li><a href="#blog-section">Blog</a></li>
-                    <li><a href="#contact-section">Contact</a></li>
-                    <li><a href="#about-section">About Us</a></li>
-                    <li><a href="#" class="btn">Get Started</a></li>
-                </ul>
-            </nav>
-            <!-- Mobile menu button and mobile menu div are removed -->
-        </div>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <canvas id="hero-canvas"></canvas>
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Empowering <span>Trust</span> in the Digital Era.</h1>
-                    <p>We are the experts you can trust to protect your digital assets and keep your data safe. With our help, you can focus on what matters most, knowing that your business is secure.</p>
-                    <a href="#" class="btn">Contact Now</a>
-                </div>
-            </div>
-        </section>
+<!-- Cursor -->
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
 
-        <!-- Features Section -->
-        <section class="section features" id="features-section">
-            <div class="container">
-                <h2 class="section-title">Trustworthy Digital Transformation</h2>
-                <p class="section-subtitle">Secure, Innovate, Thrive.</p>
-                
-                <div class="features-grid">
-                    <div class="feature-card block-3d">
-                        <div class="feature-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>Precision</h3>
-                        <p>We approach digital defense with a high level of accuracy and attention to detail. We employ precise strategies and techniques to protect digital assets, leaving no room for vulnerabilities.</p>
-                    </div>
-                    <div class="feature-card block-3d">
-                        <div class="feature-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Vigilance</h3>
-                        <p>We have a constant and watchful approach to cyber security. We are always alert and proactive in monitoring and identifying potential threats or risks in the digital landscape.</p>
-                    </div>
-                    <div class="feature-card block-3d">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Assurance</h3>
-                    <p>We represent the confidence and peace of mind that clients can have when they choose RDDA for their digital defense needs. We provide assurance that their clients' digital assets will be protected effectively and reliably.</p>
-                </div>
-            </div>
-        </section>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"RDD Agency","alternateName":"Razi Digital Agency","url":"https://www.rddagency.com","description":"Elite global cybersecurity agency: penetration testing, red team operations, SOC management, threat intelligence, incident response.","areaServed":"Worldwide","hasOfferCatalog":{"@type":"OfferCatalog","name":"Cybersecurity Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Penetration Testing"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Red Team Operations"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SOC as a Service"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Threat Intelligence"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Incident Response"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cloud Security"}}]},"contactPoint":{"@type":"ContactPoint","telephone":"+44-800-733-7328","contactType":"customer service","availableLanguage":["English","Arabic","Urdu"]}}
+</script>
 
-        <!-- Mission Section -->
-        <section class="section mission" id="mission-section">
-            <div class="container">
-                <h2 class="section-title">Crafting a Secure Digital Realm</h2>
-                <div class="mission-content">
-                    <p>Join us in our mission to craft a secure digital realm for a brighter future. Discover how our vision for a safer virtual world drives us to protect your digital landscape.</p>
-                    
-                    <h3>Our Mission:</h3>
-                    <p>At our core, our mission is to empower individuals and businesses alike by creating a secure and resilient digital environment. We are dedicated to defending against cyber threats and ensuring the safety of your digital future.</p>
-                    
-                    <h3>Our Vision:</h3>
-                    <p>Our vision is to be the leading force in shaping a virtual world where innovation thrives without compromising security. We aspire to set new standards for digital protection, enabling a future where everyone can navigate the digital realm with confidence and peace of mind.</p>
-                </div>
-            </div>
-        </section>
+<!-- EXIT-INTENT POPUP -->
+<div id="exit-popup" role="dialog" aria-modal="true" aria-labelledby="pop-title">
+  <div class="pop-box">
+    <button class="pop-close" id="popClose" aria-label="Close">✕</button>
+    <div class="pop-tag"><span class="hero-blink"></span>Limited Availability — Q3 2025</div>
+    <h2 class="pop-title" id="pop-title">Don't Leave Without<br><span>Getting Protected</span></h2>
+    <p class="pop-sub">One data breach costs an average of $4.88M. Schedule a free 30-minute security briefing with our senior team — no sales pitch, immediate tactical value.</p>
+    <div class="pop-actions">
+      <a href="#contact" class="pop-cta" id="popHire">Hire RDD Agency Now →</a>
+      <button class="pop-skip" id="popSkip">Maybe Later</button>
+    </div>
+    <p class="pop-urgency">⚠ We onboard max 8 new enterprise clients per quarter. 3 slots remaining.</p>
+  </div>
+</div>
 
-        <!-- Solutions Section -->
-        <section class="section solutions" id="solutions-section">
-            <div class="container">
-                <h2 class="section-title">Revolutionizing Digital Defense</h2>
-                <div class="solutions-content">
-                    <div>
-                        <p>Our solutions are designed to protect your data, devices, and networks from a wide range of threats. We offer a variety of products and services to fit your specific requirements, so you can be confident that your digital assets are safe.</p>
-                        
-                        <ul class="solutions-list">
-                            <li>We use artificial intelligence to identify and block malicious activity in real time.</li>
-                            <li>We offer a wide range of products and services to fit your specific needs, from endpoint protection to cloud security.</li>
-                            <li>We've streamlined our solutions to be cost-effective, ensuring that even everyday users can access top-tier digital defense without breaking the bank.</li>
-                            <li>We provide security training for our customers so they can be more aware of cyber threats.</li>
-                        </ul>
-                    </div>
-                    <canvas id="solutions-canvas"></canvas>
-                </div>
-            </div>
-        </section>
+<!-- FLOATING HIRE US -->
+<div id="hire-float">
+  <a href="#contact" class="hire-btn"><span class="hire-dot"></span>Hire Us Now</a>
+  <button class="hire-dismiss" id="hireDismiss">Dismiss</button>
+</div>
 
-        <!-- Testimonials Section -->
-        <section class="section testimonials" id="testimonials-section">
-            <div class="container">
-                <h2 class="section-title">Client Testimonials</h2>
-                <p class="section-subtitle">What Our Valued Partners Have to Say</p>
-                
-                <div class="testimonial-grid">
-                    <div class="testimonial-card block-3d">
-                        <p>Partnering with rddagency has been a game-changer for our organization. Their cyber security expertise has kept us safe from evolving threats, and their responsive team is always there when we need them.</p>
-                        <div class="testimonial-author">- CTO, TechCorp</div>
-                    </div>
-                    <div class="testimonial-card block-3d">
-                        <p>We were looking for a cyber security partner that we could trust. rddagency has a proven track record of success and we're confident that they will continue to protect our data.</p>
-                        <div class="testimonial-author">- CEO, SecureSystems</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo" aria-label="RDD Agency Home">
+    <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+    <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Main navigation">
+    <a href="#services">Services</a>
+    <a href="#why-rdd">Why RDD</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#clients">Clients</a>
+    <a href="#team">Team</a>
+    <a href="#contact" class="nav-cta"><span>Get Protected</span></a>
+  </div>
+  <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-        <!-- Services Section -->
-        <section class="section services" id="services-section">
-            <div class="container">
-                <h2 class="section-title">Our 24/7 Cyber Security Operations</h2>
-                <p class="section-subtitle">Partner with us to benefit from our robust Cyber Security Operations Center and the unwavering responsibility of our customer support team, ensuring your digital protection is our top priority.</p>
-                
-                <div class="services-grid">
-                    <div class="service-item block-3d">
-                        <i class="fas fa-search"></i>
-                        <h3>Monitor and detect cyber threats</h3>
-                    </div>
-                    <div class="service-item block-3d">
-                        <i class="fas fa-bolt"></i>
-                        <h3>Respond to cyber incidents</h3>
-                    </div>
-                    <div class="service-item block-3d">
-                        <i class="fas fa-microscope"></i>
-                        <h3>Investigate cyber incidents</h3>
-                    </div>
-                    <div class="service-item block-3d">
-                        <i class="fas fa-comments"></i>
-                        <h3>Advise on security best practices</h3>
-                    </div>
-                    <div class="service-item block-3d">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Train customers on cyber security</h3>
-                    </div>
-                    <div class="service-item block-3d">
-                        <i class="fas fa-bell"></i>
-                        <h3>Stay updated on latest threats</h3>
-                    </div>
-                    <div class="service-item block-3d">
-                        <i class="fas fa-globe"></i>
-                        <h3>Managed Web Application</h3>
-                    </div>
-                    <div class="service-item block-3d">
-                        <i class="fas fa-database"></i>
-                        <h3>Database Security</h3>
-                    </div>
-                    <div class="service-item block-3d">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Penetration Testing</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="#services" class="mob-lnk">Services</a>
+  <a href="#why-rdd" class="mob-lnk">Why RDD</a>
+  <a href="#pricing" class="mob-lnk">Pricing</a>
+  <a href="#clients" class="mob-lnk">Clients</a>
+  <a href="#team" class="mob-lnk">Team</a>
+  <a href="#contact" class="mob-lnk" style="color:var(--red)">Get Protected →</a>
+</div>
 
-        <!-- Stats Section -->
-        <section class="section stats" id="stats-section">
-            <div class="container">
-                <h2 class="section-title">Guarding Against Threats</h2>
-                <p class="section-subtitle">A Year's Worth of 2,580 Hours Invested in Your Digital Safety.</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-item block-3d">
-                        <h3>10+</h3>
-                        <p>Cyber-security Experts</p>
-                    </div>
-                    <div class="stat-item block-3d">
-                        <h3>19+</h3>
-                        <p>Global Reach</p>
-                    </div>
-                    <div class="stat-item block-3d">
-                        <h3>500+</h3>
-                        <p>Security Assessments</p>
-                    </div>
-                    <div class="stat-item block-3d">
-                        <h3>10,000 TB</h3>
-                        <p>Data Protection</p>
-                    </div>
-                    <div class="stat-item block-3d">
-                        <h3>100+</h3>
-                        <p>Client Partnerships</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- ===================== HERO ===================== -->
+<section id="hero" role="banner">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-scan" aria-hidden="true"></div>
+  <div class="hero-orb" aria-hidden="true"></div>
+  <div class="hero-orb2" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-blink" aria-hidden="true"></span>Active Threat Monitoring — 24/7/365</div>
+    <h1 class="hero-title">
+      <span class="l1" style="display:block">We Hunt</span>
+      <span class="l2" style="display:block">Adversaries</span>
+      <span class="l3" style="display:block">Before They Strike</span>
+    </h1>
+    <p class="hero-sub">RDD Agency is a world-class cybersecurity firm protecting Fortune 500 enterprises, financial institutions, and critical national infrastructure from advanced persistent threats, zero-day exploits, and nation-state actors — worldwide, around the clock.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-red">Request Security Assessment</a>
+      <a href="#services" class="btn-ghost">Our Capabilities →</a>
+    </div>
+    <div class="hero-stats" role="region" aria-label="Key statistics">
+      <div class="stat-item"><span class="stat-num">500<b>+</b></span><span class="stat-lbl">Enterprise Clients</span></div>
+      <div class="stat-item"><span class="stat-num">12<b>K+</b></span><span class="stat-lbl">Threats Neutralized</span></div>
+      <div class="stat-item"><span class="stat-num">98<b>%</b></span><span class="stat-lbl">Containment Rate</span></div>
+      <div class="stat-item"><span class="stat-num">47</span><span class="stat-lbl">Countries Served</span></div>
+    </div>
+  </div>
+  <div class="hero-terminal" aria-hidden="true">
+    <div class="term-bar">
+      <div class="term-dot" style="background:#E01A1A"></div>
+      <div class="term-dot" style="background:#B85A00"></div>
+      <div class="term-dot" style="background:#4EC94E"></div>
+      <span class="term-title">rdd_threat_monitor.sh</span>
+    </div>
+    <div class="term-body" id="termBody">
+      <div><span class="tg">rdd@soc</span><span class="td">:~$ </span><span class="tw" id="termTxt"></span><span class="tcursor"></span></div>
+    </div>
+  </div>
+</section>
 
-        <!-- Pricing Section -->
-        <section class="section pricing" id="pricing-section">
-            <div class="container">
-                <h2 class="section-title">Pricing Plans</h2>
-                <p class="section-subtitle">The Most Streamlined Pricing Plan for Ensuring Data Security.</p>
-                
-                <div class="pricing-grid">
-                    <div class="pricing-card block-3d">
-                        <h3>Basic Security Shield</h3>
-                        <div class="price">$500/W</div>
-                        <p>Essential protection at an affordable price. Safeguard your digital assets with our Basic Security Shield.</p>
-                        <ul class="pricing-features">
-                            <li>Antivirus and malware detection</li>
-                            <li>Real-time threat monitoring</li>
-                            <li>Firewall protection</li>
-                            <li>Email security</li>
-                            <li>24/7 customer support</li>
-                            <li>Weekly security reports</li>
-                        </ul>
-                        <a href="#" class="btn">Get a Quote</a>
-                    </div>
-                    <div class="pricing-card block-3d">
-                        <h3>Advanced Cyber Defense</h3>
-                        <div class="price">$1000/W</div>
-                        <p>Comprehensive security for businesses. Fortify your digital fortress with our Advanced Cyber Defense plan.</p>
-                        <ul class="pricing-features">
-                            <li>All Basic Security Shield features</li>
-                            <li>Intrusion detection system</li>
-                            <li>Data encryption</li>
-                            <li>Phishing and identity theft protection</li>
-                            <li>Priority customer support</li>
-                            <li>IDS/IPS to detection</li>
-                            <li>Penetration testing</li>
-                            <li>Weekly security audits</li>
-                        </ul>
-                        <a href="#" class="btn">Get a Quote</a>
-                    </div>
-                    <div class="pricing-card block-3d">
-                        <h3>Enterprise Fortification</h3>
-                        <div class="price">$2000/W</div>
-                        <p>Tailored security solutions for enterprises. Elevate your security posture with our Enterprise Fortification plan.</p>
-                        <ul class="pricing-features">
-                            <li>All Advanced Cyber Defense features</li>
-                            <li>Customized security policies</li>
-                            <li>DDoS mitigation</li>
-                            <li>Security awareness training</li>
-                            <li>Dedicated account manager</li>
-                            <li>Compliance support</li>
-                        </ul>
-                        <a href="#" class="btn">Get a Quote</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Advanced Persistent Threat Detection</span>
+    <span class="marquee-item">Zero-Day Vulnerability Research</span>
+    <span class="marquee-item">Red Team &amp; Adversary Simulation</span>
+    <span class="marquee-item">SOC Operations Center</span>
+    <span class="marquee-item">Digital Forensics &amp; Incident Response</span>
+    <span class="marquee-item">Cloud Infrastructure Security</span>
+    <span class="marquee-item">Nation-State Defense</span>
+    <span class="marquee-item">Ransomware Prevention &amp; Recovery</span>
+    <span class="marquee-item">Advanced Persistent Threat Detection</span>
+    <span class="marquee-item">Zero-Day Vulnerability Research</span>
+    <span class="marquee-item">Red Team &amp; Adversary Simulation</span>
+    <span class="marquee-item">SOC Operations Center</span>
+    <span class="marquee-item">Digital Forensics &amp; Incident Response</span>
+    <span class="marquee-item">Cloud Infrastructure Security</span>
+    <span class="marquee-item">Nation-State Defense</span>
+    <span class="marquee-item">Ransomware Prevention &amp; Recovery</span>
+  </div>
+</div>
 
-        <!-- Partners Section -->
-        <section class="section partners" id="partners-section">
-            <div class="container">
-                <h2 class="section-title">Our Partners</h2>
-                <p class="section-subtitle">We're Collaborating With Prominent Organizations to Achieve Remarkable Results Together.</p>
-                
-                <div class="partners-grid">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" alt="Azure" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UbuntuCoF.svg/1200px-UbuntuCoF.svg.png" alt="Ubuntu" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Red_Hat_Logo.svg/1200px-Red_Hat_Logo.svg.png" alt="Red Hat" class="partner-logo">
-                </div>
-            </div>
-        </section>
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="rev-l">
+    <div class="section-tag">About RDD Agency</div>
+    <h2 class="section-title">Built By <em>Operators,</em><br>For Enterprises</h2>
+    <p class="about-text" style="font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85;margin-top:1.4rem">Razi Digital Agency was founded by former intelligence community operators, elite red teamers, and incident response veterans. We speak the language of adversaries because we were trained in the same tradecraft.</p>
+    <p style="font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85;margin-top:1rem">Today, RDD Agency operates across 47 countries, maintaining round-the-clock visibility over the global threat landscape. Our proprietary ThreatCore™ intelligence platform processes over 2 billion signals per day — giving clients an unparalleled early-warning advantage.</p>
+    <div class="about-highlights stag" style="margin-top:2.5rem">
+      <div class="hl-item"><div class="hl-num">2016</div><div class="hl-lbl">Year Founded</div></div>
+      <div class="hl-item"><div class="hl-num">340+</div><div class="hl-lbl">Security Experts</div></div>
+      <div class="hl-item"><div class="hl-num">ISO 27001</div><div class="hl-lbl">Certified Ops</div></div>
+      <div class="hl-item"><div class="hl-num">CREST</div><div class="hl-lbl">Accredited Firm</div></div>
+    </div>
+  </div>
+  <div class="about-visual rev-r">
+    <div class="globe-wrap">
+      <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Global operations illustration">
+        <circle cx="150" cy="150" r="120" stroke="rgba(245,245,240,.08)" stroke-width="1" fill="none"/>
+        <circle cx="150" cy="150" r="120" stroke="rgba(224,26,26,.18)" stroke-width=".5" fill="none"/>
+        <g class="gr1"><ellipse cx="150" cy="150" rx="120" ry="36" stroke="rgba(224,26,26,.3)" stroke-width="1" fill="none"/></g>
+        <g class="gr2"><ellipse cx="150" cy="150" rx="82" ry="120" stroke="rgba(245,245,240,.1)" stroke-width=".5" fill="none"/></g>
+        <line x1="30" y1="150" x2="270" y2="150" stroke="rgba(245,245,240,.05)" stroke-width=".5"/>
+        <line x1="150" y1="30" x2="150" y2="270" stroke="rgba(245,245,240,.05)" stroke-width=".5"/>
+        <circle class="pd" cx="190" cy="112" r="4" fill="#E01A1A"/>
+        <circle class="pd" cx="102" cy="140" r="4" fill="#E01A1A"/>
+        <circle class="pd" cx="208" cy="180" r="4" fill="#E01A1A"/>
+        <line x1="190" y1="112" x2="208" y2="180" stroke="rgba(224,26,26,.3)" stroke-width=".5" stroke-dasharray="4 4"/>
+        <line x1="102" y1="140" x2="190" y2="112" stroke="rgba(224,26,26,.3)" stroke-width=".5" stroke-dasharray="4 4"/>
+        <text x="150" y="158" text-anchor="middle" font-family="'Barlow Condensed'" font-weight="900" font-size="20" fill="rgba(245,245,240,.9)" letter-spacing=".05em">RDD</text>
+        <text x="150" y="175" text-anchor="middle" font-family="'Space Mono'" font-size="6.5" fill="rgba(224,26,26,.9)" letter-spacing=".1em">GLOBAL OPS</text>
+      </svg>
+    </div>
+  </div>
+</section>
 
-        <!-- Newsletter Section -->
-        <section class="section newsletter" id="newsletter-section">
-            <div class="container">
-                <h2 class="section-title">Sign up for Newsletter</h2>
-                <p class="section-subtitle">Don't wait until it's too late to protect your online assets. Follow our cyber security blog today and stay ahead of the curve.</p>
-                
-                <form class="newsletter-form">
-                    <div class="form-group name-fields">
-                        <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
-                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="personal@company.com" required>
-                    </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">I have read and agree to the Terms & Conditions</label>
-                    </div>
-                    <button type="submit" class="btn">Submit</button>
-                </form>
-            </div>
-        </section>
-    </main>
+<!-- ===================== SERVICES ===================== -->
+<section id="services">
+  <div class="services-intro">
+    <div class="reveal">
+      <div class="section-tag">Our Services</div>
+      <h2 class="section-title">Full-Spectrum<br><em>Cyber</em> Defense</h2>
+    </div>
+    <p class="services-desc reveal" style="align-self:end">From proactive threat hunting and red team engagements to 24/7 managed detection and response — RDD Agency delivers the complete security stack that enterprise and government clients demand.</p>
+  </div>
+  <div class="svc-grid stag">
+    <article class="svc-card" tabindex="0">
+      <div class="svc-num">01</div>
+      <div class="svc-name">Penetration Testing</div>
+      <p class="svc-desc">Full-scope assessments of networks, applications, APIs, and physical security. CREST-certified testers execute real-world attack scenarios to expose exploitable weaknesses before adversaries do.</p>
+      <div class="svc-tags"><span class="svc-tag">Web App</span><span class="svc-tag">Network</span><span class="svc-tag">API</span><span class="svc-tag">Mobile</span></div>
+    </article>
+    <article class="svc-card" tabindex="0">
+      <div class="svc-num">02</div>
+      <div class="svc-name">Red Team Operations</div>
+      <p class="svc-desc">Multi-week adversary simulation campaigns designed to test your people, processes, and technology. We emulate nation-state TTPs to reveal systemic security gaps invisible to standard audits.</p>
+      <div class="svc-tags"><span class="svc-tag">APT Emulation</span><span class="svc-tag">Social Eng</span><span class="svc-tag">Physical</span></div>
+    </article>
+    <article class="svc-card" tabindex="0">
+      <div class="svc-num">03</div>
+      <div class="svc-name">SOC as a Service</div>
+      <p class="svc-desc">24/7/365 managed security operations with sub-5-minute mean time to detect. Our analysts leverage AI-enhanced SIEM, SOAR automation, and proprietary threat intelligence to stay ahead of attackers.</p>
+      <div class="svc-tags"><span class="svc-tag">MDR</span><span class="svc-tag">SIEM</span><span class="svc-tag">SOAR</span><span class="svc-tag">XDR</span></div>
+    </article>
+    <article class="svc-card" tabindex="0">
+      <div class="svc-num">04</div>
+      <div class="svc-name">Threat Intelligence</div>
+      <p class="svc-desc">Strategic, operational, and tactical intelligence feeds tailored to your industry vertical. Real-time dark web monitoring, adversary tracking, and bespoke threat profiles delivered to your team.</p>
+      <div class="svc-tags"><span class="svc-tag">Dark Web</span><span class="svc-tag">IOC Feeds</span><span class="svc-tag">Reporting</span></div>
+    </article>
+    <article class="svc-card" tabindex="0">
+      <div class="svc-num">05</div>
+      <div class="svc-name">Incident Response</div>
+      <p class="svc-desc">Rapid deployment forensics and containment within 2 hours of engagement. Our DFIR team has handled over 800 ransomware, data breach, and insider threat cases with documented 98% recovery rates.</p>
+      <div class="svc-tags"><span class="svc-tag">DFIR</span><span class="svc-tag">Ransomware</span><span class="svc-tag">Data Breach</span></div>
+    </article>
+    <article class="svc-card" tabindex="0">
+      <div class="svc-num">06</div>
+      <div class="svc-name">Cloud Security</div>
+      <p class="svc-desc">Comprehensive posture management, workload protection, and secure architecture review across AWS, Azure, and GCP. We secure cloud-native environments from misconfigurations to runtime threats.</p>
+      <div class="svc-tags"><span class="svc-tag">AWS</span><span class="svc-tag">Azure</span><span class="svc-tag">GCP</span><span class="svc-tag">CSPM</span></div>
+    </article>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer id="contact-section">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo">Razi <span>Digital</span></div>
-                    <p>Razi Digital Defence Agency is a leading provider of cyber security solutions. We help organizations of all sizes protect their data, systems, and networks from cyber threats.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Continuous Monitoring</a></li>
-                        <li><a href="#">Penetration Testing</a></li>
-                        <li><a href="#">Spyware Protection</a></li>
-                        <li><a href="#">Database Security</a></li>
-                        <li><a href="#">Firewall Setup</a></li>
-                        <li><a href="#">Networking</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms and Conditions</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Support & FAQ</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Payment Methods</h3>
-                    <p>We Accept All Major Credit Cards For Fast And Easy Payment</p>
-                    <div class="payment-methods">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-amex"></i>
-                        <i class="fab fa-cc-paypal"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Razi Digital Defence Agency. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<!-- ===================== WHY RDD ===================== -->
+<section id="why-rdd">
+  <div class="reveal" style="max-width:680px">
+    <div class="section-tag">Why Choose RDD</div>
+    <h2 class="section-title">The Reasons <em>Elite</em><br>Organizations Choose Us</h2>
+    <p style="font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8;margin-top:1rem">When Google, Microsoft, or a sovereign government needs a cybersecurity partner, they need more than software — they need operators who have done the real thing. Here is why RDD Agency is that choice.</p>
+  </div>
+  <div class="why-grid stag">
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">Operator-Led, Not Sales-Led</div>
+      <p class="why-desc">Every engagement is led by a senior practitioner — not an account manager. Our founders come from NSA, GCHQ, and Tier 1 military cyber units. You get real expertise, not packaged products.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⚡</div>
+      <div class="why-title">2-Hour Incident Response SLA</div>
+      <p class="why-desc">When a breach happens, every minute costs money. Our guaranteed 2-hour SLA and 24/7 hotline means a senior analyst is on your call before your competitors have even opened a ticket.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🌍</div>
+      <div class="why-title">Truly Global Coverage</div>
+      <p class="why-desc">With 6 active SOC hubs across 4 continents, RDD Agency provides follow-the-sun coverage. No outsourced night shifts — dedicated local teams in your timezone, speaking your language.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔬</div>
+      <div class="why-title">Proprietary ThreatCore™ Platform</div>
+      <p class="why-desc">Our in-house intelligence platform processes 2B+ signals daily, tracks 1,400+ threat actor groups, and delivers actionable IOCs before commercial feeds do. Built by operators, for operators.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📋</div>
+      <div class="why-title">Regulatory Compliance Expertise</div>
+      <p class="why-desc">PCI-DSS, HIPAA, ISO 27001, SOC 2, NIST CSF, NIS2, DORA — our compliance team has guided 200+ organizations through audits and zero failed certifications in 8 years.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏆</div>
+      <div class="why-title">Proven Track Record</div>
+      <p class="why-desc">$2.1B in prevented financial losses. 98% client retention. 800+ DFIR cases closed. Zero data exfiltration from clients under active MDR coverage. Results you can put in a board report.</p>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // No mobile menu related JavaScript needed as it's removed
+<!-- ===================== PRICING ===================== -->
+<section id="pricing">
+  <div class="pricing-intro reveal">
+    <div class="section-tag">Transparent Pricing</div>
+    <h2 class="section-title">Invest In <em>Security,</em><br>Not Surprises</h2>
+    <p>We believe enterprise security pricing should be clear. Below are our starting engagement tiers. Every engagement is scoped and quoted precisely — no hidden fees, no upsell traps.</p>
+  </div>
+  <div class="pricing-grid stag">
+    <div class="price-card">
+      <div class="price-tier">Starter</div>
+      <div class="price-name">Essentials</div>
+      <div class="price-cost">$4,500<span>/engagement</span></div>
+      <div class="price-note">Starting price — final quote after scoping call</div>
+      <div class="price-features">
+        <div class="price-feature">External network penetration test (up to /24)</div>
+        <div class="price-feature">Web application assessment (up to 5 targets)</div>
+        <div class="price-feature">Executive + technical report with remediation roadmap</div>
+        <div class="price-feature">30-day remediation support window</div>
+        <div class="price-feature">One free retest included</div>
+      </div>
+      <a href="#contact" class="price-cta">Request Quote</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge">Most Popular</div>
+      <div class="price-tier">Professional</div>
+      <div class="price-name">Enterprise</div>
+      <div class="price-cost">$18,000<span>/engagement</span></div>
+      <div class="price-note">Starting price — final quote after scoping call</div>
+      <div class="price-features">
+        <div class="price-feature">Full red team engagement (2–4 weeks)</div>
+        <div class="price-feature">Physical, social engineering &amp; technical attack simulation</div>
+        <div class="price-feature">Active Directory &amp; cloud infrastructure assessment</div>
+        <div class="price-feature">Threat intelligence briefing on your adversary profile</div>
+        <div class="price-feature">Board-ready executive presentation included</div>
+        <div class="price-feature">90-day post-engagement support</div>
+      </div>
+      <a href="#contact" class="price-cta">Request Quote</a>
+    </div>
+    <div class="price-card">
+      <div class="price-tier">Managed</div>
+      <div class="price-name">SOC Retainer</div>
+      <div class="price-cost">$9,500<span>/month</span></div>
+      <div class="price-note">12-month minimum — per site pricing available</div>
+      <div class="price-features">
+        <div class="price-feature">24/7/365 managed detection &amp; response (MDR)</div>
+        <div class="price-feature">SIEM + SOAR + EDR platform included</div>
+        <div class="price-feature">Dedicated senior analyst as primary contact</div>
+        <div class="price-feature">Monthly threat intelligence digest</div>
+        <div class="price-feature">Quarterly penetration test included</div>
+        <div class="price-feature">2-hour incident response SLA guaranteed</div>
+      </div>
+      <a href="#contact" class="price-cta">Request Quote</a>
+    </div>
+  </div>
+</section>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+<!-- ===================== PROCESS ===================== -->
+<section id="process">
+  <div class="process-hd reveal">
+    <div class="section-tag">Our Methodology</div>
+    <h2 class="section-title">How We <em>Operate</em></h2>
+  </div>
+  <div class="steps stag">
+    <div class="step"><div class="step-n">01</div><div class="step-name">Scope &amp; Intel</div><p class="step-desc">Define attack surface and gather OSINT on your environment and adversary profile</p></div>
+    <div class="step"><div class="step-n">02</div><div class="step-name">Enumeration</div><p class="step-desc">Map all assets, services, identities, and potential entry vectors systematically</p></div>
+    <div class="step"><div class="step-n">03</div><div class="step-name">Exploitation</div><p class="step-desc">Controlled exploitation using real adversary tooling and TTPs from MITRE ATT&amp;CK</p></div>
+    <div class="step"><div class="step-n">04</div><div class="step-name">Reporting</div><p class="step-desc">Executive and technical reports with prioritized remediation roadmaps and PoC evidence</p></div>
+    <div class="step"><div class="step-n">05</div><div class="step-name">Remediation</div><p class="step-desc">Guided remediation support and free retest validation to confirm all risks are closed</p></div>
+  </div>
+</section>
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+<!-- ===================== THREAT INTEL ===================== -->
+<section id="threat-intel">
+  <div class="reveal">
+    <div class="section-tag">Live Intelligence</div>
+    <h2 class="section-title">Global Threat <em>Landscape</em></h2>
+  </div>
+  <div class="threat-layout">
+    <div class="threat-feed rev-l">
+      <div class="feed-hd">
+        <span class="feed-hd-title">ThreatCore™ Live Feed</span>
+        <span class="feed-live"><span class="hero-blink" aria-hidden="true"></span>Live</span>
+      </div>
+      <div class="feed-body" id="feedBody" role="log" aria-live="polite"></div>
+    </div>
+    <div class="tstats stag">
+      <div class="tstat-card"><span class="tstat-lbl">Threats Blocked Today</span><span class="tstat-val" id="tBlocked">2,<b>847</b></span><span class="tstat-trend">↑ 12% vs yesterday</span><div class="tbar"><div class="tbar-fill" style="width:76%"></div></div></div>
+      <div class="tstat-card"><span class="tstat-lbl">Clients Protected</span><span class="tstat-val">5<b>12</b></span><span class="tstat-trend">↑ 3 onboarded this week</span><div class="tbar"><div class="tbar-fill" style="width:90%;animation-delay:.3s"></div></div></div>
+      <div class="tstat-card"><span class="tstat-lbl">MTTR (Minutes)</span><span class="tstat-val"><b>4</b>.8</span><span class="tstat-trend">↓ 23% improvement YTD</span><div class="tbar"><div class="tbar-fill" style="width:95%;animation-delay:.6s"></div></div></div>
+      <div class="tstat-card"><span class="tstat-lbl">Active Threat Hunts</span><span class="tstat-val">3<b>9</b></span><span class="tstat-trend">Across 14 sectors</span><div class="tbar"><div class="tbar-fill" style="width:55%;animation-delay:.9s"></div></div></div>
+      <div class="tstat-card"><span class="tstat-lbl">CVEs Tracked</span><span class="tstat-val">18<b>K</b></span><span class="tstat-trend">↑ 340 new this month</span><div class="tbar"><div class="tbar-fill" style="width:82%;animation-delay:1.1s"></div></div></div>
+      <div class="tstat-card"><span class="tstat-lbl">Uptime SLA</span><span class="tstat-val">99<b>.9%</b></span><span class="tstat-trend">18 months consecutive</span><div class="tbar"><div class="tbar-fill" style="width:99%;animation-delay:1.3s"></div></div></div>
+    </div>
+  </div>
+</section>
 
-        // Newsletter Form Submission (Client-side only)
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if (newsletterForm) { // Check if form exists before adding listener
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault(); // Prevent default form submission
+<!-- ===================== CLIENTS ===================== -->
+<section id="clients">
+  <div class="reveal">
+    <div class="section-tag">Trusted By Leaders</div>
+    <h2 class="section-title">Enterprise &amp; <em>Government</em> Clients</h2>
+  </div>
+  <div class="client-logos stag">
+    <div class="cl-logo">Financial<br>Services</div>
+    <div class="cl-logo">Defense<br>Contractors</div>
+    <div class="cl-logo">Healthcare<br>Systems</div>
+    <div class="cl-logo">Energy<br>Infrastructure</div>
+    <div class="cl-logo">Tech<br>Enterprise</div>
+    <div class="cl-logo">Government<br>Agencies</div>
+  </div>
+  <div class="cases stag" style="margin-top:1px">
+    <article class="case-card" tabindex="0">
+      <div class="case-ind">Financial Sector</div>
+      <h3 class="case-title">Stopped $47M Wire Fraud via Supply Chain Compromise</h3>
+      <div class="case-res">Identified rogue insider and nation-state pivot in 38 minutes</div>
+      <div class="case-res">Full forensic reconstruction, legal-grade evidence delivered</div>
+      <div class="case-res">$47M transfer blocked before settlement window closed</div>
+    </article>
+    <article class="case-card" tabindex="0">
+      <div class="case-ind">Critical Infrastructure</div>
+      <h3 class="case-title">Pre-Attack Detection of ICS/SCADA Zero-Day Campaign</h3>
+      <div class="case-res">Detected staged attack across 6 power substations pre-execution</div>
+      <div class="case-res">Custom YARA signatures deployed within 4 hours</div>
+      <div class="case-res">Zero operational disruption; coordinated with national CERT</div>
+    </article>
+    <article class="case-card" tabindex="0">
+      <div class="case-ind">Healthcare Enterprise</div>
+      <h3 class="case-title">Ransomware Containment Across 14-Hospital Network</h3>
+      <div class="case-res">Contained LockBit 3.0 variant within 22 minutes of detection</div>
+      <div class="case-res">Patient data preserved; zero ransom paid</div>
+      <div class="case-res">Full recovery and hardening completed in 72 hours</div>
+    </article>
+  </div>
+</section>
 
-                const formMessage = document.getElementById('form-message'); // Ensure this element exists in HTML if needed
-                if (!this.checkValidity()) {
-                    if (formMessage) {
-                        formMessage.textContent = 'Please fill in all required fields correctly.';
-                        formMessage.style.color = 'red';
-                        formMessage.style.display = 'block';
-                    }
-                    return;
-                }
+<!-- ===================== ROI CALCULATOR ===================== -->
+<section id="roi">
+  <div class="reveal">
+    <div class="section-tag">Business Case</div>
+    <h2 class="section-title">Calculate Your <em>Security ROI</em></h2>
+    <p style="font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8;margin-top:1rem;max-width:580px">Use this calculator to see the financial case for partnering with RDD Agency. Based on IBM Cost of a Data Breach Report 2024 data.</p>
+  </div>
+  <div class="roi-layout" style="margin-top:3rem">
+    <div class="roi-form">
+      <div class="roi-group">
+        <label class="roi-label" for="roi-emp">Number of Employees</label>
+        <input class="roi-input" type="number" id="roi-emp" value="500" min="10" placeholder="500">
+      </div>
+      <div class="roi-group">
+        <label class="roi-label" for="roi-rev">Annual Revenue (USD)</label>
+        <input class="roi-input" type="number" id="roi-rev" value="50000000" min="100000" placeholder="50000000">
+      </div>
+      <div class="roi-group">
+        <label class="roi-label" for="roi-ind">Industry</label>
+        <select class="f-select roi-input" id="roi-ind">
+          <option value="4.88">General Enterprise ($4.88M avg breach)</option>
+          <option value="9.77">Healthcare ($9.77M avg breach)</option>
+          <option value="6.08">Financial Services ($6.08M avg breach)</option>
+          <option value="5.56">Technology ($5.56M avg breach)</option>
+          <option value="5.29">Energy ($5.29M avg breach)</option>
+          <option value="4.47">Retail ($4.47M avg breach)</option>
+        </select>
+      </div>
+      <button class="btn-red" id="roiCalcBtn" style="align-self:flex-start">Calculate My Risk</button>
+    </div>
+    <div class="roi-result" id="roiResult">
+      <div class="roi-metric">
+        <div class="roi-metric-lbl">Average Breach Cost for Your Industry</div>
+        <div class="roi-metric-val" id="roi-breach-cost">$4.88M</div>
+        <div class="roi-metric-sub">Source: IBM Cost of a Data Breach Report 2024</div>
+      </div>
+      <div class="roi-metric">
+        <div class="roi-metric-lbl">Estimated Annual Risk Exposure</div>
+        <div class="roi-metric-val" id="roi-exposure">$1.46M</div>
+        <div class="roi-metric-sub">Based on 30% annualized breach probability for your sector</div>
+      </div>
+      <div class="roi-metric">
+        <div class="roi-metric-lbl">RDD Agency Annual Protection Cost</div>
+        <div class="roi-metric-val" id="roi-cost" style="color:var(--white)">$114,000</div>
+        <div class="roi-metric-sub">Enterprise SOC retainer — fully managed, 24/7</div>
+      </div>
+      <div class="roi-metric" style="background:rgba(224,26,26,.06);padding:1rem;margin:-1rem">
+        <div class="roi-metric-lbl">Estimated ROI on Security Investment</div>
+        <div class="roi-metric-val" id="roi-return" style="font-size:2.5rem">12.8×</div>
+        <div class="roi-metric-sub">Every dollar spent on RDD protection returns ~$12.80 in avoided losses</div>
+      </div>
+      <a href="#contact" class="btn-red" style="align-self:flex-start">Get a Custom Assessment →</a>
+    </div>
+  </div>
+</section>
 
-                // Simulate form submission
-                if (formMessage) {
-                    formMessage.textContent = 'Thank you for subscribing! We will be in touch shortly.';
-                    formMessage.style.color = 'green';
-                    formMessage.style.display = 'block';
-                }
+<!-- ===================== TEAM ===================== -->
+<section id="team">
+  <div class="team-intro reveal">
+    <div class="section-tag">Our People</div>
+    <h2 class="section-title">Elite <em>Operators</em></h2>
+    <p>Every RDD analyst is a specialist with battlefield-tested experience. Our leadership team brings backgrounds from NSA, GCHQ, Mandiant, and elite military cyber units. We don't hire generalists — we hire the best in the world.</p>
+  </div>
+  <div class="team-grid stag">
+    <article class="team-card" tabindex="0">
+      <div class="team-av" aria-hidden="true">MR</div>
+      <h3 class="team-name">M. Razi</h3>
+      <div class="team-role">Founder &amp; CEO</div>
+      <p class="team-cert">CISSP · OSCP · CEH<br>18 yrs adversarial research, former intelligence advisor to government CERTs</p>
+    </article>
+    <article class="team-card" tabindex="0">
+      <div class="team-av" aria-hidden="true">AK</div>
+      <h3 class="team-name">A. Karim</h3>
+      <div class="team-role">Head of Red Team</div>
+      <p class="team-cert">OSED · CRTO · CRTE<br>Ex-NATO offensive cyber specialist, 12 yrs APT simulation, 150+ red team ops</p>
+    </article>
+    <article class="team-card" tabindex="0">
+      <div class="team-av" aria-hidden="true">SF</div>
+      <h3 class="team-name">S. Farooqi</h3>
+      <div class="team-role">Chief Threat Analyst</div>
+      <p class="team-cert">GCFE · GCFA · GREM<br>Led 400+ DFIR investigations across 30 countries, ex-Mandiant</p>
+    </article>
+    <article class="team-card" tabindex="0">
+      <div class="team-av" aria-hidden="true">NN</div>
+      <h3 class="team-name">N. Naveed</h3>
+      <div class="team-role">VP Cloud Security</div>
+      <p class="team-cert">AWS Security Specialty · GCP Pro<br>Former Google Cloud security architect, 9 yrs cloud infrastructure hardening</p>
+    </article>
+  </div>
+</section>
 
-                // Clear the form fields after a short delay
-                setTimeout(() => {
-                    newsletterForm.reset();
-                    if (formMessage) {
-                        formMessage.style.display = 'none';
-                    }
-                }, 3000);
-            });
-        }
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="testimonials">
+  <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto">
+    <div class="section-tag" style="justify-content:center">Client Testimonials</div>
+    <h2 class="section-title">What Our <em>Clients</em> Say</h2>
+  </div>
+  <div class="testi-grid stag">
+    <article class="testi-card">
+      <p class="testi-q">"RDD Agency identified a persistent threat actor inside our network that had evaded our internal team for nine months. Their red team found what no one else could. We've renewed our contract three years running."</p>
+      <div class="testi-name">Chief Information Security Officer</div>
+      <div class="testi-role">Global Financial Institution, Zürich</div>
+    </article>
+    <article class="testi-card">
+      <p class="testi-q">"During a live ransomware incident, RDD had analysts on a call within 11 minutes and the malware contained in under half an hour. Their ThreatCore platform gave us visibility we simply didn't have before."</p>
+      <div class="testi-name">Director of IT Security</div>
+      <div class="testi-role">Regional Energy Provider, Gulf Cooperation Council</div>
+    </article>
+    <article class="testi-card">
+      <p class="testi-q">"We engaged RDD for a red team assessment ahead of a regulatory audit. Their report was the most detailed and actionable we've ever received. They found critical flaws verified by the regulator itself."</p>
+      <div class="testi-name">Group Head of Cybersecurity</div>
+      <div class="testi-role">Multinational Telecom, Southeast Asia</div>
+    </article>
+  </div>
+</section>
 
-        // Three.js and GSAP animations (kept as they were not part of the header revert request)
-        const heroCanvas = document.getElementById('hero-canvas');
-        let scene, camera, renderer, particles;
-        
-        function initHeroAnimation() {
-            scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, heroCanvas.clientWidth / heroCanvas.clientHeight, 0.1, 1000);
-            camera.position.z = 30;
-            renderer = new THREE.WebGLRenderer({
-                canvas: heroCanvas,
-                antialias: true,
-                alpha: true
-            });
-            renderer.setSize(heroCanvas.clientWidth, heroCanvas.clientHeight);
-            
-            const particleCount = 1000;
-            const particlesGeometry = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-            const colors = new Float32Array(particleCount * 3);
-            
-            for (let i = 0; i < particleCount; i++) {
-                positions[i * 3] = (Math.random() - 0.5) * 200;
-                positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
-                positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
-                colors[i * 3] = 1; colors[i * 3 + 1] = 0; colors[i * 3 + 2] = 0;
-            }
-            
-            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-            
-            const particlesMaterial = new THREE.PointsMaterial({
-                size: 1, vertexColors: true, transparent: true, opacity: 0.8
-            });
-            particles = new THREE.Points(particlesGeometry, particlesMaterial);
-            scene.add(particles);
-            
-            function animateHero() {
-                requestAnimationFrame(animateHero);
-                particles.rotation.x += 0.001;
-                particles.rotation.y += 0.001;
-                renderer.render(scene, camera);
-            }
-            animateHero();
-            
-            window.addEventListener('resize', () => {
-                camera.aspect = heroCanvas.clientWidth / heroCanvas.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(heroCanvas.clientWidth, heroCanvas.clientHeight);
-            });
-        }
-        
-        const solutionsCanvas = document.getElementById('solutions-canvas');
-        function initSolutionsAnimation() {
-            if (!solutionsCanvas || !(solutionsCanvas instanceof HTMLCanvasElement)) {
-                console.error("solutions-canvas element not found or is not a canvas element.");
-                return;
-            }
+<!-- ===================== GLOBAL ===================== -->
+<section id="global">
+  <div class="reveal">
+    <div class="section-tag">Global Operations</div>
+    <h2 class="section-title">Operational <em>Everywhere</em></h2>
+  </div>
+  <div class="global-layout">
+    <div class="offices rev-l">
+      <div class="office-row"><div><div class="oc">London</div><div class="oco">United Kingdom — HQ</div></div><span class="os"><span class="dl"></span>Active SOC</span></div>
+      <div class="office-row"><div><div class="oc">New York</div><div class="oco">United States</div></div><span class="os"><span class="dl"></span>Active SOC</span></div>
+      <div class="office-row"><div><div class="oc">Dubai</div><div class="oco">United Arab Emirates</div></div><span class="os"><span class="dl"></span>Active SOC</span></div>
+      <div class="office-row"><div><div class="oc">Singapore</div><div class="oco">Singapore</div></div><span class="os"><span class="dl"></span>Active SOC</span></div>
+      <div class="office-row"><div><div class="oc">Frankfurt</div><div class="oco">Germany</div></div><span class="os"><span class="dl"></span>Active SOC</span></div>
+      <div class="office-row"><div><div class="oc">São Paulo</div><div class="oco">Brazil</div></div><span class="os"><span class="dl"></span>Active SOC</span></div>
+    </div>
+    <div class="rev-r">
+      <svg viewBox="0 0 580 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;opacity:.75" role="img" aria-label="World map with RDD office locations">
+        <path d="M68,58 L88,53 L128,56 L143,78 L138,108 L118,128 L98,138 L78,133 L63,108 L58,83 Z" fill="rgba(224,26,26,.15)" stroke="rgba(224,26,26,.4)" stroke-width=".8"/>
+        <path d="M128,153 L153,148 L163,168 L158,218 L138,238 L118,228 L113,198 L116,168 Z" fill="rgba(224,26,26,.08)" stroke="rgba(245,245,240,.12)" stroke-width=".8"/>
+        <path d="M238,48 L273,43 L293,58 L288,88 L263,98 L243,88 L233,68 Z" fill="rgba(224,26,26,.15)" stroke="rgba(224,26,26,.4)" stroke-width=".8"/>
+        <path d="M243,108 L278,103 L293,128 L288,183 L263,198 L243,183 L236,153 L238,123 Z" fill="rgba(224,26,26,.08)" stroke="rgba(245,245,240,.12)" stroke-width=".8"/>
+        <path d="M303,38 L418,33 L443,58 L438,98 L408,118 L358,123 L318,113 L298,88 L298,58 Z" fill="rgba(224,26,26,.15)" stroke="rgba(224,26,26,.4)" stroke-width=".8"/>
+        <path d="M418,173 L468,168 L483,193 L473,223 L443,228 L418,213 L413,193 Z" fill="rgba(224,26,26,.08)" stroke="rgba(245,245,240,.12)" stroke-width=".8"/>
+        <!-- Office markers with pulse -->
+        <circle cx="258" cy="66" r="5" fill="#E01A1A"/>
+        <circle cx="258" cy="66" r="5" fill="none" stroke="#E01A1A" stroke-width="1.5" opacity=".5"><animate attributeName="r" values="5;18;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;0;.5" dur="2s" repeatCount="indefinite"/></circle>
+        <circle cx="106" cy="93" r="5" fill="#E01A1A"/>
+        <circle cx="368" cy="70" r="5" fill="#E01A1A"/>
+        <circle cx="438" cy="98" r="5" fill="#E01A1A"/>
+        <circle cx="313" cy="128" r="5" fill="#E01A1A"/>
+        <circle cx="135" cy="183" r="5" fill="#E01A1A"/>
+        <text x="253" y="56" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">LON</text>
+        <text x="98" y="83" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">NYC</text>
+        <text x="430" y="90" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">SGP</text>
+        <text x="308" y="141" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">DXB</text>
+        <text x="358" y="62" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">FRA</text>
+        <text x="126" y="195" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">SAO</text>
+      </svg>
+      <div class="map-nums">
+        <div class="map-num"><div class="map-n">47</div><div class="map-l">Countries</div></div>
+        <div class="map-num"><div class="map-n" style="color:var(--red)">6</div><div class="map-l">SOC Hubs</div></div>
+        <div class="map-num"><div class="map-n">24/7</div><div class="map-l">Coverage</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            const solutionsScene = new THREE.Scene();
-            const solutionsCamera = new THREE.PerspectiveCamera(75, solutionsCanvas.clientWidth / solutionsCanvas.clientHeight, 0.1, 1000);
-            solutionsCamera.position.z = 5;
-            const solutionsRenderer = new THREE.WebGLRenderer({
-                canvas: solutionsCanvas, antialias: true, alpha: true
-            });
-            solutionsRenderer.setSize(solutionsCanvas.clientWidth, solutionsCanvas.clientHeight);
-            
-            const geometry = new THREE.BoxGeometry(2, 2, 2);
-            const edges = new THREE.EdgesGeometry(geometry);
-            const line = new THREE.LineSegments(
-                edges, new THREE.LineBasicMaterial({ color: 0xff0000 })
-            );
-            const cube = new THREE.Mesh(
-                geometry, new THREE.MeshBasicMaterial({ 
-                    color: 0x000000, wireframe: true, transparent: true, opacity: 0.5
-                })
-            );
-            solutionsScene.add(cube);
-            solutionsScene.add(line);
-            
-            function animateSolutions() {
-                requestAnimationFrame(animateSolutions);
-                cube.rotation.x += 0.01; cube.rotation.y += 0.01;
-                line.rotation.x += 0.01; line.rotation.y += 0.01;
-                solutionsRenderer.render(solutionsScene, solutionsCamera);
-            }
-            animateSolutions();
-            
-            window.addEventListener('resize', () => {
-                solutionsCamera.aspect = solutionsCanvas.clientWidth / solutionsCanvas.clientHeight;
-                solutionsCamera.updateProjectionMatrix();
-                solutionsRenderer.setSize(solutionsCanvas.clientWidth, solutionsCanvas.clientHeight);
-            });
-        }
-        
-        window.addEventListener('load', () => {
-            if (heroCanvas) initHeroAnimation();
-            if (solutionsCanvas) initSolutionsAnimation();
-            
-            gsap.registerPlugin(ScrollTrigger);
-            gsap.utils.toArray('.block-3d').forEach(section => {
-                gsap.from(section, {
-                    scrollTrigger: {
-                        trigger: section, start: "top 80%", toggleActions: "play none none none"
-                    },
-                    y: 50, opacity: 0, duration: 1, ease: "power3.out"
-                });
-            });
-            
-            document.querySelectorAll('.feature-card').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const x = e.clientX - card.getBoundingClientRect().left;
-                    const y = e.clientY - card.getBoundingClientRect().top;
-                    const centerX = card.offsetWidth / 2;
-                    const centerY = card.offsetHeight / 2;
-                    const angleX = (y - centerY) / 20;
-                    const angleY = (centerX - x) / 20;
-                    gsap.to(card, {
-                        rotationX: angleX, rotationY: angleY, transformPerspective: 1000, ease: "power2.out", duration: 0.5
-                    });
-                });
-                card.addEventListener('mouseleave', () => {
-                    gsap.to(card, {
-                        rotationX: 0, rotationY: 0, ease: "power2.out", duration: 0.5
-                    });
-                });
-            });
-        });
-    </script>
+<!-- CTA BAND -->
+<section id="cta-band">
+  <h2 class="cta-title">Your Adversaries<br>Don't Take Days Off.</h2>
+  <p class="cta-sub">Neither do we. Enterprise and government organizations worldwide trust RDD Agency to be their last line of defense. Let's talk about protecting what matters most.</p>
+  <a href="#contact" class="btn-white">Schedule a Free Security Briefing</a>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="rev-l">
+    <div class="section-tag">Contact Us</div>
+    <h2 class="section-title">Start Your <em>Assessment</em></h2>
+    <div class="contact-info" style="margin-top:2rem">
+      <div><div class="ci-label">Headquarters</div><div class="ci-val">Level 22, One Canada Square<br>Canary Wharf, London E14 5AB, UK</div></div>
+      <div><div class="ci-label">Emergency Hotline (24/7)</div><div class="ci-val"><a href="tel:+448001234567">+44 800 RDD-SECURE</a></div></div>
+      <div><div class="ci-label">Enterprise Enquiries</div><div class="ci-val"><a href="mailto:enterprise@rddagency.com">enterprise@rddagency.com</a></div></div>
+      <div><div class="ci-label">Government &amp; Defense</div><div class="ci-val"><a href="mailto:gov@rddagency.com">gov@rddagency.com</a></div></div>
+      <div><div class="ci-label">Active Incident Response</div><div class="ci-val"><a href="mailto:ir@rddagency.com">ir@rddagency.com</a><br><span style="font-size:.8rem;color:var(--white-mute)">2-hour SLA guaranteed</span></div></div>
+    </div>
+  </div>
+  <form class="cf rev-r" id="contactForm" novalidate>
+    <div class="f-row">
+      <div class="f-group"><label class="f-label" for="fname">First Name</label><input class="f-input" type="text" id="fname" placeholder="John" required></div>
+      <div class="f-group"><label class="f-label" for="lname">Last Name</label><input class="f-input" type="text" id="lname" placeholder="Smith" required></div>
+    </div>
+    <div class="f-group"><label class="f-label" for="femail">Work Email</label><input class="f-input" type="email" id="femail" placeholder="j.smith@company.com" required></div>
+    <div class="f-row">
+      <div class="f-group"><label class="f-label" for="fcomp">Company</label><input class="f-input" type="text" id="fcomp" placeholder="Acme Corp" required></div>
+      <div class="f-group"><label class="f-label" for="fsize">Company Size</label>
+        <select class="f-select" id="fsize">
+          <option value="">Select...</option>
+          <option>1–100 employees</option><option>101–500 employees</option>
+          <option>501–5,000 employees</option><option>5,000+ employees</option>
+          <option>Government / Public Sector</option>
+        </select>
+      </div>
+    </div>
+    <div class="f-group"><label class="f-label" for="fsvc">Service Required</label>
+      <select class="f-select" id="fsvc">
+        <option value="">Select a service...</option>
+        <option>Penetration Testing</option><option>Red Team Assessment</option>
+        <option>SOC as a Service (MDR)</option><option>Threat Intelligence</option>
+        <option>Incident Response (Active Breach)</option><option>Cloud Security Review</option>
+        <option>Full Security Program</option>
+      </select>
+    </div>
+    <div class="f-group"><label class="f-label" for="fmsg">Tell Us About Your Environment</label>
+      <textarea class="f-textarea" id="fmsg" placeholder="Describe your security concerns, environment size, compliance requirements, or any active incidents..."></textarea>
+    </div>
+    <button type="submit" class="btn-submit" id="submitBtn">Send Secure Request →</button>
+    <div id="formMsg" style="font-family:var(--mono);font-size:.72rem;margin-top:.5rem;display:none"></div>
+  </form>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<!-- NOTE: footer uses NO .stag / .reveal / .rev-* classes — always fully visible -->
+<footer role="contentinfo">
+  <div class="foot-top">
+
+    <!-- Brand column -->
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+        <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+      </div>
+      <p class="foot-desc">Elite global cybersecurity. Protecting the world's most critical organizations from the most advanced threats — 24 hours a day, 365 days a year.</p>
+      <div class="foot-certs">
+        <span class="foot-cert">ISO 27001</span>
+        <span class="foot-cert">CREST</span>
+        <span class="foot-cert">SOC 2 II</span>
+        <span class="foot-cert">GDPR</span>
+        <span class="foot-cert">FedRAMP</span>
+      </div>
+      <div class="foot-socials">
+        <a href="https://linkedin.com/company/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+        <a href="https://twitter.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="Twitter">Tw</a>
+        <a href="https://github.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="GitHub">Gh</a>
+      </div>
+    </div>
+
+    <!-- Services column -->
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul class="foot-links">
+        <li><a href="#services">Penetration Testing</a></li>
+        <li><a href="#services">Red Team Operations</a></li>
+        <li><a href="#services">SOC as a Service</a></li>
+        <li><a href="#services">Threat Intelligence</a></li>
+        <li><a href="#services">Incident Response</a></li>
+        <li><a href="#services">Cloud Security</a></li>
+      </ul>
+    </div>
+
+    <!-- Company column -->
+    <div class="foot-col">
+      <h4>Company</h4>
+      <ul class="foot-links">
+        <li><a href="#about">About RDD</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#clients">Case Studies</a></li>
+        <li><a href="#global">Global Presence</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Careers</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources column -->
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul class="foot-links">
+        <li><a href="#threat-intel">Threat Intelligence Blog</a></li>
+        <li><a href="#threat-intel">Security Advisories</a></li>
+        <li><a href="#services">CVE Research</a></li>
+        <li><a href="#services">White Papers</a></li>
+        <li><a href="#contact">Vulnerability Disclosure</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2026 <b>RDD Agency</b> — Razi Digital Agency Ltd. All rights reserved. Registered in England &amp; Wales.</span>
+    <div class="foot-legal">
+      <a href="#contact">Privacy Policy</a>
+      <a href="#contact">Terms of Service</a>
+      <a href="#contact">Cookie Policy</a>
+      <a href="#contact">Vulnerability Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CURSOR ===== */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{
+  const x=e.clientX,y=e.clientY;
+  cur.style.cssText+=`;left:${x}px;top:${y}px`;
+  ring.style.cssText+=`;left:${x}px;top:${y}px`;
+});
+document.querySelectorAll('a,button,[tabindex]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hov');ring.classList.add('hov')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hov');ring.classList.remove('hov')});
+});
+
+/* ===== NAVBAR SCROLL ===== */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',scrollY>40);
+});
+
+/* ===== MOBILE HAMBURGER ===== */
+const ham=document.getElementById('navHam'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');
+  ham.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mob-lnk').forEach(l=>l.addEventListener('click',()=>{
+  mob.classList.remove('open');ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+
+/* ===== SCROLL REVEAL ===== */
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});
+},{threshold:0.1}).observe;
+// Use separate observer so footer is NOT affected
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.rev-l,.rev-r,.stag').forEach(el=>obs.observe(el));
+
+/* ===== TERMINAL ===== */
+const tLines=['init_threat_scan --scope global','Scanning 2.1B signals...','[ALERT] APT29 activity: Eastern Europe','[BLOCK] C2 server: 185.220.101.47','[INFO] Dark web: 3 new credential dumps','run threat_hunt --ttps=MITRE','[DETECT] Lateral movement: FIN7 TTPs','[BLOCKED] 847 malicious IPs last hour','[ALERT] Phishing kit: 14 targets','[OK] Client 0x4A1 — systems nominal'];
+let tli=0,tci=0,tCur='';
+const tTxt=document.getElementById('termTxt'),tBody=document.getElementById('termBody');
+function typeNext(){
+  if(!tTxt||!tBody)return;
+  if(tci<tLines[tli].length){tCur+=tLines[tli][tci++];tTxt.textContent=tCur;setTimeout(typeNext,35+Math.random()*20)}
+  else setTimeout(()=>{
+    const d=document.createElement('div');
+    d.innerHTML=`<span class="tg">rdd@soc</span><span class="td">:~$ </span><span class="tw">${tCur}</span>`;
+    tBody.insertBefore(d,tBody.firstChild);
+    tCur='';tci=0;tli=(tli+1)%tLines.length;tTxt.textContent='';
+    if(tBody.children.length>7)tBody.removeChild(tBody.lastChild);
+    typeNext();
+  },950);
+}
+setTimeout(typeNext,1800);
+
+/* ===== LIVE THREAT FEED ===== */
+const tData=[
+  {s:'CRITICAL',t:'APT Campaign Detected',d:'LockBit 3.0 indicators in Eastern European financial networks. C2 identified.',ts:'just now'},
+  {s:'HIGH',t:'Credential Stuffing Attack',d:'52,000 auth attempts against enterprise VPN endpoint. Origin: Botnet TG-4521.',ts:'2m ago'},
+  {s:'MEDIUM',t:'Phishing Infrastructure',d:'New spear-phishing domain impersonating Microsoft 365 login portal.',ts:'5m ago'},
+  {s:'CRITICAL',t:'Zero-Day Exploit in Wild',d:'CVE-2025-1942: Active exploitation of Fortinet SSL-VPN. IOCs distributed.',ts:'8m ago'},
+  {s:'HIGH',t:'Ransomware Precursor',d:'Cobalt Strike beacon + BloodHound AD enumeration detected in healthcare org.',ts:'14m ago'},
+  {s:'MEDIUM',t:'Supply Chain Indicator',d:'Suspicious npm package update mechanism. 8,400 dependent projects at risk.',ts:'19m ago'},
+  {s:'CRITICAL',t:'Nation-State Recon',d:'Volt Typhoon TTPs observed targeting US critical infrastructure.',ts:'23m ago'},
+];
+const fb=document.getElementById('feedBody');let fi=0;
+function addThreat(){
+  if(!fb)return;const t=tData[fi++%tData.length];
+  const sc=t.s==='CRITICAL'?'crit':t.s==='HIGH'?'high':'med';
+  const d=document.createElement('div');d.className='threat-entry';
+  d.innerHTML=`<span class="tsev ${sc}">${t.s}</span><div class="tinfo"><div class="ttype">${t.t}</div><div class="tdetail">${t.d}</div><div class="ttime">${t.ts}</div></div>`;
+  fb.insertBefore(d,fb.firstChild);
+  if(fb.children.length>6)fb.removeChild(fb.lastChild);
+}
+for(let i=0;i<4;i++)addThreat();
+setInterval(addThreat,4500);
+
+/* ===== THREAT COUNTER ===== */
+let tc=2847;
+setInterval(()=>{
+  tc+=Math.floor(Math.random()*3)+1;
+  const el=document.getElementById('tBlocked');
+  if(el){const s=tc.toLocaleString(),p=s.split(',');el.innerHTML=p.length===2?p[0]+',<b>'+p[1]+'</b>':s}
+},3200);
+
+/* ===== ROI CALCULATOR ===== */
+function calcROI(){
+  const emp=parseInt(document.getElementById('roi-emp').value)||500;
+  const rev=parseInt(document.getElementById('roi-rev').value)||50000000;
+  const ind=parseFloat(document.getElementById('roi-ind').value)||4.88;
+  const breachCost=ind*1000000;
+  const prob=0.3;
+  const exposure=breachCost*prob;
+  // Cost scales with company size
+  const rddCost=Math.max(54000,Math.min(emp*120,480000));
+  const roi=exposure/rddCost;
+  document.getElementById('roi-breach-cost').textContent='$'+ind+'M';
+  document.getElementById('roi-exposure').textContent='$'+formatNum(Math.round(exposure));
+  document.getElementById('roi-cost').textContent='$'+formatNum(rddCost);
+  document.getElementById('roi-return').textContent=roi.toFixed(1)+'×';
+}
+function formatNum(n){return n>=1000000?(n/1000000).toFixed(1)+'M':n>=1000?Math.round(n/1000)+'K':n.toString()}
+document.getElementById('roiCalcBtn').addEventListener('click',calcROI);
+['roi-emp','roi-rev','roi-ind'].forEach(id=>document.getElementById(id).addEventListener('input',calcROI));
+
+/* ===== CONTACT FORM ===== */
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const btn=document.getElementById('submitBtn'),msg=document.getElementById('formMsg');
+  btn.textContent='Sending...';btn.disabled=true;
+  setTimeout(()=>{
+    btn.textContent='Request Sent ✓';
+    msg.style.display='block';msg.style.color='#4EC94E';
+    msg.textContent='// Secure request received. Our team will contact you within 2 business hours.';
+  },1200);
+});
+
+/* ===== FLOATING HIRE ===== */
+document.getElementById('hireDismiss').addEventListener('click',()=>{
+  document.getElementById('hire-float').style.display='none';
+});
+
+/* ===== EXIT-INTENT POPUP ===== */
+let popShown=false;
+function showPop(){if(popShown)return;popShown=true;document.getElementById('exit-popup').classList.add('show')}
+document.addEventListener('mouseleave',e=>{if(e.clientY<8)showPop()});
+let idleT=setTimeout(showPop,45000);
+['mousemove','keydown','scroll','click'].forEach(ev=>document.addEventListener(ev,()=>{clearTimeout(idleT);idleT=setTimeout(showPop,45000)}));
+['popClose','popSkip','popHire'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',()=>document.getElementById('exit-popup').classList.remove('show'));
+});
+document.getElementById('exit-popup').addEventListener('click',e=>{
+  if(e.target===document.getElementById('exit-popup'))document.getElementById('exit-popup').classList.remove('show');
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('exit-popup').classList.remove('show')});
+</script>
 </body>
 </html>
