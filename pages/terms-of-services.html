@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RDD Agency Terms of Service — The legal terms governing use of Razi Digital Agency's website and cybersecurity services. Read before engaging our services.">
+<meta name="author" content="RDD Agency — Razi Digital Agency">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Terms of Service — RDD Agency">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rddagency.com/terms-of-service">
+<link rel="canonical" href="https://www.rddagency.com/terms-of-service">
+<title>Terms of Service — RDD Agency | Razi Digital Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RESET & VARIABLES
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E01A1A; --red-dark:#A01010; --red-glow:rgba(224,26,26,0.15);
+  --black:#0A0A0A; --black-2:#111; --black-3:#181818; --black-4:#222;
+  --white:#F5F5F0; --white-dim:rgba(245,245,240,.72); --white-mute:rgba(245,245,240,.35);
+  --border:rgba(245,245,240,.1); --border-red:rgba(224,26,26,.4);
+  --mono:'Space Mono',monospace; --sans:'Barlow',sans-serif; --cond:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+a,button{cursor:pointer!important;pointer-events:auto!important}
+input,textarea{cursor:text!important}
+select{cursor:pointer!important}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--red-dark);border-radius:2px}
+
+/* ============================================================
+   CUSTOM CURSOR
+============================================================ */
+#cursor,#cursor-ring{position:fixed;border-radius:50%;pointer-events:none!important;z-index:99999;transform:translate(-50%,-50%)}
+#cursor{width:10px;height:10px;background:var(--red);z-index:100000;transition:width .15s,height .15s,background .15s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,26,26,.5);z-index:99999;transition:width .2s,height .2s,border-color .2s}
+#cursor.hov{width:14px;height:14px;background:var(--red-dark)}
+#cursor-ring.hov{width:50px;height:50px;border-color:var(--red);border-width:2px}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pulseCta{0%{box-shadow:0 0 0 0 rgba(224,26,26,.7)}70%{box-shadow:0 0 0 14px rgba(224,26,26,0)}100%{box-shadow:0 0 0 0 rgba(224,26,26,0)}}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;z-index:2}
+.nav-logo-mark{width:38px;height:38px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:13px;letter-spacing:.05em;color:#fff;clip-path:polygon(0 0,100% 0,100% 74%,88% 100%,0 100%)}
+.nav-logo-text{font-family:var(--cond);font-weight:900;font-size:1.05rem;letter-spacing:.12em;color:var(--white);text-transform:uppercase}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:2rem;z-index:2}
+.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;padding:.3rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:.6rem 1.4rem!important;display:inline-block!important;transform:skewX(-8deg);transition:background .2s,transform .2s!important}
+.nav-cta span{display:inline-block;transform:skewX(8deg)}
+.nav-cta:hover{background:var(--red-dark)!important;transform:skewX(-8deg) scale(1.04)!important}
+.nav-cta::after{display:none!important}
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;z-index:9002}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.99);z-index:9001;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--cond);font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mob-menu a:hover{color:var(--red)}
+
+/* ============================================================
+   FLOATING HIRE US
+============================================================ */
+#hire-float{position:fixed;bottom:2rem;right:2rem;z-index:8500;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.hire-btn{background:var(--red);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:.6rem;animation:pulseCta 2s infinite;white-space:nowrap;border:none}
+.hire-btn:hover{background:var(--red-dark);animation:none;transform:scale(1.05)}
+.hire-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1s infinite;flex-shrink:0;pointer-events:none}
+.hire-dismiss{background:var(--black-4);border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.6rem;padding:.28rem .65rem;letter-spacing:.08em;cursor:pointer!important;transition:color .2s;align-self:flex-end}
+.hire-dismiss:hover{color:var(--white)}
+
+/* ============================================================
+   PAGE HERO BANNER
+============================================================ */
+.page-hero{padding:9rem 4rem 5rem;background:var(--black-2);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.page-hero::before{content:'TERMS OF SERVICE';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(3rem,10vw,10rem);color:rgba(245,245,240,.03);white-space:nowrap;pointer-events:none;letter-spacing:.05em}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,245,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,245,240,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.page-hero-orb{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(224,26,26,.08) 0%,transparent 70%);top:-150px;right:-100px;pointer-events:none}
+.page-hero-content{position:relative;z-index:1;max-width:760px;animation:fadeUp .8s .1s ease both}
+.page-breadcrumb{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.page-breadcrumb a{color:var(--white-mute);text-decoration:none;transition:color .2s}
+.page-breadcrumb a:hover{color:var(--red)}
+.page-breadcrumb span{color:var(--red)}
+.page-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.8rem,6vw,5.5rem);text-transform:uppercase;line-height:.92;color:var(--white);margin-bottom:1.5rem}
+.page-title em{color:var(--red);font-style:normal}
+.page-meta{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.8rem;border-top:1px solid var(--border)}
+.page-meta-item{display:flex;flex-direction:column;gap:.2rem}
+.page-meta-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute)}
+.page-meta-val{font-family:var(--mono);font-size:.75rem;color:var(--white-dim)}
+.page-meta-val b{color:var(--red)}
+
+/* ============================================================
+   POLICY / LEGAL PAGE LAYOUT
+============================================================ */
+.policy-wrapper{display:grid;grid-template-columns:260px 1fr;gap:0;max-width:1400px;margin:0 auto;position:relative}
+
+/* Sticky TOC */
+.policy-toc{padding:4rem 2rem 4rem 4rem;position:sticky;top:80px;height:calc(100vh - 80px);overflow-y:auto;border-right:1px solid var(--border);background:var(--black);align-self:start}
+.policy-toc::-webkit-scrollbar{width:2px}
+.policy-toc::-webkit-scrollbar-thumb{background:var(--border)}
+.toc-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.toc-label::before{content:'';display:inline-block;width:18px;height:1px;background:var(--red)}
+.toc-list{display:flex;flex-direction:column;gap:.1rem;list-style:none}
+.toc-list a{font-family:var(--mono);font-size:.67rem;letter-spacing:.06em;color:var(--white-mute);text-decoration:none;padding:.45rem .5rem;display:block;border-left:2px solid transparent;transition:all .2s;line-height:1.5}
+.toc-list a:hover{color:var(--white);border-left-color:var(--border)}
+.toc-list a.active{color:var(--red);border-left-color:var(--red);background:rgba(224,26,26,.05)}
+
+/* Policy body */
+.policy-body{padding:4rem 4rem 6rem;background:var(--black)}
+
+/* Section */
+.policy-section{margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--border);scroll-margin-top:100px}
+.policy-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ps-num{font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+.ps-title{font-family:var(--cond);font-weight:900;font-size:clamp(1.5rem,3vw,2.2rem);text-transform:uppercase;color:var(--white);line-height:1;margin-bottom:1.6rem}
+.ps-title em{color:var(--red);font-style:normal}
+
+/* Typography */
+.policy-p{font-size:.97rem;font-weight:300;color:var(--white-dim);line-height:1.85;margin-bottom:1.2rem}
+.policy-p:last-child{margin-bottom:0}
+.policy-p a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--border-red);transition:border-color .2s}
+.policy-p a:hover{border-bottom-color:var(--red)}
+.policy-p strong{color:var(--white);font-weight:600}
+
+/* Highlight box */
+.policy-highlight{background:var(--black-2);border:1px solid var(--border);border-left:3px solid var(--red);padding:1.5rem 1.8rem;margin:1.6rem 0}
+.policy-highlight p{font-family:var(--mono);font-size:.78rem;color:var(--white-dim);line-height:1.8;letter-spacing:.02em}
+.policy-highlight p strong{color:var(--red)}
+
+/* Warning box */
+.policy-warning{background:rgba(224,26,26,.07);border:1px solid var(--border-red);padding:1.5rem 1.8rem;margin:1.6rem 0}
+.policy-warning p{font-family:var(--mono);font-size:.78rem;color:var(--white-dim);line-height:1.8;letter-spacing:.02em}
+.policy-warning p strong{color:var(--red)}
+
+/* Tables */
+.def-table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.def-table th{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--border-red);background:var(--black-2)}
+.def-table td{font-size:.88rem;font-weight:300;color:var(--white-dim);padding:.9rem 1rem;border-bottom:1px solid var(--border);line-height:1.65;vertical-align:top}
+.def-table tr:last-child td{border-bottom:none}
+.def-table tr:hover td{background:var(--black-2)}
+.def-term{font-family:var(--mono);font-size:.75rem;color:var(--white);font-weight:700;white-space:nowrap}
+
+/* Lists */
+.policy-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin:1.2rem 0 1.4rem}
+.policy-list li{font-size:.95rem;font-weight:300;color:var(--white-dim);padding-left:1.6rem;position:relative;line-height:1.75}
+.policy-list li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:.8rem;top:.1rem}
+.policy-list.numbered{counter-reset:lc}
+.policy-list.numbered li{counter-increment:lc}
+.policy-list.numbered li::before{content:counter(lc,decimal-leading-zero);font-family:var(--mono);font-size:.62rem;color:var(--red);top:.25rem}
+
+/* Obligation cards */
+.ob-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:1.5rem 0}
+.ob-card{background:var(--black-2);padding:1.8rem 1.6rem;border-top:2px solid transparent;transition:border-color .3s}
+.ob-card:hover{border-top-color:var(--red)}
+.ob-card.client{border-top-color:rgba(224,26,26,.4)}
+.ob-card.rdd{border-top-color:rgba(245,245,240,.15)}
+.ob-head{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
+.ob-head.red{color:var(--red)}
+.ob-head.white{color:var(--white-mute)}
+.ob-title{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white);margin-bottom:.8rem}
+.ob-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.ob-list li{font-size:.84rem;font-weight:300;color:var(--white-mute);padding-left:1.2rem;position:relative;line-height:1.65}
+.ob-list li::before{content:'·';position:absolute;left:0;color:var(--red);font-size:1.2rem;top:-.15rem}
+
+/* Liability table */
+.liab-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);margin:1.5rem 0}
+.liab-card{background:var(--black-2);padding:1.6rem 1.4rem;text-align:center}
+.liab-icon{font-size:1.6rem;margin-bottom:.7rem}
+.liab-title{font-family:var(--cond);font-weight:700;font-size:.95rem;text-transform:uppercase;margin-bottom:.5rem}
+.liab-title.yes{color:#4EC94E}
+.liab-title.no{color:var(--red)}
+.liab-title.ltd{color:#E8A020}
+.liab-desc{font-size:.82rem;font-weight:300;color:var(--white-mute);line-height:1.65}
+
+/* Contact box */
+.contact-box{background:var(--black-2);border:1px solid var(--border-red);padding:2rem 2.2rem;margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.cb-item{display:flex;flex-direction:column;gap:.3rem}
+.cb-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.cb-val{font-size:.92rem;font-weight:300;color:var(--white-dim)}
+.cb-val a{color:var(--white-dim);text-decoration:none;transition:color .2s}
+.cb-val a:hover{color:var(--white)}
+
+/* Updated bar */
+.policy-updated{background:var(--black-3);border:1px solid var(--border);padding:1rem 1.5rem;display:flex;align-items:center;gap:.8rem;margin-bottom:3rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--white-mute)}
+.policy-updated b{color:var(--red);font-weight:400}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer{background:var(--black);border-top:1px solid var(--border);padding:4.5rem 4rem 2.5rem}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-logo{display:flex;align-items:center;gap:.75rem}
+.foot-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75;max-width:275px}
+.foot-certs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.foot-cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;padding:.28rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.foot-socials{display:flex;gap:.65rem;margin-top:.5rem}
+.foot-social{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important;pointer-events:auto!important}
+.foot-social:hover{border-color:var(--red);color:var(--red)}
+.foot-col h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1.3rem;display:block;opacity:1}
+.foot-col .foot-links{display:flex;flex-direction:column;gap:.65rem;list-style:none}
+.foot-col .foot-links a{font-size:.87rem;font-weight:300;color:var(--white-mute);text-decoration:none;transition:color .2s;display:block;cursor:pointer!important;pointer-events:auto!important;opacity:1}
+.foot-col .foot-links a:hover{color:var(--red)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute)}
+.foot-copy b{color:var(--red);font-weight:400}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:color .2s;cursor:pointer!important;pointer-events:auto!important}
+.foot-legal a.active-page{color:var(--red)}
+.foot-legal a:hover{color:var(--red)}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:1024px){
+  nav{padding:1.3rem 2.5rem}
+  .page-hero{padding:8rem 2.5rem 4rem}
+  .policy-wrapper{grid-template-columns:1fr}
+  .policy-toc{display:none}
+  .policy-body{padding:3rem 2.5rem 5rem}
+  .ob-grid{grid-template-columns:1fr}
+  .liab-grid{grid-template-columns:1fr 1fr}
+  .contact-box{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  nav{padding:1.1rem 1.25rem}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .page-hero{padding:7rem 1.25rem 3.5rem}
+  .policy-body{padding:2.5rem 1.25rem 4rem}
+  .ob-grid{grid-template-columns:1fr}
+  .liab-grid{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr;padding:1.5rem}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  #hire-float{bottom:1rem;right:1rem}
+  .hire-btn{font-size:.65rem;padding:.75rem 1.2rem}
+  footer{padding:3.5rem 1.25rem 2rem}
+  .page-meta{gap:1.5rem}
+}
+@media(max-width:480px){
+  .page-title{font-size:2.4rem}
+  .ps-title{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- FLOATING HIRE US -->
+<div id="hire-float">
+  <a href="index.html#contact" class="hire-btn"><span class="hire-dot"></span>Hire Us Now</a>
+  <button class="hire-dismiss" id="hireDismiss">Dismiss</button>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="RDD Agency Home">
+    <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+    <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Main navigation">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#why-rdd">Why RDD</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#clients">Clients</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#contact" class="nav-cta"><span>Get Protected</span></a>
+  </div>
+  <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html#services" class="mob-lnk">Services</a>
+  <a href="index.html#why-rdd" class="mob-lnk">Why RDD</a>
+  <a href="index.html#pricing" class="mob-lnk">Pricing</a>
+  <a href="index.html#clients" class="mob-lnk">Clients</a>
+  <a href="index.html#team" class="mob-lnk">Team</a>
+  <a href="index.html#contact" class="mob-lnk" style="color:var(--red)">Get Protected →</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<div class="page-hero" role="banner">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-orb" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Terms of Service</span>
+    </nav>
+    <h1 class="page-title">Terms of <em>Service</em></h1>
+    <p style="font-size:1.05rem;font-weight:300;color:var(--white-dim);line-height:1.8;max-width:660px">These Terms of Service govern your use of the RDD Agency website and your engagement of cybersecurity services provided by Razi Digital Agency Ltd. Please read them carefully before accessing our site or entering into a service agreement.</p>
+    <div class="page-meta">
+      <div class="page-meta-item">
+        <span class="page-meta-label">Last Updated</span>
+        <span class="page-meta-val"><b>1 June 2025</b></span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Effective Date</span>
+        <span class="page-meta-val">1 June 2025</span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Governing Law</span>
+        <span class="page-meta-val">England &amp; Wales</span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Jurisdiction</span>
+        <span class="page-meta-val">Courts of England &amp; Wales</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CONTENT ===================== -->
+<main>
+  <div class="policy-wrapper">
+
+    <!-- TABLE OF CONTENTS -->
+    <aside class="policy-toc" aria-label="Table of contents">
+      <div class="toc-label">Contents</div>
+      <ul class="toc-list" role="list">
+        <li><a href="#s1"  class="toc-link">1.  Acceptance of Terms</a></li>
+        <li><a href="#s2"  class="toc-link">2.  Definitions</a></li>
+        <li><a href="#s3"  class="toc-link">3.  About RDD Agency</a></li>
+        <li><a href="#s4"  class="toc-link">4.  Website Use</a></li>
+        <li><a href="#s5"  class="toc-link">5.  Service Engagements</a></li>
+        <li><a href="#s6"  class="toc-link">6.  Scope &amp; Authorisation</a></li>
+        <li><a href="#s7"  class="toc-link">7.  Client Obligations</a></li>
+        <li><a href="#s8"  class="toc-link">8.  RDD Agency Obligations</a></li>
+        <li><a href="#s9"  class="toc-link">9.  Fees &amp; Payment</a></li>
+        <li><a href="#s10" class="toc-link">10. Confidentiality</a></li>
+        <li><a href="#s11" class="toc-link">11. Intellectual Property</a></li>
+        <li><a href="#s12" class="toc-link">12. Data Protection</a></li>
+        <li><a href="#s13" class="toc-link">13. Liability &amp; Indemnity</a></li>
+        <li><a href="#s14" class="toc-link">14. Warranties &amp; Disclaimers</a></li>
+        <li><a href="#s15" class="toc-link">15. Prohibited Use</a></li>
+        <li><a href="#s16" class="toc-link">16. Term &amp; Termination</a></li>
+        <li><a href="#s17" class="toc-link">17. Force Majeure</a></li>
+        <li><a href="#s18" class="toc-link">18. Dispute Resolution</a></li>
+        <li><a href="#s19" class="toc-link">19. Governing Law</a></li>
+        <li><a href="#s20" class="toc-link">20. General Provisions</a></li>
+        <li><a href="#s21" class="toc-link">21. Contact Us</a></li>
+      </ul>
+    </aside>
+
+    <!-- BODY -->
+    <div class="policy-body">
+
+      <div class="policy-updated" role="note">
+        <span aria-hidden="true" style="color:var(--red)">⚡</span>
+        Last updated <b>1 June 2025</b>. Questions? Contact <b>legal@rddagency.com</b>
+      </div>
+
+      <!-- 1. ACCEPTANCE -->
+      <section class="policy-section" id="s1" aria-labelledby="s1-title">
+        <div class="ps-num">Section 01</div>
+        <h2 class="ps-title" id="s1-title">Acceptance of <em>Terms</em></h2>
+        <p class="policy-p">By accessing or using the RDD Agency website at <strong>www.rddagency.com</strong> (the "Site"), or by engaging any services provided by Razi Digital Agency Ltd. ("RDD Agency", "we", "us", or "our"), you agree to be bound by these Terms of Service ("Terms") in their entirety.</p>
+        <p class="policy-p">If you are entering into these Terms on behalf of a company, organisation, or other legal entity, you represent and warrant that you have the authority to bind that entity. In that case, "you" and "your" refer to that entity.</p>
+        <p class="policy-p">If you do not agree to these Terms, you must immediately cease using the Site and may not engage our services. Your continued use of the Site after any update to these Terms constitutes acceptance of the revised Terms.</p>
+        <div class="policy-highlight">
+          <p><strong>Important:</strong> These Terms apply to website visitors, prospective clients, and contracted clients. Specific service engagements are additionally governed by a separate <strong>Statement of Work (SOW)</strong> and, where applicable, a <strong>Master Services Agreement (MSA)</strong>. In the event of conflict, the SOW or MSA takes precedence over these Terms for matters relating to that engagement.</p>
+        </div>
+      </section>
+
+      <!-- 2. DEFINITIONS -->
+      <section class="policy-section" id="s2" aria-labelledby="s2-title">
+        <div class="ps-num">Section 02</div>
+        <h2 class="ps-title" id="s2-title"><em>Definitions</em></h2>
+        <p class="policy-p">The following definitions apply throughout these Terms:</p>
+        <table class="def-table">
+          <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td class="def-term">"Agreement"</td><td>These Terms of Service together with any applicable Statement of Work, Master Services Agreement, Non-Disclosure Agreement, or other written agreement between the parties.</td></tr>
+            <tr><td class="def-term">"Client"</td><td>Any individual, company, or organisation that engages RDD Agency for the provision of cybersecurity services under a signed Statement of Work or other written agreement.</td></tr>
+            <tr><td class="def-term">"Deliverables"</td><td>All reports, assessments, documentation, findings, remediation guidance, and other outputs produced by RDD Agency in connection with a service engagement.</td></tr>
+            <tr><td class="def-term">"Engagement"</td><td>A specific cybersecurity service project, assessment, or ongoing retainer agreed between RDD Agency and a Client, as defined in a Statement of Work.</td></tr>
+            <tr><td class="def-term">"Intellectual Property"</td><td>All patents, copyrights, trademarks, trade secrets, methodologies, tools, frameworks, source code, and other proprietary rights owned or licensed by either party.</td></tr>
+            <tr><td class="def-term">"Scope"</td><td>The specific systems, networks, applications, locations, and activities that RDD Agency is authorised to assess or test, as defined in a signed Statement of Work or Rules of Engagement document.</td></tr>
+            <tr><td class="def-term">"Services"</td><td>All cybersecurity services offered by RDD Agency, including but not limited to penetration testing, red team operations, managed detection and response (MDR), threat intelligence, digital forensics, incident response, and cloud security assessments.</td></tr>
+            <tr><td class="def-term">"Site"</td><td>The RDD Agency website at www.rddagency.com and all associated subdomains, pages, and digital assets.</td></tr>
+            <tr><td class="def-term">"Statement of Work" (SOW)</td><td>A written document signed by both parties specifying the scope, deliverables, timeline, fees, and specific terms of a particular engagement.</td></tr>
+            <tr><td class="def-term">"Confidential Information"</td><td>All non-public technical, commercial, operational, and strategic information disclosed by either party in connection with an engagement, whether marked confidential or not.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 3. ABOUT RDD -->
+      <section class="policy-section" id="s3" aria-labelledby="s3-title">
+        <div class="ps-num">Section 03</div>
+        <h2 class="ps-title" id="s3-title">About <em>RDD Agency</em></h2>
+        <p class="policy-p"><strong>Razi Digital Agency Ltd.</strong> is a company incorporated and registered in England and Wales (Company No. 10XXXXXXX), with its registered office at Level 22, One Canada Square, Canary Wharf, London E14 5AB, United Kingdom.</p>
+        <p class="policy-p">RDD Agency provides professional cybersecurity services to enterprise and government clients globally. Our services are provided by qualified professionals with relevant certifications and experience, and all offensive security work is performed strictly within authorised scopes under signed legal agreements.</p>
+        <p class="policy-p">RDD Agency is a CREST-accredited firm and holds ISO/IEC 27001:2022 certification for its information security management system. We comply with applicable professional codes of conduct including CREST's Code of Conduct for Penetration Testing.</p>
+      </section>
+
+      <!-- 4. WEBSITE USE -->
+      <section class="policy-section" id="s4" aria-labelledby="s4-title">
+        <div class="ps-num">Section 04</div>
+        <h2 class="ps-title" id="s4-title">Website <em>Use</em></h2>
+        <p class="policy-p">Access to and use of the Site is permitted on a temporary basis. RDD Agency reserves the right to withdraw, amend, or suspend any part of the Site at any time without notice.</p>
+        <p class="policy-p">You agree to use the Site only for lawful purposes and in a manner that does not infringe the rights of any third party. Specifically, you must not:</p>
+        <ul class="policy-list">
+          <li>Use the Site in any way that violates applicable local, national, or international law or regulation.</li>
+          <li>Transmit any unsolicited or unauthorised advertising or promotional material (spam).</li>
+          <li>Knowingly transmit any data, malware, or other harmful material that could damage the Site, its infrastructure, or any connected systems.</li>
+          <li>Attempt to gain unauthorised access to any part of the Site, the servers on which it is hosted, or any connected databases or systems.</li>
+          <li>Conduct any form of automated data scraping, crawling, or harvesting of content from the Site without prior written consent.</li>
+          <li>Use the Site to submit false, misleading, or fraudulent enquiries or impersonate any person or organisation.</li>
+        </ul>
+        <p class="policy-p">The Site may contain links to third-party websites for your convenience. RDD Agency has no control over the content of those sites and accepts no responsibility for them. Inclusion of a link does not constitute an endorsement.</p>
+        <p class="policy-p">The Site is provided for informational purposes only. Nothing on the Site constitutes legal, technical, or professional advice. Always engage a qualified professional for specific security guidance tailored to your environment.</p>
+      </section>
+
+      <!-- 5. SERVICE ENGAGEMENTS -->
+      <section class="policy-section" id="s5" aria-labelledby="s5-title">
+        <div class="ps-num">Section 05</div>
+        <h2 class="ps-title" id="s5-title">Service <em>Engagements</em></h2>
+        <p class="policy-p">All professional services provided by RDD Agency are subject to a signed <strong>Statement of Work (SOW)</strong> or equivalent written agreement executed by both parties before any work commences. No verbal agreement, email exchange, or informal communication constitutes a binding service engagement.</p>
+        <p class="policy-p">The process for engaging our services is as follows:</p>
+        <ul class="policy-list numbered">
+          <li><strong>Initial Enquiry</strong> — You submit an enquiry via our website, email, or direct contact. This creates no binding obligation on either party.</li>
+          <li><strong>Scoping Call</strong> — A senior RDD analyst conducts a scoping discussion to understand your requirements, environment, and objectives.</li>
+          <li><strong>Proposal &amp; Quotation</strong> — RDD Agency provides a written proposal outlining the scope, methodology, deliverables, timeline, and fees.</li>
+          <li><strong>Agreement Execution</strong> — Both parties sign the SOW and any applicable NDA or MSA. Work commences only after full execution.</li>
+          <li><strong>Engagement Delivery</strong> — RDD Agency performs the agreed services within the defined scope, timeline, and rules of engagement.</li>
+          <li><strong>Deliverables &amp; Closure</strong> — Final deliverables are provided, findings are presented, and the engagement is formally closed.</li>
+        </ul>
+        <p class="policy-p">RDD Agency reserves the right to decline any engagement request at our sole discretion, including where we determine that the requested scope is unlawful, unethical, or presents unacceptable risk to third parties.</p>
+      </section>
+
+      <!-- 6. SCOPE & AUTHORISATION -->
+      <section class="policy-section" id="s6" aria-labelledby="s6-title">
+        <div class="ps-num">Section 06</div>
+        <h2 class="ps-title" id="s6-title">Scope &amp; <em>Authorisation</em></h2>
+        <p class="policy-p">This section is critical. All offensive security activities — including penetration testing, red team operations, vulnerability assessments, and security audits — are performed <strong>exclusively</strong> within the scope and authorisation defined in the signed Statement of Work and accompanying Rules of Engagement (ROE) document.</p>
+        <div class="policy-warning">
+          <p><strong>Legal Notice:</strong> Unauthorised access to computer systems is a criminal offence under the Computer Misuse Act 1990 (UK), the Computer Fraud and Abuse Act (USA), and equivalent legislation globally. RDD Agency only performs offensive security testing with explicit written authorisation from the legal owner or duly authorised representative of the target systems. Any request to test systems without such authorisation will be refused and may be reported to relevant authorities.</p>
+        </div>
+        <p class="policy-p">The Client warrants and represents that they:</p>
+        <ul class="policy-list">
+          <li>Are the legal owner of, or have explicit written authorisation from the legal owner of, all systems, networks, applications, and data included within the agreed scope.</li>
+          <li>Have the authority to grant RDD Agency permission to conduct the agreed testing activities.</li>
+          <li>Will provide written confirmation of authorisation ("Get Out of Jail" letter) before any testing commences, on request.</li>
+          <li>Will promptly notify RDD Agency of any systems or assets that must be excluded from testing scope.</li>
+          <li>Understand that testing activities may cause unintended service disruption if conducted in production environments and accept responsibility for this risk where they have approved such testing.</li>
+        </ul>
+        <p class="policy-p">RDD Agency will immediately suspend testing and notify the Client if activities outside the agreed scope are discovered or if testing poses unacceptable risk to systems or data. The Client will not hold RDD Agency liable for issues arising from the Client's failure to accurately define or communicate the scope.</p>
+      </section>
+
+      <!-- 7. CLIENT OBLIGATIONS -->
+      <section class="policy-section" id="s7" aria-labelledby="s7-title">
+        <div class="ps-num">Section 07</div>
+        <h2 class="ps-title" id="s7-title">Client <em>Obligations</em></h2>
+        <div class="ob-grid">
+          <div class="ob-card client">
+            <div class="ob-head red">Client Must Do</div>
+            <div class="ob-title">Cooperation &amp; Access</div>
+            <ul class="ob-list">
+              <li>Provide timely access to systems, credentials, and personnel as required by the agreed scope</li>
+              <li>Designate a named technical contact with authority to approve scope changes</li>
+              <li>Respond to RDD Agency queries within agreed SLA timeframes</li>
+              <li>Ensure internal teams are notified of testing windows to avoid false incident responses</li>
+              <li>Provide network diagrams, asset inventories, or other documentation as requested</li>
+            </ul>
+          </div>
+          <div class="ob-card client">
+            <div class="ob-head red">Compliance &amp; Legal</div>
+            <div class="ob-title">Lawful Use</div>
+            <ul class="ob-list">
+              <li>Ensure all systems within scope are owned or legally authorised for testing</li>
+              <li>Obtain any third-party authorisations required (e.g., from cloud providers, ISPs, or co-location facilities)</li>
+              <li>Comply with applicable laws and regulations relevant to the engagement</li>
+              <li>Not use RDD Agency deliverables for any unlawful purpose</li>
+              <li>Maintain confidentiality of engagement details, methodologies, and findings</li>
+            </ul>
+          </div>
+          <div class="ob-card client">
+            <div class="ob-head red">Payment</div>
+            <div class="ob-title">Financial Obligations</div>
+            <ul class="ob-list">
+              <li>Pay all invoices within the agreed payment terms (typically 30 days net)</li>
+              <li>Notify RDD Agency of any billing disputes within 14 days of invoice receipt</li>
+              <li>Provide valid purchase order numbers or billing references where required</li>
+              <li>Reimburse agreed out-of-pocket expenses within payment terms</li>
+            </ul>
+          </div>
+          <div class="ob-card client">
+            <div class="ob-head red">Communication</div>
+            <div class="ob-title">Engagement Conduct</div>
+            <ul class="ob-list">
+              <li>Notify RDD Agency immediately of any system outages or incidents during an active engagement</li>
+              <li>Approve any changes to scope in writing before they are acted upon</li>
+              <li>Provide feedback on draft deliverables within agreed review windows</li>
+              <li>Treat RDD Agency personnel with professional respect at all times</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. RDD OBLIGATIONS -->
+      <section class="policy-section" id="s8" aria-labelledby="s8-title">
+        <div class="ps-num">Section 08</div>
+        <h2 class="ps-title" id="s8-title">RDD Agency <em>Obligations</em></h2>
+        <p class="policy-p">RDD Agency commits to delivering services in accordance with the following professional standards:</p>
+        <ul class="policy-list">
+          <li><strong>Professional competence</strong> — All engagements are led by qualified professionals holding relevant industry certifications (OSCP, CREST CRT, GPEN, CISSP, GCFA, or equivalent). We do not outsource client engagements to uncertified individuals.</li>
+          <li><strong>Defined scope adherence</strong> — We will conduct testing activities strictly within the authorised scope. If we identify that scope expansion is necessary, we will seek explicit written approval before proceeding.</li>
+          <li><strong>Minimal business disruption</strong> — We will use techniques and timing that minimise the risk of service disruption, unless agreed otherwise in the SOW (e.g., for availability/resilience testing).</li>
+          <li><strong>Timely communication</strong> — We will provide regular updates throughout the engagement and immediately notify the Client of any critical findings (CVSS 9.0+) that require urgent attention, without waiting for the final report.</li>
+          <li><strong>Quality deliverables</strong> — We will provide clear, accurate, actionable reports with both executive summaries and detailed technical findings, including remediation guidance tailored to your environment.</li>
+          <li><strong>Confidentiality</strong> — We will maintain strict confidentiality of all Client information, systems, and findings in accordance with Section 10 of these Terms.</li>
+          <li><strong>Data handling</strong> — We will handle all Client data in accordance with our Privacy Policy, applicable data protection law, and any signed Data Processing Agreement.</li>
+          <li><strong>Compliance</strong> — We will comply with all applicable laws and professional codes of conduct, including CREST's Code of Conduct, throughout every engagement.</li>
+        </ul>
+      </section>
+
+      <!-- 9. FEES & PAYMENT -->
+      <section class="policy-section" id="s9" aria-labelledby="s9-title">
+        <div class="ps-num">Section 09</div>
+        <h2 class="ps-title" id="s9-title">Fees &amp; <em>Payment</em></h2>
+        <p class="policy-p">All fees for RDD Agency services are set out in the applicable Statement of Work or Master Services Agreement. All prices are quoted exclusive of VAT and other applicable taxes unless stated otherwise.</p>
+        <table class="def-table">
+          <thead><tr><th>Term</th><th>Detail</th></tr></thead>
+          <tbody>
+            <tr><td class="def-term">Payment Terms</td><td>Invoices are due within <strong>30 days</strong> of the invoice date unless otherwise agreed in writing. For engagements exceeding £20,000 / $25,000, a 50% deposit is required before work commences.</td></tr>
+            <tr><td class="def-term">Late Payment</td><td>Overdue invoices accrue interest at 8% per annum above the Bank of England base rate under the Late Payment of Commercial Debts (Interest) Act 1998, calculated from the due date until full payment is received.</td></tr>
+            <tr><td class="def-term">Disputed Invoices</td><td>Billing disputes must be raised in writing within <strong>14 days</strong> of invoice receipt. Undisputed portions of an invoice remain due and payable on their original due date.</td></tr>
+            <tr><td class="def-term">Expenses</td><td>Reasonable out-of-pocket expenses (travel, accommodation, specialist tools) agreed in advance are chargeable at cost with receipts provided. No expense exceeding £500 / $625 will be incurred without prior written approval.</td></tr>
+            <tr><td class="def-term">Scope Changes</td><td>Changes to the agreed scope that materially increase the effort required will be subject to a revised fee estimate and must be approved in writing before additional work is undertaken.</td></tr>
+            <tr><td class="def-term">Cancellation</td><td>Engagements cancelled with less than <strong>10 business days</strong> notice will be charged at 50% of the agreed engagement fee to cover preparation costs and reserved capacity.</td></tr>
+            <tr><td class="def-term">Currency</td><td>Invoices are issued in GBP (£) by default. USD ($) or EUR (€) invoicing is available by prior written agreement. Exchange rate risk is borne by the Client for non-GBP invoicing.</td></tr>
+          </tbody>
+        </table>
+        <p class="policy-p">RDD Agency reserves the right to suspend active engagements or withhold delivery of final reports in the event of non-payment. Resumption is subject to settlement of all outstanding invoices plus any accrued interest.</p>
+      </section>
+
+      <!-- 10. CONFIDENTIALITY -->
+      <section class="policy-section" id="s10" aria-labelledby="s10-title">
+        <div class="ps-num">Section 10</div>
+        <h2 class="ps-title" id="s10-title"><em>Confidentiality</em></h2>
+        <p class="policy-p">Both parties acknowledge that in the course of an engagement, each may disclose or receive Confidential Information belonging to the other. Both parties agree to:</p>
+        <ul class="policy-list">
+          <li>Hold all Confidential Information in strict confidence and protect it with at least the same degree of care used to protect their own confidential information — and in any case no less than reasonable care.</li>
+          <li>Not disclose Confidential Information to any third party without prior written consent from the disclosing party, except as set out below.</li>
+          <li>Use Confidential Information solely for the purposes of performing or receiving the agreed services.</li>
+          <li>Limit internal access to Confidential Information to those personnel who have a legitimate need to know for the purpose of the engagement.</li>
+          <li>Promptly notify the disclosing party upon becoming aware of any actual or suspected unauthorised disclosure of Confidential Information.</li>
+        </ul>
+        <p class="policy-p">Confidentiality obligations do not apply to information that: (a) is or becomes publicly available through no fault of the receiving party; (b) was already known to the receiving party prior to disclosure; (c) is independently developed by the receiving party without reference to the Confidential Information; or (d) is required to be disclosed by law, court order, or regulatory authority — in which case the receiving party will give maximum possible notice to the disclosing party.</p>
+        <p class="policy-p">Confidentiality obligations survive termination of any engagement or these Terms for a period of <strong>5 years</strong>, or indefinitely where trade secrets are involved.</p>
+        <div class="policy-highlight">
+          <p><strong>Engagement findings are strictly confidential.</strong> RDD Agency will not disclose, reference, or publish details of any client engagement — including the existence of the engagement — without explicit written consent from the Client. We do not use client names in marketing materials without permission.</p>
+        </div>
+      </section>
+
+      <!-- 11. INTELLECTUAL PROPERTY -->
+      <section class="policy-section" id="s11" aria-labelledby="s11-title">
+        <div class="ps-num">Section 11</div>
+        <h2 class="ps-title" id="s11-title">Intellectual <em>Property</em></h2>
+        <p class="policy-p">Intellectual property rights in connection with RDD Agency engagements are allocated as follows:</p>
+        <table class="def-table">
+          <thead><tr><th>Asset</th><th>Ownership</th><th>Client Rights</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="def-term">Engagement Reports &amp; Deliverables</td>
+              <td>RDD Agency owns the copyright in all reports, assessments, and documentation until full payment is received, upon which ownership transfers to the Client.</td>
+              <td>Full ownership upon payment. May be used internally and shared with auditors, regulators, insurers, and board members.</td>
+            </tr>
+            <tr>
+              <td class="def-term">RDD Methodologies &amp; Frameworks</td>
+              <td>RDD Agency retains all rights to our proprietary testing methodologies, processes, ThreatCore™ platform, custom tooling, and internal frameworks.</td>
+              <td>No rights granted. Methodologies may be referenced in reports but cannot be reproduced, reverse-engineered, or used independently.</td>
+            </tr>
+            <tr>
+              <td class="def-term">Custom Tools &amp; Scripts</td>
+              <td>Tools and scripts developed specifically for a Client engagement are owned by RDD Agency unless the SOW explicitly states otherwise.</td>
+              <td>A non-exclusive, non-transferable licence to use tools delivered as part of a retainer engagement, for internal security purposes only.</td>
+            </tr>
+            <tr>
+              <td class="def-term">Client Pre-existing IP</td>
+              <td>The Client retains all rights to their existing systems, source code, data, and intellectual property. RDD Agency acquires no rights over Client IP through an engagement.</td>
+              <td>Full ownership. Client grants RDD Agency a limited licence to access and assess Client IP solely for the purposes of the engagement.</td>
+            </tr>
+            <tr>
+              <td class="def-term">General Knowledge &amp; Skills</td>
+              <td>RDD Agency personnel retain the right to use general knowledge, skills, and experience gained during an engagement in future work, provided no Confidential Information is disclosed.</td>
+              <td>N/A</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="policy-p">You may not reproduce, redistribute, publish, or resell any RDD Agency deliverables to third parties without prior written consent. Use of RDD Agency's name, logo, or branding in any Client marketing, press release, or public statement requires prior written approval.</p>
+      </section>
+
+      <!-- 12. DATA PROTECTION -->
+      <section class="policy-section" id="s12" aria-labelledby="s12-title">
+        <div class="ps-num">Section 12</div>
+        <h2 class="ps-title" id="s12-title">Data <em>Protection</em></h2>
+        <p class="policy-p">Both parties acknowledge their respective obligations under UK GDPR, EU GDPR, and other applicable data protection legislation. Where RDD Agency processes personal data on behalf of the Client in the course of an engagement, such processing is governed by a separate <strong>Data Processing Agreement (DPA)</strong> which forms part of the SOW.</p>
+        <p class="policy-p">Each party is independently responsible for compliance with applicable data protection law in relation to their own data processing activities. RDD Agency's processing of personal data collected through the Site (e.g., contact form submissions) is governed by our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+        <p class="policy-p">Where an engagement involves access to personal data belonging to the Client's customers, employees, or other data subjects, the Client must:</p>
+        <ul class="policy-list">
+          <li>Inform RDD Agency of any personal data categories likely to be encountered during testing, prior to engagement commencement.</li>
+          <li>Ensure there is a lawful basis for RDD Agency to access and process such data for testing purposes.</li>
+          <li>Sign a Data Processing Agreement with RDD Agency before such data is accessed.</li>
+          <li>Not share with RDD Agency any personal data that is not necessary for the conduct of the engagement.</li>
+        </ul>
+        <p class="policy-p">RDD Agency will implement appropriate technical and organisational measures to protect any personal data accessed during an engagement and will delete or return such data upon engagement closure as directed by the Client.</p>
+      </section>
+
+      <!-- 13. LIABILITY & INDEMNITY -->
+      <section class="policy-section" id="s13" aria-labelledby="s13-title">
+        <div class="ps-num">Section 13</div>
+        <h2 class="ps-title" id="s13-title">Liability &amp; <em>Indemnity</em></h2>
+        <div class="liab-grid">
+          <div class="liab-card">
+            <div class="liab-icon">✅</div>
+            <div class="liab-title yes">Covered</div>
+            <div class="liab-desc">Death or personal injury caused by RDD Agency's negligence. Fraud or fraudulent misrepresentation. Any liability that cannot be excluded by law.</div>
+          </div>
+          <div class="liab-card">
+            <div class="liab-icon">⚠️</div>
+            <div class="liab-title ltd">Limited</div>
+            <div class="liab-desc">Direct losses caused by RDD Agency's breach of contract or negligence, capped at the total fees paid for the relevant engagement in the 12 months preceding the claim.</div>
+          </div>
+          <div class="liab-card">
+            <div class="liab-icon">❌</div>
+            <div class="liab-title no">Excluded</div>
+            <div class="liab-desc">Indirect, consequential, special, or punitive losses. Loss of profits, revenue, data, goodwill, or anticipated savings. Losses arising from third-party claims against the Client.</div>
+          </div>
+        </div>
+        <p class="policy-p" style="margin-top:1.5rem">RDD Agency's total aggregate liability to the Client under or in connection with any engagement shall not exceed the total fees paid by the Client for that specific engagement in the 12 months immediately preceding the event giving rise to the claim, except as set out above.</p>
+        <div class="policy-warning">
+          <p><strong>Client Indemnity:</strong> The Client agrees to indemnify, defend, and hold harmless RDD Agency, its officers, employees, and sub-contractors from and against any third-party claims, losses, costs, and liabilities arising from: (a) the Client's breach of these Terms; (b) the Client's failure to obtain proper authorisation for the testing scope; (c) the Client's use of RDD Agency deliverables in a manner not permitted by these Terms; or (d) the Client's violation of applicable law.</p>
+        </div>
+        <p class="policy-p">Nothing in these Terms shall limit or exclude any liability for death or personal injury caused by negligence, for fraud or fraudulent misrepresentation, or for any liability that cannot lawfully be excluded under applicable law.</p>
+      </section>
+
+      <!-- 14. WARRANTIES & DISCLAIMERS -->
+      <section class="policy-section" id="s14" aria-labelledby="s14-title">
+        <div class="ps-num">Section 14</div>
+        <h2 class="ps-title" id="s14-title">Warranties &amp; <em>Disclaimers</em></h2>
+        <p class="policy-p">RDD Agency warrants that:</p>
+        <ul class="policy-list">
+          <li>Services will be performed with reasonable care and skill by qualified professionals.</li>
+          <li>We have the right to provide the services and grant the licences described in these Terms.</li>
+          <li>We will comply with all applicable laws in performing the services.</li>
+        </ul>
+        <p class="policy-p"><strong>Important Limitations:</strong> The Client acknowledges and agrees that:</p>
+        <ul class="policy-list">
+          <li><strong>No security testing is exhaustive.</strong> A penetration test or security assessment identifies vulnerabilities that existed and were discoverable at the time of testing. It does not guarantee the identification of every vulnerability or that newly discovered vulnerabilities will not emerge after testing.</li>
+          <li><strong>Testing is point-in-time.</strong> The security posture of any environment changes continuously. RDD Agency's findings and recommendations reflect the state of the environment at the time of assessment only.</li>
+          <li><strong>Remediation is the Client's responsibility.</strong> RDD Agency provides recommendations for remediation but accepts no responsibility for the Client's implementation of those recommendations or for vulnerabilities that remain unremediated.</li>
+          <li><strong>No guarantee against future breaches.</strong> Engagement with RDD Agency does not guarantee that a data breach or security incident will not occur. Cybersecurity risk cannot be eliminated, only reduced.</li>
+        </ul>
+        <p class="policy-p">The Site and its content are provided "as is" without warranties of any kind, express or implied. RDD Agency does not warrant that the Site will be uninterrupted, error-free, or free from viruses or other harmful components.</p>
+      </section>
+
+      <!-- 15. PROHIBITED USE -->
+      <section class="policy-section" id="s15" aria-labelledby="s15-title">
+        <div class="ps-num">Section 15</div>
+        <h2 class="ps-title" id="s15-title">Prohibited <em>Use</em></h2>
+        <p class="policy-p">You may not use RDD Agency's services for any of the following purposes, and any attempt to do so will result in immediate termination of the engagement and may be reported to law enforcement authorities:</p>
+        <ul class="policy-list">
+          <li>Testing, scanning, or attempting to access systems, networks, or applications that you do not own or have explicit written authorisation to test.</li>
+          <li>Conducting offensive security activities against critical national infrastructure, healthcare systems, emergency services, or financial market infrastructure without appropriate governmental or regulatory authorisation.</li>
+          <li>Using deliverables, findings, or methodologies provided by RDD Agency to conduct unauthorised access to third-party systems.</li>
+          <li>Engaging RDD Agency services on behalf of a sanctioned individual, entity, or state as defined by HM Treasury, OFAC, EU, UN, or equivalent sanctions lists.</li>
+          <li>Using RDD Agency services for purposes that constitute a criminal offence in the UK, the Client's jurisdiction, or the jurisdiction of any targeted system.</li>
+          <li>Using RDD Agency services to harass, surveil, or cause harm to individuals.</li>
+          <li>Misrepresenting the nature, scope, or findings of any RDD Agency engagement to regulators, insurers, investors, or other third parties.</li>
+          <li>Sublicensing, reselling, or redistributing RDD Agency services or deliverables to third parties without prior written consent.</li>
+        </ul>
+      </section>
+
+      <!-- 16. TERM & TERMINATION -->
+      <section class="policy-section" id="s16" aria-labelledby="s16-title">
+        <div class="ps-num">Section 16</div>
+        <h2 class="ps-title" id="s16-title">Term &amp; <em>Termination</em></h2>
+        <p class="policy-p">These Terms remain in effect for the duration of any engagement between the parties and continue to apply to post-engagement obligations (confidentiality, payment, IP) as specified herein.</p>
+        <p class="policy-p"><strong>Termination for Convenience:</strong> Either party may terminate an engagement by providing <strong>30 days' written notice</strong>. RDD Agency will invoice for all work completed to the date of termination. Where notice is provided by the Client, cancellation fees set out in Section 9 may apply.</p>
+        <p class="policy-p"><strong>Termination for Cause:</strong> Either party may terminate an engagement immediately upon written notice if the other party:</p>
+        <ul class="policy-list">
+          <li>Commits a material breach of these Terms or the applicable SOW and fails to remedy it within 14 days of written notice.</li>
+          <li>Becomes insolvent, enters administration, receivership, or liquidation, or makes an arrangement with creditors.</li>
+          <li>Engages in fraudulent, illegal, or grossly unethical conduct in connection with the engagement.</li>
+        </ul>
+        <p class="policy-p"><strong>Immediate Suspension:</strong> RDD Agency may immediately suspend testing activities (without terminating the agreement) if we discover that testing is occurring outside the agreed scope, poses unexpected risk to third-party systems, or if we receive a credible legal challenge to the authorisation of the engagement.</p>
+        <p class="policy-p">Upon termination, the Client must pay all outstanding invoices for services rendered. Confidentiality obligations, IP provisions, and the limitation of liability provisions survive termination of these Terms.</p>
+      </section>
+
+      <!-- 17. FORCE MAJEURE -->
+      <section class="policy-section" id="s17" aria-labelledby="s17-title">
+        <div class="ps-num">Section 17</div>
+        <h2 class="ps-title" id="s17-title">Force <em>Majeure</em></h2>
+        <p class="policy-p">Neither party shall be in breach of these Terms, nor liable for any failure or delay in performance of any obligations, to the extent such failure or delay is caused by circumstances beyond that party's reasonable control ("Force Majeure Event"), including but not limited to:</p>
+        <ul class="policy-list">
+          <li>Acts of God, natural disasters, pandemics, or extreme weather events.</li>
+          <li>Acts of war, terrorism, civil unrest, or government action.</li>
+          <li>Failure of third-party telecommunications, internet, or power infrastructure.</li>
+          <li>Strikes, lockouts, or industrial action not involving the affected party's own employees.</li>
+          <li>Cyber attacks, distributed denial-of-service events, or infrastructure outages affecting either party's systems (where not caused by the affected party's negligence).</li>
+        </ul>
+        <p class="policy-p">The affected party must notify the other party as soon as reasonably practicable, provide reasonable details of the Force Majeure Event and expected duration, and use all reasonable efforts to mitigate the impact and resume performance. If a Force Majeure Event continues for more than <strong>60 consecutive days</strong>, either party may terminate the affected engagement by written notice.</p>
+      </section>
+
+      <!-- 18. DISPUTE RESOLUTION -->
+      <section class="policy-section" id="s18" aria-labelledby="s18-title">
+        <div class="ps-num">Section 18</div>
+        <h2 class="ps-title" id="s18-title">Dispute <em>Resolution</em></h2>
+        <p class="policy-p">The parties agree to attempt to resolve any dispute arising out of or in connection with these Terms or any engagement through the following staged process before resorting to formal legal proceedings:</p>
+        <ul class="policy-list numbered">
+          <li><strong>Informal Resolution (Stage 1 — 30 days):</strong> Either party may raise a dispute by written notice to the other. The parties' designated representatives will meet (in person or virtually) within 10 business days to attempt good-faith resolution. Most disputes are resolved at this stage.</li>
+          <li><strong>Senior Escalation (Stage 2 — 15 days):</strong> If unresolved at Stage 1, the matter is escalated to senior leadership of each party, who will attempt resolution within 15 further business days.</li>
+          <li><strong>Mediation (Stage 3 — Optional):</strong> If unresolved at Stage 2, the parties may agree to refer the dispute to a neutral mediator appointed by the Centre for Effective Dispute Resolution (CEDR) in London. Mediation costs are shared equally unless otherwise agreed.</li>
+          <li><strong>Litigation (Stage 4):</strong> If the dispute remains unresolved following the above stages, either party may commence formal legal proceedings in accordance with Section 19.</li>
+        </ul>
+        <p class="policy-p">Nothing in this clause prevents either party from seeking urgent injunctive or other interim relief from a court of competent jurisdiction where necessary to protect its rights or confidential information.</p>
+      </section>
+
+      <!-- 19. GOVERNING LAW -->
+      <section class="policy-section" id="s19" aria-labelledby="s19-title">
+        <div class="ps-num">Section 19</div>
+        <h2 class="ps-title" id="s19-title">Governing <em>Law</em></h2>
+        <p class="policy-p">These Terms and any dispute or claim arising out of or in connection with them (including non-contractual disputes or claims) shall be governed by and construed in accordance with the laws of <strong>England and Wales</strong>.</p>
+        <p class="policy-p">Each party irrevocably agrees that the courts of England and Wales shall have exclusive jurisdiction to settle any dispute or claim arising out of or in connection with these Terms or their subject matter or formation.</p>
+        <p class="policy-p">For Clients based outside the United Kingdom, this does not affect any mandatory consumer protection rights you may have under the laws of your country of residence. Where local law requires a different governing law, RDD Agency will work with affected Clients on a case-by-case basis to ensure compliance.</p>
+      </section>
+
+      <!-- 20. GENERAL PROVISIONS -->
+      <section class="policy-section" id="s20" aria-labelledby="s20-title">
+        <div class="ps-num">Section 20</div>
+        <h2 class="ps-title" id="s20-title">General <em>Provisions</em></h2>
+        <table class="def-table">
+          <thead><tr><th>Provision</th><th>Detail</th></tr></thead>
+          <tbody>
+            <tr><td class="def-term">Entire Agreement</td><td>These Terms, together with any applicable SOW, MSA, NDA, or DPA, constitute the entire agreement between the parties and supersede all prior representations, agreements, and understandings relating to the subject matter.</td></tr>
+            <tr><td class="def-term">Amendments</td><td>RDD Agency may amend these Terms at any time by publishing the updated version on the Site. For material changes affecting existing engagements, we will provide 30 days' written notice. Continued use of the Site or services constitutes acceptance.</td></tr>
+            <tr><td class="def-term">Severability</td><td>If any provision of these Terms is held to be invalid, illegal, or unenforceable, that provision shall be modified to the minimum extent necessary to make it enforceable, or severed if modification is not possible. The remaining provisions remain in full force.</td></tr>
+            <tr><td class="def-term">Waiver</td><td>Failure to exercise or enforce any right under these Terms shall not constitute a waiver of that right. Any waiver must be express and in writing to be effective.</td></tr>
+            <tr><td class="def-term">No Partnership</td><td>Nothing in these Terms creates or implies a partnership, joint venture, employment, or agency relationship between the parties. RDD Agency is an independent contractor.</td></tr>
+            <tr><td class="def-term">Assignment</td><td>The Client may not assign, transfer, or sub-license any rights or obligations under these Terms without prior written consent from RDD Agency. RDD Agency may assign its rights and obligations to any successor entity in connection with a merger, acquisition, or restructuring.</td></tr>
+            <tr><td class="def-term">Notices</td><td>All formal notices under these Terms must be in writing and delivered by email with read receipt or by recorded post to the registered address of the receiving party. Notices take effect on the date of confirmed receipt.</td></tr>
+            <tr><td class="def-term">Third Party Rights</td><td>A person who is not a party to these Terms has no right under the Contracts (Rights of Third Parties) Act 1999 to enforce any term, except where expressly stated otherwise.</td></tr>
+            <tr><td class="def-term">Language</td><td>These Terms are written in English. In the event of any inconsistency between an English version and a translated version, the English version prevails.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 21. CONTACT -->
+      <section class="policy-section" id="s21" aria-labelledby="s21-title">
+        <div class="ps-num">Section 21</div>
+        <h2 class="ps-title" id="s21-title">Contact <em>Us</em></h2>
+        <p class="policy-p">For any questions, concerns, or communications relating to these Terms of Service, please contact RDD Agency through the appropriate channel below:</p>
+        <div class="contact-box">
+          <div class="cb-item">
+            <span class="cb-label">Legal &amp; Contracts</span>
+            <span class="cb-val"><a href="mailto:legal@rddagency.com">legal@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Service Enquiries</span>
+            <span class="cb-val"><a href="mailto:enterprise@rddagency.com">enterprise@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Billing &amp; Invoices</span>
+            <span class="cb-val"><a href="mailto:billing@rddagency.com">billing@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Active Incident Response</span>
+            <span class="cb-val"><a href="mailto:ir@rddagency.com">ir@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Registered Office</span>
+            <span class="cb-val">Razi Digital Agency Ltd.<br>Level 22, One Canada Square<br>Canary Wharf, London E14 5AB<br>United Kingdom</span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Emergency Hotline (24/7)</span>
+            <span class="cb-val"><a href="tel:+448001234567">+44 800 RDD-SECURE</a></span>
+          </div>
+        </div>
+        <p class="policy-p" style="margin-top:2rem">We aim to respond to all legal and contractual enquiries within <strong>5 business days</strong>. For urgent matters relating to active engagements or critical incidents, please use the emergency hotline.</p>
+      </section>
+
+    </div><!-- end .policy-body -->
+  </div><!-- end .policy-wrapper -->
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer role="contentinfo">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+        <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+      </div>
+      <p class="foot-desc">Elite global cybersecurity. Protecting the world's most critical organizations from the most advanced threats — 24 hours a day, 365 days a year.</p>
+      <div class="foot-certs">
+        <span class="foot-cert">ISO 27001</span>
+        <span class="foot-cert">CREST</span>
+        <span class="foot-cert">SOC 2 II</span>
+        <span class="foot-cert">GDPR</span>
+        <span class="foot-cert">FedRAMP</span>
+      </div>
+      <div class="foot-socials">
+        <a href="https://linkedin.com/company/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+        <a href="https://twitter.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="Twitter">Tw</a>
+        <a href="https://github.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="GitHub">Gh</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#services">Penetration Testing</a></li>
+        <li><a href="index.html#services">Red Team Operations</a></li>
+        <li><a href="index.html#services">SOC as a Service</a></li>
+        <li><a href="index.html#services">Threat Intelligence</a></li>
+        <li><a href="index.html#services">Incident Response</a></li>
+        <li><a href="index.html#services">Cloud Security</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#about">About RDD</a></li>
+        <li><a href="index.html#team">Our Team</a></li>
+        <li><a href="index.html#clients">Case Studies</a></li>
+        <li><a href="index.html#global">Global Presence</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#contact">Careers</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#threat-intel">Threat Intelligence Blog</a></li>
+        <li><a href="index.html#threat-intel">Security Advisories</a></li>
+        <li><a href="index.html#services">CVE Research</a></li>
+        <li><a href="index.html#services">White Papers</a></li>
+        <li><a href="index.html#contact">Vulnerability Disclosure</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 <b>RDD Agency</b> — Razi Digital Agency Ltd. All rights reserved. Registered in England &amp; Wales.</span>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html" class="active-page">Terms of Service</a>
+      <a href="index.html#contact">Cookie Policy</a>
+      <a href="index.html#contact">Vulnerability Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CURSOR ===== */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,[tabindex]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hov');ring.classList.add('hov')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hov');ring.classList.remove('hov')});
+});
+
+/* ===== NAVBAR SCROLL ===== */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',scrollY>40);
+});
+
+/* ===== MOBILE HAMBURGER ===== */
+const ham=document.getElementById('navHam'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');
+  ham.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mob-lnk').forEach(l=>l.addEventListener('click',()=>{
+  mob.classList.remove('open');ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+
+/* ===== FLOATING HIRE DISMISS ===== */
+document.getElementById('hireDismiss').addEventListener('click',()=>{
+  document.getElementById('hire-float').style.display='none';
+});
+
+/* ===== STICKY TOC ACTIVE STATE ===== */
+const sections=document.querySelectorAll('.policy-section');
+const tocLinks=document.querySelectorAll('.toc-link');
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(l=>l.classList.remove('active'));
+      const a=document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-80px 0px -60% 0px',threshold:0}).observe
+// observe all sections
+const sectObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(l=>l.classList.remove('active'));
+      const a=document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-80px 0px -60% 0px',threshold:0});
+sections.forEach(s=>sectObs.observe(s));
+</script>
+</body>
+</html>
