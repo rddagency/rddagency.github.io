@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RDD Agency Privacy Policy — How Razi Digital Agency collects, uses, and protects your personal data in compliance with GDPR, CCPA, and global data protection laws.">
+<meta name="author" content="RDD Agency — Razi Digital Agency">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Privacy Policy — RDD Agency">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rddagency.com/privacy-policy">
+<link rel="canonical" href="https://www.rddagency.com/privacy-policy">
+<title>Privacy Policy — RDD Agency | Razi Digital Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RESET & VARIABLES  (identical to main site)
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E01A1A; --red-dark:#A01010; --red-glow:rgba(224,26,26,0.15);
+  --black:#0A0A0A; --black-2:#111; --black-3:#181818; --black-4:#222;
+  --white:#F5F5F0; --white-dim:rgba(245,245,240,.72); --white-mute:rgba(245,245,240,.35);
+  --border:rgba(245,245,240,.1); --border-red:rgba(224,26,26,.4);
+  --mono:'Space Mono',monospace; --sans:'Barlow',sans-serif; --cond:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+a,button{cursor:pointer!important;pointer-events:auto!important}
+input,textarea{cursor:text!important}
+select{cursor:pointer!important}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--red-dark);border-radius:2px}
+
+/* ============================================================
+   CUSTOM CURSOR  (identical to main site)
+============================================================ */
+#cursor,#cursor-ring{position:fixed;border-radius:50%;pointer-events:none!important;z-index:99999;transform:translate(-50%,-50%)}
+#cursor{width:10px;height:10px;background:var(--red);z-index:100000;transition:width .15s,height .15s,background .15s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,26,26,.5);z-index:99999;transition:width .2s,height .2s,border-color .2s}
+#cursor.hov{width:14px;height:14px;background:var(--red-dark)}
+#cursor-ring.hov{width:50px;height:50px;border-color:var(--red);border-width:2px}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pulseCta{0%{box-shadow:0 0 0 0 rgba(224,26,26,.7)}70%{box-shadow:0 0 0 14px rgba(224,26,26,0)}100%{box-shadow:0 0 0 0 rgba(224,26,26,0)}}
+@keyframes popIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+
+/* ============================================================
+   NAVBAR  (identical to main site)
+============================================================ */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;z-index:2}
+.nav-logo-mark{width:38px;height:38px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:13px;letter-spacing:.05em;color:#fff;clip-path:polygon(0 0,100% 0,100% 74%,88% 100%,0 100%)}
+.nav-logo-text{font-family:var(--cond);font-weight:900;font-size:1.05rem;letter-spacing:.12em;color:var(--white);text-transform:uppercase}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:2rem;z-index:2}
+.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;padding:.3rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:.6rem 1.4rem!important;display:inline-block!important;transform:skewX(-8deg);transition:background .2s,transform .2s!important}
+.nav-cta span{display:inline-block;transform:skewX(8deg)}
+.nav-cta:hover{background:var(--red-dark)!important;transform:skewX(-8deg) scale(1.04)!important}
+.nav-cta::after{display:none!important}
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;z-index:9002}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.99);z-index:9001;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--cond);font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mob-menu a:hover{color:var(--red)}
+
+/* ============================================================
+   FLOATING HIRE US  (identical to main site)
+============================================================ */
+#hire-float{position:fixed;bottom:2rem;right:2rem;z-index:8500;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.hire-btn{background:var(--red);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:.6rem;animation:pulseCta 2s infinite;white-space:nowrap;border:none}
+.hire-btn:hover{background:var(--red-dark);animation:none;transform:scale(1.05)}
+.hire-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1s infinite;flex-shrink:0;pointer-events:none}
+.hire-dismiss{background:var(--black-4);border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.6rem;padding:.28rem .65rem;letter-spacing:.08em;cursor:pointer!important;transition:color .2s;align-self:flex-end}
+.hire-dismiss:hover{color:var(--white)}
+
+/* ============================================================
+   PAGE HERO BANNER
+============================================================ */
+.page-hero{
+  padding:9rem 4rem 5rem;
+  background:var(--black-2);
+  border-bottom:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.page-hero::before{
+  content:'PRIVACY POLICY';
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--cond);font-weight:900;
+  font-size:clamp(4rem,12vw,11rem);
+  color:rgba(245,245,240,.03);
+  white-space:nowrap;pointer-events:none;letter-spacing:.05em;
+}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,245,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,245,240,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.page-hero-orb{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(224,26,26,.08) 0%,transparent 70%);top:-150px;right:-100px;pointer-events:none}
+.page-hero-content{position:relative;z-index:1;max-width:760px;animation:fadeUp .8s .1s ease both}
+.page-breadcrumb{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.page-breadcrumb a{color:var(--white-mute);text-decoration:none;transition:color .2s}
+.page-breadcrumb a:hover{color:var(--red)}
+.page-breadcrumb span{color:var(--red)}
+.page-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.8rem,6vw,5.5rem);text-transform:uppercase;line-height:.92;color:var(--white);margin-bottom:1.5rem}
+.page-title em{color:var(--red);font-style:normal}
+.page-meta{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.8rem;border-top:1px solid var(--border)}
+.page-meta-item{display:flex;flex-direction:column;gap:.2rem}
+.page-meta-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute)}
+.page-meta-val{font-family:var(--mono);font-size:.75rem;color:var(--white-dim)}
+.page-meta-val b{color:var(--red)}
+
+/* ============================================================
+   PRIVACY POLICY LAYOUT
+============================================================ */
+.policy-wrapper{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:0;
+  max-width:1400px;
+  margin:0 auto;
+  position:relative;
+}
+
+/* Sticky Table of Contents */
+.policy-toc{
+  padding:4rem 2rem 4rem 4rem;
+  position:sticky;
+  top:80px;
+  height:calc(100vh - 80px);
+  overflow-y:auto;
+  border-right:1px solid var(--border);
+  background:var(--black);
+  align-self:start;
+}
+.policy-toc::-webkit-scrollbar{width:2px}
+.policy-toc::-webkit-scrollbar-thumb{background:var(--border)}
+.toc-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.toc-label::before{content:'';display:inline-block;width:18px;height:1px;background:var(--red)}
+.toc-list{display:flex;flex-direction:column;gap:.1rem;list-style:none}
+.toc-list a{font-family:var(--mono);font-size:.67rem;letter-spacing:.06em;color:var(--white-mute);text-decoration:none;padding:.45rem .5rem;display:block;border-left:2px solid transparent;transition:all .2s;line-height:1.5}
+.toc-list a:hover{color:var(--white);border-left-color:var(--border)}
+.toc-list a.active{color:var(--red);border-left-color:var(--red);background:rgba(224,26,26,.05)}
+
+/* Policy body */
+.policy-body{
+  padding:4rem 4rem 6rem;
+  background:var(--black);
+}
+
+/* Section */
+.policy-section{
+  margin-bottom:4rem;
+  padding-bottom:4rem;
+  border-bottom:1px solid var(--border);
+  scroll-margin-top:100px;
+}
+.policy-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+
+.ps-num{
+  font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--red);margin-bottom:.7rem;
+}
+.ps-title{
+  font-family:var(--cond);font-weight:900;
+  font-size:clamp(1.5rem,3vw,2.2rem);
+  text-transform:uppercase;color:var(--white);
+  line-height:1;margin-bottom:1.6rem;
+}
+.ps-title em{color:var(--red);font-style:normal}
+
+/* Typography */
+.policy-p{font-size:.97rem;font-weight:300;color:var(--white-dim);line-height:1.85;margin-bottom:1.2rem}
+.policy-p:last-child{margin-bottom:0}
+.policy-p a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--border-red);transition:border-color .2s}
+.policy-p a:hover{border-bottom-color:var(--red)}
+.policy-p strong{color:var(--white);font-weight:600}
+
+/* Highlighted box */
+.policy-highlight{
+  background:var(--black-2);
+  border:1px solid var(--border);
+  border-left:3px solid var(--red);
+  padding:1.5rem 1.8rem;
+  margin:1.6rem 0;
+}
+.policy-highlight p{font-family:var(--mono);font-size:.78rem;color:var(--white-dim);line-height:1.8;letter-spacing:.02em}
+.policy-highlight p strong{color:var(--red)}
+
+/* Definition table */
+.def-table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.def-table th{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--border-red);background:var(--black-2)}
+.def-table td{font-size:.88rem;font-weight:300;color:var(--white-dim);padding:.9rem 1rem;border-bottom:1px solid var(--border);line-height:1.65;vertical-align:top}
+.def-table tr:last-child td{border-bottom:none}
+.def-table tr:hover td{background:var(--black-2)}
+.def-term{font-family:var(--mono);font-size:.75rem;color:var(--white);font-weight:700;white-space:nowrap}
+
+/* Ordered / unordered lists */
+.policy-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin:1.2rem 0 1.4rem}
+.policy-list li{font-size:.95rem;font-weight:300;color:var(--white-dim);padding-left:1.6rem;position:relative;line-height:1.75}
+.policy-list li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:.8rem;top:.1rem}
+.policy-list.bullets li::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%;top:.55rem}
+
+/* Data category cards */
+.data-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:1.5rem 0}
+.data-card{background:var(--black-2);padding:1.6rem 1.4rem;border-top:2px solid transparent;transition:border-color .3s}
+.data-card:hover{border-top-color:var(--red)}
+.dc-title{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white);margin-bottom:.6rem}
+.dc-desc{font-size:.83rem;font-weight:300;color:var(--white-mute);line-height:1.7}
+.dc-examples{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:var(--red);margin-top:.5rem}
+
+/* Rights grid */
+.rights-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);margin:1.5rem 0}
+.right-card{background:var(--black-2);padding:1.5rem 1.2rem;border-bottom:2px solid transparent;transition:border-color .3s}
+.right-card:hover{border-bottom-color:var(--red)}
+.rc-icon{font-size:1.4rem;margin-bottom:.7rem}
+.rc-title{font-family:var(--cond);font-weight:700;font-size:.95rem;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
+.rc-desc{font-size:.82rem;font-weight:300;color:var(--white-mute);line-height:1.65}
+
+/* Contact box */
+.contact-box{
+  background:var(--black-2);
+  border:1px solid var(--border-red);
+  padding:2rem 2.2rem;
+  margin-top:1.5rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+}
+.cb-item{display:flex;flex-direction:column;gap:.3rem}
+.cb-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.cb-val{font-size:.92rem;font-weight:300;color:var(--white-dim)}
+.cb-val a{color:var(--white-dim);text-decoration:none;transition:color .2s}
+.cb-val a:hover{color:var(--white)}
+
+/* Last updated bar */
+.policy-updated{
+  background:var(--black-3);
+  border:1px solid var(--border);
+  padding:1rem 1.5rem;
+  display:flex;align-items:center;gap:.8rem;
+  margin-bottom:3rem;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--white-mute);
+}
+.policy-updated b{color:var(--red);font-weight:400}
+
+/* ============================================================
+   FOOTER  (identical to main site)
+============================================================ */
+footer{
+  background:var(--black);
+  border-top:1px solid var(--border);
+  padding:4.5rem 4rem 2.5rem;
+}
+.foot-top{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1fr;
+  gap:3rem;
+  padding-bottom:3rem;
+  border-bottom:1px solid var(--border);
+}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-logo{display:flex;align-items:center;gap:.75rem}
+.foot-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75;max-width:275px}
+.foot-certs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.foot-cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;padding:.28rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.foot-socials{display:flex;gap:.65rem;margin-top:.5rem}
+.foot-social{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important;pointer-events:auto!important}
+.foot-social:hover{border-color:var(--red);color:var(--red)}
+.foot-col h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1.3rem;display:block;opacity:1}
+.foot-col .foot-links{display:flex;flex-direction:column;gap:.65rem;list-style:none}
+.foot-col .foot-links a{font-size:.87rem;font-weight:300;color:var(--white-mute);text-decoration:none;transition:color .2s;display:block;cursor:pointer!important;pointer-events:auto!important;opacity:1}
+.foot-col .foot-links a:hover{color:var(--red)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute)}
+.foot-copy b{color:var(--red);font-weight:400}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:color .2s;cursor:pointer!important;pointer-events:auto!important}
+.foot-legal a.active-page{color:var(--red)}
+.foot-legal a:hover{color:var(--red)}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:1024px){
+  nav{padding:1.3rem 2.5rem}
+  .page-hero{padding:8rem 2.5rem 4rem}
+  .policy-wrapper{grid-template-columns:1fr}
+  .policy-toc{display:none}
+  .policy-body{padding:3rem 2.5rem 5rem}
+  .data-cards{grid-template-columns:1fr 1fr}
+  .rights-grid{grid-template-columns:1fr 1fr}
+  .contact-box{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  nav{padding:1.1rem 1.25rem}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .page-hero{padding:7rem 1.25rem 3.5rem}
+  .policy-body{padding:2.5rem 1.25rem 4rem}
+  .data-cards{grid-template-columns:1fr}
+  .rights-grid{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr;padding:1.5rem}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  #hire-float{bottom:1rem;right:1rem}
+  .hire-btn{font-size:.65rem;padding:.75rem 1.2rem}
+  .page-meta{gap:1.5rem}
+  footer{padding:3.5rem 1.25rem 2rem}
+}
+@media(max-width:480px){
+  .page-title{font-size:2.5rem}
+  .ps-title{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- FLOATING HIRE US -->
+<div id="hire-float">
+  <a href="index.html#contact" class="hire-btn"><span class="hire-dot"></span>Hire Us Now</a>
+  <button class="hire-dismiss" id="hireDismiss">Dismiss</button>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="RDD Agency Home">
+    <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+    <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Main navigation">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#why-rdd">Why RDD</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#clients">Clients</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#contact" class="nav-cta"><span>Get Protected</span></a>
+  </div>
+  <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html#services" class="mob-lnk">Services</a>
+  <a href="index.html#why-rdd" class="mob-lnk">Why RDD</a>
+  <a href="index.html#pricing" class="mob-lnk">Pricing</a>
+  <a href="index.html#clients" class="mob-lnk">Clients</a>
+  <a href="index.html#team" class="mob-lnk">Team</a>
+  <a href="index.html#contact" class="mob-lnk" style="color:var(--red)">Get Protected →</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<div class="page-hero" role="banner">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-orb" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Privacy Policy</span>
+    </nav>
+    <h1 class="page-title">Privacy <em>Policy</em></h1>
+    <p style="font-size:1.05rem;font-weight:300;color:var(--white-dim);line-height:1.8;max-width:640px">This policy explains how RDD Agency (Razi Digital Agency Ltd.) collects, uses, stores, and protects your personal data. We are committed to full transparency and compliance with global privacy laws.</p>
+    <div class="page-meta">
+      <div class="page-meta-item">
+        <span class="page-meta-label">Last Updated</span>
+        <span class="page-meta-val"><b>1 June 2025</b></span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Effective Date</span>
+        <span class="page-meta-val">1 June 2025</span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Jurisdiction</span>
+        <span class="page-meta-val">England &amp; Wales, UK</span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Frameworks</span>
+        <span class="page-meta-val">UK GDPR · EU GDPR · CCPA · PIPEDA</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== POLICY CONTENT ===================== -->
+<main>
+  <div class="policy-wrapper">
+
+    <!-- TABLE OF CONTENTS (sticky sidebar) -->
+    <aside class="policy-toc" aria-label="Table of contents">
+      <div class="toc-label">Contents</div>
+      <ul class="toc-list" role="list">
+        <li><a href="#s1" class="toc-link">1. Who We Are</a></li>
+        <li><a href="#s2" class="toc-link">2. Key Definitions</a></li>
+        <li><a href="#s3" class="toc-link">3. Data We Collect</a></li>
+        <li><a href="#s4" class="toc-link">4. How We Collect Data</a></li>
+        <li><a href="#s5" class="toc-link">5. Legal Basis for Processing</a></li>
+        <li><a href="#s6" class="toc-link">6. How We Use Your Data</a></li>
+        <li><a href="#s7" class="toc-link">7. Data Sharing &amp; Transfers</a></li>
+        <li><a href="#s8" class="toc-link">8. International Transfers</a></li>
+        <li><a href="#s9" class="toc-link">9. Data Retention</a></li>
+        <li><a href="#s10" class="toc-link">10. Data Security</a></li>
+        <li><a href="#s11" class="toc-link">11. Your Rights</a></li>
+        <li><a href="#s12" class="toc-link">12. Cookies &amp; Tracking</a></li>
+        <li><a href="#s13" class="toc-link">13. Children's Privacy</a></li>
+        <li><a href="#s14" class="toc-link">14. Third-Party Links</a></li>
+        <li><a href="#s15" class="toc-link">15. Changes to This Policy</a></li>
+        <li><a href="#s16" class="toc-link">16. Contact &amp; DPO</a></li>
+      </ul>
+    </aside>
+
+    <!-- POLICY BODY -->
+    <div class="policy-body">
+
+      <div class="policy-updated" role="note">
+        <span aria-hidden="true" style="color:var(--red)">⚡</span>
+        This policy was last updated on <b>1 June 2025</b>. If you have questions, contact <b>privacy@rddagency.com</b>
+      </div>
+
+      <!-- 1. WHO WE ARE -->
+      <section class="policy-section" id="s1" aria-labelledby="s1-title">
+        <div class="ps-num">Section 01</div>
+        <h2 class="ps-title" id="s1-title">Who <em>We Are</em></h2>
+        <p class="policy-p">
+          <strong>Razi Digital Agency Ltd.</strong> (trading as <strong>RDD Agency</strong>) is a company registered in England and Wales (Company No. 10XXXXXXX), with its registered office at Level 22, One Canada Square, Canary Wharf, London E14 5AB, United Kingdom.
+        </p>
+        <p class="policy-p">
+          RDD Agency is a global cybersecurity firm providing penetration testing, red team operations, managed detection and response (MDR), threat intelligence, digital forensics, incident response, and cloud security services to enterprise and government clients in 47 countries.
+        </p>
+        <p class="policy-p">
+          For the purposes of UK GDPR and EU GDPR, RDD Agency is the <strong>Data Controller</strong> of personal data collected through our website, client portals, and business relationships. Where we process data on behalf of clients, we act as a <strong>Data Processor</strong> under a formal Data Processing Agreement (DPA).
+        </p>
+        <div class="policy-highlight">
+          <p><strong>Data Protection Officer (DPO):</strong> RDD Agency has appointed a Data Protection Officer in accordance with Article 37 of UK/EU GDPR. You may contact our DPO directly at <strong>dpo@rddagency.com</strong> for any privacy-related concerns.</p>
+        </div>
+      </section>
+
+      <!-- 2. KEY DEFINITIONS -->
+      <section class="policy-section" id="s2" aria-labelledby="s2-title">
+        <div class="ps-num">Section 02</div>
+        <h2 class="ps-title" id="s2-title">Key <em>Definitions</em></h2>
+        <p class="policy-p">The following definitions apply throughout this Privacy Policy:</p>
+        <table class="def-table">
+          <thead>
+            <tr><th>Term</th><th>Meaning</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="def-term">Personal Data</td><td>Any information relating to an identified or identifiable natural person ("data subject"), directly or indirectly, such as name, email, IP address, or professional role.</td></tr>
+            <tr><td class="def-term">Processing</td><td>Any operation on personal data — including collection, recording, storage, use, disclosure, erasure, or destruction.</td></tr>
+            <tr><td class="def-term">Data Controller</td><td>The entity that determines the purposes and means of processing personal data. RDD Agency acts as Controller for data collected through this website.</td></tr>
+            <tr><td class="def-term">Data Processor</td><td>An entity processing data on behalf of a Controller. RDD Agency acts as Processor when handling client data under a signed DPA.</td></tr>
+            <tr><td class="def-term">Data Subject</td><td>The identified or identifiable living individual whose personal data is being processed.</td></tr>
+            <tr><td class="def-term">Consent</td><td>A freely given, specific, informed, and unambiguous indication of the data subject's agreement to processing of their personal data.</td></tr>
+            <tr><td class="def-term">Special Category Data</td><td>Sensitive data including health information, racial or ethnic origin, biometric data, political opinions, and criminal conviction data — subject to heightened protections.</td></tr>
+            <tr><td class="def-term">UK GDPR</td><td>The UK General Data Protection Regulation, as retained in UK law by the European Union (Withdrawal) Act 2018.</td></tr>
+            <tr><td class="def-term">EU GDPR</td><td>Regulation (EU) 2016/679 — the European Union General Data Protection Regulation.</td></tr>
+            <tr><td class="def-term">CCPA</td><td>California Consumer Privacy Act (2018), applicable to California residents.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 3. DATA WE COLLECT -->
+      <section class="policy-section" id="s3" aria-labelledby="s3-title">
+        <div class="ps-num">Section 03</div>
+        <h2 class="ps-title" id="s3-title">Data We <em>Collect</em></h2>
+        <p class="policy-p">Depending on how you interact with RDD Agency — as a website visitor, prospective client, existing client, job applicant, or partner — we may collect the following categories of personal data:</p>
+        <div class="data-cards">
+          <div class="data-card">
+            <div class="dc-title">Identity Data</div>
+            <div class="dc-desc">Information that identifies you as an individual in a professional or personal capacity.</div>
+            <div class="dc-examples">Full name · Job title · Company name · Professional credentials</div>
+          </div>
+          <div class="data-card">
+            <div class="dc-title">Contact Data</div>
+            <div class="dc-desc">Information needed to communicate with you regarding enquiries, engagements, or service delivery.</div>
+            <div class="dc-examples">Work email · Phone number · Business address · LinkedIn profile URL</div>
+          </div>
+          <div class="data-card">
+            <div class="dc-title">Technical Data</div>
+            <div class="dc-desc">Automatically collected data about your device and how you interact with our website.</div>
+            <div class="dc-examples">IP address · Browser type · OS · Cookie IDs · Session data · Referring URL</div>
+          </div>
+          <div class="data-card">
+            <div class="dc-title">Usage Data</div>
+            <div class="dc-desc">Information about how you use our website, portals, and communications.</div>
+            <div class="dc-examples">Pages visited · Click paths · Time on page · Email open/click rates · Form submissions</div>
+          </div>
+          <div class="data-card">
+            <div class="dc-title">Engagement Data</div>
+            <div class="dc-desc">Data you provide when requesting services, submitting forms, or entering into a business relationship.</div>
+            <div class="dc-examples">Enquiry content · Scoping requirements · NDA status · Signed contracts</div>
+          </div>
+          <div class="data-card">
+            <div class="dc-title">Financial Data</div>
+            <div class="dc-desc">Limited financial information required to process payments for engagements.</div>
+            <div class="dc-examples">Invoice details · Bank transfer references · Purchase order numbers</div>
+          </div>
+        </div>
+        <div class="policy-highlight">
+          <p><strong>We do not collect Special Category Data</strong> (such as health, biometric, or political data) unless specifically required for a contracted engagement and with explicit written consent. We do not collect payment card numbers directly — payments are processed via PCI-DSS-compliant third-party processors.</p>
+        </div>
+      </section>
+
+      <!-- 4. HOW WE COLLECT DATA -->
+      <section class="policy-section" id="s4" aria-labelledby="s4-title">
+        <div class="ps-num">Section 04</div>
+        <h2 class="ps-title" id="s4-title">How We <em>Collect</em> Data</h2>
+        <p class="policy-p">We collect personal data through the following methods:</p>
+        <ul class="policy-list">
+          <li><strong>Direct interactions</strong> — When you submit an enquiry form, request a security assessment, email us, call our offices, attend a briefing, or sign a contract.</li>
+          <li><strong>Automated technologies</strong> — As you browse our website, we automatically collect Technical and Usage Data through cookies, server logs, and similar tracking technologies (see Section 12).</li>
+          <li><strong>Third-party sources</strong> — We may receive data from business intelligence providers, LinkedIn, conference organisers, or referral partners where you have consented to sharing your professional information.</li>
+          <li><strong>Public sources</strong> — We may collect publicly available professional information (such as company registration data or public LinkedIn profiles) for legitimate business development purposes.</li>
+          <li><strong>Client-provided data</strong> — During the course of a cybersecurity engagement, clients may share data about their systems, personnel, and infrastructure. This is governed by a separate Data Processing Agreement.</li>
+        </ul>
+      </section>
+
+      <!-- 5. LEGAL BASIS -->
+      <section class="policy-section" id="s5" aria-labelledby="s5-title">
+        <div class="ps-num">Section 05</div>
+        <h2 class="ps-title" id="s5-title">Legal Basis for <em>Processing</em></h2>
+        <p class="policy-p">Under UK GDPR and EU GDPR, we are required to have a valid legal basis for processing your personal data. We rely on the following lawful bases:</p>
+        <table class="def-table">
+          <thead>
+            <tr><th>Legal Basis</th><th>When We Rely on It</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="def-term">Contractual Necessity<br><span style="font-weight:300;color:var(--white-mute);font-size:.78rem">Article 6(1)(b)</span></td>
+              <td>Processing your data is necessary to enter into or perform a contract with you — for example, delivering a penetration test or incident response engagement.</td>
+            </tr>
+            <tr>
+              <td class="def-term">Legitimate Interests<br><span style="font-weight:300;color:var(--white-mute);font-size:.78rem">Article 6(1)(f)</span></td>
+              <td>We have a legitimate business interest in processing data for website analytics, business development, fraud prevention, improving our services, and cybersecurity operations — where these interests are not overridden by your rights.</td>
+            </tr>
+            <tr>
+              <td class="def-term">Legal Obligation<br><span style="font-weight:300;color:var(--white-mute);font-size:.78rem">Article 6(1)(c)</span></td>
+              <td>Where processing is required to comply with applicable law — such as anti-money laundering obligations, sanctions screening, or responding to lawful requests by regulatory or law enforcement authorities.</td>
+            </tr>
+            <tr>
+              <td class="def-term">Consent<br><span style="font-weight:300;color:var(--white-mute);font-size:.78rem">Article 6(1)(a)</span></td>
+              <td>Where you have expressly opted in — such as subscribing to our threat intelligence newsletter, agreeing to marketing communications, or accepting non-essential cookies.</td>
+            </tr>
+            <tr>
+              <td class="def-term">Vital Interests<br><span style="font-weight:300;color:var(--white-mute);font-size:.78rem">Article 6(1)(d)</span></td>
+              <td>In rare circumstances where processing is necessary to protect life — for example, during a critical incident response involving imminent threat to human safety.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="policy-p">Where we rely on <strong>Legitimate Interests</strong>, we conduct and document a Legitimate Interests Assessment (LIA) to ensure your rights and interests are appropriately balanced. You may request a copy of any relevant LIA by contacting our DPO.</p>
+      </section>
+
+      <!-- 6. HOW WE USE YOUR DATA -->
+      <section class="policy-section" id="s6" aria-labelledby="s6-title">
+        <div class="ps-num">Section 06</div>
+        <h2 class="ps-title" id="s6-title">How We <em>Use</em> Your Data</h2>
+        <p class="policy-p">We use personal data only for specified, explicit, and legitimate purposes. The table below maps each use case to its legal basis:</p>
+        <table class="def-table">
+          <thead>
+            <tr><th>Purpose</th><th>Legal Basis</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Responding to enquiries and providing service proposals</td><td>Contractual Necessity / Legitimate Interests</td></tr>
+            <tr><td>Delivering contracted cybersecurity engagements</td><td>Contractual Necessity</td></tr>
+            <tr><td>Managing client accounts, invoicing, and support</td><td>Contractual Necessity / Legal Obligation</td></tr>
+            <tr><td>Sending security advisories and threat intelligence updates (opted-in)</td><td>Consent</td></tr>
+            <tr><td>Sending service-related communications (non-marketing)</td><td>Contractual Necessity / Legitimate Interests</td></tr>
+            <tr><td>Website analytics and performance optimisation</td><td>Legitimate Interests / Consent (cookies)</td></tr>
+            <tr><td>Fraud prevention, anti-money laundering, and sanctions screening</td><td>Legal Obligation / Legitimate Interests</td></tr>
+            <tr><td>Improving our services through aggregated, anonymised analytics</td><td>Legitimate Interests</td></tr>
+            <tr><td>Complying with legal, regulatory, or law enforcement obligations</td><td>Legal Obligation</td></tr>
+            <tr><td>Maintaining records for audit and corporate governance</td><td>Legal Obligation / Legitimate Interests</td></tr>
+          </tbody>
+        </table>
+        <p class="policy-p">We will never use your personal data for purposes incompatible with those stated above without providing advance notice and, where required, obtaining your fresh consent.</p>
+      </section>
+
+      <!-- 7. DATA SHARING -->
+      <section class="policy-section" id="s7" aria-labelledby="s7-title">
+        <div class="ps-num">Section 07</div>
+        <h2 class="ps-title" id="s7-title">Data Sharing <em>&amp; Transfers</em></h2>
+        <p class="policy-p">RDD Agency does not sell, rent, or trade your personal data to third parties. We share data only in the following limited circumstances:</p>
+        <ul class="policy-list">
+          <li><strong>Service providers and sub-processors</strong> — Trusted third-party vendors who assist us in operating our business (e.g., cloud infrastructure providers, CRM systems, secure document management, email platforms). All sub-processors are bound by Data Processing Agreements meeting UK/EU GDPR standards.</li>
+          <li><strong>Professional advisors</strong> — Lawyers, accountants, auditors, and insurers who require access to data to provide professional services, subject to confidentiality obligations.</li>
+          <li><strong>Regulatory and law enforcement authorities</strong> — Where required by law, court order, or legitimate regulatory request. We will notify you where legally permitted to do so.</li>
+          <li><strong>Business transactions</strong> — In the event of a merger, acquisition, restructuring, or sale of assets, personal data may be transferred to the relevant parties, subject to equivalent privacy protections.</li>
+          <li><strong>With your consent</strong> — For any other purpose, only with your explicit prior consent.</li>
+        </ul>
+        <div class="policy-highlight">
+          <p><strong>We never share client data with intelligence agencies, advertising networks, or data brokers.</strong> Our business model is built on client trust. Unauthorised disclosure of client data would be a fundamental breach of our professional obligations.</p>
+        </div>
+      </section>
+
+      <!-- 8. INTERNATIONAL TRANSFERS -->
+      <section class="policy-section" id="s8" aria-labelledby="s8-title">
+        <div class="ps-num">Section 08</div>
+        <h2 class="ps-title" id="s8-title">International <em>Transfers</em></h2>
+        <p class="policy-p">RDD Agency operates globally with offices in the UK, USA, UAE, Singapore, Germany, and Brazil. Personal data may be transferred to, stored in, or processed in countries outside your country of residence, including countries outside the European Economic Area (EEA) and the UK.</p>
+        <p class="policy-p">Where we transfer personal data outside the UK or EEA, we ensure an equivalent level of protection is afforded by relying on one or more of the following safeguards:</p>
+        <ul class="policy-list">
+          <li>Transfers to countries recognised by the UK ICO or European Commission as providing an <strong>adequate level of data protection</strong> (e.g., adequacy decisions).</li>
+          <li>Use of <strong>Standard Contractual Clauses (SCCs)</strong> approved by the UK ICO (International Data Transfer Agreements, IDTAs) or the European Commission.</li>
+          <li><strong>Binding Corporate Rules (BCRs)</strong> where applicable for intra-group transfers.</li>
+          <li>Implementation of <strong>supplementary technical and organisational measures</strong> (TOMs) including encryption, pseudonymisation, and access controls.</li>
+        </ul>
+        <p class="policy-p">You may request a copy of the safeguards we apply to your data by contacting <a href="mailto:privacy@rddagency.com">privacy@rddagency.com</a>.</p>
+      </section>
+
+      <!-- 9. DATA RETENTION -->
+      <section class="policy-section" id="s9" aria-labelledby="s9-title">
+        <div class="ps-num">Section 09</div>
+        <h2 class="ps-title" id="s9-title">Data <em>Retention</em></h2>
+        <p class="policy-p">We retain personal data only for as long as necessary to fulfil the purposes for which it was collected, including legal, accounting, and reporting requirements. Our retention schedule is as follows:</p>
+        <table class="def-table">
+          <thead>
+            <tr><th>Data Category</th><th>Retention Period</th><th>Basis</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Client identity and contact data</td><td>7 years after contract end</td><td>Legal / Tax obligation</td></tr>
+            <tr><td>Engagement deliverables and reports</td><td>5 years after engagement close</td><td>Contractual / Professional liability</td></tr>
+            <tr><td>Invoices and financial records</td><td>7 years</td><td>UK Companies Act / HMRC</td></tr>
+            <tr><td>Enquiry and lead data (non-converted)</td><td>18 months from last contact</td><td>Legitimate Interests</td></tr>
+            <tr><td>Website usage and analytics data</td><td>13 months (aggregated)</td><td>Legitimate Interests / ICO guidance</td></tr>
+            <tr><td>Marketing consent records</td><td>Until consent withdrawn + 3 years</td><td>PECR / Consent compliance</td></tr>
+            <tr><td>Job applicant data (unsuccessful)</td><td>6 months from decision</td><td>Legitimate Interests</td></tr>
+            <tr><td>Incident response case data</td><td>7 years from case close</td><td>Legal / Professional obligation</td></tr>
+            <tr><td>DPA and contractual records</td><td>Duration + 10 years</td><td>Legal obligation</td></tr>
+          </tbody>
+        </table>
+        <p class="policy-p">At the end of the applicable retention period, personal data is securely deleted or anonymised in accordance with our Data Destruction Policy (ISO 27001-certified procedures). You may request earlier deletion subject to our legal obligations — see Your Rights in Section 11.</p>
+      </section>
+
+      <!-- 10. DATA SECURITY -->
+      <section class="policy-section" id="s10" aria-labelledby="s10-title">
+        <div class="ps-num">Section 10</div>
+        <h2 class="ps-title" id="s10-title">Data <em>Security</em></h2>
+        <p class="policy-p">As a cybersecurity firm, data security is not merely a legal obligation — it is the foundation of our business. We apply enterprise-grade technical and organisational measures (TOMs) to protect personal data against unauthorised access, alteration, disclosure, or destruction.</p>
+        <ul class="policy-list">
+          <li><strong>Encryption at rest and in transit</strong> — AES-256 encryption at rest; TLS 1.3 enforced for all data in transit.</li>
+          <li><strong>Zero-trust architecture</strong> — Strict identity verification, least-privilege access controls, and continuous device posture assessment across all internal systems.</li>
+          <li><strong>Multi-factor authentication (MFA)</strong> — Mandatory across all internal systems, client portals, and third-party platforms handling personal data.</li>
+          <li><strong>24/7 internal SOC monitoring</strong> — Our own Security Operations Centre monitors our infrastructure in real time, providing us the same protection we deliver to clients.</li>
+          <li><strong>Annual penetration testing</strong> — Our own systems undergo independent red team assessments by CREST-certified third parties annually.</li>
+          <li><strong>ISO 27001 certification</strong> — Our information security management system (ISMS) is certified to ISO/IEC 27001:2022 by an accredited third-party auditor.</li>
+          <li><strong>Staff training</strong> — All personnel complete mandatory annual data protection and security awareness training.</li>
+          <li><strong>Data breach response</strong> — We maintain a tested Incident Response plan with defined obligations to notify the ICO within 72 hours of a qualifying breach, and affected individuals without undue delay.</li>
+        </ul>
+        <div class="policy-highlight">
+          <p><strong>Data Breach Notification:</strong> In the event of a personal data breach affecting your rights and freedoms, RDD Agency will notify you without undue delay as required under UK GDPR Article 34. To report a suspected breach, contact <strong>ir@rddagency.com</strong> immediately.</p>
+        </div>
+      </section>
+
+      <!-- 11. YOUR RIGHTS -->
+      <section class="policy-section" id="s11" aria-labelledby="s11-title">
+        <div class="ps-num">Section 11</div>
+        <h2 class="ps-title" id="s11-title">Your <em>Rights</em></h2>
+        <p class="policy-p">Under UK GDPR, EU GDPR, CCPA, and other applicable laws, you have the following rights in relation to your personal data. We will respond to all valid requests within <strong>30 days</strong> (extendable to 60 days for complex requests, with notice).</p>
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="rc-icon">👁</div>
+            <div class="rc-title">Right of Access</div>
+            <div class="rc-desc">Request a copy of all personal data we hold about you (Subject Access Request / SAR). Free of charge in most cases.</div>
+          </div>
+          <div class="right-card">
+            <div class="rc-icon">✏️</div>
+            <div class="rc-title">Right to Rectification</div>
+            <div class="rc-desc">Request correction of inaccurate or incomplete personal data we hold about you.</div>
+          </div>
+          <div class="right-card">
+            <div class="rc-icon">🗑</div>
+            <div class="rc-title">Right to Erasure</div>
+            <div class="rc-desc">Request deletion of your personal data ("right to be forgotten") where there is no overriding legal reason to retain it.</div>
+          </div>
+          <div class="right-card">
+            <div class="rc-icon">🔒</div>
+            <div class="rc-title">Right to Restriction</div>
+            <div class="rc-desc">Request we limit how we process your data while a dispute or complaint is being resolved.</div>
+          </div>
+          <div class="right-card">
+            <div class="rc-icon">📦</div>
+            <div class="rc-title">Right to Portability</div>
+            <div class="rc-desc">Receive a copy of your data in a structured, machine-readable format (where processing is consent- or contract-based).</div>
+          </div>
+          <div class="right-card">
+            <div class="rc-icon">🚫</div>
+            <div class="rc-title">Right to Object</div>
+            <div class="rc-desc">Object to processing based on legitimate interests or for direct marketing purposes. We will cease unless compelling grounds exist.</div>
+          </div>
+          <div class="right-card">
+            <div class="rc-icon">🤖</div>
+            <div class="rc-title">Automated Decision-Making</div>
+            <div class="rc-desc">Request human review of any purely automated decisions that significantly affect you. We do not use fully automated decision-making for consequential matters.</div>
+          </div>
+          <div class="right-card">
+            <div class="rc-icon">↩️</div>
+            <div class="rc-title">Right to Withdraw Consent</div>
+            <div class="rc-desc">Where processing is based on consent, you may withdraw it at any time. This does not affect the lawfulness of prior processing.</div>
+          </div>
+          <div class="right-card">
+            <div class="rc-icon">⚖️</div>
+            <div class="rc-title">Right to Lodge a Complaint</div>
+            <div class="rc-desc">Complain to the UK ICO (ico.org.uk) or your national supervisory authority if you believe we have mishandled your data.</div>
+          </div>
+        </div>
+        <p class="policy-p" style="margin-top:1.5rem">To exercise any of these rights, submit a written request to <a href="mailto:privacy@rddagency.com">privacy@rddagency.com</a>. We may need to verify your identity before processing the request. We will not charge a fee unless requests are manifestly unfounded or excessive.</p>
+        <p class="policy-p"><strong>California residents (CCPA):</strong> You additionally have the right to know the categories of personal information collected, the right to opt-out of any sale (note: we do not sell personal information), and the right to non-discrimination for exercising your rights. Submit requests via the same email address above.</p>
+      </section>
+
+      <!-- 12. COOKIES -->
+      <section class="policy-section" id="s12" aria-labelledby="s12-title">
+        <div class="ps-num">Section 12</div>
+        <h2 class="ps-title" id="s12-title">Cookies <em>&amp; Tracking</em></h2>
+        <p class="policy-p">Our website uses cookies and similar tracking technologies. Cookies are small text files placed on your device to help us provide a better user experience and understand how our site is used.</p>
+        <table class="def-table">
+          <thead>
+            <tr><th>Cookie Type</th><th>Purpose</th><th>Consent Required</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="def-term">Strictly Necessary</td><td>Essential for the website to function — session management, security tokens, load balancing. Cannot be disabled.</td><td>No — exempt under PECR</td></tr>
+            <tr><td class="def-term">Performance / Analytics</td><td>Anonymised data on how visitors use our site (page views, session duration, bounce rate). We use privacy-first analytics with IP anonymisation.</td><td>Yes — consent required</td></tr>
+            <tr><td class="def-term">Functional</td><td>Remembers your preferences (e.g., language, form pre-fill). Improves your experience on return visits.</td><td>Yes — consent required</td></tr>
+            <tr><td class="def-term">Marketing / Targeting</td><td>Used to show relevant content or advertisements on other platforms. We use these sparingly for B2B retargeting only.</td><td>Yes — consent required</td></tr>
+          </tbody>
+        </table>
+        <p class="policy-p">You may manage cookie preferences at any time through our Cookie Consent Manager (accessible via the cookie icon in the footer) or through your browser settings. Withdrawing consent for non-essential cookies will not affect your ability to use the website.</p>
+        <p class="policy-p">We do not use third-party advertising cookies for consumer profiling. Any analytics data is aggregated and never sold to third parties.</p>
+      </section>
+
+      <!-- 13. CHILDREN -->
+      <section class="policy-section" id="s13" aria-labelledby="s13-title">
+        <div class="ps-num">Section 13</div>
+        <h2 class="ps-title" id="s13-title">Children's <em>Privacy</em></h2>
+        <p class="policy-p">RDD Agency's services and website are directed exclusively at business professionals and enterprises. We do not knowingly collect, use, or process personal data from individuals under the age of 18.</p>
+        <p class="policy-p">If we become aware that we have inadvertently collected personal data from a person under 18, we will take immediate steps to delete that data from our records. If you believe we have collected data from a minor, please contact us immediately at <a href="mailto:privacy@rddagency.com">privacy@rddagency.com</a>.</p>
+      </section>
+
+      <!-- 14. THIRD-PARTY LINKS -->
+      <section class="policy-section" id="s14" aria-labelledby="s14-title">
+        <div class="ps-num">Section 14</div>
+        <h2 class="ps-title" id="s14-title">Third-Party <em>Links</em></h2>
+        <p class="policy-p">Our website may contain links to third-party websites, publications, or services — including industry news sources, regulatory bodies, and technology partner sites. These links are provided for your information and convenience only.</p>
+        <p class="policy-p">RDD Agency has no control over the content or privacy practices of third-party websites and accepts no responsibility or liability for their privacy policies or how they process your data. We recommend reviewing the privacy policy of every website you visit.</p>
+        <p class="policy-p">The presence of a link to a third-party website does not constitute an endorsement of that website, its content, or its organisation.</p>
+      </section>
+
+      <!-- 15. CHANGES -->
+      <section class="policy-section" id="s15" aria-labelledby="s15-title">
+        <div class="ps-num">Section 15</div>
+        <h2 class="ps-title" id="s15-title">Changes to <em>This Policy</em></h2>
+        <p class="policy-p">We review this Privacy Policy at least annually and whenever there are significant changes to applicable law, our processing activities, or our business operations. The "Last Updated" date at the top of this page reflects the most recent revision.</p>
+        <p class="policy-p">For <strong>material changes</strong> — changes that significantly affect your rights or how we use your data — we will provide prominent notice on our website and, where we hold your contact details and where required by law, send direct notification by email no less than 30 days before the change takes effect.</p>
+        <p class="policy-p">Your continued use of our website or services after the effective date of any changes constitutes your acceptance of the updated policy (except where fresh consent is legally required).</p>
+        <p class="policy-p">Previous versions of this Privacy Policy are available on request from <a href="mailto:privacy@rddagency.com">privacy@rddagency.com</a>.</p>
+      </section>
+
+      <!-- 16. CONTACT & DPO -->
+      <section class="policy-section" id="s16" aria-labelledby="s16-title">
+        <div class="ps-num">Section 16</div>
+        <h2 class="ps-title" id="s16-title">Contact <em>&amp; DPO</em></h2>
+        <p class="policy-p">For any questions, concerns, or requests relating to this Privacy Policy or our data processing activities, please contact us through the following channels:</p>
+        <div class="contact-box">
+          <div class="cb-item">
+            <span class="cb-label">General Privacy Enquiries</span>
+            <span class="cb-val"><a href="mailto:privacy@rddagency.com">privacy@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Data Protection Officer (DPO)</span>
+            <span class="cb-val"><a href="mailto:dpo@rddagency.com">dpo@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Subject Access Requests (SAR)</span>
+            <span class="cb-val"><a href="mailto:sar@rddagency.com">sar@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Data Breach Reports</span>
+            <span class="cb-val"><a href="mailto:ir@rddagency.com">ir@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Registered Address</span>
+            <span class="cb-val">Razi Digital Agency Ltd.<br>Level 22, One Canada Square<br>Canary Wharf, London E14 5AB<br>United Kingdom</span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Supervisory Authority</span>
+            <span class="cb-val">UK Information Commissioner's Office (ICO)<br><a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> · 0303 123 1113</span>
+          </div>
+        </div>
+        <p class="policy-p" style="margin-top:2rem">We aim to resolve all privacy enquiries within <strong>30 days</strong>. If you are not satisfied with our response, you have the right to lodge a complaint with the UK ICO or your local supervisory authority at any time.</p>
+      </section>
+
+    </div><!-- end .policy-body -->
+  </div><!-- end .policy-wrapper -->
+</main>
+
+<!-- ===================== FOOTER  (identical to main site) ===================== -->
+<footer role="contentinfo">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+        <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+      </div>
+      <p class="foot-desc">Elite global cybersecurity. Protecting the world's most critical organizations from the most advanced threats — 24 hours a day, 365 days a year.</p>
+      <div class="foot-certs">
+        <span class="foot-cert">ISO 27001</span>
+        <span class="foot-cert">CREST</span>
+        <span class="foot-cert">SOC 2 II</span>
+        <span class="foot-cert">GDPR</span>
+        <span class="foot-cert">FedRAMP</span>
+      </div>
+      <div class="foot-socials">
+        <a href="https://linkedin.com/company/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+        <a href="https://twitter.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="Twitter">Tw</a>
+        <a href="https://github.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="GitHub">Gh</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#services">Penetration Testing</a></li>
+        <li><a href="index.html#services">Red Team Operations</a></li>
+        <li><a href="index.html#services">SOC as a Service</a></li>
+        <li><a href="index.html#services">Threat Intelligence</a></li>
+        <li><a href="index.html#services">Incident Response</a></li>
+        <li><a href="index.html#services">Cloud Security</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#about">About RDD</a></li>
+        <li><a href="index.html#team">Our Team</a></li>
+        <li><a href="index.html#clients">Case Studies</a></li>
+        <li><a href="index.html#global">Global Presence</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#contact">Careers</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#threat-intel">Threat Intelligence Blog</a></li>
+        <li><a href="index.html#threat-intel">Security Advisories</a></li>
+        <li><a href="index.html#services">CVE Research</a></li>
+        <li><a href="index.html#services">White Papers</a></li>
+        <li><a href="index.html#contact">Vulnerability Disclosure</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 <b>RDD Agency</b> — Razi Digital Agency Ltd. All rights reserved. Registered in England &amp; Wales.</span>
+    <div class="foot-legal">
+      <a href="privacy-policy.html" class="active-page">Privacy Policy</a>
+      <a href="index.html#contact">Terms of Service</a>
+      <a href="index.html#contact">Cookie Policy</a>
+      <a href="index.html#contact">Vulnerability Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CURSOR ===== */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px'; cur.style.top=e.clientY+'px';
+  ring.style.left=e.clientX+'px'; ring.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,[tabindex]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hov');ring.classList.add('hov')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hov');ring.classList.remove('hov')});
+});
+
+/* ===== NAVBAR SCROLL ===== */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',scrollY>40);
+});
+
+/* ===== MOBILE HAMBURGER ===== */
+const ham=document.getElementById('navHam'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');
+  ham.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mob-lnk').forEach(l=>l.addEventListener('click',()=>{
+  mob.classList.remove('open');ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+
+/* ===== FLOATING HIRE DISMISS ===== */
+document.getElementById('hireDismiss').addEventListener('click',()=>{
+  document.getElementById('hire-float').style.display='none';
+});
+
+/* ===== STICKY TOC ACTIVE STATE ===== */
+const sections=document.querySelectorAll('.policy-section');
+const tocLinks=document.querySelectorAll('.toc-link');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(l=>l.classList.remove('active'));
+      const active=document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+      if(active)active.classList.add('active');
+    }
+  });
+},{rootMargin:'-80px 0px -60% 0px',threshold:0});
+sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
