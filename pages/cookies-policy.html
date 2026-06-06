@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RDD Agency Cookie Policy — How Razi Digital Agency uses cookies and tracking technologies on its website, your choices, and how to manage your preferences under PECR, UK GDPR, and EU GDPR.">
+<meta name="author" content="RDD Agency — Razi Digital Agency">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Cookie Policy — RDD Agency">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rddagency.com/cookie-policy">
+<link rel="canonical" href="https://www.rddagency.com/cookie-policy">
+<title>Cookie Policy — RDD Agency | Razi Digital Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RESET & VARIABLES
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E01A1A; --red-dark:#A01010; --red-glow:rgba(224,26,26,.15);
+  --black:#0A0A0A; --black-2:#111; --black-3:#181818; --black-4:#222;
+  --white:#F5F5F0; --white-dim:rgba(245,245,240,.72); --white-mute:rgba(245,245,240,.35);
+  --border:rgba(245,245,240,.1); --border-red:rgba(224,26,26,.4);
+  --green:#4EC94E; --green-dim:rgba(78,201,78,.12);
+  --amber:#E8A020; --amber-dim:rgba(232,160,32,.1);
+  --blue:#3B82F6; --blue-dim:rgba(59,130,246,.1);
+  --mono:'Space Mono',monospace; --sans:'Barlow',sans-serif; --cond:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+a,button{cursor:pointer!important;pointer-events:auto!important}
+input,textarea{cursor:text!important}
+select{cursor:pointer!important}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--red-dark);border-radius:2px}
+
+/* ============================================================
+   CUSTOM CURSOR
+============================================================ */
+#cursor,#cursor-ring{position:fixed;border-radius:50%;pointer-events:none!important;z-index:99999;transform:translate(-50%,-50%)}
+#cursor{width:10px;height:10px;background:var(--red);z-index:100000;transition:width .15s,height .15s,background .15s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,26,26,.5);z-index:99999;transition:width .2s,height .2s,border-color .2s}
+#cursor.hov{width:14px;height:14px;background:var(--red-dark)}
+#cursor-ring.hov{width:50px;height:50px;border-color:var(--red);border-width:2px}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pulseCta{0%{box-shadow:0 0 0 0 rgba(224,26,26,.7)}70%{box-shadow:0 0 0 14px rgba(224,26,26,0)}100%{box-shadow:0 0 0 0 rgba(224,26,26,0)}}
+@keyframes toggleOn{from{transform:translateX(0)}to{transform:translateX(20px)}}
+@keyframes toggleOff{from{transform:translateX(20px)}to{transform:translateX(0)}}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;z-index:2}
+.nav-logo-mark{width:38px;height:38px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:13px;letter-spacing:.05em;color:#fff;clip-path:polygon(0 0,100% 0,100% 74%,88% 100%,0 100%)}
+.nav-logo-text{font-family:var(--cond);font-weight:900;font-size:1.05rem;letter-spacing:.12em;color:var(--white);text-transform:uppercase}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:2rem;z-index:2}
+.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;padding:.3rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:.6rem 1.4rem!important;display:inline-block!important;transform:skewX(-8deg);transition:background .2s,transform .2s!important}
+.nav-cta span{display:inline-block;transform:skewX(8deg)}
+.nav-cta:hover{background:var(--red-dark)!important;transform:skewX(-8deg) scale(1.04)!important}
+.nav-cta::after{display:none!important}
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;z-index:9002}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.99);z-index:9001;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--cond);font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mob-menu a:hover{color:var(--red)}
+
+/* ============================================================
+   FLOATING HIRE US
+============================================================ */
+#hire-float{position:fixed;bottom:2rem;right:2rem;z-index:8500;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.hire-btn{background:var(--red);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:.6rem;animation:pulseCta 2s infinite;white-space:nowrap;border:none}
+.hire-btn:hover{background:var(--red-dark);animation:none;transform:scale(1.05)}
+.hire-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1s infinite;flex-shrink:0;pointer-events:none}
+.hire-dismiss{background:var(--black-4);border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.6rem;padding:.28rem .65rem;letter-spacing:.08em;cursor:pointer!important;transition:color .2s;align-self:flex-end}
+.hire-dismiss:hover{color:var(--white)}
+
+/* ============================================================
+   PAGE HERO BANNER
+============================================================ */
+.page-hero{padding:9rem 4rem 5rem;background:var(--black-2);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.page-hero::before{content:'COOKIES';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(6rem,18vw,18rem);color:rgba(245,245,240,.025);white-space:nowrap;pointer-events:none;letter-spacing:.05em}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,245,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,245,240,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.page-hero-orb{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(224,26,26,.08) 0%,transparent 70%);top:-150px;right:-100px;pointer-events:none}
+.page-hero-content{position:relative;z-index:1;max-width:760px;animation:fadeUp .8s .1s ease both}
+.page-breadcrumb{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.page-breadcrumb a{color:var(--white-mute);text-decoration:none;transition:color .2s}
+.page-breadcrumb a:hover{color:var(--red)}
+.page-breadcrumb span{color:var(--red)}
+.page-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.8rem,6vw,5.5rem);text-transform:uppercase;line-height:.92;color:var(--white);margin-bottom:1.5rem}
+.page-title em{color:var(--red);font-style:normal}
+.page-meta{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:1.8rem;padding-top:1.8rem;border-top:1px solid var(--border)}
+.page-meta-item{display:flex;flex-direction:column;gap:.2rem}
+.page-meta-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute)}
+.page-meta-val{font-family:var(--mono);font-size:.75rem;color:var(--white-dim)}
+.page-meta-val b{color:var(--red)}
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+.policy-wrapper{display:grid;grid-template-columns:260px 1fr;gap:0;max-width:1400px;margin:0 auto;position:relative}
+.policy-toc{padding:4rem 2rem 4rem 4rem;position:sticky;top:80px;height:calc(100vh - 80px);overflow-y:auto;border-right:1px solid var(--border);background:var(--black);align-self:start}
+.policy-toc::-webkit-scrollbar{width:2px}
+.policy-toc::-webkit-scrollbar-thumb{background:var(--border)}
+.toc-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.toc-label::before{content:'';display:inline-block;width:18px;height:1px;background:var(--red)}
+.toc-list{display:flex;flex-direction:column;gap:.1rem;list-style:none}
+.toc-list a{font-family:var(--mono);font-size:.67rem;letter-spacing:.06em;color:var(--white-mute);text-decoration:none;padding:.45rem .5rem;display:block;border-left:2px solid transparent;transition:all .2s;line-height:1.5}
+.toc-list a:hover{color:var(--white);border-left-color:var(--border)}
+.toc-list a.active{color:var(--red);border-left-color:var(--red);background:rgba(224,26,26,.05)}
+.policy-body{padding:4rem 4rem 6rem;background:var(--black)}
+.policy-section{margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--border);scroll-margin-top:100px}
+.policy-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ps-num{font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+.ps-title{font-family:var(--cond);font-weight:900;font-size:clamp(1.5rem,3vw,2.2rem);text-transform:uppercase;color:var(--white);line-height:1;margin-bottom:1.6rem}
+.ps-title em{color:var(--red);font-style:normal}
+
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+.policy-p{font-size:.97rem;font-weight:300;color:var(--white-dim);line-height:1.85;margin-bottom:1.2rem}
+.policy-p:last-child{margin-bottom:0}
+.policy-p a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--border-red);transition:border-color .2s}
+.policy-p a:hover{border-bottom-color:var(--red)}
+.policy-p strong{color:var(--white);font-weight:600}
+
+/* Info boxes */
+.box-plain{background:var(--black-2);border:1px solid var(--border);border-left:3px solid var(--border);padding:1.5rem 1.8rem;margin:1.6rem 0}
+.box-plain p{font-family:var(--mono);font-size:.78rem;color:var(--white-dim);line-height:1.8;letter-spacing:.02em}
+.box-red{background:rgba(224,26,26,.07);border:1px solid var(--border-red);border-left:3px solid var(--red);padding:1.5rem 1.8rem;margin:1.6rem 0}
+.box-red p{font-family:var(--mono);font-size:.78rem;color:var(--white-dim);line-height:1.8;letter-spacing:.02em}
+.box-red p strong{color:var(--red)}
+.box-green{background:var(--green-dim);border:1px solid rgba(78,201,78,.3);border-left:3px solid var(--green);padding:1.5rem 1.8rem;margin:1.6rem 0}
+.box-green p{font-family:var(--mono);font-size:.78rem;color:var(--white-dim);line-height:1.8;letter-spacing:.02em}
+.box-green p strong{color:var(--green)}
+.box-amber{background:var(--amber-dim);border:1px solid rgba(232,160,32,.3);border-left:3px solid var(--amber);padding:1.5rem 1.8rem;margin:1.6rem 0}
+.box-amber p{font-family:var(--mono);font-size:.78rem;color:var(--white-dim);line-height:1.8;letter-spacing:.02em}
+.box-amber p strong{color:var(--amber)}
+
+/* Lists */
+.policy-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin:1.2rem 0 1.4rem}
+.policy-list li{font-size:.95rem;font-weight:300;color:var(--white-dim);padding-left:1.6rem;position:relative;line-height:1.75}
+.policy-list li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:.8rem;top:.1rem}
+.policy-list.checks li::before{content:'✓';color:var(--green);font-size:.85rem;top:.05rem}
+
+/* Updated bar */
+.policy-updated{background:var(--black-3);border:1px solid var(--border);padding:1rem 1.5rem;display:flex;align-items:center;gap:.8rem;margin-bottom:3rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--white-mute)}
+.policy-updated b{color:var(--red);font-weight:400}
+
+/* Tables */
+.def-table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.def-table th{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--border-red);background:var(--black-2)}
+.def-table td{font-size:.87rem;font-weight:300;color:var(--white-dim);padding:.9rem 1rem;border-bottom:1px solid var(--border);line-height:1.65;vertical-align:top}
+.def-table tr:last-child td{border-bottom:none}
+.def-table tr:hover td{background:var(--black-2)}
+.def-term{font-family:var(--mono);font-size:.75rem;color:var(--white);font-weight:700;white-space:nowrap}
+
+/* ============================================================
+   COOKIE-SPECIFIC COMPONENTS
+============================================================ */
+
+/* Category type cards — four across */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin:1.8rem 0}
+.cat-card{background:var(--black-2);padding:1.8rem 1.5rem;border-top:3px solid transparent;transition:border-color .3s;position:relative}
+.cat-card.necessary{border-top-color:var(--green)}
+.cat-card.performance{border-top-color:var(--amber)}
+.cat-card.functional{border-top-color:var(--blue)}
+.cat-card.marketing{border-top-color:var(--red)}
+.cat-badge{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:.22rem .55rem;margin-bottom:.85rem;display:inline-block}
+.badge-necessary{background:var(--green-dim);color:var(--green);border:1px solid rgba(78,201,78,.3)}
+.badge-performance{background:var(--amber-dim);color:var(--amber);border:1px solid rgba(232,160,32,.3)}
+.badge-functional{background:var(--blue-dim);color:var(--blue);border:1px solid rgba(59,130,246,.3)}
+.badge-marketing{background:rgba(224,26,26,.07);color:var(--red);border:1px solid var(--border-red)}
+.cat-title{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white);margin-bottom:.6rem}
+.cat-desc{font-size:.83rem;font-weight:300;color:var(--white-mute);line-height:1.7;margin-bottom:.8rem}
+.cat-consent{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase}
+.cat-consent.required{color:var(--green)}
+.cat-consent.opt-in{color:var(--amber)}
+
+/* ---- INTERACTIVE COOKIE CONSENT MANAGER ---- */
+.consent-manager{background:var(--black-2);border:1px solid var(--border);margin:2rem 0}
+.cm-header{background:var(--black-4);padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.8rem}
+.cm-title{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white)}
+.cm-status{font-family:var(--mono);font-size:.62rem;color:var(--white-mute);letter-spacing:.08em}
+.cm-status b{color:var(--green)}
+.cm-body{padding:0}
+.cm-row{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.4rem;border-bottom:1px solid var(--border);gap:1.5rem;flex-wrap:wrap;transition:background .2s}
+.cm-row:last-child{border-bottom:none}
+.cm-row:hover{background:var(--black-3)}
+.cm-row-info{flex:1;min-width:200px}
+.cm-row-name{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white);margin-bottom:.25rem;display:flex;align-items:center;gap:.6rem}
+.cm-row-desc{font-size:.85rem;font-weight:300;color:var(--white-mute);line-height:1.6}
+.cm-row-count{font-family:var(--mono);font-size:.6rem;color:var(--white-mute);margin-top:.3rem;letter-spacing:.06em}
+/* Toggle switch */
+.toggle-wrap{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.toggle-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);min-width:36px;text-align:right}
+.toggle{position:relative;width:44px;height:24px;cursor:pointer!important}
+.toggle input{opacity:0;width:0;height:0;position:absolute}
+.toggle-track{position:absolute;inset:0;background:var(--black-4);border:1px solid var(--border);border-radius:12px;transition:background .25s,border-color .25s}
+.toggle input:checked ~ .toggle-track{background:var(--red);border-color:var(--red)}
+.toggle-track.locked{background:var(--green-dim);border-color:rgba(78,201,78,.4)}
+.toggle-thumb{position:absolute;top:3px;left:3px;width:16px;height:16px;background:var(--white-mute);border-radius:50%;transition:transform .25s,background .25s}
+.toggle input:checked ~ .toggle-thumb{transform:translateX(20px);background:#fff}
+.toggle-track.locked ~ .toggle-thumb,
+.locked-thumb{transform:translateX(20px)!important;background:var(--green)!important}
+.toggle-locked-note{font-family:var(--mono);font-size:.6rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;flex-shrink:0}
+/* Consent action bar */
+.cm-actions{background:var(--black-3);padding:1rem 1.4rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--border)}
+.cm-btn{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1.4rem;border:none;cursor:pointer!important;transition:all .2s}
+.cm-btn-accept-all{background:var(--red);color:#fff}
+.cm-btn-accept-all:hover{background:var(--red-dark)}
+.cm-btn-save{background:transparent;color:var(--white);border:1px solid var(--border)}
+.cm-btn-save:hover{border-color:var(--red);color:var(--red)}
+.cm-btn-reject{background:transparent;color:var(--white-mute);border:1px solid var(--border)}
+.cm-btn-reject:hover{border-color:var(--white-mute);color:var(--white)}
+.cm-saved-msg{font-family:var(--mono);font-size:.65rem;color:var(--green);display:none;letter-spacing:.08em;animation:fadeSlide .3s ease both}
+
+/* Cookie inventory table */
+.cookie-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.83rem}
+.cookie-table th{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);padding:.75rem .9rem;text-align:left;border-bottom:1px solid var(--border-red);background:var(--black-2);white-space:nowrap}
+.cookie-table td{font-weight:300;color:var(--white-dim);padding:.85rem .9rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6}
+.cookie-table tr:last-child td{border-bottom:none}
+.cookie-table tr:hover td{background:var(--black-2)}
+.cookie-name{font-family:var(--mono);font-size:.72rem;color:var(--white);font-weight:700;word-break:break-all}
+.cookie-duration{font-family:var(--mono);font-size:.68rem;color:var(--white-mute);white-space:nowrap}
+.cat-pill{display:inline-block;font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .5rem;border-radius:2px;white-space:nowrap}
+.pill-n{background:var(--green-dim);color:var(--green);border:1px solid rgba(78,201,78,.3)}
+.pill-p{background:var(--amber-dim);color:var(--amber);border:1px solid rgba(232,160,32,.3)}
+.pill-f{background:var(--blue-dim);color:var(--blue);border:1px solid rgba(59,130,246,.3)}
+.pill-m{background:rgba(224,26,26,.07);color:var(--red);border:1px solid var(--border-red)}
+
+/* Browser guide cards */
+.browser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:1.5rem 0}
+.browser-card{background:var(--black-2);padding:1.6rem 1.4rem;border-top:2px solid transparent;transition:border-color .3s}
+.browser-card:hover{border-top-color:var(--red)}
+.browser-icon{font-size:1.8rem;margin-bottom:.7rem}
+.browser-name{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.browser-steps{font-size:.83rem;font-weight:300;color:var(--white-mute);line-height:1.75}
+.browser-steps code{font-family:var(--mono);font-size:.7rem;background:var(--black-3);padding:.1rem .35rem;color:var(--white-dim)}
+
+/* Third-party table */
+.tp-table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.tp-table th{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--border-red);background:var(--black-2)}
+.tp-table td{font-size:.87rem;font-weight:300;color:var(--white-dim);padding:.85rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.65}
+.tp-table tr:last-child td{border-bottom:none}
+.tp-table tr:hover td{background:var(--black-2)}
+.tp-name{font-family:var(--mono);font-size:.75rem;color:var(--white);font-weight:700}
+
+/* Contact box */
+.contact-box{background:var(--black-2);border:1px solid var(--border-red);padding:2rem 2.2rem;margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.cb-item{display:flex;flex-direction:column;gap:.3rem}
+.cb-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.cb-val{font-size:.92rem;font-weight:300;color:var(--white-dim)}
+.cb-val a{color:var(--white-dim);text-decoration:none;transition:color .2s}
+.cb-val a:hover{color:var(--white)}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer{background:var(--black);border-top:1px solid var(--border);padding:4.5rem 4rem 2.5rem}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-logo{display:flex;align-items:center;gap:.75rem}
+.foot-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75;max-width:275px}
+.foot-certs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.foot-cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;padding:.28rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.foot-socials{display:flex;gap:.65rem;margin-top:.5rem}
+.foot-social{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important;pointer-events:auto!important}
+.foot-social:hover{border-color:var(--red);color:var(--red)}
+.foot-col h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1.3rem;display:block;opacity:1}
+.foot-col .foot-links{display:flex;flex-direction:column;gap:.65rem;list-style:none}
+.foot-col .foot-links a{font-size:.87rem;font-weight:300;color:var(--white-mute);text-decoration:none;transition:color .2s;display:block;cursor:pointer!important;pointer-events:auto!important;opacity:1}
+.foot-col .foot-links a:hover{color:var(--red)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute)}
+.foot-copy b{color:var(--red);font-weight:400}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:color .2s;cursor:pointer!important;pointer-events:auto!important}
+.foot-legal a.active-page{color:var(--red)}
+.foot-legal a:hover{color:var(--red)}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:1200px){
+  .cat-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:1024px){
+  nav{padding:1.3rem 2.5rem}
+  .page-hero{padding:8rem 2.5rem 4rem}
+  .policy-wrapper{grid-template-columns:1fr}
+  .policy-toc{display:none}
+  .policy-body{padding:3rem 2.5rem 5rem}
+  .browser-grid{grid-template-columns:1fr 1fr}
+  .contact-box{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  nav{padding:1.1rem 1.25rem}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .page-hero{padding:7rem 1.25rem 3.5rem}
+  .policy-body{padding:2.5rem 1.25rem 4rem}
+  .cat-grid{grid-template-columns:1fr}
+  .browser-grid{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr;padding:1.5rem}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  #hire-float{bottom:1rem;right:1rem}
+  .hire-btn{font-size:.65rem;padding:.75rem 1.2rem}
+  footer{padding:3.5rem 1.25rem 2rem}
+  .page-meta{gap:1.5rem}
+  .cm-row{flex-direction:column;align-items:flex-start}
+  .cookie-table{display:block;overflow-x:auto}
+  .tp-table{display:block;overflow-x:auto}
+}
+@media(max-width:480px){
+  .page-title{font-size:2.3rem}
+  .ps-title{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- FLOATING HIRE US -->
+<div id="hire-float">
+  <a href="index.html#contact" class="hire-btn"><span class="hire-dot"></span>Hire Us Now</a>
+  <button class="hire-dismiss" id="hireDismiss">Dismiss</button>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="RDD Agency Home">
+    <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+    <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Main navigation">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#why-rdd">Why RDD</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#clients">Clients</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#contact" class="nav-cta"><span>Get Protected</span></a>
+  </div>
+  <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html#services" class="mob-lnk">Services</a>
+  <a href="index.html#why-rdd" class="mob-lnk">Why RDD</a>
+  <a href="index.html#pricing" class="mob-lnk">Pricing</a>
+  <a href="index.html#clients" class="mob-lnk">Clients</a>
+  <a href="index.html#team" class="mob-lnk">Team</a>
+  <a href="index.html#contact" class="mob-lnk" style="color:var(--red)">Get Protected →</a>
+</div>
+
+<!-- ===================== PAGE HERO ===================== -->
+<div class="page-hero" role="banner">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-orb" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Cookie Policy</span>
+    </nav>
+    <h1 class="page-title">Cookie <em>Policy</em></h1>
+    <p style="font-size:1.05rem;font-weight:300;color:var(--white-dim);line-height:1.8;max-width:660px">This policy explains exactly what cookies and tracking technologies RDD Agency uses on this website, why we use them, and how you can control your preferences at any time. We believe in full transparency — no dark patterns, no hidden tracking.</p>
+    <div class="page-meta">
+      <div class="page-meta-item">
+        <span class="page-meta-label">Last Updated</span>
+        <span class="page-meta-val"><b>1 June 2025</b></span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Effective Date</span>
+        <span class="page-meta-val">1 June 2025</span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Frameworks</span>
+        <span class="page-meta-val">PECR · UK GDPR · EU GDPR · ePrivacy</span>
+      </div>
+      <div class="page-meta-item">
+        <span class="page-meta-label">Consent Manager</span>
+        <span class="page-meta-val"><b>Section 10 below</b></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CONTENT ===================== -->
+<main>
+  <div class="policy-wrapper">
+
+    <!-- TABLE OF CONTENTS -->
+    <aside class="policy-toc" aria-label="Table of contents">
+      <div class="toc-label">Contents</div>
+      <ul class="toc-list" role="list">
+        <li><a href="#s1"  class="toc-link">1.  What Are Cookies</a></li>
+        <li><a href="#s2"  class="toc-link">2.  Why We Use Cookies</a></li>
+        <li><a href="#s3"  class="toc-link">3.  Types of Cookies</a></li>
+        <li><a href="#s4"  class="toc-link">4.  Strictly Necessary</a></li>
+        <li><a href="#s5"  class="toc-link">5.  Performance Cookies</a></li>
+        <li><a href="#s6"  class="toc-link">6.  Functional Cookies</a></li>
+        <li><a href="#s7"  class="toc-link">7.  Marketing Cookies</a></li>
+        <li><a href="#s8"  class="toc-link">8.  Full Cookie Inventory</a></li>
+        <li><a href="#s9"  class="toc-link">9.  Third-Party Services</a></li>
+        <li><a href="#s10" class="toc-link">10. Consent Manager</a></li>
+        <li><a href="#s11" class="toc-link">11. Browser Controls</a></li>
+        <li><a href="#s12" class="toc-link">12. Do Not Track</a></li>
+        <li><a href="#s13" class="toc-link">13. Cookie Consent Records</a></li>
+        <li><a href="#s14" class="toc-link">14. Data Protection</a></li>
+        <li><a href="#s15" class="toc-link">15. Policy Updates</a></li>
+        <li><a href="#s16" class="toc-link">16. Contact Us</a></li>
+      </ul>
+    </aside>
+
+    <!-- BODY -->
+    <div class="policy-body">
+
+      <div class="policy-updated" role="note">
+        <span style="color:var(--amber)" aria-hidden="true">🍪</span>
+        Last updated <b>1 June 2025</b> · Manage your preferences in <b>Section 10</b> or contact <b>privacy@rddagency.com</b>
+      </div>
+
+      <!-- 1. WHAT ARE COOKIES -->
+      <section class="policy-section" id="s1" aria-labelledby="s1-title">
+        <div class="ps-num">Section 01</div>
+        <h2 class="ps-title" id="s1-title">What Are <em>Cookies</em></h2>
+        <p class="policy-p">Cookies are small text files that are placed on your device — computer, tablet, or mobile phone — when you visit a website. They are widely used to make websites work efficiently, to remember your preferences, and to provide analytical information to site owners.</p>
+        <p class="policy-p">Cookies are not programs. They cannot execute code, carry viruses, or access information on your device beyond what was stored in them. They can only be read by the website or service that set them, subject to the same-origin policy enforced by your browser.</p>
+        <p class="policy-p">Beyond traditional cookies, we may also use related technologies including:</p>
+        <ul class="policy-list">
+          <li><strong>Session storage</strong> — Temporary data stored in your browser memory that is deleted when you close the tab or browser window.</li>
+          <li><strong>Local storage</strong> — Similar to cookies but stored locally in your browser with no automatic expiry or server transmission.</li>
+          <li><strong>Web beacons / pixel tags</strong> — Tiny invisible images embedded in pages or emails that confirm when content has been loaded or an email has been opened.</li>
+          <li><strong>Server logs</strong> — Automatically recorded data including IP address, browser type, pages visited, and timestamps, stored on our web servers.</li>
+          <li><strong>Device fingerprinting</strong> — We do <strong>not</strong> use device fingerprinting or any technique designed to track you without your consent across sessions.</li>
+        </ul>
+        <p class="policy-p">Throughout this policy, we use the word "cookies" to refer collectively to all of the above technologies unless stated otherwise.</p>
+      </section>
+
+      <!-- 2. WHY WE USE COOKIES -->
+      <section class="policy-section" id="s2" aria-labelledby="s2-title">
+        <div class="ps-num">Section 02</div>
+        <h2 class="ps-title" id="s2-title">Why We <em>Use Cookies</em></h2>
+        <p class="policy-p">RDD Agency uses cookies on this website for the following core purposes:</p>
+        <ul class="policy-list checks">
+          <li><strong>Security</strong> — To protect the integrity of user sessions, prevent cross-site request forgery (CSRF), and detect and block abusive or bot-driven traffic.</li>
+          <li><strong>Functionality</strong> — To remember your preferences, display the site correctly, and enable features such as contact forms and the client portal login.</li>
+          <li><strong>Analytics</strong> — To understand which pages are most visited, how users navigate the site, and where we can improve the experience. All analytics data is anonymised before processing.</li>
+          <li><strong>Marketing</strong> — With your consent, to display relevant RDD Agency content to business professionals who have previously visited our site via professional networks such as LinkedIn.</li>
+          <li><strong>Performance</strong> — To measure site load times, identify slow-loading pages, and optimise the technical performance of the site.</li>
+        </ul>
+        <div class="box-green">
+          <p><strong>Our Commitment:</strong> We do not use cookies to build personal profiles for sale to third parties. We do not use cookies to track you across unrelated websites. We do not place any non-essential cookies until you have actively consented to them through our Cookie Consent Manager.</p>
+        </div>
+      </section>
+
+      <!-- 3. TYPES OF COOKIES -->
+      <section class="policy-section" id="s3" aria-labelledby="s3-title">
+        <div class="ps-num">Section 03</div>
+        <h2 class="ps-title" id="s3-title">Types of <em>Cookies</em></h2>
+        <p class="policy-p">We categorise cookies by two dimensions: <strong>duration</strong> (how long they last) and <strong>purpose</strong> (what they do). Understanding these helps you make informed consent decisions.</p>
+        <table class="def-table">
+          <thead><tr><th>Dimension</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr>
+              <td rowspan="2" class="def-term" style="vertical-align:middle;border-right:1px solid var(--border)">Duration</td>
+              <td class="def-term">Session Cookies</td>
+              <td>Temporary cookies that exist only for the duration of your browser session. They are automatically deleted when you close your browser. Used primarily for security and basic functionality.</td>
+            </tr>
+            <tr>
+              <td class="def-term">Persistent Cookies</td>
+              <td>Cookies that remain on your device for a set period (from minutes to years) or until you manually delete them. Used for remembering preferences, analytics, and marketing.</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="def-term" style="vertical-align:middle;border-right:1px solid var(--border)">Origin</td>
+              <td class="def-term">First-Party Cookies</td>
+              <td>Set directly by RDD Agency (rddagency.com). Only readable by our site. Used for security, functionality, and our own analytics platform.</td>
+            </tr>
+            <tr>
+              <td class="def-term">Third-Party Cookies</td>
+              <td>Set by external services we use (e.g., LinkedIn, Google Analytics). May be readable by those third parties on other websites. Subject to those parties' privacy policies. Require your explicit consent.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="policy-p">We use four purpose-based categories of cookies, described in detail in the sections below. You can manage each category independently using our Cookie Consent Manager in Section 10.</p>
+        <div class="cat-grid">
+          <div class="cat-card necessary">
+            <div class="cat-badge badge-necessary">Strictly Necessary</div>
+            <div class="cat-title">Always On</div>
+            <div class="cat-desc">Essential for the site to function. Cannot be disabled without breaking core features.</div>
+            <div class="cat-consent required">✓ No consent required</div>
+          </div>
+          <div class="cat-card performance">
+            <div class="cat-badge badge-performance">Performance</div>
+            <div class="cat-title">Analytics</div>
+            <div class="cat-desc">Anonymised usage data to improve site performance and content.</div>
+            <div class="cat-consent opt-in">⚙ Opt-in required</div>
+          </div>
+          <div class="cat-card functional">
+            <div class="cat-badge badge-functional">Functional</div>
+            <div class="cat-title">Preferences</div>
+            <div class="cat-desc">Remembers your settings and personalises your experience.</div>
+            <div class="cat-consent opt-in">⚙ Opt-in required</div>
+          </div>
+          <div class="cat-card marketing">
+            <div class="cat-badge badge-marketing">Marketing</div>
+            <div class="cat-title">B2B Retargeting</div>
+            <div class="cat-desc">Delivers relevant RDD Agency content to you on professional platforms.</div>
+            <div class="cat-consent opt-in">⚙ Opt-in required</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. STRICTLY NECESSARY -->
+      <section class="policy-section" id="s4" aria-labelledby="s4-title">
+        <div class="ps-num">Section 04</div>
+        <h2 class="ps-title" id="s4-title">Strictly <em>Necessary Cookies</em></h2>
+        <p class="policy-p">Strictly necessary cookies are essential for the website to function correctly. They enable core features such as page navigation, form submissions, secure sessions, and access to protected areas of the site. Under UK PECR and EU ePrivacy Directive, these cookies are exempt from the consent requirement.</p>
+        <p class="policy-p">These cookies do not collect any information about you that could be used for marketing or to track your activity on other websites. They are first-party cookies only.</p>
+        <ul class="policy-list checks">
+          <li>Session management and user authentication (client portal)</li>
+          <li>CSRF protection tokens to prevent cross-site request forgery attacks</li>
+          <li>Load balancing to distribute traffic across our server infrastructure</li>
+          <li>Cookie consent preferences storage — to remember that you have seen and responded to our consent banner</li>
+          <li>Security tokens required to submit contact and report forms</li>
+          <li>TLS session resumption tokens to optimise encrypted connection performance</li>
+        </ul>
+        <div class="box-amber">
+          <p><strong>Why these cannot be disabled:</strong> Disabling strictly necessary cookies would prevent core site functions from working, including the ability to submit enquiries, log in to the client portal, or use our report submission forms. The site would not load correctly without them.</p>
+        </div>
+      </section>
+
+      <!-- 5. PERFORMANCE COOKIES -->
+      <section class="policy-section" id="s5" aria-labelledby="s5-title">
+        <div class="ps-num">Section 05</div>
+        <h2 class="ps-title" id="s5-title">Performance <em>Cookies</em></h2>
+        <p class="policy-p">Performance cookies collect anonymised information about how visitors use our website — which pages they visit, how long they stay, what links they click, and how they found the site. This data helps us understand user behaviour and improve the site experience.</p>
+        <p class="policy-p"><strong>How we protect your privacy in analytics:</strong></p>
+        <ul class="policy-list checks">
+          <li><strong>IP anonymisation</strong> — The final octet of all IP addresses is removed before any storage or processing.</li>
+          <li><strong>No cross-site tracking</strong> — Our analytics do not track you across other websites.</li>
+          <li><strong>Data aggregation</strong> — We review aggregated statistics, not individual user journeys.</li>
+          <li><strong>No advertising use</strong> — Analytics data is never shared with advertising networks or used to serve you targeted ads.</li>
+          <li><strong>Data minimisation</strong> — We only collect the minimum data needed to understand site usage patterns.</li>
+          <li><strong>Retention limit</strong> — Aggregated analytics data is retained for a maximum of 13 months, in line with ICO guidance.</li>
+        </ul>
+        <p class="policy-p">We use <strong>privacy-first analytics</strong> configured with full IP anonymisation and data residency in the UK/EU. We do not use Google Analytics Universal Analytics (which sends data to US servers). Our analytics platform stores all data within the European Economic Area.</p>
+      </section>
+
+      <!-- 6. FUNCTIONAL COOKIES -->
+      <section class="policy-section" id="s6" aria-labelledby="s6-title">
+        <div class="ps-num">Section 06</div>
+        <h2 class="ps-title" id="s6-title">Functional <em>Cookies</em></h2>
+        <p class="policy-p">Functional cookies allow the website to remember choices you have made and provide enhanced, more personalised features. These cookies are not strictly necessary for the site to work but significantly improve your experience.</p>
+        <p class="policy-p">Examples of what functional cookies enable on the RDD Agency website:</p>
+        <ul class="policy-list">
+          <li><strong>Language and region preferences</strong> — Remembering your preferred language or geographic region so you see the most relevant content on return visits.</li>
+          <li><strong>Form pre-population</strong> — With your consent, remembering your name and email address so you do not need to re-enter them on subsequent form submissions.</li>
+          <li><strong>Consent manager state</strong> — Storing which cookie categories you have accepted or rejected so we do not show you the consent banner repeatedly.</li>
+          <li><strong>Chat widget preferences</strong> — If you have interacted with our live chat support, remembering your conversation thread and preferences.</li>
+          <li><strong>Navigation state</strong> — Remembering which sections of a long page you have expanded or collapsed during a session.</li>
+        </ul>
+        <p class="policy-p">Functional cookies do not track your browsing activity across other websites and do not contain personally identifiable information beyond what you have chosen to provide.</p>
+      </section>
+
+      <!-- 7. MARKETING COOKIES -->
+      <section class="policy-section" id="s7" aria-labelledby="s7-title">
+        <div class="ps-num">Section 07</div>
+        <h2 class="ps-title" id="s7-title">Marketing <em>Cookies</em></h2>
+        <p class="policy-p">With your explicit consent, we use a limited set of marketing cookies to support B2B retargeting — that is, displaying relevant RDD Agency content and advertisements to business professionals who have previously visited our site on platforms such as LinkedIn.</p>
+        <p class="policy-p"><strong>We are deliberately narrow in our use of marketing cookies:</strong></p>
+        <ul class="policy-list">
+          <li>We use <strong>LinkedIn Insight Tag</strong> only, for B2B audience retargeting on LinkedIn. We do not use Facebook Pixel, Google Ads, or any consumer advertising network.</li>
+          <li>Marketing cookies are only set after you have actively opted in. They are never placed on first visit without consent.</li>
+          <li>We do not build individual consumer profiles or sell data to data brokers.</li>
+          <li>LinkedIn Insight Tag data is governed by <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">LinkedIn's Privacy Policy</a>. You can opt out of LinkedIn personalised advertising at any time in your LinkedIn account settings.</li>
+        </ul>
+        <div class="box-red">
+          <p><strong>No consumer advertising:</strong> RDD Agency does not run consumer advertising campaigns. Our marketing cookies are used exclusively for reaching cybersecurity decision-makers and enterprise IT professionals on professional platforms. We do not track consumer browsing behaviour, health data, location, or any sensitive category for advertising purposes.</p>
+        </div>
+      </section>
+
+      <!-- 8. FULL COOKIE INVENTORY -->
+      <section class="policy-section" id="s8" aria-labelledby="s8-title">
+        <div class="ps-num">Section 08</div>
+        <h2 class="ps-title" id="s8-title">Full Cookie <em>Inventory</em></h2>
+        <p class="policy-p">The table below is a complete inventory of every cookie currently placed by the RDD Agency website. We maintain this list and update it whenever cookies are added, changed, or removed. Last audited: <strong>1 June 2025</strong>.</p>
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Cookie Name</th>
+              <th>Category</th>
+              <th>Set By</th>
+              <th>Purpose</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Strictly Necessary -->
+            <tr>
+              <td><span class="cookie-name">rdd_session</span></td>
+              <td><span class="cat-pill pill-n">Necessary</span></td>
+              <td>RDD Agency</td>
+              <td>Maintains your authenticated session in the client portal. Contains a cryptographically random session token — no personal data.</td>
+              <td><span class="cookie-duration">Session</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">rdd_csrf</span></td>
+              <td><span class="cat-pill pill-n">Necessary</span></td>
+              <td>RDD Agency</td>
+              <td>Cross-site request forgery (CSRF) protection token. Required for all form submissions including contact and report forms.</td>
+              <td><span class="cookie-duration">Session</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">rdd_consent</span></td>
+              <td><span class="cat-pill pill-n">Necessary</span></td>
+              <td>RDD Agency</td>
+              <td>Stores your cookie consent preferences (which categories you accepted or declined) so we do not repeatedly show the consent banner.</td>
+              <td><span class="cookie-duration">12 months</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">rdd_lb</span></td>
+              <td><span class="cat-pill pill-n">Necessary</span></td>
+              <td>RDD Agency</td>
+              <td>Load balancer affinity cookie. Ensures requests from your session are routed to the same server for consistency. Contains no personal data.</td>
+              <td><span class="cookie-duration">Session</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">rdd_sec</span></td>
+              <td><span class="cat-pill pill-n">Necessary</span></td>
+              <td>RDD Agency</td>
+              <td>Security token used to detect and prevent automated bot traffic and brute-force attacks. Hashed, non-reversible.</td>
+              <td><span class="cookie-duration">1 hour</span></td>
+            </tr>
+            <!-- Performance -->
+            <tr>
+              <td><span class="cookie-name">rdd_analytics</span></td>
+              <td><span class="cat-pill pill-p">Performance</span></td>
+              <td>RDD Agency</td>
+              <td>First-party analytics identifier. Assigns an anonymised visitor ID to track aggregate page view patterns. IP is anonymised before storage. No personal data.</td>
+              <td><span class="cookie-duration">13 months</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">rdd_analytics_session</span></td>
+              <td><span class="cat-pill pill-p">Performance</span></td>
+              <td>RDD Agency</td>
+              <td>Groups page views within a single session to calculate session duration and pages-per-visit. Automatically expires after 30 minutes of inactivity.</td>
+              <td><span class="cookie-duration">30 minutes</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">rdd_perf</span></td>
+              <td><span class="cat-pill pill-p">Performance</span></td>
+              <td>RDD Agency</td>
+              <td>Records page load performance metrics (time-to-first-byte, largest contentful paint) to help us identify and fix slow-loading pages.</td>
+              <td><span class="cookie-duration">Session</span></td>
+            </tr>
+            <!-- Functional -->
+            <tr>
+              <td><span class="cookie-name">rdd_lang</span></td>
+              <td><span class="cat-pill pill-f">Functional</span></td>
+              <td>RDD Agency</td>
+              <td>Stores your language and region preference so the correct content variant is shown on return visits.</td>
+              <td><span class="cookie-duration">12 months</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">rdd_form_pref</span></td>
+              <td><span class="cat-pill pill-f">Functional</span></td>
+              <td>RDD Agency</td>
+              <td>With your explicit permission, stores your name and email to pre-populate forms on return visits. Encrypted at rest.</td>
+              <td><span class="cookie-duration">6 months</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">rdd_chat_id</span></td>
+              <td><span class="cat-pill pill-f">Functional</span></td>
+              <td>RDD Agency</td>
+              <td>Maintains continuity of your live chat support session across page loads. Enables our team to continue a previous conversation.</td>
+              <td><span class="cookie-duration">30 days</span></td>
+            </tr>
+            <!-- Marketing -->
+            <tr>
+              <td><span class="cookie-name">li_fat_id</span></td>
+              <td><span class="cat-pill pill-m">Marketing</span></td>
+              <td>LinkedIn</td>
+              <td>LinkedIn first-party ad tracking. Used to attribute ad conversions and enable B2B retargeting on LinkedIn for decision-makers in cybersecurity and IT. Governed by LinkedIn's Privacy Policy.</td>
+              <td><span class="cookie-duration">30 days</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">AnalyticsSyncHistory</span></td>
+              <td><span class="cat-pill pill-m">Marketing</span></td>
+              <td>LinkedIn</td>
+              <td>Used by LinkedIn to sync IDs across devices for consistent audience targeting. Only active if you consent to marketing cookies.</td>
+              <td><span class="cookie-duration">30 days</span></td>
+            </tr>
+            <tr>
+              <td><span class="cookie-name">UserMatchHistory</span></td>
+              <td><span class="cat-pill pill-m">Marketing</span></td>
+              <td>LinkedIn</td>
+              <td>LinkedIn audience matching for B2B retargeting. Links your LinkedIn profile with your visit to our site to enable relevant ad targeting on LinkedIn only.</td>
+              <td><span class="cookie-duration">30 days</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="policy-p">This inventory is reviewed and updated at every cookie audit, conducted at least every 6 months. If you notice a cookie not listed above, please contact us at <a href="mailto:privacy@rddagency.com">privacy@rddagency.com</a> so we can investigate and update the inventory.</p>
+      </section>
+
+      <!-- 9. THIRD-PARTY SERVICES -->
+      <section class="policy-section" id="s9" aria-labelledby="s9-title">
+        <div class="ps-num">Section 09</div>
+        <h2 class="ps-title" id="s9-title">Third-Party <em>Services</em></h2>
+        <p class="policy-p">We use a limited number of third-party services that may set cookies on your device. Each has been reviewed for compliance with UK GDPR and EU GDPR and is covered by a Data Processing Agreement or Standard Contractual Clauses where applicable.</p>
+        <table class="tp-table">
+          <thead>
+            <tr><th>Service</th><th>Provider</th><th>Purpose</th><th>Cookie Category</th><th>Privacy Policy</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tp-name">LinkedIn Insight Tag</span></td>
+              <td>LinkedIn Ireland Unlimited Company</td>
+              <td>B2B retargeting and conversion tracking for cybersecurity decision-makers on LinkedIn. Enables us to show ads to professionals who visited our site.</td>
+              <td><span class="cat-pill pill-m">Marketing</span></td>
+              <td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener" style="color:var(--red);font-family:var(--mono);font-size:.68rem">linkedin.com/legal/privacy-policy</a></td>
+            </tr>
+            <tr>
+              <td><span class="tp-name">Google Fonts</span></td>
+              <td>Google LLC</td>
+              <td>Loads the Barlow and Space Mono typefaces from Google's CDN. Google may log the request IP address for font delivery optimisation. No cookies are set by Google Fonts.</td>
+              <td><span class="cat-pill pill-n">Necessary</span></td>
+              <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--red);font-family:var(--mono);font-size:.68rem">policies.google.com/privacy</a></td>
+            </tr>
+            <tr>
+              <td><span class="tp-name">Cloudflare</span></td>
+              <td>Cloudflare, Inc.</td>
+              <td>Content delivery network (CDN), DDoS protection, and web application firewall (WAF). May set a <code style="font-family:var(--mono);font-size:.72rem;background:var(--black-3);padding:.1rem .3rem">__cf_bm</code> cookie for bot management. Essential for site security and performance.</td>
+              <td><span class="cat-pill pill-n">Necessary</span></td>
+              <td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener" style="color:var(--red);font-family:var(--mono);font-size:.68rem">cloudflare.com/privacypolicy</a></td>
+            </tr>
+            <tr>
+              <td><span class="tp-name">Stripe</span></td>
+              <td>Stripe, Inc.</td>
+              <td>Payment processing for service invoices via the client portal. Stripe may set cookies for fraud prevention during checkout. Governed by Stripe's Privacy Policy and their PCI DSS-compliant infrastructure.</td>
+              <td><span class="cat-pill pill-n">Necessary</span></td>
+              <td><a href="https://stripe.com/gb/privacy" target="_blank" rel="noopener" style="color:var(--red);font-family:var(--mono);font-size:.68rem">stripe.com/gb/privacy</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="policy-p">We do not use any advertising networks (Google Display, Meta, programmatic DSPs), consumer data brokers, social share buttons that track without consent, or embedded third-party videos that auto-track. This is an intentional design decision consistent with our professional values as a cybersecurity firm.</p>
+      </section>
+
+      <!-- 10. CONSENT MANAGER -->
+      <section class="policy-section" id="s10" aria-labelledby="s10-title">
+        <div class="ps-num">Section 10</div>
+        <h2 class="ps-title" id="s10-title">Cookie <em>Consent Manager</em></h2>
+        <p class="policy-p">Use the controls below to manage your cookie preferences. Your choices are saved immediately and will be respected on all subsequent visits. You can return here and update your preferences at any time.</p>
+
+        <div class="consent-manager" role="region" aria-label="Cookie consent manager">
+          <div class="cm-header">
+            <span class="cm-title">// Cookie Preference Centre</span>
+            <span class="cm-status">Status: <b id="cmStatusText">Preferences saved</b></span>
+          </div>
+          <div class="cm-body">
+
+            <!-- Strictly Necessary — locked on -->
+            <div class="cm-row">
+              <div class="cm-row-info">
+                <div class="cm-row-name">
+                  <span class="cat-pill pill-n">Necessary</span>
+                  Strictly Necessary Cookies
+                </div>
+                <div class="cm-row-desc">Required for the site to function. Cannot be disabled. These cookies do not track you and are not used for marketing.</div>
+                <div class="cm-row-count">5 cookies · Always active · First-party only</div>
+              </div>
+              <div class="toggle-wrap">
+                <span class="toggle-locked-note">Always On</span>
+                <label class="toggle" aria-label="Strictly necessary cookies — always enabled">
+                  <input type="checkbox" id="tog-necessary" checked disabled>
+                  <div class="toggle-track locked"></div>
+                  <div class="toggle-thumb locked-thumb"></div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Performance -->
+            <div class="cm-row">
+              <div class="cm-row-info">
+                <div class="cm-row-name">
+                  <span class="cat-pill pill-p">Performance</span>
+                  Performance &amp; Analytics Cookies
+                </div>
+                <div class="cm-row-desc">Anonymised usage data to help us understand how the site is used and improve content and performance. No personal data stored. IP addresses anonymised.</div>
+                <div class="cm-row-count">3 cookies · First-party · Data retained max 13 months</div>
+              </div>
+              <div class="toggle-wrap">
+                <span class="toggle-label" id="lbl-perf">Off</span>
+                <label class="toggle" aria-label="Performance cookies toggle">
+                  <input type="checkbox" id="tog-performance" onchange="updateToggleLabel(this,'lbl-perf')">
+                  <div class="toggle-track"></div>
+                  <div class="toggle-thumb"></div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Functional -->
+            <div class="cm-row">
+              <div class="cm-row-info">
+                <div class="cm-row-name">
+                  <span class="cat-pill pill-f">Functional</span>
+                  Functional Cookies
+                </div>
+                <div class="cm-row-desc">Remembers your preferences and settings to improve your experience on return visits. Includes language preference and form pre-population.</div>
+                <div class="cm-row-count">3 cookies · First-party · Max 12 months</div>
+              </div>
+              <div class="toggle-wrap">
+                <span class="toggle-label" id="lbl-func">Off</span>
+                <label class="toggle" aria-label="Functional cookies toggle">
+                  <input type="checkbox" id="tog-functional" onchange="updateToggleLabel(this,'lbl-func')">
+                  <div class="toggle-track"></div>
+                  <div class="toggle-thumb"></div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Marketing -->
+            <div class="cm-row">
+              <div class="cm-row-info">
+                <div class="cm-row-name">
+                  <span class="cat-pill pill-m">Marketing</span>
+                  Marketing &amp; Retargeting Cookies
+                </div>
+                <div class="cm-row-desc">LinkedIn Insight Tag only. Enables B2B retargeting to reach cybersecurity decision-makers on LinkedIn. We do not use consumer advertising networks.</div>
+                <div class="cm-row-count">3 cookies · Third-party (LinkedIn) · 30 days</div>
+              </div>
+              <div class="toggle-wrap">
+                <span class="toggle-label" id="lbl-mkt">Off</span>
+                <label class="toggle" aria-label="Marketing cookies toggle">
+                  <input type="checkbox" id="tog-marketing" onchange="updateToggleLabel(this,'lbl-mkt')">
+                  <div class="toggle-track"></div>
+                  <div class="toggle-thumb"></div>
+                </label>
+              </div>
+            </div>
+
+          </div><!-- end cm-body -->
+
+          <div class="cm-actions">
+            <button class="cm-btn cm-btn-accept-all" id="cmAcceptAll">Accept All</button>
+            <button class="cm-btn cm-btn-save" id="cmSavePref">Save My Preferences</button>
+            <button class="cm-btn cm-btn-reject" id="cmRejectAll">Reject Non-Essential</button>
+            <span class="cm-saved-msg" id="cmSavedMsg">// Preferences saved successfully.</span>
+          </div>
+        </div>
+
+        <p class="policy-p" style="margin-top:1.2rem">Your consent preferences are stored in the <code style="font-family:var(--mono);font-size:.8rem;background:var(--black-2);padding:.1rem .4rem;color:var(--white-dim)">rdd_consent</code> cookie for 12 months. After this period, you will be asked to confirm your preferences again. You can update or withdraw consent at any time by returning to this page.</p>
+      </section>
+
+      <!-- 11. BROWSER CONTROLS -->
+      <section class="policy-section" id="s11" aria-labelledby="s11-title">
+        <div class="ps-num">Section 11</div>
+        <h2 class="ps-title" id="s11-title">Browser <em>Controls</em></h2>
+        <p class="policy-p">In addition to our Consent Manager, all modern browsers allow you to manage cookies directly through your browser settings. You can choose to block all cookies, block third-party cookies only, or delete cookies that have already been set. Here is how to access cookie settings in the most common browsers:</p>
+        <div class="browser-grid">
+          <div class="browser-card">
+            <div class="browser-icon">🌐</div>
+            <div class="browser-name">Google Chrome</div>
+            <div class="browser-steps">
+              Open <code>Settings</code> → <code>Privacy and security</code> → <code>Cookies and other site data</code>. From here you can block third-party cookies, clear all cookies, or manage exceptions per site.
+            </div>
+          </div>
+          <div class="browser-card">
+            <div class="browser-icon">🦊</div>
+            <div class="browser-name">Mozilla Firefox</div>
+            <div class="browser-steps">
+              Open <code>Settings</code> → <code>Privacy &amp; Security</code> → <code>Enhanced Tracking Protection</code>. Choose Strict mode to block all third-party tracking cookies. Use <code>Manage Exceptions</code> for per-site control.
+            </div>
+          </div>
+          <div class="browser-card">
+            <div class="browser-icon">🧭</div>
+            <div class="browser-name">Apple Safari</div>
+            <div class="browser-steps">
+              Open <code>Preferences</code> → <code>Privacy</code> → Enable <code>Prevent cross-site tracking</code> and <code>Block all cookies</code>. On iOS: <code>Settings</code> → <code>Safari</code> → <code>Privacy &amp; Security</code>.
+            </div>
+          </div>
+          <div class="browser-card">
+            <div class="browser-icon">🔷</div>
+            <div class="browser-name">Microsoft Edge</div>
+            <div class="browser-steps">
+              Open <code>Settings</code> → <code>Cookies and site permissions</code> → <code>Cookies and site data</code>. Use <code>Tracking prevention</code> set to Balanced or Strict to block most third-party trackers.
+            </div>
+          </div>
+          <div class="browser-card">
+            <div class="browser-icon">🟠</div>
+            <div class="browser-name">Opera</div>
+            <div class="browser-steps">
+              Open <code>Settings</code> → <code>Advanced</code> → <code>Privacy &amp; security</code> → <code>Site Settings</code> → <code>Cookies and site data</code>. Supports per-site cookie blocking.
+            </div>
+          </div>
+          <div class="browser-card">
+            <div class="browser-icon">🛡</div>
+            <div class="browser-name">Brave Browser</div>
+            <div class="browser-steps">
+              Brave blocks third-party cookies and trackers by default via <code>Shields</code>. To adjust: click the Brave icon in the address bar → adjust <code>Cross-site cookies blocked</code> per site.
+            </div>
+          </div>
+        </div>
+        <div class="box-amber">
+          <p><strong>Please note:</strong> Blocking all cookies via your browser — including strictly necessary cookies — will prevent core site functionality including form submissions, portal login, and security features from working correctly. We recommend using our Consent Manager (Section 10) for granular control without disrupting essential functionality.</p>
+        </div>
+        <p class="policy-p">Additional opt-out tools for specific tracking networks:</p>
+        <ul class="policy-list">
+          <li><strong>LinkedIn Ad Preferences</strong> — <a href="https://www.linkedin.com/psettings/advertising" target="_blank" rel="noopener">linkedin.com/psettings/advertising</a> — opt out of interest-based advertising on LinkedIn.</li>
+          <li><strong>Your Online Choices (EU)</strong> — <a href="https://www.youronlinechoices.eu" target="_blank" rel="noopener">youronlinechoices.eu</a> — opt out of participating advertising networks in one place.</li>
+          <li><strong>Network Advertising Initiative (US)</strong> — <a href="https://optout.networkadvertising.org" target="_blank" rel="noopener">optout.networkadvertising.org</a> — manage advertising opt-outs across member networks.</li>
+          <li><strong>All About Cookies</strong> — <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener">allaboutcookies.org</a> — independent resource on managing cookies across all browsers and devices.</li>
+        </ul>
+      </section>
+
+      <!-- 12. DO NOT TRACK -->
+      <section class="policy-section" id="s12" aria-labelledby="s12-title">
+        <div class="ps-num">Section 12</div>
+        <h2 class="ps-title" id="s12-title">Do Not <em>Track</em></h2>
+        <p class="policy-p">Some browsers include a "<strong>Do Not Track</strong>" (DNT) feature that sends a signal to websites requesting that your browsing activity not be tracked. There is currently no agreed technical standard for how websites should respond to DNT signals, and the W3C's DNT specification was abandoned in 2019.</p>
+        <p class="policy-p">At RDD Agency, we respect the intent behind DNT. When we detect a DNT signal in your browser, we:</p>
+        <ul class="policy-list checks">
+          <li>Do not activate any performance analytics cookies by default.</li>
+          <li>Do not activate any marketing or retargeting cookies.</li>
+          <li>Treat your visit as if you had selected "Reject Non-Essential" in our Consent Manager.</li>
+        </ul>
+        <p class="policy-p">Strictly necessary cookies are still placed regardless of DNT signals, as these are essential for the site to function and do not track you across sessions or sites.</p>
+        <p class="policy-p">If you use a DNT-enabled browser and would like to enable performance or functional cookies for an improved experience, you can explicitly opt in via our Consent Manager in Section 10. Your explicit consent overrides the DNT default.</p>
+      </section>
+
+      <!-- 13. CONSENT RECORDS -->
+      <section class="policy-section" id="s13" aria-labelledby="s13-title">
+        <div class="ps-num">Section 13</div>
+        <h2 class="ps-title" id="s13-title">Cookie Consent <em>Records</em></h2>
+        <p class="policy-p">Under UK GDPR Article 7(1) and EU GDPR, we are required to be able to demonstrate that consent for non-essential cookies was validly obtained. We maintain consent records as follows:</p>
+        <table class="def-table">
+          <thead><tr><th>Record Type</th><th>What We Store</th><th>How Long</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="def-term">Consent Timestamp</td>
+              <td>The date and time you submitted your cookie preferences via the Consent Manager or cookie banner.</td>
+              <td>13 months from consent date</td>
+            </tr>
+            <tr>
+              <td class="def-term">Consent Version</td>
+              <td>The version of this Cookie Policy that was in effect when consent was given, so we can identify if re-consent is needed after a material update.</td>
+              <td>13 months</td>
+            </tr>
+            <tr>
+              <td class="def-term">Preferences Selected</td>
+              <td>Which cookie categories were accepted or declined (e.g., "Performance: On, Marketing: Off"). Not linked to any personal identifier.</td>
+              <td>13 months</td>
+            </tr>
+            <tr>
+              <td class="def-term">Consent Method</td>
+              <td>Whether consent was given via the initial banner, the Consent Manager, or inferred from DNT signal. Required to demonstrate valid consent under PECR.</td>
+              <td>13 months</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="policy-p">Consent records are stored in a pseudonymised format — they are not linked to your name, email address, or any other personal identifier. They are retained solely to demonstrate regulatory compliance and are automatically purged after 13 months, at which point you will be asked to confirm your preferences again.</p>
+        <div class="box-plain">
+          <p><strong>Withdrawal of consent:</strong> You can withdraw your consent for non-essential cookies at any time by returning to Section 10 of this page and selecting "Reject Non-Essential" or adjusting your category preferences. Withdrawal takes effect immediately. Withdrawing consent does not affect the lawfulness of any cookie processing that occurred before withdrawal.</p>
+        </div>
+      </section>
+
+      <!-- 14. DATA PROTECTION -->
+      <section class="policy-section" id="s14" aria-labelledby="s14-title">
+        <div class="ps-num">Section 14</div>
+        <h2 class="ps-title" id="s14-title">Data <em>Protection</em></h2>
+        <p class="policy-p">Cookie-related data processing at RDD Agency is conducted in accordance with our full <a href="privacy-policy.html">Privacy Policy</a>, UK GDPR, EU GDPR, and the UK Privacy and Electronic Communications Regulations 2003 (PECR).</p>
+        <p class="policy-p">Key data protection principles applied to our cookie use:</p>
+        <ul class="policy-list checks">
+          <li><strong>Lawfulness</strong> — Strictly necessary cookies rely on the legitimate interest basis under PECR. All other cookies require your explicit, freely given, specific consent before being placed.</li>
+          <li><strong>Transparency</strong> — This Cookie Policy provides full, clear disclosure of every cookie we use, its purpose, duration, and the data it processes.</li>
+          <li><strong>Data minimisation</strong> — Cookies are designed to collect the minimum data necessary for their stated purpose. We regularly audit cookies to remove any that are no longer required.</li>
+          <li><strong>Purpose limitation</strong> — Cookie data is used only for the purposes stated in this policy. Analytics data is never repurposed for marketing without fresh consent.</li>
+          <li><strong>Storage limitation</strong> — Cookie lifespans are set to the minimum necessary. We do not use persistent identifiers beyond what is needed.</li>
+          <li><strong>Security</strong> — All cookies set by RDD Agency use the <code style="font-family:var(--mono);font-size:.8rem;background:var(--black-2);padding:.1rem .4rem">Secure</code>, <code style="font-family:var(--mono);font-size:.8rem;background:var(--black-2);padding:.1rem .4rem">HttpOnly</code>, and <code style="font-family:var(--mono);font-size:.8rem;background:var(--black-2);padding:.1rem .4rem">SameSite=Strict</code> flags where applicable to prevent interception or cross-site misuse.</li>
+        </ul>
+        <p class="policy-p">For full details on how we handle personal data, your rights under UK/EU GDPR, and how to submit a Subject Access Request, please refer to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </section>
+
+      <!-- 15. POLICY UPDATES -->
+      <section class="policy-section" id="s15" aria-labelledby="s15-title">
+        <div class="ps-num">Section 15</div>
+        <h2 class="ps-title" id="s15-title">Policy <em>Updates</em></h2>
+        <p class="policy-p">We review this Cookie Policy at minimum every <strong>6 months</strong> and after every scheduled cookie audit. The policy is also updated whenever:</p>
+        <ul class="policy-list">
+          <li>We add, change, or remove any cookies or tracking technologies from our site.</li>
+          <li>A third-party service we use changes its cookie behaviour or privacy policy.</li>
+          <li>Applicable law, regulatory guidance (ICO, EDPB), or industry standards change.</li>
+          <li>We launch new features on the site that require new cookies.</li>
+        </ul>
+        <p class="policy-p">For <strong>material changes</strong> — such as the addition of a new cookie category or a new third-party tracking service — we will reset cookie consents and present you with the updated consent banner on your next visit. This ensures your consent is always informed and current.</p>
+        <p class="policy-p">Non-material changes (for example, corrections, clarifications, or minor rewording) will not trigger a consent reset. The "Last Updated" date at the top of this page will reflect all revisions, material or otherwise.</p>
+        <p class="policy-p">Previous versions of this Cookie Policy are archived and available on request from <a href="mailto:privacy@rddagency.com">privacy@rddagency.com</a>.</p>
+      </section>
+
+      <!-- 16. CONTACT -->
+      <section class="policy-section" id="s16" aria-labelledby="s16-title">
+        <div class="ps-num">Section 16</div>
+        <h2 class="ps-title" id="s16-title">Contact <em>Us</em></h2>
+        <p class="policy-p">If you have questions about how we use cookies, wish to exercise your rights under UK/EU GDPR, or would like to report a cookie that is not listed in our inventory, please contact us through the channels below.</p>
+        <div class="contact-box">
+          <div class="cb-item">
+            <span class="cb-label">Cookie &amp; Privacy Enquiries</span>
+            <span class="cb-val"><a href="mailto:privacy@rddagency.com">privacy@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Data Protection Officer</span>
+            <span class="cb-val"><a href="mailto:dpo@rddagency.com">dpo@rddagency.com</a></span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Registered Office</span>
+            <span class="cb-val">Razi Digital Agency Ltd.<br>Level 22, One Canada Square<br>Canary Wharf, London E14 5AB<br>United Kingdom</span>
+          </div>
+          <div class="cb-item">
+            <span class="cb-label">Supervisory Authority</span>
+            <span class="cb-val">UK Information Commissioner's Office<br><a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> · 0303 123 1113</span>
+          </div>
+        </div>
+        <p class="policy-p" style="margin-top:1.5rem">We aim to respond to all cookie and privacy enquiries within <strong>30 days</strong>. If you are dissatisfied with our response, you have the right to raise a concern with the UK ICO at any time without charge.</p>
+      </section>
+
+    </div><!-- end .policy-body -->
+  </div><!-- end .policy-wrapper -->
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer role="contentinfo">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+        <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+      </div>
+      <p class="foot-desc">Elite global cybersecurity. Protecting the world's most critical organizations from the most advanced threats — 24 hours a day, 365 days a year.</p>
+      <div class="foot-certs">
+        <span class="foot-cert">ISO 27001</span>
+        <span class="foot-cert">CREST</span>
+        <span class="foot-cert">SOC 2 II</span>
+        <span class="foot-cert">GDPR</span>
+        <span class="foot-cert">FedRAMP</span>
+      </div>
+      <div class="foot-socials">
+        <a href="https://linkedin.com/company/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+        <a href="https://twitter.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="Twitter">Tw</a>
+        <a href="https://github.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="GitHub">Gh</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#services">Penetration Testing</a></li>
+        <li><a href="index.html#services">Red Team Operations</a></li>
+        <li><a href="index.html#services">SOC as a Service</a></li>
+        <li><a href="index.html#services">Threat Intelligence</a></li>
+        <li><a href="index.html#services">Incident Response</a></li>
+        <li><a href="index.html#services">Cloud Security</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#about">About RDD</a></li>
+        <li><a href="index.html#team">Our Team</a></li>
+        <li><a href="index.html#clients">Case Studies</a></li>
+        <li><a href="index.html#global">Global Presence</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#contact">Careers</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#threat-intel">Threat Intelligence Blog</a></li>
+        <li><a href="index.html#threat-intel">Security Advisories</a></li>
+        <li><a href="index.html#services">CVE Research</a></li>
+        <li><a href="index.html#services">White Papers</a></li>
+        <li><a href="vulnerability-disclosure.html">Vulnerability Disclosure</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 <b>RDD Agency</b> — Razi Digital Agency Ltd. All rights reserved. Registered in England &amp; Wales.</span>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html" class="active-page">Cookie Policy</a>
+      <a href="vulnerability-disclosure.html">Vulnerability Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CURSOR ===== */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,label,[tabindex]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hov');ring.classList.add('hov')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hov');ring.classList.remove('hov')});
+});
+
+/* ===== NAVBAR SCROLL ===== */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',scrollY>40);
+});
+
+/* ===== MOBILE HAMBURGER ===== */
+const ham=document.getElementById('navHam'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');
+  ham.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mob-lnk').forEach(l=>l.addEventListener('click',()=>{
+  mob.classList.remove('open');ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+
+/* ===== FLOATING HIRE DISMISS ===== */
+document.getElementById('hireDismiss').addEventListener('click',()=>{
+  document.getElementById('hire-float').style.display='none';
+});
+
+/* ===== TOGGLE LABEL HELPER ===== */
+function updateToggleLabel(chk, lblId){
+  document.getElementById(lblId).textContent = chk.checked ? 'On' : 'Off';
+  document.getElementById(lblId).style.color = chk.checked ? 'var(--red)' : 'var(--white-mute)';
+}
+
+/* ===== CONSENT MANAGER ===== */
+function showSaved(){
+  const msg=document.getElementById('cmSavedMsg');
+  msg.style.display='block';
+  setTimeout(()=>msg.style.display='none',3000);
+}
+function setPreferences(perf,func,mkt){
+  document.getElementById('tog-performance').checked=perf;
+  document.getElementById('tog-functional').checked=func;
+  document.getElementById('tog-marketing').checked=mkt;
+  updateToggleLabel(document.getElementById('tog-performance'),'lbl-perf');
+  updateToggleLabel(document.getElementById('tog-functional'),'lbl-func');
+  updateToggleLabel(document.getElementById('tog-marketing'),'lbl-mkt');
+}
+// Load saved preferences from localStorage if available
+(function loadPrefs(){
+  try{
+    const saved=JSON.parse(localStorage.getItem('rdd_consent_prefs'));
+    if(saved){
+      setPreferences(saved.performance||false, saved.functional||false, saved.marketing||false);
+      document.getElementById('cmStatusText').textContent='Preferences loaded';
+    }
+  }catch(e){}
+})();
+document.getElementById('cmAcceptAll').addEventListener('click',()=>{
+  setPreferences(true,true,true);
+  try{localStorage.setItem('rdd_consent_prefs',JSON.stringify({necessary:true,performance:true,functional:true,marketing:true,ts:Date.now()}))}catch(e){}
+  showSaved();
+  document.getElementById('cmStatusText').textContent='All accepted';
+});
+document.getElementById('cmRejectAll').addEventListener('click',()=>{
+  setPreferences(false,false,false);
+  try{localStorage.setItem('rdd_consent_prefs',JSON.stringify({necessary:true,performance:false,functional:false,marketing:false,ts:Date.now()}))}catch(e){}
+  showSaved();
+  document.getElementById('cmStatusText').textContent='Non-essential rejected';
+});
+document.getElementById('cmSavePref').addEventListener('click',()=>{
+  const prefs={
+    necessary:true,
+    performance:document.getElementById('tog-performance').checked,
+    functional:document.getElementById('tog-functional').checked,
+    marketing:document.getElementById('tog-marketing').checked,
+    ts:Date.now()
+  };
+  try{localStorage.setItem('rdd_consent_prefs',JSON.stringify(prefs))}catch(e){}
+  showSaved();
+  document.getElementById('cmStatusText').textContent='Custom preferences saved';
+});
+
+/* ===== STICKY TOC ===== */
+const sections=document.querySelectorAll('.policy-section');
+const tocLinks=document.querySelectorAll('.toc-link');
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(l=>l.classList.remove('active'));
+      const a=document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-80px 0px -60% 0px',threshold:0}).observe;
+const sObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(l=>l.classList.remove('active'));
+      const a=document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-80px 0px -60% 0px',threshold:0});
+sections.forEach(s=>sObs.observe(s));
+</script>
+</body>
+</html>
