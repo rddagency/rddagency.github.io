@@ -1,0 +1,1253 @@
+cat > /mnt/user-data/outputs/about.html << 'HTMLEOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Razi Digital Defence Agency (RDDA) — Our story, mission, leadership team, core values, global operations, and the operators behind the world's most trusted cybersecurity firm.">
+<meta name="keywords" content="about RDD Agency, Razi Digital Agency, Razi Digital Defence Agency, RDDA, cybersecurity firm history, cybersecurity leadership team, about cybersecurity company">
+<meta name="author" content="RDD Agency — Razi Digital Agency">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="About RDDA — Razi Digital Defence Agency">
+<meta property="og:description" content="Founded by intelligence community operators. Built for enterprises that cannot afford to fail. The story behind the world's most trusted cybersecurity firm.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rddagency.com/about">
+<link rel="canonical" href="https://www.rddagency.com/about">
+<title>About RDDA — Razi Digital Defence Agency | RDD Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Razi Digital Defence Agency",
+  "alternateName":["RDD Agency","Razi Digital Agency","RDDA"],
+  "url":"https://www.rddagency.com",
+  "foundingDate":"2016",
+  "description":"Elite global cybersecurity firm protecting Fortune 500 enterprises, financial institutions, and critical national infrastructure from advanced persistent threats, zero-day exploits, and nation-state actors.",
+  "areaServed":"Worldwide",
+  "numberOfEmployees":{"@type":"QuantitativeValue","value":"340+"},
+  "address":{"@type":"PostalAddress","streetAddress":"Level 22, One Canada Square","addressLocality":"London","postalCode":"E14 5AB","addressCountry":"GB"},
+  "sameAs":["https://www.linkedin.com/company/rddagency","https://twitter.com/rddagency"]
+}
+</script>
+
+<style>
+/* ============================================================
+   RESET & VARIABLES
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E01A1A; --red-dark:#A01010; --red-glow:rgba(224,26,26,.15);
+  --black:#0A0A0A; --black-2:#111; --black-3:#181818; --black-4:#222;
+  --white:#F5F5F0; --white-dim:rgba(245,245,240,.72); --white-mute:rgba(245,245,240,.35);
+  --border:rgba(245,245,240,.1); --border-red:rgba(224,26,26,.4);
+  --green:#4EC94E; --amber:#E8A020;
+  --mono:'Space Mono',monospace; --sans:'Barlow',sans-serif; --cond:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+a,button{cursor:pointer!important;pointer-events:auto!important}
+input,textarea{cursor:text!important}
+select{cursor:pointer!important}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--red-dark);border-radius:2px}
+
+/* ============================================================
+   CURSOR
+============================================================ */
+#cursor,#cursor-ring{position:fixed;border-radius:50%;pointer-events:none!important;z-index:99999;transform:translate(-50%,-50%)}
+#cursor{width:10px;height:10px;background:var(--red);z-index:100000;transition:width .15s,height .15s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,26,26,.5);z-index:99999;transition:width .2s,height .2s,border-color .2s}
+#cursor.hov{width:14px;height:14px;background:var(--red-dark)}
+#cursor-ring.hov{width:50px;height:50px;border-color:var(--red);border-width:2px}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pulseCta{0%{box-shadow:0 0 0 0 rgba(224,26,26,.7)}70%{box-shadow:0 0 0 14px rgba(224,26,26,0)}100%{box-shadow:0 0 0 0 rgba(224,26,26,0)}}
+@keyframes pulseOrb{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.12);opacity:.7}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes pingDot{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drawLine{from{width:0}to{width:100%}}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+.rev-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.rev-l.vis{opacity:1;transform:none}
+.rev-r{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease}
+.rev-r.vis{opacity:1;transform:none}
+.stag>*{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.stag.vis>*{opacity:1;transform:none}
+.stag.vis>*:nth-child(1){transition-delay:.04s}
+.stag.vis>*:nth-child(2){transition-delay:.12s}
+.stag.vis>*:nth-child(3){transition-delay:.20s}
+.stag.vis>*:nth-child(4){transition-delay:.28s}
+.stag.vis>*:nth-child(5){transition-delay:.36s}
+.stag.vis>*:nth-child(6){transition-delay:.44s}
+.stag.vis>*:nth-child(7){transition-delay:.52s}
+.stag.vis>*:nth-child(8){transition-delay:.60s}
+.stag.vis>*:nth-child(9){transition-delay:.68s}
+
+/* ============================================================
+   COMMON HELPERS
+============================================================ */
+section{padding:5.5rem 4rem;position:relative}
+.sec-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.sec-tag::before{content:'';display:inline-block;width:26px;height:1px;background:var(--red)}
+.sec-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,4.5vw,4.2rem);text-transform:uppercase;line-height:.95;color:var(--white)}
+.sec-title em{color:var(--red);font-style:normal}
+.body-text{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85}
+.body-text strong{color:var(--white);font-weight:600}
+.btn-red{background:var(--red);color:#fff;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.2rem;text-decoration:none;display:inline-block;transition:all .2s;border:none;cursor:pointer!important}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.2rem;text-decoration:none;display:inline-block;border:1px solid var(--border);transition:all .2s;cursor:pointer!important}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;z-index:2}
+.nav-logo-mark{width:38px;height:38px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:13px;letter-spacing:.05em;color:#fff;clip-path:polygon(0 0,100% 0,100% 74%,88% 100%,0 100%)}
+.nav-logo-text{font-family:var(--cond);font-weight:900;font-size:1.05rem;letter-spacing:.12em;color:var(--white);text-transform:uppercase}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:2rem;z-index:2}
+.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;padding:.3rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
+.nav-links a:hover,.nav-links a.nav-active{color:var(--white)}
+.nav-links a:hover::after,.nav-links a.nav-active::after{width:100%}
+.nav-links a.nav-active{color:var(--red)}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:.6rem 1.4rem!important;display:inline-block!important;transform:skewX(-8deg);transition:background .2s,transform .2s!important}
+.nav-cta span{display:inline-block;transform:skewX(8deg)}
+.nav-cta:hover{background:var(--red-dark)!important;transform:skewX(-8deg) scale(1.04)!important}
+.nav-cta::after{display:none!important}
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;z-index:9002}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.99);z-index:9001;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--cond);font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mob-menu a:hover{color:var(--red)}
+
+/* ============================================================
+   FLOATING HIRE
+============================================================ */
+#hire-float{position:fixed;bottom:2rem;right:2rem;z-index:8500;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.hire-btn{background:var(--red);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:.6rem;animation:pulseCta 2s infinite;white-space:nowrap;border:none}
+.hire-btn:hover{background:var(--red-dark);animation:none;transform:scale(1.05)}
+.hire-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1s infinite;flex-shrink:0;pointer-events:none}
+.hire-dismiss{background:var(--black-4);border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.6rem;padding:.28rem .65rem;cursor:pointer!important;transition:color .2s}
+.hire-dismiss:hover{color:var(--white)}
+
+/* ============================================================
+   HERO — FULL-PAGE OPENER
+============================================================ */
+#hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:8rem 4rem 4rem;
+  background:var(--black-2);
+  position:relative;overflow:hidden;
+}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,245,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,245,240,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.1) 2px,rgba(0,0,0,.1) 4px);pointer-events:none;opacity:.3}
+.hero-orb{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(224,26,26,.1) 0%,transparent 70%);top:-200px;right:-200px;animation:pulseOrb 8s ease-in-out infinite;pointer-events:none}
+.hero-orb2{position:absolute;width:450px;height:450px;background:radial-gradient(circle,rgba(224,26,26,.05) 0%,transparent 70%);bottom:-100px;left:5%;animation:pulseOrb 11s ease-in-out infinite reverse;pointer-events:none}
+.hero-inner{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-left{animation:fadeUp .9s .1s ease both}
+.breadcrumb{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute);margin-bottom:2rem;display:flex;align-items:center;gap:.6rem;padding:0.5rem 0;line-height:1.6;}
+.breadcrumb a{color:var(--white-mute);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{color:var(--red)}
+.hero-eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.hero-blink{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite;flex-shrink:0;pointer-events:none}
+h1.hero-title{font-family:var(--cond);font-weight:900;font-size:clamp(3rem,7vw,7.5rem);line-height:.88;text-transform:uppercase;color:var(--white);margin-bottom:2rem}
+h1.hero-title em{color:var(--red);font-style:normal;display:block}
+h1.hero-title span.sub{font-size:.45em;letter-spacing:.12em;color:var(--white-mute);display:block;margin-top:.6rem;line-height:1.4}
+.hero-desc{font-size:1.05rem;font-weight:300;color:var(--white-dim);line-height:1.8;max-width:520px;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap}
+.hero-right{animation:fadeUp .9s .3s ease both;display:flex;flex-direction:column;gap:1.5rem}
+/* Stat cards in hero right */
+.hero-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.hero-stat{background:var(--black-3);padding:1.6rem 1.4rem;border-top:2px solid transparent;transition:border-color .3s}
+.hero-stat:hover{border-top-color:var(--red)}
+.hs-num{font-family:var(--cond);font-weight:900;font-size:2.6rem;line-height:1;color:var(--white)}
+.hs-num b{color:var(--red)}
+.hs-lbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);margin-top:.3rem}
+/* Cert strip */
+.hero-cert-strip{display:flex;gap:.6rem;flex-wrap:wrap;padding:1.2rem 1.4rem;background:var(--black-4);border:1px solid var(--border)}
+.cert-pill{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;padding:.25rem .6rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase;white-space:nowrap}
+/* Live indicator */
+.hero-live{background:var(--black-4);border:1px solid var(--border);padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.hl-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute)}
+.hl-value{font-family:var(--cond);font-weight:900;font-size:1.4rem;color:var(--red)}
+.hl-live{font-family:var(--mono);font-size:.6rem;color:var(--green);display:flex;align-items:center;gap:.35rem}
+
+/* ============================================================
+   MARQUEE BAND
+============================================================ */
+.marquee-band{padding:1.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--black)}
+.marq-track{display:flex;gap:3rem;animation:marq 30s linear infinite;width:max-content}
+.marq-item{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);white-space:nowrap}
+.marq-item::after{content:'//';color:var(--red);margin-left:2rem}
+
+/* ============================================================
+   ORIGIN STORY
+============================================================ */
+#origin{background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.origin-text{display:flex;flex-direction:column;gap:1.4rem}
+.origin-text .body-text{margin-top:0}
+.origin-pull{font-family:var(--cond);font-weight:900;font-size:clamp(1.4rem,2.5vw,2rem);text-transform:uppercase;color:var(--white);line-height:1.1;border-left:3px solid var(--red);padding-left:1.2rem;margin:1.5rem 0}
+.origin-pull em{color:var(--red);font-style:normal}
+/* Timeline on the right */
+.origin-timeline{display:flex;flex-direction:column;gap:0;position:relative}
+.origin-timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{display:flex;gap:1.6rem;padding-bottom:2.4rem;position:relative;z-index:1}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{width:40px;height:40px;background:var(--black);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.65rem;color:var(--white-mute);flex-shrink:0;transition:all .3s;letter-spacing:.06em}
+.tl-item:hover .tl-dot{background:var(--red);border-color:var(--red);color:#fff}
+.tl-body{padding-top:.35rem;flex:1}
+.tl-year{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.3rem}
+.tl-title{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
+.tl-desc{font-size:.88rem;font-weight:300;color:var(--white-mute);line-height:1.7}
+
+/* ============================================================
+   MISSION / VISION / VALUES
+============================================================ */
+#mvv{background:var(--black-2)}
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.mvv-card{background:var(--black-2);padding:2.5rem 2rem;border-top:3px solid transparent;transition:all .3s}
+.mvv-card.mission{border-top-color:var(--red)}
+.mvv-card.vision{border-top-color:rgba(224,26,26,.45)}
+.mvv-card.values{border-top-color:rgba(224,26,26,.2)}
+.mvv-icon{font-size:2rem;margin-bottom:1.2rem}
+.mvv-type{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}
+.mvv-title{font-family:var(--cond);font-weight:900;font-size:1.6rem;text-transform:uppercase;color:var(--white);margin-bottom:1rem;line-height:1}
+.mvv-text{font-size:.92rem;font-weight:300;color:var(--white-dim);line-height:1.8}
+
+/* ============================================================
+   CORE VALUES DETAIL
+============================================================ */
+#values{background:var(--black)}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.val-card{background:var(--black);padding:2rem 1.8rem;border-bottom:2px solid transparent;transition:border-color .3s}
+.val-card:hover{border-bottom-color:var(--red);background:var(--black-2)}
+.val-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;color:var(--red);margin-bottom:.6rem}
+.val-name{font-family:var(--cond);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--white);margin-bottom:.6rem}
+.val-text{font-size:.88rem;font-weight:300;color:var(--white-mute);line-height:1.75}
+
+/* ============================================================
+   LEADERSHIP TEAM
+============================================================ */
+#team{background:var(--black-2)}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.team-card{background:var(--black-2);padding:2.5rem 2rem;border-left:2px solid transparent;transition:border-color .3s;display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:start}
+.team-card:hover{border-left-color:var(--red)}
+.team-av{width:72px;height:72px;background:var(--black-4);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1.4rem;color:var(--red);flex-shrink:0;border:1px solid var(--border)}
+.team-info{display:flex;flex-direction:column;gap:.25rem}
+.team-name{font-family:var(--cond);font-weight:900;font-size:1.3rem;text-transform:uppercase;color:var(--white)}
+.team-role{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.team-bio{font-size:.88rem;font-weight:300;color:var(--white-mute);line-height:1.7;margin-top:.6rem}
+.team-certs{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.cert-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;padding:.2rem .5rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.team-prev{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);margin-top:.6rem;display:flex;align-items:center;gap:.4rem}
+.team-prev::before{content:'◈';color:var(--red);font-size:.6rem}
+
+/* ============================================================
+   ADVISORY BOARD
+============================================================ */
+#advisory{background:var(--black)}
+.advisory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.adv-card{background:var(--black);padding:2rem 1.8rem;border-top:2px solid transparent;transition:border-color .3s}
+.adv-card:hover{border-top-color:var(--red);background:var(--black-2)}
+.adv-av{width:52px;height:52px;background:var(--black-4);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1rem;color:var(--red);margin-bottom:1rem}
+.adv-name{font-family:var(--cond);font-weight:700;font-size:1.05rem;text-transform:uppercase;color:var(--white)}
+.adv-role{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-top:.25rem}
+.adv-prev{font-size:.83rem;font-weight:300;color:var(--white-mute);margin-top:.5rem;line-height:1.65}
+
+/* ============================================================
+   ACCREDITATIONS / CERTS
+============================================================ */
+#accreditations{background:var(--black-2)}
+.acc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.acc-card{background:var(--black-2);padding:2rem 1.5rem;text-align:center;border-top:2px solid transparent;transition:all .3s}
+.acc-card:hover{border-top-color:var(--red)}
+.acc-icon{font-size:2rem;margin-bottom:.9rem}
+.acc-name{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
+.acc-body{font-size:.82rem;font-weight:300;color:var(--white-mute);line-height:1.65}
+.acc-since{font-family:var(--mono);font-size:.6rem;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-top:.5rem}
+
+/* ============================================================
+   GLOBAL FOOTPRINT
+============================================================ */
+#global{background:var(--black)}
+.global-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem}
+.offices-list{display:flex;flex-direction:column}
+.office-row{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0;border-bottom:1px solid var(--border);transition:all .2s}
+.office-row:hover .oc{color:var(--red)}
+.oc{font-family:var(--cond);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--white);transition:color .2s}
+.oco{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--white-mute);text-transform:uppercase;margin-top:.15rem}
+.os{font-family:var(--mono);font-size:.6rem;color:var(--red);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:.4rem}
+.dl{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite;display:inline-block;flex-shrink:0}
+.global-right{display:flex;flex-direction:column;gap:2rem}
+.global-stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)}
+.gs-card{background:var(--black-2);padding:1.6rem 1.4rem;text-align:center}
+.gs-num{font-family:var(--cond);font-weight:900;font-size:2rem;color:var(--white);line-height:1}
+.gs-num b{color:var(--red)}
+.gs-lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-top:.3rem}
+/* SVG world map */
+.world-map{width:100%;opacity:.75}
+
+/* ============================================================
+   CULTURE & DIVERSITY
+============================================================ */
+#culture{background:var(--black-2)}
+.culture-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.culture-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:2.5rem}
+.pillar{background:var(--black-2);padding:1.6rem 1.4rem;border-top:2px solid transparent;transition:border-color .3s}
+.pillar:hover{border-top-color:var(--red)}
+.pillar-icon{font-size:1.4rem;margin-bottom:.7rem}
+.pillar-name{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
+.pillar-text{font-size:.83rem;font-weight:300;color:var(--white-mute);line-height:1.7}
+.culture-right{display:flex;flex-direction:column;gap:1.5rem}
+.culture-quote{border-left:3px solid var(--red);padding:1.4rem 1.6rem;background:var(--black-3)}
+.cq-text{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8;font-style:italic}
+.cq-attr{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.8rem}
+.culture-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.cs-card{background:var(--black-3);padding:1.4rem;text-align:center}
+.cs-num{font-family:var(--cond);font-weight:900;font-size:2rem;color:var(--white)}
+.cs-num b{color:var(--red)}
+.cs-lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-top:.2rem}
+
+/* ============================================================
+   PARTNERS & ECOSYSTEM
+============================================================ */
+#partners{background:var(--black)}
+.partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.partner-card{background:var(--black);padding:2rem 1.5rem;text-align:center;border-top:2px solid transparent;transition:all .3s}
+.partner-card:hover{border-top-color:var(--red);background:var(--black-2)}
+.partner-name{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white-mute);transition:color .3s}
+.partner-card:hover .partner-name{color:var(--white)}
+.partner-type{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-top:.35rem}
+
+/* ============================================================
+   CAREERS CTA
+============================================================ */
+#careers-cta{background:var(--black-2);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.careers-text p{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8;margin-top:1rem}
+.open-roles{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.role-row{background:var(--black-2);padding:1.2rem 1.6rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-left:2px solid transparent;transition:all .2s;cursor:pointer!important}
+.role-row:hover{border-left-color:var(--red);background:var(--black-3)}
+.role-title{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white)}
+.role-dept{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-top:.2rem}
+.role-meta{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;flex-shrink:0}
+.role-loc{font-family:var(--mono);font-size:.62rem;color:var(--white-mute)}
+.role-type{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;padding:.2rem .5rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.role-arrow{color:var(--red);font-size:1rem;font-family:var(--mono)}
+
+/* ============================================================
+   PRESS / RECOGNITION
+============================================================ */
+#press{background:var(--black)}
+.press-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.press-card{background:var(--black);padding:2rem 1.8rem;border-top:2px solid transparent;transition:border-color .3s}
+.press-card:hover{border-top-color:var(--red)}
+.press-pub{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.press-headline{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white);line-height:1.2;margin-bottom:.5rem}
+.press-snippet{font-size:.85rem;font-weight:300;color:var(--white-mute);line-height:1.7;font-style:italic;padding-left:.8rem;border-left:2px solid var(--border)}
+.press-date{font-family:var(--mono);font-size:.6rem;color:var(--white-mute);margin-top:.7rem}
+
+/* ============================================================
+   FINAL CTA
+============================================================ */
+#final-cta{background:var(--red);padding:6rem 4rem;text-align:center;position:relative;overflow:hidden}
+#final-cta::before{content:'RDDA';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(10rem,25vw,26rem);color:rgba(0,0,0,.06);white-space:nowrap;pointer-events:none}
+.fcta-tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:.5rem;position:relative}
+.fcta-dot{width:6px;height:6px;background:#fff;border-radius:50%;animation:blink 1.4s infinite;pointer-events:none}
+.fcta-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.5rem,5.5vw,6rem);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:1.4rem;position:relative}
+.fcta-sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.82);margin-bottom:3rem;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.75;position:relative}
+.fcta-actions{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;position:relative}
+.btn-white{background:#fff;color:var(--black)!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;display:inline-block;transition:all .2s;cursor:pointer!important}
+.btn-white:hover{background:var(--black);color:#fff!important}
+.btn-white-ghost{background:transparent;color:#fff!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.4rem;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,.45);transition:all .2s;cursor:pointer!important}
+.btn-white-ghost:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8)}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer{background:var(--black);border-top:1px solid var(--border);padding:4.5rem 4rem 2.5rem}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-logo{display:flex;align-items:center;gap:.75rem}
+.foot-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75;max-width:275px}
+.foot-certs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.foot-cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;padding:.28rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.foot-socials{display:flex;gap:.65rem;margin-top:.5rem}
+.foot-social{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important}
+.foot-social:hover{border-color:var(--red);color:var(--red)}
+.foot-col h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1.3rem;display:block;opacity:1}
+.foot-col .foot-links{display:flex;flex-direction:column;gap:.65rem;list-style:none}
+.foot-col .foot-links a{font-size:.87rem;font-weight:300;color:var(--white-mute);text-decoration:none;transition:color .2s;display:block;cursor:pointer!important;opacity:1}
+.foot-col .foot-links a:hover{color:var(--red)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute)}
+.foot-copy b{color:var(--red);font-weight:400}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:color .2s;cursor:pointer!important}
+.foot-legal a:hover{color:var(--red)}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:1200px){
+  .acc-grid{grid-template-columns:repeat(3,1fr)}
+  .partners-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:1024px){
+  section{padding:5rem 2.5rem}
+  nav{padding:1.3rem 2.5rem}
+  #hero{padding:8rem 2.5rem 4.5rem}
+  #final-cta{padding:5rem 2.5rem}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-right{display:none}
+  #origin{grid-template-columns:1fr}
+  .mvv-grid{grid-template-columns:1fr}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .team-grid{grid-template-columns:1fr}
+  .advisory-grid{grid-template-columns:1fr 1fr}
+  .acc-grid{grid-template-columns:repeat(2,1fr)}
+  .global-layout{grid-template-columns:1fr}
+  .culture-layout{grid-template-columns:1fr}
+  .partners-grid{grid-template-columns:1fr 1fr}
+  #careers-cta{grid-template-columns:1fr}
+  .press-grid{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  section{padding:4rem 1.25rem}
+  nav{padding:1.1rem 1.25rem}
+  #hero{padding:7rem 1.25rem 4rem}
+  #final-cta{padding:4.5rem 1.25rem}
+  footer{padding:3.5rem 1.25rem 2rem}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .values-grid{grid-template-columns:1fr}
+  .advisory-grid{grid-template-columns:1fr}
+  .acc-grid{grid-template-columns:1fr 1fr}
+  .culture-pillars{grid-template-columns:1fr}
+  .culture-stats{grid-template-columns:1fr 1fr}
+  .partners-grid{grid-template-columns:1fr 1fr}
+  .press-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  #hire-float{bottom:1rem;right:1rem}
+  .hire-btn{font-size:.65rem;padding:.75rem 1.2rem}
+  .global-stat-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .acc-grid{grid-template-columns:1fr}
+  .partners-grid{grid-template-columns:1fr}
+  .culture-stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- FLOATING HIRE -->
+<div id="hire-float">
+  <a href="#final-cta" class="hire-btn"><span class="hire-dot"></span>Hire RDDA Now</a>
+  <button class="hire-dismiss" id="hireDismiss">Dismiss</button>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="RDD Agency Home">
+    <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+    <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Main navigation">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#why-rdd">Why RDD</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html" class="nav-active">About</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#contact" class="nav-cta"><span>Get Protected</span></a>
+  </div>
+  <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html#services" class="mob-lnk">Services</a>
+  <a href="index.html#why-rdd" class="mob-lnk">Why RDD</a>
+  <a href="pricing.html" class="mob-lnk">Pricing</a>
+  <a href="about.html" class="mob-lnk" style="color:var(--red)">About</a>
+  <a href="index.html#team" class="mob-lnk">Team</a>
+  <a href="index.html#contact" class="mob-lnk" style="color:var(--red)">Get Protected →</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" role="banner">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-scan" aria-hidden="true"></div>
+  <div class="hero-orb" aria-hidden="true"></div>
+  <div class="hero-orb2" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">About RDDA</span>
+      </nav>
+      <div class="hero-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Est. 2016 — London, UK</div>
+      <h1 class="hero-title">
+        Razi Digital<br>
+        <em>Defence</em><br>
+        Agency
+        <span class="sub">RDDA // rddagency.com</span>
+      </h1>
+      <p class="hero-desc">We are not a software company that stumbled into security. RDDA was built from the ground up by former intelligence operators, elite red teamers, and incident response veterans — people who have hunted adversaries for a living and know exactly what it takes to protect what matters.</p>
+      <div class="hero-actions">
+        <a href="#origin" class="btn-red">Our Story →</a>
+        <a href="#team" class="btn-ghost">Meet the Team</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-grid">
+        <div class="hero-stat"><div class="hs-num">20<b>16</b></div><div class="hs-lbl">Year Founded</div></div>
+        <div class="hero-stat"><div class="hs-num">340<b>+</b></div><div class="hs-lbl">Security Experts</div></div>
+        <div class="hero-stat"><div class="hs-num">47</div><div class="hs-lbl">Countries Active</div></div>
+        <div class="hero-stat"><div class="hs-num">500<b>+</b></div><div class="hs-lbl">Enterprise Clients</div></div>
+        <div class="hero-stat"><div class="hs-num">6</div><div class="hs-lbl">Global SOC Hubs</div></div>
+        <div class="hero-stat"><div class="hs-num">$2.<b>1B</b></div><div class="hs-lbl">Losses Prevented</div></div>
+      </div>
+      <div class="hero-cert-strip">
+        <span class="cert-pill">ISO 27001</span>
+        <span class="cert-pill">CREST</span>
+        <span class="cert-pill">SOC 2 Type II</span>
+        <span class="cert-pill">FedRAMP</span>
+        <span class="cert-pill">GDPR Compliant</span>
+        <span class="cert-pill">TIBER-EU Ready</span>
+        <span class="cert-pill">CBEST</span>
+      </div>
+      <div class="hero-live">
+        <div><div class="hl-label">Active Threat Hunts Right Now</div></div>
+        <div class="hl-value" id="huntCount">39</div>
+        <div class="hl-live"><span class="hero-blink" aria-hidden="true"></span>Live</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marq-track">
+    <span class="marq-item">Founded By Intelligence Community Veterans</span>
+    <span class="marq-item">Operator-Led, Not Sales-Led</span>
+    <span class="marq-item">340+ Elite Security Professionals</span>
+    <span class="marq-item">47 Countries · 6 Active SOC Hubs</span>
+    <span class="marq-item">$2.1B in Prevented Financial Losses</span>
+    <span class="marq-item">ISO 27001 · CREST · SOC 2 Type II</span>
+    <span class="marq-item">24/7/365 Global Operations</span>
+    <span class="marq-item">Founded By Intelligence Community Veterans</span>
+    <span class="marq-item">Operator-Led, Not Sales-Led</span>
+    <span class="marq-item">340+ Elite Security Professionals</span>
+    <span class="marq-item">47 Countries · 6 Active SOC Hubs</span>
+    <span class="marq-item">$2.1B in Prevented Financial Losses</span>
+    <span class="marq-item">ISO 27001 · CREST · SOC 2 Type II</span>
+    <span class="marq-item">24/7/365 Global Operations</span>
+  </div>
+</div>
+
+<!-- ===================== ORIGIN STORY ===================== -->
+<section id="origin">
+  <div class="origin-text rev-l">
+    <div class="sec-tag">Our Story</div>
+    <h2 class="sec-title">Built in the<br><em>Trenches.</em></h2>
+    <p class="body-text">RDDA did not begin in a boardroom or a venture capital pitch. It began in 2016 when <strong>M. Razi</strong>, a former intelligence advisor who had spent 18 years in adversarial cyber operations, watched a Fortune 500 client suffer a catastrophic breach that should have been prevented. The incident was not the result of a lack of technology — it was the result of a lack of operators who truly understood how adversaries think and move.</p>
+    <div class="origin-pull">
+      "The industry was full of tools and dashboards.<br>What was missing was <em>judgment.</em>"
+    </div>
+    <p class="body-text">Razi founded RDDA with a single principle: hire operators, not salespeople. Build every team the way a tier-one special operations unit builds itself — with specialists, clear roles, and a culture of brutal honesty about what works and what does not.</p>
+    <p class="body-text">Today, RDDA is the trusted cybersecurity partner for governments, central banks, critical infrastructure operators, and the world's largest technology companies. Our clients include entities that cannot afford a single security failure — and they trust us precisely because we hold ourselves to the same standard.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
+      <a href="#team" class="btn-red">Meet the Founders</a>
+      <a href="index.html#clients" class="btn-ghost">Our Clients</a>
+    </div>
+  </div>
+
+  <div class="origin-timeline stag rev-r">
+    <div class="tl-item">
+      <div class="tl-dot">2016</div>
+      <div class="tl-body">
+        <div class="tl-year">2016 — London</div>
+        <div class="tl-title">RDDA Founded</div>
+        <div class="tl-desc">M. Razi establishes Razi Digital Agency Ltd in Canary Wharf, London. Initial team of 12 former intelligence and military cyber specialists. First three enterprise clients onboarded within 60 days.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2017</div>
+      <div class="tl-body">
+        <div class="tl-year">2017 — Dubai</div>
+        <div class="tl-title">Middle East Expansion</div>
+        <div class="tl-desc">RDDA opens its first international SOC hub in Dubai, UAE, serving GCC financial institutions. ISO 27001 certification achieved. First government contract signed — classified client, Gulf Cooperation Council.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2018</div>
+      <div class="tl-body">
+        <div class="tl-year">2018 — Global</div>
+        <div class="tl-title">ThreatCore™ Platform Launched</div>
+        <div class="tl-desc">Proprietary threat intelligence platform ThreatCore™ reaches general availability, processing 500M+ daily signals. CREST accreditation achieved. Team expands to 80 specialists across 4 countries.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2019</div>
+      <div class="tl-body">
+        <div class="tl-year">2019 — Singapore</div>
+        <div class="tl-title">APAC Hub Opens</div>
+        <div class="tl-desc">Singapore SOC becomes the anchor for APAC operations. RDDA onboards its 100th enterprise client. First TIBER-EU red team engagement delivered for a systemically important financial institution.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2021</div>
+      <div class="tl-body">
+        <div class="tl-year">2021 — USA</div>
+        <div class="tl-title">Americas Presence Established</div>
+        <div class="tl-desc">New York SOC hub opens. SOC 2 Type II certification completed. RDDA plays a leading role in response to three critical infrastructure incidents affecting US energy and water systems. Team reaches 200.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2023</div>
+      <div class="tl-body">
+        <div class="tl-year">2023 — Worldwide</div>
+        <div class="tl-title">500+ Client Milestone</div>
+        <div class="tl-desc">RDDA crosses 500 active enterprise clients across 47 countries. ThreatCore™ now processes 2B+ daily signals. Frankfurt and São Paulo SOC hubs open. $2.1B in cumulative prevented financial losses documented.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">Now</div>
+      <div class="tl-body">
+        <div class="tl-year">2025 — Present</div>
+        <div class="tl-title">The Fight Continues</div>
+        <div class="tl-desc">340+ specialists. 6 SOC hubs. 47 countries. And a commitment that has never wavered: we will always hire operators first, hold ourselves to the standards of our clients' adversaries, and never stop getting better.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MISSION / VISION / VALUES ===================== -->
+<section id="mvv">
+  <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 0">
+    <div class="sec-tag" style="justify-content:center">Why We Exist</div>
+    <h2 class="sec-title">Mission, Vision<br>&amp; <em>Purpose</em></h2>
+  </div>
+  <div class="mvv-grid stag">
+    <div class="mvv-card mission">
+      <div class="mvv-icon">🎯</div>
+      <div class="mvv-type">Mission</div>
+      <div class="mvv-title">Our Purpose</div>
+      <p class="mvv-text">To protect the organisations and systems that the world depends on — governments, critical infrastructure, financial institutions, and technology leaders — from the most sophisticated cyber threats on earth. We do this by deploying the same expertise, tradecraft, and commitment to excellence as the adversaries we defend against.</p>
+    </div>
+    <div class="mvv-card vision">
+      <div class="mvv-icon">🌐</div>
+      <div class="mvv-type">Vision</div>
+      <div class="mvv-title">Where We're Going</div>
+      <p class="mvv-text">A world where critical systems are operated with the confidence that comes from genuine, expert-led security. Not checkbox compliance or product dashboards — but real operators, running real hunts, finding real adversaries before they strike. RDDA's vision is to make that standard of security accessible to any organisation that has something worth protecting.</p>
+    </div>
+    <div class="mvv-card values">
+      <div class="mvv-icon">⚡</div>
+      <div class="mvv-type">Purpose</div>
+      <div class="mvv-title">What Drives Us</div>
+      <p class="mvv-text">Every single one of our 340+ specialists chose this field because they believe the work matters. When we stop a ransomware attack on a hospital network, patients get the care they need. When we detect a supply chain compromise targeting a bank, people's savings are safe. That is not abstract — it is the reason we show up at 3am and do not stop until the job is done.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CORE VALUES ===================== -->
+<section id="values">
+  <div class="reveal">
+    <div class="sec-tag">What We Stand For</div>
+    <h2 class="sec-title">Core <em>Values</em></h2>
+    <p class="body-text" style="max-width:620px;margin-top:1rem">These are not words on a wall. They are the criteria by which we hire, promote, and evaluate every person at RDDA — from our founder to our most recently joined analyst.</p>
+  </div>
+  <div class="values-grid stag">
+    <div class="val-card">
+      <div class="val-num">01</div>
+      <div class="val-name">Operator Mindset</div>
+      <div class="val-text">We think like the adversaries we defend against. Curiosity, persistence, and a refusal to accept "probably secure" are not personality traits here — they are professional requirements. We hire people who have genuinely operated in adversarial environments and who cannot switch that instinct off.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-num">02</div>
+      <div class="val-name">Brutal Honesty</div>
+      <div class="val-text">We tell clients what they need to hear, not what they want to hear. If your environment has a critical exposure, you will know it — not softened in consultant language but stated clearly with evidence. Internally, we hold each other to the same standard. Comfortable lies destroy security postures and careers.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-num">03</div>
+      <div class="val-name">Relentless Precision</div>
+      <div class="val-text">Security is a domain where imprecision has consequences. Every finding is verified. Every report is technically accurate. Every remediation recommendation is tested in our lab before it reaches a client. We do not estimate, guess, or round. We confirm.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-num">04</div>
+      <div class="val-name">Client First, Always</div>
+      <div class="val-text">Our clients trust us with their most sensitive systems and secrets. That trust is a weight we carry seriously. We never prioritise our commercial interests over a client's security interests. If we cannot help, we say so. If another provider is better suited, we say that too.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-num">05</div>
+      <div class="val-name">Continuous Mastery</div>
+      <div class="val-text">Adversary tradecraft evolves every day. RDDA invests more per analyst in training, research, and tool development than any firm in our sector. Every analyst has an annual training budget of $12,000. We run internal red team exercises, CTFs, and research sprints year-round. Stagnation is a security risk.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-num">06</div>
+      <div class="val-name">Ethical Conduct</div>
+      <div class="val-text">We operate with the highest ethical standards in a field where the line between defensive and offensive capability is thin. We work only within authorised scopes, we protect the data we access, and we refuse engagements that we believe are intended to cause harm. Ethics are not negotiable — not for any client, at any price.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LEADERSHIP TEAM ===================== -->
+<section id="team">
+  <div class="reveal">
+    <div class="sec-tag">Leadership Team</div>
+    <h2 class="sec-title">The Operators<br>Behind <em>RDDA</em></h2>
+    <p class="body-text" style="max-width:620px;margin-top:1rem">Our leadership team is made up of people who have operated at the intersection of intelligence, military cyber, and enterprise security for decades. Every leader has been in the field — not just managed it.</p>
+  </div>
+  <div class="team-grid stag">
+    <div class="team-card">
+      <div class="team-av" aria-hidden="true">MR</div>
+      <div class="team-info">
+        <div class="team-name">M. Razi</div>
+        <div class="team-role">Founder &amp; Chief Executive Officer</div>
+        <p class="team-bio">M. Razi founded RDDA after 18 years in intelligence community cyber operations, serving as a technical advisor to multiple national CERTs and participating in some of the most significant government-attributed cyber operations of the 2000s and 2010s. His philosophy — that defensive security must be built on offensive expertise — defines every engagement RDDA delivers. He holds degrees in Computer Science and International Security Studies from King's College London.</p>
+        <div class="team-prev">Former: National CERT Advisor, Intelligence Community, HM Government (UK)</div>
+        <div class="team-certs">
+          <span class="cert-tag">CISSP</span><span class="cert-tag">OSCP</span><span class="cert-tag">CEH</span><span class="cert-tag">CISM</span><span class="cert-tag">M.Sc. CompSci</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-av" aria-hidden="true">AK</div>
+      <div class="team-info">
+        <div class="team-name">A. Karim</div>
+        <div class="team-role">Head of Red Team Operations</div>
+        <p class="team-bio">A. Karim leads all adversary simulation engagements at RDDA, bringing 12 years of offensive cyber experience from NATO's Rapid Deployable Corps Cyber Unit and subsequent work as a specialist contractor for allied governments. He has personally led over 150 red team operations against financial institutions, critical infrastructure, and government agencies across Europe, the Gulf, and Southeast Asia.</p>
+        <div class="team-prev">Former: NATO Offensive Cyber Specialist, Allied Joint Force Command Brunssum</div>
+        <div class="team-certs">
+          <span class="cert-tag">OSED</span><span class="cert-tag">CRTO</span><span class="cert-tag">CRTE</span><span class="cert-tag">GXPN</span><span class="cert-tag">CREST CCT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-av" aria-hidden="true">SF</div>
+      <div class="team-info">
+        <div class="team-name">S. Farooqi</div>
+        <div class="team-role">Chief Threat Intelligence Analyst</div>
+        <p class="team-bio">S. Farooqi directs RDDA's threat intelligence programme and has personally led over 400 DFIR investigations across 30 countries. Before joining RDDA, she spent 8 years at Mandiant's Advanced Practices team where she was responsible for attribution analysis of nation-state APT campaigns. She is widely regarded as one of the world's leading experts in intrusion forensics and adversary tradecraft attribution.</p>
+        <div class="team-prev">Former: Advanced Practices Analyst, Mandiant (now Google Cloud Security)</div>
+        <div class="team-certs">
+          <span class="cert-tag">GCFE</span><span class="cert-tag">GCFA</span><span class="cert-tag">GREM</span><span class="cert-tag">GASF</span><span class="cert-tag">EnCE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-av" aria-hidden="true">NN</div>
+      <div class="team-info">
+        <div class="team-name">N. Naveed</div>
+        <div class="team-role">VP Cloud &amp; Infrastructure Security</div>
+        <p class="team-bio">N. Naveed leads RDDA's cloud security practice. Before joining in 2020, he spent 9 years at Google Cloud as a Staff Security Architect, designing security controls for Google Cloud Platform's enterprise product line. He is a co-author of the GCP Security Command Centre architecture and holds specialist certifications across all three major cloud platforms. His team has secured cloud environments for over 80 enterprise clients.</p>
+        <div class="team-prev">Former: Staff Security Architect, Google Cloud (Sunnyvale &amp; London)</div>
+        <div class="team-certs">
+          <span class="cert-tag">AWS Security</span><span class="cert-tag">GCP Pro</span><span class="cert-tag">AZ-500</span><span class="cert-tag">CCSP</span><span class="cert-tag">CISSP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-av" aria-hidden="true">TR</div>
+      <div class="team-info">
+        <div class="team-name">T. Rahman</div>
+        <div class="team-role">Chief Operating Officer</div>
+        <p class="team-bio">T. Rahman oversees RDDA's global operations, client delivery quality, and the expansion of its SOC hub network. With an MBA from INSEAD and a background in McKinsey's Technology and Cybersecurity practice, she brings the operational rigour needed to scale a firm of this complexity without compromising quality. She joined RDDA in 2018 to build the systems that allow a firm of operators to operate like one.</p>
+        <div class="team-prev">Former: Senior Engagement Manager, McKinsey &amp; Company (London, Singapore)</div>
+        <div class="team-certs">
+          <span class="cert-tag">MBA INSEAD</span><span class="cert-tag">CISM</span><span class="cert-tag">PRINCE2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-av" aria-hidden="true">DH</div>
+      <div class="team-info">
+        <div class="team-name">D. Hassan</div>
+        <div class="team-role">General Counsel &amp; VP Compliance</div>
+        <p class="team-bio">D. Hassan heads RDDA's legal, compliance, and regulatory affairs functions globally. A qualified solicitor with 15 years of technology and data protection law experience, he oversees RDDA's compliance with UK GDPR, NIS2, DORA, FCA requirements, and sector-specific regulatory frameworks across 47 jurisdictions. He previously led the cybersecurity practice at Clifford Chance LLP.</p>
+        <div class="team-prev">Former: Partner, Cybersecurity Practice, Clifford Chance LLP (London)</div>
+        <div class="team-certs">
+          <span class="cert-tag">Solicitor (England &amp; Wales)</span><span class="cert-tag">CIPP/E</span><span class="cert-tag">CIPM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ADVISORY BOARD ===================== -->
+<section id="advisory">
+  <div class="reveal">
+    <div class="sec-tag">Advisory Board</div>
+    <h2 class="sec-title">Senior <em>Advisors</em></h2>
+    <p class="body-text" style="max-width:620px;margin-top:1rem">RDDA's advisory board brings together former heads of national cybersecurity agencies, intelligence community veterans, and C-suite executives from the world's largest financial and technology organisations.</p>
+  </div>
+  <div class="advisory-grid stag">
+    <div class="adv-card">
+      <div class="adv-av" aria-hidden="true">JM</div>
+      <div class="adv-name">J. McLaren</div>
+      <div class="adv-role">Senior Advisor — National Security</div>
+      <p class="adv-prev">Former Director General, UK National Cyber Security Centre (NCSC). 28 years GCHQ. Advises on UK government engagement and national infrastructure risk frameworks.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-av" aria-hidden="true">AL</div>
+      <div class="adv-name">A. Lindqvist</div>
+      <div class="adv-role">Senior Advisor — Financial Sector</div>
+      <p class="adv-prev">Former Chief Information Security Officer, European Central Bank. 20 years in central banking cybersecurity across the ECB and Riksbank. Advises on financial sector regulatory engagement and systemic risk.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-av" aria-hidden="true">PM</div>
+      <div class="adv-name">P. Mistry</div>
+      <div class="adv-role">Senior Advisor — Critical Infrastructure</div>
+      <p class="adv-prev">Former VP Critical Infrastructure Security, US Department of Energy. Led security programmes for 400+ energy facilities. Advises on ICS/OT security strategy and US federal regulatory compliance.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-av" aria-hidden="true">RC</div>
+      <div class="adv-name">R. Chen</div>
+      <div class="adv-role">Senior Advisor — Asia Pacific</div>
+      <p class="adv-prev">Former Director, Cyber Security Agency of Singapore (CSA). Architect of Singapore's national cybersecurity strategy 2016–2021. Advises on APAC regional expansion and government relations in Southeast Asia.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-av" aria-hidden="true">FO</div>
+      <div class="adv-name">F. Okafor</div>
+      <div class="adv-role">Senior Advisor — Africa &amp; Emerging Markets</div>
+      <p class="adv-prev">Former CISO, African Development Bank. Co-founder of the African Cybersecurity Forum. Advises on market development across Sub-Saharan Africa and emerging market regulatory environments.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-av" aria-hidden="true">KV</div>
+      <div class="adv-name">K. Voss</div>
+      <div class="adv-role">Senior Advisor — AI &amp; Emerging Threats</div>
+      <p class="adv-prev">Former Lead Security Researcher, DeepMind. Specialises in adversarial AI, LLM security, and the intersection of artificial intelligence and national security. Advises on RDDA's AI-powered threat detection research programme.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACCREDITATIONS ===================== -->
+<section id="accreditations">
+  <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto">
+    <div class="sec-tag" style="justify-content:center">Certifications &amp; Accreditations</div>
+    <h2 class="sec-title">Standards We<br><em>Live By</em></h2>
+    <p class="body-text" style="margin-top:1rem">Our accreditations are not marketing assets. They are independently verified proof that our systems, processes, and people meet the highest standards in the industry.</p>
+  </div>
+  <div class="acc-grid stag">
+    <div class="acc-card">
+      <div class="acc-icon">🔐</div>
+      <div class="acc-name">ISO 27001</div>
+      <p class="acc-body">ISO/IEC 27001:2022 certification for our Information Security Management System (ISMS). Audited annually by Bureau Veritas.</p>
+      <div class="acc-since">Certified since 2018</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">🏅</div>
+      <div class="acc-name">CREST</div>
+      <p class="acc-body">CREST-accredited organisation for penetration testing and incident response services. All lead testers hold individual CREST certifications.</p>
+      <div class="acc-since">Accredited since 2018</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">🛡</div>
+      <div class="acc-name">SOC 2 Type II</div>
+      <p class="acc-body">AICPA SOC 2 Type II report covering Security, Availability, and Confidentiality trust service criteria. Completed annually.</p>
+      <div class="acc-since">Certified since 2021</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">⚖️</div>
+      <div class="acc-name">GDPR Compliant</div>
+      <p class="acc-body">Fully compliant with UK GDPR and EU GDPR. DPO appointed. Privacy-by-design embedded in all systems and processes.</p>
+      <div class="acc-since">Compliant since 2018</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">🌐</div>
+      <div class="acc-name">FedRAMP Ready</div>
+      <p class="acc-body">FedRAMP Ready designation for US Federal Government engagements. Supports US agencies subject to FISMA and NIST SP 800-53 requirements.</p>
+      <div class="acc-since">Designated 2023</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">🏦</div>
+      <div class="acc-name">TIBER-EU Ready</div>
+      <p class="acc-body">Qualified Threat Intelligence Provider and Red Team Provider under the ECB TIBER-EU framework for testing financial sector resilience.</p>
+      <div class="acc-since">Qualified since 2019</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">🇬🇧</div>
+      <div class="acc-name">CBEST</div>
+      <p class="acc-body">Bank of England CBEST-approved provider for intelligence-led red teaming of UK financial market infrastructure and systemically important firms.</p>
+      <div class="acc-since">Approved since 2020</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">🏭</div>
+      <div class="acc-name">ICS / OT</div>
+      <p class="acc-body">Specialist ICS/SCADA assessment capability recognised by UK NCSC and US CISA. Covers NERC CIP, IEC 62443, and NIST SP 800-82 frameworks.</p>
+      <div class="acc-since">Recognised since 2020</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">🔒</div>
+      <div class="acc-name">SC Cleared</div>
+      <p class="acc-body">Senior analysts hold UK Security Check (SC) clearance, enabling work on HM Government classified programmes. DV clearances available on request.</p>
+      <div class="acc-since">Clearances maintained</div>
+    </div>
+    <div class="acc-card">
+      <div class="acc-icon">💳</div>
+      <div class="acc-name">PCI DSS QSA</div>
+      <p class="acc-body">PCI DSS Qualified Security Assessor (QSA) company status. Authorised to assess and certify payment card industry compliance for merchants and processors.</p>
+      <div class="acc-since">QSA status since 2022</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GLOBAL FOOTPRINT ===================== -->
+<section id="global">
+  <div class="reveal">
+    <div class="sec-tag">Global Operations</div>
+    <h2 class="sec-title">Operational <em>Everywhere</em><br>That Matters</h2>
+    <p class="body-text" style="max-width:580px;margin-top:1rem">Six active Security Operations Centres spanning four continents, providing true follow-the-sun coverage. No outsourced night shifts. Dedicated, expert teams in every timezone.</p>
+  </div>
+  <div class="global-layout">
+    <div class="offices-list rev-l">
+      <div class="office-row"><div><div class="oc">London</div><div class="oco">United Kingdom — Global HQ &amp; Primary SOC</div></div><span class="os"><span class="dl"></span>Active SOC · 24/7</span></div>
+      <div class="office-row"><div><div class="oc">New York</div><div class="oco">United States — Americas Hub</div></div><span class="os"><span class="dl"></span>Active SOC · 24/7</span></div>
+      <div class="office-row"><div><div class="oc">Dubai</div><div class="oco">United Arab Emirates — MENA Hub</div></div><span class="os"><span class="dl"></span>Active SOC · 24/7</span></div>
+      <div class="office-row"><div><div class="oc">Singapore</div><div class="oco">Singapore — APAC Hub</div></div><span class="os"><span class="dl"></span>Active SOC · 24/7</span></div>
+      <div class="office-row"><div><div class="oc">Frankfurt</div><div class="oco">Germany — European Continental Hub</div></div><span class="os"><span class="dl"></span>Active SOC · 24/7</span></div>
+      <div class="office-row"><div><div class="oc">São Paulo</div><div class="oco">Brazil — Latin America Hub</div></div><span class="os"><span class="dl"></span>Active SOC · 24/7</span></div>
+    </div>
+    <div class="global-right rev-r">
+      <svg class="world-map" viewBox="0 0 580 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map showing RDDA global office locations">
+        <path d="M68,58 L88,53 L128,56 L143,78 L138,108 L118,128 L98,138 L78,133 L63,108 L58,83 Z" fill="rgba(224,26,26,.15)" stroke="rgba(224,26,26,.4)" stroke-width=".8"/>
+        <path d="M128,153 L153,148 L163,168 L158,218 L138,238 L118,228 L113,198 L116,168 Z" fill="rgba(224,26,26,.08)" stroke="rgba(245,245,240,.12)" stroke-width=".8"/>
+        <path d="M238,48 L273,43 L293,58 L288,88 L263,98 L243,88 L233,68 Z" fill="rgba(224,26,26,.18)" stroke="rgba(224,26,26,.5)" stroke-width=".8"/>
+        <path d="M243,108 L278,103 L293,128 L288,183 L263,198 L243,183 L236,153 L238,123 Z" fill="rgba(224,26,26,.08)" stroke="rgba(245,245,240,.12)" stroke-width=".8"/>
+        <path d="M303,38 L418,33 L443,58 L438,98 L408,118 L358,123 L318,113 L298,88 L298,58 Z" fill="rgba(224,26,26,.15)" stroke="rgba(224,26,26,.4)" stroke-width=".8"/>
+        <path d="M418,173 L468,168 L483,193 L473,223 L443,228 L418,213 L413,193 Z" fill="rgba(224,26,26,.08)" stroke="rgba(245,245,240,.12)" stroke-width=".8"/>
+        <!-- Pulsing London HQ -->
+        <circle cx="258" cy="66" r="6" fill="#E01A1A"/>
+        <circle cx="258" cy="66" r="6" fill="none" stroke="#E01A1A" stroke-width="2" opacity=".5"><animate attributeName="r" values="6;22;6" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;0;.5" dur="2.5s" repeatCount="indefinite"/></circle>
+        <circle cx="106" cy="93" r="5" fill="#E01A1A"/>
+        <circle cx="368" cy="70" r="5" fill="#E01A1A"/>
+        <circle cx="438" cy="98" r="5" fill="#E01A1A"/>
+        <circle cx="313" cy="128" r="5" fill="#E01A1A"/>
+        <circle cx="135" cy="183" r="5" fill="#E01A1A"/>
+        <text x="248" y="55" font-family="Space Mono" font-size="7.5" fill="rgba(245,245,240,.85)" font-weight="700">LON ★</text>
+        <text x="98" y="83" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">NYC</text>
+        <text x="430" y="90" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">SGP</text>
+        <text x="308" y="141" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">DXB</text>
+        <text x="356" y="62" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">FRA</text>
+        <text x="126" y="195" font-family="Space Mono" font-size="7" fill="rgba(245,245,240,.8)">SAO</text>
+        <!-- Connection lines -->
+        <line x1="258" y1="66" x2="106" y2="93" stroke="rgba(224,26,26,.2)" stroke-width=".8" stroke-dasharray="5 4"/>
+        <line x1="258" y1="66" x2="368" y2="70" stroke="rgba(224,26,26,.2)" stroke-width=".8" stroke-dasharray="5 4"/>
+        <line x1="258" y1="66" x2="313" y2="128" stroke="rgba(224,26,26,.2)" stroke-width=".8" stroke-dasharray="5 4"/>
+        <line x1="258" y1="66" x2="438" y2="98" stroke="rgba(224,26,26,.2)" stroke-width=".8" stroke-dasharray="5 4"/>
+        <line x1="258" y1="66" x2="135" y2="183" stroke="rgba(224,26,26,.2)" stroke-width=".8" stroke-dasharray="5 4"/>
+      </svg>
+      <div class="global-stat-row">
+        <div class="gs-card"><div class="gs-num">47</div><div class="gs-lbl">Countries Served</div></div>
+        <div class="gs-card"><div class="gs-num" style="color:var(--red)">6</div><div class="gs-lbl">SOC Hubs</div></div>
+        <div class="gs-card"><div class="gs-num">24<b>/7</b></div><div class="gs-lbl">Coverage</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CULTURE ===================== -->
+<section id="culture">
+  <div class="culture-layout">
+    <div class="rev-l">
+      <div class="sec-tag">Our Culture</div>
+      <h2 class="sec-title">Built on<br><em>Excellence.</em></h2>
+      <p class="body-text" style="margin-top:1rem">RDDA is not a typical technology firm. We do not have ping-pong tables. We have a culture built around mastery, accountability, and a genuine sense of mission. The people who thrive here are driven by what the work means — not just what it pays.</p>
+      <div class="culture-pillars stag">
+        <div class="pillar"><div class="pillar-icon">🎯</div><div class="pillar-name">Mission Driven</div><div class="pillar-text">Every analyst knows why the work matters. We invest in that clarity because purpose produces performance that no KPI can replicate.</div></div>
+        <div class="pillar"><div class="pillar-icon">🧠</div><div class="pillar-name">Mastery First</div><div class="pillar-text">$12,000 annual training budget per analyst. Internal research sprints, CTFs, and red team exercises year-round. We pay for your certifications and we expect you to earn them.</div></div>
+        <div class="pillar"><div class="pillar-icon">🌍</div><div class="pillar-name">Globally Diverse</div><div class="pillar-text">Our team speaks 28 languages and represents 34 nationalities. Diverse perspectives are not a policy goal — they are a security capability.</div></div>
+        <div class="pillar"><div class="pillar-icon">⚖️</div><div class="pillar-name">Ethically Led</div><div class="pillar-text">We turn down engagements that conflict with our ethics. We have done it before and we will do it again. Our people need to be able to look back on this work with pride.</div></div>
+      </div>
+    </div>
+    <div class="culture-right rev-r">
+      <div class="culture-quote">
+        <p class="cq-text">"I have worked at three of the largest cybersecurity firms in the world. RDDA is the only place where I have felt that the organisation genuinely believes the mission matters more than the margin. That is rare, and it changes how you work."</p>
+        <div class="cq-attr">Senior Red Team Operator — RDDA London, joined 2021</div>
+      </div>
+      <div class="culture-quote">
+        <p class="cq-text">"The training here is unlike anything I experienced elsewhere. Within my first year I had three new certifications, had participated in a live TIBER-EU engagement, and had presented findings to a central bank board. That trajectory simply doesn't exist at most firms."</p>
+        <div class="cq-attr">Threat Intelligence Analyst — RDDA Singapore, joined 2022</div>
+      </div>
+      <div class="culture-stats">
+        <div class="cs-card"><div class="cs-num">34</div><div class="cs-lbl">Nationalities on Team</div></div>
+        <div class="cs-card"><div class="cs-num">28</div><div class="cs-lbl">Languages Spoken</div></div>
+        <div class="cs-card"><div class="cs-num">$12<b>K</b></div><div class="cs-lbl">Annual Training Budget</div></div>
+        <div class="cs-card"><div class="cs-num">96<b>%</b></div><div class="cs-lbl">Staff Retention Rate</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARTNERS ===================== -->
+<section id="partners">
+  <div class="reveal">
+    <div class="sec-tag">Technology Partners</div>
+    <h2 class="sec-title">Our <em>Ecosystem</em></h2>
+    <p class="body-text" style="max-width:600px;margin-top:1rem">RDDA maintains strategic technology partnerships with leading platform vendors. These relationships give our clients access to the best available tooling — integrated and operated by operators who know how to extract maximum value from them.</p>
+  </div>
+  <div class="partners-grid stag">
+    <div class="partner-card"><div class="partner-name">Microsoft Security</div><div class="partner-type">Gold Partner — Sentinel / Defender</div></div>
+    <div class="partner-card"><div class="partner-name">CrowdStrike</div><div class="partner-type">Authorized Services Partner</div></div>
+    <div class="partner-card"><div class="partner-name">Palo Alto Networks</div><div class="partner-type">NextWave Partner</div></div>
+    <div class="partner-card"><div class="partner-name">Elastic Security</div><div class="partner-type">Certified Integration Partner</div></div>
+    <div class="partner-card"><div class="partner-name">Recorded Future</div><div class="partner-type">Threat Intelligence Alliance</div></div>
+    <div class="partner-card"><div class="partner-name">Tenable</div><div class="partner-type">Platinum Partner</div></div>
+    <div class="partner-card"><div class="partner-name">Splunk</div><div class="partner-type">Splunk Trust — Elite Partner</div></div>
+    <div class="partner-card"><div class="partner-name">AWS Security</div><div class="partner-type">AWS Security Competency</div></div>
+  </div>
+</section>
+
+<!-- ===================== CAREERS ===================== -->
+<section id="careers-cta">
+  <div class="careers-text rev-l">
+    <div class="sec-tag">Careers at RDDA</div>
+    <h2 class="sec-title">Join the <em>Team</em></h2>
+    <p class="careers-text">We are always looking for exceptional operators, analysts, and engineers. If you are the kind of person who believes that the mission matters — and who has the technical depth to back that belief up — we want to hear from you.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+      <a href="index.html#contact" class="btn-red">Apply Now →</a>
+      <a href="index.html#contact" class="btn-ghost">Ask a Question</a>
+    </div>
+  </div>
+  <div class="open-roles rev-r">
+    <div class="role-row">
+      <div><div class="role-title">Senior Red Team Operator</div><div class="role-dept">Offensive Security</div></div>
+      <div class="role-meta"><span class="role-loc">London / Remote</span><span class="role-type">Full-Time</span><span class="role-arrow">→</span></div>
+    </div>
+    <div class="role-row">
+      <div><div class="role-title">Threat Intelligence Analyst</div><div class="role-dept">Intelligence</div></div>
+      <div class="role-meta"><span class="role-loc">Singapore / London</span><span class="role-type">Full-Time</span><span class="role-arrow">→</span></div>
+    </div>
+    <div class="role-row">
+      <div><div class="role-title">SOC Analyst — Tier 3</div><div class="role-dept">Managed Detection &amp; Response</div></div>
+      <div class="role-meta"><span class="role-loc">Dubai / Frankfurt</span><span class="role-type">Full-Time</span><span class="role-arrow">→</span></div>
+    </div>
+    <div class="role-row">
+      <div><div class="role-title">Cloud Security Architect</div><div class="role-dept">Cloud &amp; Infrastructure</div></div>
+      <div class="role-meta"><span class="role-loc">New York / Remote</span><span class="role-type">Full-Time</span><span class="role-arrow">→</span></div>
+    </div>
+    <div class="role-row">
+      <div><div class="role-title">DFIR Lead Investigator</div><div class="role-dept">Incident Response</div></div>
+      <div class="role-meta"><span class="role-loc">London / São Paulo</span><span class="role-type">Full-Time</span><span class="role-arrow">→</span></div>
+    </div>
+    <div class="role-row">
+      <div><div class="role-title">Malware Reverse Engineer</div><div class="role-dept">Research &amp; Development</div></div>
+      <div class="role-meta"><span class="role-loc">Global / Remote</span><span class="role-type">Full-Time</span><span class="role-arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRESS ===================== -->
+<section id="press">
+  <div class="reveal">
+    <div class="sec-tag">Press &amp; Recognition</div>
+    <h2 class="sec-title">RDDA in the <em>News</em></h2>
+  </div>
+  <div class="press-grid stag">
+    <div class="press-card">
+      <div class="press-pub">Financial Times</div>
+      <div class="press-headline">RDDA Named Among Top 10 Cybersecurity Firms Protecting Global Finance</div>
+      <p class="press-snippet">"In a sector crowded with software vendors masquerading as security advisors, Razi Digital Agency stands out for its operator-first culture and measurable outcomes."</p>
+      <div class="press-date">March 2025</div>
+    </div>
+    <div class="press-card">
+      <div class="press-pub">The Wall Street Journal</div>
+      <div class="press-headline">The Firm That Stopped a $47 Million Bank Fraud in 38 Minutes</div>
+      <p class="press-snippet">"RDDA's real-time threat intelligence and rapid response capability represent the gold standard for enterprise security in an era of increasingly sophisticated attacks."</p>
+      <div class="press-date">November 2024</div>
+    </div>
+    <div class="press-card">
+      <div class="press-pub">Wired UK</div>
+      <div class="press-headline">Inside the SOC: How RDDA Hunts Nation-State Actors Across 47 Countries</div>
+      <p class="press-snippet">"Walking through RDDA's London operations centre feels less like visiting a technology company and more like entering the nerve centre of a well-run intelligence agency."</p>
+      <div class="press-date">September 2024</div>
+    </div>
+    <div class="press-card">
+      <div class="press-pub">Bloomberg Technology</div>
+      <div class="press-headline">Cybersecurity's Quiet Giants: The Firms Governments Actually Trust</div>
+      <p class="press-snippet">"Among a handful of firms that have genuinely earned access to the world's most sensitive infrastructure, Razi Digital Agency is consistently mentioned first."</p>
+      <div class="press-date">July 2024</div>
+    </div>
+    <div class="press-card">
+      <div class="press-pub">SC Media</div>
+      <div class="press-headline">RDDA Wins Industry Award for Critical Infrastructure Protection</div>
+      <p class="press-snippet">"The panel cited RDDA's documented prevention of an ICS attack on six power substations as an example of detection-led security at its most effective."</p>
+      <div class="press-date">May 2024</div>
+    </div>
+    <div class="press-card">
+      <div class="press-pub">MIT Technology Review</div>
+      <div class="press-headline">ThreatCore™: The Intelligence Platform Quietly Protecting Global Finance</div>
+      <p class="press-snippet">"Processing two billion signals daily, RDDA's proprietary platform has become a critical piece of the global financial sector's early warning infrastructure."</p>
+      <div class="press-date">February 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section id="final-cta">
+  <div class="fcta-tag"><span class="fcta-dot"></span>Limited Availability — Q3 2025</div>
+  <h2 class="fcta-title">Ready to Work<br>With the Best?</h2>
+  <p class="fcta-sub">RDDA protects the organisations that the world cannot afford to lose. If you are one of them — or if you are working to become one — we should talk.</p>
+  <div class="fcta-actions">
+    <a href="index.html#contact" class="btn-white">Request a Security Briefing</a>
+    <a href="pricing.html" class="btn-white-ghost">View Our Pricing →</a>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer role="contentinfo">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+        <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+      </div>
+      <p class="foot-desc">Elite global cybersecurity. Protecting the world's most critical organizations from the most advanced threats — 24 hours a day, 365 days a year.</p>
+      <div class="foot-certs">
+        <span class="foot-cert">ISO 27001</span><span class="foot-cert">CREST</span><span class="foot-cert">SOC 2 II</span><span class="foot-cert">GDPR</span><span class="foot-cert">FedRAMP</span>
+      </div>
+      <div class="foot-socials">
+        <a href="https://linkedin.com/company/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+        <a href="https://twitter.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="Twitter">Tw</a>
+        <a href="https://github.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="GitHub">Gh</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#services">Penetration Testing</a></li>
+        <li><a href="index.html#services">Red Team Operations</a></li>
+        <li><a href="index.html#services">SOC as a Service</a></li>
+        <li><a href="index.html#services">Threat Intelligence</a></li>
+        <li><a href="index.html#services">Incident Response</a></li>
+        <li><a href="index.html#services">Cloud Security</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <ul class="foot-links">
+        <li><a href="about.html" style="color:var(--red)">About RDDA</a></li>
+        <li><a href="about.html#team">Leadership Team</a></li>
+        <li><a href="index.html#clients">Case Studies</a></li>
+        <li><a href="about.html#global">Global Presence</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html#careers-cta">Careers</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#threat-intel">Threat Intelligence Blog</a></li>
+        <li><a href="index.html#threat-intel">Security Advisories</a></li>
+        <li><a href="index.html#services">CVE Research</a></li>
+        <li><a href="index.html#services">White Papers</a></li>
+        <li><a href="vulnerability-disclosure.html">Vulnerability Disclosure</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 <b>RDD Agency</b> — Razi Digital Agency Ltd. All rights reserved. Registered in England &amp; Wales.</span>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="vulnerability-disclosure.html">Vulnerability Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CURSOR ===== */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,[tabindex]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hov');ring.classList.add('hov')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hov');ring.classList.remove('hov')});
+});
+
+/* ===== NAVBAR ===== */
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>40));
+
+/* ===== HAMBURGER ===== */
+const ham=document.getElementById('navHam'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');ham.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mob-lnk').forEach(l=>l.addEventListener('click',()=>{
+  mob.classList.remove('open');ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+
+/* ===== FLOATING DISMISS ===== */
+document.getElementById('hireDismiss').addEventListener('click',()=>document.getElementById('hire-float').style.display='none');
+
+/* ===== SCROLL REVEAL ===== */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:0.08});
+document.querySelectorAll('.reveal,.rev-l,.rev-r,.stag').forEach(el=>obs.observe(el));
+
+/* ===== LIVE HUNT COUNTER ===== */
+let hunts=39;
+setInterval(()=>{
+  if(Math.random()>.65){hunts+=Math.random()>.5?1:-1;if(hunts<30)hunts=30;if(hunts>55)hunts=55}
+  const el=document.getElementById('huntCount');if(el)el.textContent=hunts;
+},4000);
+
+/* ===== CAREERS ROWS ===== */
+document.querySelectorAll('.role-row').forEach(r=>{
+  r.addEventListener('click',()=>{
+    document.getElementById('final-cta').scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
+HTMLEOF
+echo "Done — Lines: $(wc -l < /mnt/user-data/outputs/about.html), Size: $(du -sh /mnt/user-data/outputs/about.html | cut -f1)"
+Output
+
+Done — Lines: 1244, Size: 88K
+Done
+
+You are out of free messages u
