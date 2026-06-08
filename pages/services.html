@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RDD Agency Services — Penetration testing, red team operations, SOC as a service, threat intelligence, incident response, cloud security, ICS/OT security, and compliance. Full-spectrum cybersecurity for enterprises worldwide.">
+<meta name="keywords" content="cybersecurity services, penetration testing, red team operations, SOC as a service, MDR, threat intelligence, incident response, cloud security, DFIR, RDD Agency services">
+<meta name="author" content="RDD Agency — Razi Digital Agency">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Services — RDD Agency | Full-Spectrum Cybersecurity">
+<meta property="og:description" content="Penetration testing, red team, SOC, threat intelligence, incident response, and cloud security — all delivered by operators, not salespeople.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rddagency.com/services">
+<link rel="canonical" href="https://www.rddagency.com/services">
+<title>Services — RDD Agency | Full-Spectrum Cybersecurity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"RDD Agency Cybersecurity Services",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Penetration Testing","description":"Full-scope CREST-certified penetration testing for networks, applications, APIs, and mobile.","provider":{"@type":"Organization","name":"RDD Agency"}}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Red Team Operations","description":"Multi-week adversary simulation campaigns emulating nation-state TTPs."}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Service","name":"SOC as a Service","description":"24/7/365 managed detection and response with sub-5-minute MTTD and 2-hour IR SLA."}},
+    {"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Threat Intelligence","description":"Strategic, operational, and tactical intelligence powered by ThreatCore™ platform."}},
+    {"@type":"ListItem","position":5,"item":{"@type":"Service","name":"Incident Response","description":"Emergency DFIR with 2-hour deployment SLA and forensic evidence for legal proceedings."}},
+    {"@type":"ListItem","position":6,"item":{"@type":"Service","name":"Cloud Security","description":"AWS, Azure, and GCP penetration testing, CSPM review, and secure architecture design."}},
+    {"@type":"ListItem","position":7,"item":{"@type":"Service","name":"ICS / OT Security","description":"Non-disruptive assessment of industrial control systems and SCADA environments."}},
+    {"@type":"ListItem","position":8,"item":{"@type":"Service","name":"Compliance & GRC","description":"Gap assessments and audit preparation for PCI-DSS, ISO 27001, SOC 2, HIPAA, NIS2, DORA."}}
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E01A1A;--red-dark:#A01010;--red-glow:rgba(224,26,26,.15);
+  --black:#0A0A0A;--black-2:#111;--black-3:#181818;--black-4:#222;
+  --white:#F5F5F0;--white-dim:rgba(245,245,240,.72);--white-mute:rgba(245,245,240,.35);
+  --border:rgba(245,245,240,.1);--border-red:rgba(224,26,26,.4);
+  --green:#4EC94E;--amber:#E8A020;
+  --mono:'Space Mono',monospace;--sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+a,button{cursor:pointer!important;pointer-events:auto!important}
+input,textarea{cursor:text!important}
+select{cursor:pointer!important}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--red-dark);border-radius:2px}
+
+/* CURSOR */
+#cursor,#cursor-ring{position:fixed;border-radius:50%;pointer-events:none!important;z-index:99999;transform:translate(-50%,-50%)}
+#cursor{width:10px;height:10px;background:var(--red);z-index:100000;transition:width .15s,height .15s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,26,26,.5);z-index:99999;transition:width .2s,height .2s,border-color .2s}
+#cursor.hov{width:14px;height:14px;background:var(--red-dark)}
+#cursor-ring.hov{width:50px;height:50px;border-color:var(--red);border-width:2px}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pulseCta{0%{box-shadow:0 0 0 0 rgba(224,26,26,.7)}70%{box-shadow:0 0 0 14px rgba(224,26,26,0)}100%{box-shadow:0 0 0 0 rgba(224,26,26,0)}}
+@keyframes pulseOrb{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.12);opacity:.7}}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes slideTab{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fillBar{from{width:0}}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+.rev-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.rev-l.vis{opacity:1;transform:none}
+.rev-r{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease}
+.rev-r.vis{opacity:1;transform:none}
+.stag>*{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.stag.vis>*{opacity:1;transform:none}
+.stag.vis>*:nth-child(1){transition-delay:.04s}
+.stag.vis>*:nth-child(2){transition-delay:.12s}
+.stag.vis>*:nth-child(3){transition-delay:.20s}
+.stag.vis>*:nth-child(4){transition-delay:.28s}
+.stag.vis>*:nth-child(5){transition-delay:.36s}
+.stag.vis>*:nth-child(6){transition-delay:.44s}
+.stag.vis>*:nth-child(7){transition-delay:.52s}
+.stag.vis>*:nth-child(8){transition-delay:.60s}
+
+/* HELPERS */
+section{padding:5.5rem 4rem;position:relative}
+.sec-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.sec-tag::before{content:'';display:inline-block;width:26px;height:1px;background:var(--red)}
+.sec-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,4.5vw,4.2rem);text-transform:uppercase;line-height:.95;color:var(--white)}
+.sec-title em{color:var(--red);font-style:normal}
+.body-p{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85}
+.body-p strong{color:var(--white);font-weight:600}
+.btn-red{background:var(--red);color:#fff;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.2rem;text-decoration:none;display:inline-block;transition:all .2s;border:none;cursor:pointer!important}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.2rem;text-decoration:none;display:inline-block;border:1px solid var(--border);transition:all .2s;cursor:pointer!important}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;z-index:2}
+.nav-logo-mark{width:38px;height:38px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:13px;letter-spacing:.05em;color:#fff;clip-path:polygon(0 0,100% 0,100% 74%,88% 100%,0 100%)}
+.nav-logo-text{font-family:var(--cond);font-weight:900;font-size:1.05rem;letter-spacing:.12em;color:var(--white);text-transform:uppercase}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:2rem;z-index:2}
+.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;padding:.3rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
+.nav-links a:hover,.nav-links a.nav-active{color:var(--white)}
+.nav-links a:hover::after,.nav-links a.nav-active::after{width:100%}
+.nav-links a.nav-active{color:var(--red)}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:.6rem 1.4rem!important;display:inline-block!important;transform:skewX(-8deg);transition:background .2s,transform .2s!important}
+.nav-cta span{display:inline-block;transform:skewX(8deg)}
+.nav-cta:hover{background:var(--red-dark)!important;transform:skewX(-8deg) scale(1.04)!important}
+.nav-cta::after{display:none!important}
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;z-index:9002}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.99);z-index:9001;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--cond);font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mob-menu a:hover{color:var(--red)}
+
+/* FLOATING HIRE */
+#hire-float{position:fixed;bottom:2rem;right:2rem;z-index:8500;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.hire-btn{background:var(--red);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:.6rem;animation:pulseCta 2s infinite;white-space:nowrap;border:none}
+.hire-btn:hover{background:var(--red-dark);animation:none;transform:scale(1.05)}
+.hire-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1s infinite;flex-shrink:0;pointer-events:none}
+.hire-dismiss{background:var(--black-4);border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.6rem;padding:.28rem .65rem;cursor:pointer!important;transition:color .2s}
+.hire-dismiss:hover{color:var(--white)}
+
+/* ===================== HERO ===================== */
+#hero{min-height:80vh;display:flex;align-items:center;padding:8rem 4rem 5rem;background:var(--black-2);position:relative;overflow:hidden}
+#hero::before{content:'SERVICES';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(6rem,18vw,18rem);color:rgba(245,245,240,.025);white-space:nowrap;pointer-events:none;letter-spacing:.05em}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,245,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,245,240,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-orb{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(224,26,26,.1) 0%,transparent 70%);top:-150px;right:-150px;animation:pulseOrb 7s ease-in-out infinite;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:860px;animation:fadeUp .8s .1s ease both}
+.breadcrumb{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.breadcrumb a{color:var(--white-mute);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{color:var(--red)}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);border:1px solid var(--border-red);padding:.38rem .9rem;margin-bottom:1.8rem}
+.hero-blink{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite;flex-shrink:0;pointer-events:none}
+h1.hero-title{font-family:var(--cond);font-weight:900;font-size:clamp(3rem,7vw,7rem);line-height:.9;text-transform:uppercase;color:var(--white);margin-bottom:2rem}
+h1.hero-title em{color:var(--red);font-style:normal;display:block}
+.hero-sub{font-size:1.05rem;font-weight:300;color:var(--white-dim);max-width:620px;line-height:1.8;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:3rem}
+/* service quick-nav pills */
+.service-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.s-pill{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .9rem;border:1px solid var(--border);color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important}
+.s-pill:hover{border-color:var(--red);color:var(--red)}
+
+/* MARQUEE */
+.marquee-band{padding:1.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--black)}
+.marq-track{display:flex;gap:3rem;animation:marq 28s linear infinite;width:max-content}
+.marq-item{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);white-space:nowrap}
+.marq-item::after{content:'//';color:var(--red);margin-left:2rem}
+
+/* ===================== SERVICE OVERVIEW GRID ===================== */
+#overview{background:var(--black)}
+.ov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.ov-card{background:var(--black);padding:2rem 1.6rem;border-top:2px solid transparent;transition:all .3s;text-decoration:none;display:block}
+.ov-card:hover{border-top-color:var(--red);background:var(--black-2)}
+.ov-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.ov-name{font-family:var(--cond);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem;line-height:1.1}
+.ov-short{font-size:.85rem;font-weight:300;color:var(--white-mute);line-height:1.65}
+.ov-arrow{font-family:var(--mono);font-size:.75rem;color:var(--red);margin-top:.8rem;transition:transform .2s;display:inline-block}
+.ov-card:hover .ov-arrow{transform:translateX(4px)}
+
+/* ===================== INDIVIDUAL SERVICE SECTIONS ===================== */
+.svc-section{scroll-margin-top:90px}
+.svc-section:nth-child(odd){background:var(--black-2)}
+.svc-section:nth-child(even){background:var(--black)}
+
+/* Two-column layout: text left, details right */
+.svc-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.svc-left{display:flex;flex-direction:column;gap:1.5rem}
+.svc-eyebrow{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.5rem}
+.svc-title{font-family:var(--cond);font-weight:900;font-size:clamp(2rem,4vw,3.5rem);text-transform:uppercase;line-height:.92;color:var(--white)}
+.svc-title em{color:var(--red);font-style:normal}
+.svc-desc{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85}
+.svc-desc strong{color:var(--white);font-weight:600}
+/* Feature checklist */
+.svc-features{display:flex;flex-direction:column;gap:.7rem;margin-top:.5rem}
+.svc-feat{font-size:.92rem;font-weight:300;color:var(--white-dim);padding-left:1.6rem;position:relative;line-height:1.65}
+.svc-feat::before{content:'✓';position:absolute;left:0;color:var(--red);font-size:.85rem;font-weight:700;top:.05rem}
+.svc-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+
+/* Right panel */
+.svc-right{display:flex;flex-direction:column;gap:1.5rem}
+/* Methodology accordion */
+.method-list{display:flex;flex-direction:column;gap:0;background:var(--border);gap:1px}
+.method-item{background:var(--black-3)}
+.method-q{width:100%;background:none;border:none;text-align:left;padding:1.1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer!important;transition:background .2s}
+.method-q:hover{background:var(--black-4)}
+.method-q-text{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white);line-height:1.2}
+.method-icon{font-family:var(--mono);font-size:.8rem;color:var(--red);width:20px;flex-shrink:0;text-align:center;transition:transform .25s}
+.method-item.open .method-icon{transform:rotate(45deg)}
+.method-body{display:none;padding:.2rem 1.4rem 1.2rem;font-size:.88rem;font-weight:300;color:var(--white-mute);line-height:1.8}
+.method-item.open .method-body{display:block}
+/* Stats panel */
+.svc-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.ss-card{background:var(--black-3);padding:1.4rem 1.2rem}
+.ss-val{font-family:var(--cond);font-weight:900;font-size:2rem;color:var(--white);line-height:1}
+.ss-val b{color:var(--red)}
+.ss-lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-top:.3rem}
+/* Tool tags */
+.tool-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tool-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .55rem;border:1px solid var(--border);color:var(--white-mute)}
+/* Deliverables box */
+.deliverables{background:var(--black-4);border:1px solid var(--border);border-left:3px solid var(--red);padding:1.4rem 1.6rem}
+.deliv-title{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem}
+.deliv-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.deliv-list li{font-size:.87rem;font-weight:300;color:var(--white-dim);padding-left:1.3rem;position:relative;line-height:1.6}
+.deliv-list li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:.75rem;top:.12rem}
+/* CTA quote box */
+.svc-quote-box{background:var(--black-2);border:1px solid var(--border-red);padding:1.8rem}
+.sqb-text{font-size:.92rem;font-weight:300;color:var(--white-dim);line-height:1.8;font-style:italic;margin-bottom:.8rem}
+.sqb-attr{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--white-mute)}
+
+/* ===================== THREAT COVERAGE MAP ===================== */
+#coverage{background:var(--black-2)}
+.coverage-intro{max-width:680px;margin-bottom:3.5rem}
+.coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.cov-card{background:var(--black-2);padding:2rem 1.8rem;border-top:2px solid transparent;transition:border-color .3s}
+.cov-card:hover{border-top-color:var(--red)}
+.cov-domain{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+.cov-title{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white);margin-bottom:.7rem}
+.cov-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.cov-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;padding:.2rem .5rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+
+/* ===================== COMPLIANCE / STANDARDS ===================== */
+#standards{background:var(--black)}
+.std-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.std-card{background:var(--black);padding:1.8rem 1.5rem;border-top:2px solid transparent;transition:all .3s;text-align:center}
+.std-card:hover{border-top-color:var(--red);background:var(--black-2)}
+.std-badge{font-family:var(--cond);font-weight:900;font-size:1.3rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.std-full{font-size:.82rem;font-weight:300;color:var(--white-mute);line-height:1.6}
+
+/* ===================== INDUSTRY VERTICALS ===================== */
+#verticals{background:var(--black-2)}
+.vert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.vert-card{background:var(--black-2);padding:2rem 1.8rem;border-bottom:2px solid transparent;transition:all .3s}
+.vert-card:hover{border-bottom-color:var(--red)}
+.vert-icon{font-size:1.8rem;margin-bottom:.9rem}
+.vert-name{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.vert-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.7}
+.vert-regs{font-family:var(--mono);font-size:.6rem;color:var(--red);margin-top:.6rem;letter-spacing:.06em}
+
+/* ===================== PROCESS ===================== */
+#process{background:var(--black)}
+.process-hd{text-align:center;max-width:600px;margin:0 auto 4rem}
+.process-hd .sec-tag{justify-content:center}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.steps::before{content:'';position:absolute;top:35px;left:10%;right:10%;height:1px;background:var(--border);pointer-events:none;z-index:0}
+.step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;padding:0 .5rem}
+.step-n{width:70px;height:70px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1.5rem;color:var(--white);background:var(--black);margin-bottom:1.4rem;transition:all .3s}
+.step:hover .step-n{background:var(--red);border-color:var(--red);color:#fff}
+.step-name{font-family:var(--cond);font-weight:700;font-size:.95rem;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
+.step-desc{font-size:.78rem;color:var(--white-mute);font-weight:300;max-width:130px;line-height:1.6}
+
+/* ===================== CASE STUDIES ===================== */
+#cases{background:var(--black-2)}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.case-card{background:var(--black-2);padding:2.2rem 1.8rem;border-top:2px solid transparent;transition:border-color .3s}
+.case-card:hover{border-top-color:var(--red)}
+.case-ind{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+.case-title{font-family:var(--cond);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--white);margin-bottom:.9rem;line-height:1.2}
+.case-res{display:flex;align-items:flex-start;gap:.5rem;font-family:var(--mono);font-size:.7rem;color:var(--white-dim);margin-bottom:.45rem;line-height:1.5}
+.case-res::before{content:'→';color:var(--red);flex-shrink:0}
+.case-svc{font-family:var(--mono);font-size:.6rem;padding:.2rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase;display:inline-block;margin-top:.8rem}
+
+/* ===================== CTA BAND ===================== */
+#cta-band{background:var(--red);padding:5.5rem 4rem;text-align:center;position:relative;overflow:hidden}
+#cta-band::before{content:'SECURE YOUR ENTERPRISE';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(2rem,7vw,9rem);color:rgba(0,0,0,.07);white-space:nowrap;pointer-events:none;letter-spacing:.04em}
+.cta-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,5vw,5rem);text-transform:uppercase;color:#fff;line-height:.95;margin-bottom:1.4rem;position:relative}
+.cta-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.82);margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.75;position:relative}
+.cta-acts{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;position:relative}
+.btn-white{background:#fff;color:var(--black)!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;display:inline-block;transition:all .2s;cursor:pointer!important}
+.btn-white:hover{background:var(--black);color:#fff!important}
+.btn-white-ghost{background:transparent;color:#fff!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.4rem;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,.45);transition:all .2s;cursor:pointer!important}
+.btn-white-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--border);padding:4.5rem 4rem 2.5rem}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-logo{display:flex;align-items:center;gap:.75rem}
+.foot-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75;max-width:275px}
+.foot-certs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.foot-cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;padding:.28rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.foot-socials{display:flex;gap:.65rem;margin-top:.5rem}
+.foot-social{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important}
+.foot-social:hover{border-color:var(--red);color:var(--red)}
+.foot-col h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1.3rem;display:block;opacity:1}
+.foot-col .foot-links{display:flex;flex-direction:column;gap:.65rem;list-style:none}
+.foot-col .foot-links a{font-size:.87rem;font-weight:300;color:var(--white-mute);text-decoration:none;transition:color .2s;display:block;cursor:pointer!important;opacity:1}
+.foot-col .foot-links a:hover{color:var(--red)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute)}
+.foot-copy b{color:var(--red);font-weight:400}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:color .2s;cursor:pointer!important}
+.foot-legal a:hover{color:var(--red)}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .ov-grid{grid-template-columns:repeat(2,1fr)}
+  .std-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:1024px){
+  section{padding:5rem 2.5rem}
+  nav{padding:1.3rem 2.5rem}
+  #hero{padding:8rem 2.5rem 4.5rem}
+  #cta-band{padding:5rem 2.5rem}
+  .svc-layout{grid-template-columns:1fr}
+  .ov-grid{grid-template-columns:repeat(2,1fr)}
+  .coverage-grid{grid-template-columns:1fr 1fr}
+  .vert-grid{grid-template-columns:1fr 1fr}
+  .cases-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:2rem}
+  .steps::before{display:none}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  section{padding:4rem 1.25rem}
+  nav{padding:1.1rem 1.25rem}
+  #hero{padding:7rem 1.25rem 4rem}
+  #cta-band{padding:4.5rem 1.25rem}
+  footer{padding:3.5rem 1.25rem 2rem}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .ov-grid{grid-template-columns:1fr}
+  .coverage-grid{grid-template-columns:1fr}
+  .std-grid{grid-template-columns:1fr 1fr}
+  .vert-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .svc-stats{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  #hire-float{bottom:1rem;right:1rem}
+  .hire-btn{font-size:.65rem;padding:.75rem 1.2rem}
+}
+@media(max-width:480px){
+  .steps{grid-template-columns:1fr}
+  .std-grid{grid-template-columns:1fr}
+  h1.hero-title{font-size:2.8rem}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- FLOATING HIRE -->
+<div id="hire-float">
+  <a href="index.html#contact" class="hire-btn"><span class="hire-dot"></span>Hire Us Now</a>
+  <button class="hire-dismiss" id="hireDismiss">Dismiss</button>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="RDD Agency Home">
+    <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+    <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Main navigation">
+    <a href="services.html" class="nav-active">Services</a>
+    <a href="about.html#mvv">Why RDD</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#contact" class="nav-cta"><span>Get Protected</span></a>
+  </div>
+  <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="services.html" class="mob-lnk" style="color:var(--red)">Services</a>
+  <a href="about.html#mvv" class="mob-lnk">Why RDD</a>
+  <a href="pricing.html" class="mob-lnk">Pricing</a>
+  <a href="about.html" class="mob-lnk">About</a>
+  <a href="index.html#team" class="mob-lnk">Team</a>
+  <a href="index.html#contact" class="mob-lnk" style="color:var(--red)">Get Protected →</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" role="banner">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-orb" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Services</span>
+    </nav>
+    <div class="hero-tag"><span class="hero-blink" aria-hidden="true"></span>8 Service Lines · 47 Countries · 24/7/365</div>
+    <h1 class="hero-title">
+      Full-Spectrum<br>
+      <em>Cyber Defence</em>
+    </h1>
+    <p class="hero-sub">Every service RDDA delivers is designed, led, and executed by operators who have worked on the offensive side of the same threats they now defend against. From a single penetration test to a fully managed global SOC, we bring real expertise — not packaged products.</p>
+    <div class="hero-actions">
+      <a href="index.html#contact" class="btn-red">Request an Assessment</a>
+      <a href="pricing.html" class="btn-ghost">View Pricing →</a>
+    </div>
+    <div class="service-pills" role="list" aria-label="Quick navigation to services">
+      <a href="#pentest" class="s-pill">Penetration Testing</a>
+      <a href="#redteam" class="s-pill">Red Team Ops</a>
+      <a href="#soc" class="s-pill">SOC / MDR</a>
+      <a href="#ti" class="s-pill">Threat Intelligence</a>
+      <a href="#ir" class="s-pill">Incident Response</a>
+      <a href="#cloud" class="s-pill">Cloud Security</a>
+      <a href="#ics" class="s-pill">ICS / OT</a>
+      <a href="#compliance" class="s-pill">Compliance</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marq-track">
+    <span class="marq-item">Penetration Testing</span><span class="marq-item">Red Team Operations</span><span class="marq-item">SOC as a Service</span><span class="marq-item">Threat Intelligence</span><span class="marq-item">Incident Response</span><span class="marq-item">Cloud Security</span><span class="marq-item">ICS / OT Security</span><span class="marq-item">Compliance &amp; GRC</span><span class="marq-item">Penetration Testing</span><span class="marq-item">Red Team Operations</span><span class="marq-item">SOC as a Service</span><span class="marq-item">Threat Intelligence</span><span class="marq-item">Incident Response</span><span class="marq-item">Cloud Security</span><span class="marq-item">ICS / OT Security</span><span class="marq-item">Compliance &amp; GRC</span>
+  </div>
+</div>
+
+<!-- ===================== SERVICE OVERVIEW ===================== -->
+<section id="overview">
+  <div class="reveal">
+    <div class="sec-tag">All Services</div>
+    <h2 class="sec-title">Our <em>Capabilities</em></h2>
+    <p class="body-p" style="max-width:640px;margin-top:1rem">Eight service lines built to cover every phase of the attack lifecycle — from proactive assessment and continuous monitoring to emergency response and long-term resilience.</p>
+  </div>
+  <div class="ov-grid stag">
+    <a href="#pentest" class="ov-card"><div class="ov-num">01</div><div class="ov-name">Penetration Testing</div><div class="ov-short">CREST-certified manual assessment of networks, applications, APIs, and mobile — exposing real exploitable weaknesses before adversaries do.</div><div class="ov-arrow">Explore →</div></a>
+    <a href="#redteam" class="ov-card"><div class="ov-num">02</div><div class="ov-name">Red Team Operations</div><div class="ov-short">Multi-week covert adversary simulation campaigns emulating nation-state TTPs across technical, physical, and human attack vectors.</div><div class="ov-arrow">Explore →</div></a>
+    <a href="#soc" class="ov-card"><div class="ov-num">03</div><div class="ov-name">SOC as a Service</div><div class="ov-short">24/7/365 managed detection and response (MDR) with sub-5-minute MTTD, a dedicated senior analyst, and a 2-hour incident response SLA.</div><div class="ov-arrow">Explore →</div></a>
+    <a href="#ti" class="ov-card"><div class="ov-num">04</div><div class="ov-name">Threat Intelligence</div><div class="ov-short">Strategic, operational, and tactical intelligence powered by ThreatCore™ — tracking 1,400+ threat actor groups and 2B+ daily signals.</div><div class="ov-arrow">Explore →</div></a>
+    <a href="#ir" class="ov-card"><div class="ov-num">05</div><div class="ov-name">Incident Response</div><div class="ov-short">Emergency DFIR with 2-hour deployment SLA, malware analysis, forensic evidence packaging, and regulatory notification support.</div><div class="ov-arrow">Explore →</div></a>
+    <a href="#cloud" class="ov-card"><div class="ov-num">06</div><div class="ov-name">Cloud Security</div><div class="ov-short">Penetration testing and posture management across AWS, Azure, and GCP — covering IAM, storage, compute, serverless, and containers.</div><div class="ov-arrow">Explore →</div></a>
+    <a href="#ics" class="ov-card"><div class="ov-num">07</div><div class="ov-name">ICS / OT Security</div><div class="ov-short">Non-disruptive specialist assessments of industrial control systems, SCADA, and operational technology environments.</div><div class="ov-arrow">Explore →</div></a>
+    <a href="#compliance" class="ov-card"><div class="ov-num">08</div><div class="ov-name">Compliance &amp; GRC</div><div class="ov-short">Gap assessments and audit preparation for PCI-DSS, ISO 27001, SOC 2, HIPAA, NIS2, DORA, and sector-specific regulatory frameworks.</div><div class="ov-arrow">Explore →</div></a>
+  </div>
+</section>
+
+<!-- ===================== 01 PENETRATION TESTING ===================== -->
+<section id="pentest" class="svc-section">
+  <div class="svc-layout">
+    <div class="svc-left rev-l">
+      <div class="svc-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Service 01</div>
+      <h2 class="svc-title">Penetration<br><em>Testing</em></h2>
+      <p class="svc-desc">Manual, CREST-certified penetration testing that goes far beyond automated scanner output. Our testers use real adversarial techniques to identify vulnerabilities that matter — ranked by exploitability and business impact, not just CVSS score.</p>
+      <p class="svc-desc">We test the way attackers attack. That means chaining low-severity findings into critical attack paths, testing authentication logic by attempting to break it, and always asking: <strong>what can an attacker actually achieve from here?</strong></p>
+      <div class="svc-features">
+        <div class="svc-feat">External network penetration test (CIDR ranges and internet-facing assets)</div>
+        <div class="svc-feat">Internal network assessment — lateral movement and AD attack paths</div>
+        <div class="svc-feat">Web application testing — OWASP Top 10 and beyond, including business logic</div>
+        <div class="svc-feat">API security testing — REST, GraphQL, SOAP, authentication, and authorisation</div>
+        <div class="svc-feat">Mobile application assessment — iOS and Android (OWASP MASVS)</div>
+        <div class="svc-feat">Wireless security assessment — WPA enterprise, rogue AP, client attacks</div>
+        <div class="svc-feat">Full retest after remediation included on all engagements</div>
+      </div>
+      <div class="svc-btns">
+        <a href="pricing.html#pentest" class="btn-red">See Pricing</a>
+        <a href="index.html#contact" class="btn-ghost">Request Assessment</a>
+      </div>
+    </div>
+    <div class="svc-right rev-r">
+      <div class="svc-stats">
+        <div class="ss-card"><div class="ss-val">100<b>%</b></div><div class="ss-lbl">Manual Testing</div></div>
+        <div class="ss-card"><div class="ss-val"><b>CREST</b></div><div class="ss-lbl">Accredited Testers</div></div>
+        <div class="ss-card"><div class="ss-val">5–<b>10</b></div><div class="ss-lbl">Day Delivery</div></div>
+        <div class="ss-card"><div class="ss-val"><b>CVSSv3</b></div><div class="ss-lbl">Severity Ratings</div></div>
+      </div>
+      <div class="method-list">
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Reconnaissance &amp; OSINT</span><span class="method-icon">+</span></button>
+          <div class="method-body">Passive and active intelligence gathering on your attack surface — DNS enumeration, certificate transparency, OSINT on personnel, technology fingerprinting, and exposed service discovery — before a single packet is sent.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Enumeration &amp; Mapping</span><span class="method-icon">+</span></button>
+          <div class="method-body">Systematic mapping of all in-scope assets, services, open ports, software versions, and exposed functionalities. Identifies the complete attack surface that will be tested.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Vulnerability Analysis</span><span class="method-icon">+</span></button>
+          <div class="method-body">Manual analysis to identify configuration weaknesses, missing patches, logic flaws, and exploit opportunities. Scanner output is used as a starting point only — all findings are manually validated.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Exploitation &amp; Post-Exploitation</span><span class="method-icon">+</span></button>
+          <div class="method-body">Controlled exploitation of confirmed vulnerabilities to demonstrate real impact. Post-exploitation includes privilege escalation, lateral movement, and data access — all within agreed scope and with minimal business disruption.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Reporting &amp; Remediation</span><span class="method-icon">+</span></button>
+          <div class="method-body">Executive summary and full technical report with CVSS-rated findings, proof-of-concept evidence, business impact statements, and prioritised remediation guidance. Delivered with a findings presentation to your technical team.</div>
+        </div>
+      </div>
+      <div class="deliverables">
+        <div class="deliv-title">// Deliverables</div>
+        <ul class="deliv-list">
+          <li>Executive summary (board/CISO level, non-technical)</li>
+          <li>Technical findings report with full PoC evidence</li>
+          <li>CVSS v3.1 severity ratings with business context</li>
+          <li>Remediation roadmap with effort estimates and prioritisation</li>
+          <li>Attack narrative — how a real adversary would chain findings</li>
+          <li>One free retest after remediation</li>
+        </ul>
+      </div>
+      <div class="tool-tags">
+        <span class="tool-tag">Burp Suite Pro</span><span class="tool-tag">Metasploit</span><span class="tool-tag">BloodHound</span><span class="tool-tag">Nmap</span><span class="tool-tag">Nuclei</span><span class="tool-tag">Cobalt Strike</span><span class="tool-tag">Frida</span><span class="tool-tag">MobSF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 RED TEAM ===================== -->
+<section id="redteam" class="svc-section">
+  <div class="svc-layout">
+    <div class="svc-left rev-l">
+      <div class="svc-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Service 02</div>
+      <h2 class="svc-title">Red Team<br><em>Operations</em></h2>
+      <p class="svc-desc">A penetration test tells you where the holes are. A red team engagement answers the harder question: <strong>if a sophisticated adversary targeted your organisation right now, would you stop them?</strong></p>
+      <p class="svc-desc">RDDA's red team operators work covertly — your blue team is not told an engagement is in progress. We use the same TTPs as the nation-state and organised crime groups that target your industry, mapped to MITRE ATT&amp;CK, and delivered with meticulous documentation.</p>
+      <div class="svc-features">
+        <div class="svc-feat">Full multi-vector engagement — technical, physical, and human simultaneously</div>
+        <div class="svc-feat">Nation-state TTP emulation mapped to MITRE ATT&amp;CK framework</div>
+        <div class="svc-feat">Spear-phishing and pretexting campaigns against real staff</div>
+        <div class="svc-feat">Physical breach simulation — tailgating, lock bypass, device implant</div>
+        <div class="svc-feat">Active Directory, Azure AD, and cloud lateral movement</div>
+        <div class="svc-feat">C2 infrastructure simulating real threat actor infrastructure</div>
+        <div class="svc-feat">Detection gap analysis — what your SOC/SIEM missed and why</div>
+      </div>
+      <div class="svc-btns">
+        <a href="pricing.html#redteam" class="btn-red">See Pricing</a>
+        <a href="index.html#contact" class="btn-ghost">Request Engagement</a>
+      </div>
+    </div>
+    <div class="svc-right rev-r">
+      <div class="svc-stats">
+        <div class="ss-card"><div class="ss-val">2–<b>4</b></div><div class="ss-lbl">Week Engagements</div></div>
+        <div class="ss-card"><div class="ss-val">0<b>%</b></div><div class="ss-lbl">Blue Team Forewarning</div></div>
+        <div class="ss-card"><div class="ss-val"><b>150+</b></div><div class="ss-lbl">Red Team Ops Delivered</div></div>
+        <div class="ss-card"><div class="ss-val"><b>ATT&CK</b></div><div class="ss-lbl">Mapped Findings</div></div>
+      </div>
+      <div class="method-list">
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Threat Scenario Design</span><span class="method-icon">+</span></button>
+          <div class="method-body">Before the engagement begins, we profile the real threat actors most likely to target your organisation based on your industry, size, and geopolitical exposure. The engagement is built around their documented TTPs — not generic playbooks.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Initial Access</span><span class="method-icon">+</span></button>
+          <div class="method-body">We attempt to gain initial access using real-world techniques: targeted phishing campaigns, exploiting internet-facing vulnerabilities, physical access to offices, vishing to service desk staff, or supply chain impersonation.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Persistence &amp; Lateral Movement</span><span class="method-icon">+</span></button>
+          <div class="method-body">Post-access, we establish persistence using techniques designed to evade your specific security controls, then move laterally toward high-value targets including domain controllers, financial systems, and sensitive data repositories.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Objective Achievement</span><span class="method-icon">+</span></button>
+          <div class="method-body">We pursue pre-agreed objectives — such as exfiltrating a specific file, achieving domain admin, or accessing a particular system — to demonstrate the real-world impact of a successful breach. Every action is logged with evidence.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Debrief &amp; Purple Teaming</span><span class="method-icon">+</span></button>
+          <div class="method-body">Full reveal debrief with your blue team, walking through every step of the attack. Purple team exercises identify detection gaps in your SIEM, EDR, and response playbooks. Includes a 90-day remediation support period.</div>
+        </div>
+      </div>
+      <div class="deliverables">
+        <div class="deliv-title">// Deliverables</div>
+        <ul class="deliv-list">
+          <li>Full attack narrative with timestamped evidence and screenshots</li>
+          <li>MITRE ATT&amp;CK heatmap showing techniques used vs detected</li>
+          <li>Board-ready executive presentation with risk-rated findings</li>
+          <li>Detection gap analysis for SOC/SIEM/EDR improvement</li>
+          <li>90-day post-engagement support and remediation guidance</li>
+        </ul>
+      </div>
+      <div class="tool-tags">
+        <span class="tool-tag">Cobalt Strike</span><span class="tool-tag">Havoc C2</span><span class="tool-tag">BloodHound</span><span class="tool-tag">Mimikatz</span><span class="tool-tag">Sliver</span><span class="tool-tag">GoPhish</span><span class="tool-tag">Custom Implants</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 SOC ===================== -->
+<section id="soc" class="svc-section">
+  <div class="svc-layout">
+    <div class="svc-left rev-l">
+      <div class="svc-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Service 03</div>
+      <h2 class="svc-title">SOC as a<br><em>Service</em></h2>
+      <p class="svc-desc">Your own world-class Security Operations Centre — without the years of recruitment, tooling investment, and operational overhead it takes to build one. RDDA's SOC-as-a-Service gives you analyst-led, 24/7/365 detection and response from day one.</p>
+      <p class="svc-desc">We don't run automated playbooks and call it monitoring. Every alert that requires action is reviewed by a human analyst. Our mean time to detect (MTTD) is under 5 minutes. Our incident response SLA is <strong>2 hours from notification</strong>.</p>
+      <div class="svc-features">
+        <div class="svc-feat">24/7/365 managed detection and response — never outsourced, never automated-only</div>
+        <div class="svc-feat">SIEM, SOAR, and EDR platform licensing included in retainer</div>
+        <div class="svc-feat">Dedicated senior analyst as your primary security contact</div>
+        <div class="svc-feat">Sub-5-minute mean time to detect (MTTD) for critical alerts</div>
+        <div class="svc-feat">2-hour incident response SLA — senior analyst on call</div>
+        <div class="svc-feat">Monthly executive threat report and real-time dashboard</div>
+        <div class="svc-feat">Quarterly penetration test included at no additional cost</div>
+      </div>
+      <div class="svc-btns">
+        <a href="pricing.html#soc" class="btn-red">See Pricing</a>
+        <a href="index.html#contact" class="btn-ghost">Request Demo</a>
+      </div>
+    </div>
+    <div class="svc-right rev-r">
+      <div class="svc-stats">
+        <div class="ss-card"><div class="ss-val">&lt;<b>5</b>min</div><div class="ss-lbl">Mean Time to Detect</div></div>
+        <div class="ss-card"><div class="ss-val"><b>2</b>hr</div><div class="ss-lbl">IR Response SLA</div></div>
+        <div class="ss-card"><div class="ss-val">99.<b>9%</b></div><div class="ss-lbl">Platform Uptime SLA</div></div>
+        <div class="ss-card"><div class="ss-val"><b>5</b>days</div><div class="ss-lbl">Onboarding Time</div></div>
+      </div>
+      <div class="method-list">
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Onboarding &amp; Baseline</span><span class="method-icon">+</span></button>
+          <div class="method-body">5-day onboarding deploys sensors, configures log ingestion, builds bespoke detection rules for your environment, and establishes a behavioural baseline. Your dedicated analyst conducts an initial threat landscape briefing specific to your sector.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Continuous Monitoring</span><span class="method-icon">+</span></button>
+          <div class="method-body">24/7 ingestion and analysis of endpoint, network, identity, cloud, and email telemetry. Our SIEM processes events against custom correlation rules, threat intelligence IOCs, and behavioural anomaly models tuned to your environment.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Alert Triage &amp; Investigation</span><span class="method-icon">+</span></button>
+          <div class="method-body">Every alert is triaged by a human analyst. Confirmed incidents are investigated in full — timeline reconstruction, indicator extraction, scope assessment, and containment recommendation — before you receive a notification.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Incident Response</span><span class="method-icon">+</span></button>
+          <div class="method-body">When an incident is confirmed, a senior analyst is on your call within 2 hours. Containment actions are coordinated with your team. For major incidents, we deploy on-site within 24 hours. Evidence is preserved to forensic standards throughout.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Reporting &amp; Improvement</span><span class="method-icon">+</span></button>
+          <div class="method-body">Monthly executive report with KPI tracking (MTTD, MTTR, alert volume, false positive rate). Quarterly security posture review. Detection rule improvement sprints based on emerging threat actor TTPs relevant to your sector.</div>
+        </div>
+      </div>
+      <div class="deliverables">
+        <div class="deliv-title">// Ongoing Deliverables</div>
+        <ul class="deliv-list">
+          <li>Real-time executive security dashboard (24/7 access)</li>
+          <li>Monthly threat intelligence digest tailored to your sector</li>
+          <li>Quarterly penetration test with full report</li>
+          <li>Incident reports for every confirmed security event</li>
+          <li>Annual security posture review and roadmap</li>
+        </ul>
+      </div>
+      <div class="tool-tags">
+        <span class="tool-tag">Microsoft Sentinel</span><span class="tool-tag">Elastic SIEM</span><span class="tool-tag">CrowdStrike</span><span class="tool-tag">Splunk</span><span class="tool-tag">XSOAR</span><span class="tool-tag">Vectra AI</span><span class="tool-tag">Darktrace</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 THREAT INTELLIGENCE ===================== -->
+<section id="ti" class="svc-section">
+  <div class="svc-layout">
+    <div class="svc-left rev-l">
+      <div class="svc-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Service 04</div>
+      <h2 class="svc-title">Threat<br><em>Intelligence</em></h2>
+      <p class="svc-desc">Intelligence is only useful if it is actionable and specific to your organisation. RDDA's threat intelligence practice produces three tiers of output — <strong>strategic</strong> (for boards and executives), <strong>operational</strong> (for security teams), and <strong>tactical</strong> (for tooling and automation) — all derived from our proprietary ThreatCore™ platform.</p>
+      <div class="svc-features">
+        <div class="svc-feat">ThreatCore™ platform — 2B+ signals daily, 1,400+ tracked threat actor groups</div>
+        <div class="svc-feat">Real-time dark web and paste site monitoring for your brand and credentials</div>
+        <div class="svc-feat">IOC feeds via API, STIX/TAXII, or direct SIEM integration</div>
+        <div class="svc-feat">Adversary profile reports — who targets your industry and how</div>
+        <div class="svc-feat">Vulnerability intelligence — zero-day and n-day tracking relevant to your stack</div>
+        <div class="svc-feat">Emergency threat briefings for critical events (CVEs, campaigns, geopolitical)</div>
+        <div class="svc-feat">Monthly analyst-curated digest for executive and board consumption</div>
+      </div>
+      <div class="svc-btns">
+        <a href="pricing.html#ti" class="btn-red">See Pricing</a>
+        <a href="index.html#contact" class="btn-ghost">Request Trial Feed</a>
+      </div>
+    </div>
+    <div class="svc-right rev-r">
+      <div class="svc-stats">
+        <div class="ss-card"><div class="ss-val">2<b>B+</b></div><div class="ss-lbl">Daily Signals</div></div>
+        <div class="ss-card"><div class="ss-val">1,<b>400+</b></div><div class="ss-lbl">Threat Actor Groups</div></div>
+        <div class="ss-card"><div class="ss-val"><b>API</b></div><div class="ss-lbl">STIX / TAXII</div></div>
+        <div class="ss-card"><div class="ss-val">3</div><div class="ss-lbl">Intelligence Tiers</div></div>
+      </div>
+      <div class="deliverables">
+        <div class="deliv-title">// Intelligence Products</div>
+        <ul class="deliv-list">
+          <li>Daily IOC feeds (IPs, domains, hashes, URLs) via API</li>
+          <li>Weekly threat landscape summary for your industry sector</li>
+          <li>Monthly executive threat intelligence digest (board-ready)</li>
+          <li>Adversary TTP reports mapped to MITRE ATT&amp;CK</li>
+          <li>Zero-day and vulnerability intelligence bulletins</li>
+          <li>Dark web monitoring alerts (credentials, data, brand mentions)</li>
+          <li>Bespoke one-time intelligence reports on request</li>
+        </ul>
+      </div>
+      <div class="svc-quote-box">
+        <p class="sqb-text">"Before ThreatCore™, we were reacting to incidents. Now we see campaigns forming three weeks before they hit our sector and we're already hardened by the time they arrive."</p>
+        <div class="sqb-attr">CISO — Global Financial Institution, London</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 INCIDENT RESPONSE ===================== -->
+<section id="ir" class="svc-section">
+  <div class="svc-layout">
+    <div class="svc-left rev-l">
+      <div class="svc-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Service 05</div>
+      <h2 class="svc-title">Incident<br><em>Response</em></h2>
+      <p class="svc-desc">When a breach occurs, every minute counts. RDDA's Digital Forensics and Incident Response (DFIR) team deploys a senior analyst within 2 hours of engagement and is on-site within 24 hours for major incidents. We have handled over 800 cases — and we have never paid a ransom on behalf of a client.</p>
+      <div class="svc-features">
+        <div class="svc-feat">2-hour deployment SLA — senior analyst on call, 24/7/365</div>
+        <div class="svc-feat">Immediate triage, containment, and eradication actions</div>
+        <div class="svc-feat">Malware reverse engineering and indicator extraction</div>
+        <div class="svc-feat">Forensic evidence preservation meeting legal standards</div>
+        <div class="svc-feat">Regulatory notification support (ICO, FCA, SEC, GDPR, NIS2)</div>
+        <div class="svc-feat">Insurance claim support and coordination with loss adjusters</div>
+        <div class="svc-feat">Post-incident hardening and lessons-learned programme</div>
+      </div>
+      <div class="svc-btns">
+        <a href="tel:+448001234567" class="btn-red">Emergency: +44 800 RDD-SECURE</a>
+        <a href="pricing.html#ir" class="btn-ghost">View IR Retainer</a>
+      </div>
+    </div>
+    <div class="svc-right rev-r">
+      <div class="svc-stats">
+        <div class="ss-card"><div class="ss-val"><b>2</b>hr</div><div class="ss-lbl">Deployment SLA</div></div>
+        <div class="ss-card"><div class="ss-val"><b>800+</b></div><div class="ss-lbl">Cases Handled</div></div>
+        <div class="ss-card"><div class="ss-val">98<b>%</b></div><div class="ss-lbl">Recovery Rate</div></div>
+        <div class="ss-card"><div class="ss-val">$0</div><div class="ss-lbl">Ransom Paid for Clients</div></div>
+      </div>
+      <div class="method-list">
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Triage &amp; Initial Containment</span><span class="method-icon">+</span></button>
+          <div class="method-body">Within 2 hours of engagement, a senior DFIR analyst performs remote triage — scope assessment, initial indicator identification, and immediate containment actions to halt spread and preserve evidence.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Deep Forensic Investigation</span><span class="method-icon">+</span></button>
+          <div class="method-body">Full forensic investigation of affected systems — memory acquisition, disk imaging, log analysis, malware reverse engineering, and attack timeline reconstruction. Evidence collected to court-admissible standards.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Eradication &amp; Recovery</span><span class="method-icon">+</span></button>
+          <div class="method-body">Complete eradication of threat actor presence — all persistence mechanisms, backdoors, and tools identified and removed. Guided recovery to clean state with hardening actions to prevent re-compromise.</div>
+        </div>
+        <div class="method-item">
+          <button class="method-q" aria-expanded="false"><span class="method-q-text">Legal &amp; Regulatory Support</span><span class="method-icon">+</span></button>
+          <div class="method-body">Forensic report production meeting legal evidential standards. Regulatory notification support (72-hour GDPR/NIS2 timelines). Liaison with law enforcement. Insurance claim support with loss adjusters and underwriters.</div>
+        </div>
+      </div>
+      <div class="deliverables">
+        <div class="deliv-title">// IR Deliverables</div>
+        <ul class="deliv-list">
+          <li>Executive incident summary for board and executive team</li>
+          <li>Forensic investigation report (legal-grade standard)</li>
+          <li>Complete IOC package for threat intelligence sharing</li>
+          <li>Regulatory notification drafts (ICO, FCA, GDPR)</li>
+          <li>Post-incident hardening recommendations</li>
+          <li>Lessons-learned programme and tabletop exercise</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 CLOUD ===================== -->
+<section id="cloud" class="svc-section">
+  <div class="svc-layout">
+    <div class="svc-left rev-l">
+      <div class="svc-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Service 06</div>
+      <h2 class="svc-title">Cloud<br><em>Security</em></h2>
+      <p class="svc-desc">Cloud environments introduce security challenges that traditional network security tools and approaches are not designed to address. IAM privilege escalation paths, misconfigured storage buckets, serverless function vulnerabilities, and container escape exploits require specialists who build and break cloud infrastructure — not generalist pen testers running cloud-aware scanner tools.</p>
+      <div class="svc-features">
+        <div class="svc-feat">AWS, Microsoft Azure, and Google Cloud Platform specialists</div>
+        <div class="svc-feat">Cloud penetration test — active adversarial assessment of your cloud environment</div>
+        <div class="svc-feat">Cloud Security Posture Management (CSPM) configuration review</div>
+        <div class="svc-feat">IAM privilege escalation path analysis and attack graph generation</div>
+        <div class="svc-feat">Kubernetes and container security assessment (CIS benchmarks)</div>
+        <div class="svc-feat">CI/CD pipeline and DevSecOps security review</div>
+        <div class="svc-feat">Secure architecture review and cloud security blueprint design</div>
+      </div>
+      <div class="svc-btns">
+        <a href="pricing.html#cloud" class="btn-red">See Pricing</a>
+        <a href="index.html#contact" class="btn-ghost">Request Assessment</a>
+      </div>
+    </div>
+    <div class="svc-right rev-r">
+      <div class="svc-stats">
+        <div class="ss-card"><div class="ss-val"><b>3</b></div><div class="ss-lbl">Cloud Platforms</div></div>
+        <div class="ss-card"><div class="ss-val"><b>CIS</b></div><div class="ss-lbl">Benchmark Aligned</div></div>
+        <div class="ss-card"><div class="ss-val"><b>80+</b></div><div class="ss-lbl">Cloud Clients</div></div>
+        <div class="ss-card"><div class="ss-val"><b>SOC2</b></div><div class="ss-lbl">Audit Ready Output</div></div>
+      </div>
+      <div class="deliverables">
+        <div class="deliv-title">// Cloud Assessment Coverage</div>
+        <ul class="deliv-list">
+          <li>IAM configuration review and privilege escalation path mapping</li>
+          <li>Storage (S3/Blob/GCS) access control and encryption audit</li>
+          <li>Network security group and firewall rule analysis</li>
+          <li>Serverless functions and Lambda attack surface</li>
+          <li>Kubernetes cluster and container image security</li>
+          <li>Secrets management and key exposure assessment</li>
+          <li>Logging, monitoring, and detection capability review</li>
+        </ul>
+      </div>
+      <div class="tool-tags">
+        <span class="tool-tag">Prowler</span><span class="tool-tag">ScoutSuite</span><span class="tool-tag">Pacu</span><span class="tool-tag">CloudSploit</span><span class="tool-tag">Trivy</span><span class="tool-tag">Falco</span><span class="tool-tag">Checkov</span><span class="tool-tag">Cartography</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 07 ICS / OT ===================== -->
+<section id="ics" class="svc-section">
+  <div class="svc-layout">
+    <div class="svc-left rev-l">
+      <div class="svc-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Service 07</div>
+      <h2 class="svc-title">ICS / OT<br><em>Security</em></h2>
+      <p class="svc-desc">Industrial control systems and operational technology environments power the world's most critical infrastructure — energy grids, water treatment, manufacturing, and transport. They were built for reliability, not security, and they are now prime targets for nation-state actors and ransomware groups alike.</p>
+      <p class="svc-desc">RDDA's ICS/OT specialists work exclusively in <strong>non-disruptive, passive-first methodologies</strong> to protect the availability and safety of operational environments while identifying genuine security risks.</p>
+      <div class="svc-features">
+        <div class="svc-feat">Passive network architecture analysis and asset discovery</div>
+        <div class="svc-feat">IT/OT network segmentation review and attack path analysis</div>
+        <div class="svc-feat">SCADA and HMI security configuration assessment</div>
+        <div class="svc-feat">PLC firmware analysis and protocol security review</div>
+        <div class="svc-feat">IEC 62443, NERC CIP, and NIST SP 800-82 compliance gap assessment</div>
+        <div class="svc-feat">Red team exercises against ICS environments using replicated testbeds</div>
+        <div class="svc-feat">Incident response planning for OT environments</div>
+      </div>
+      <div class="svc-btns">
+        <a href="index.html#contact" class="btn-red">Request Assessment</a>
+        <a href="pricing.html" class="btn-ghost">View Pricing</a>
+      </div>
+    </div>
+    <div class="svc-right rev-r">
+      <div class="svc-stats">
+        <div class="ss-card"><div class="ss-val"><b>IEC</b></div><div class="ss-lbl">62443 Aligned</div></div>
+        <div class="ss-card"><div class="ss-val"><b>NERC</b></div><div class="ss-lbl">CIP Compliant</div></div>
+        <div class="ss-card"><div class="ss-val">0<b>%</b></div><div class="ss-lbl">Operational Disruption</div></div>
+        <div class="ss-card"><div class="ss-val"><b>CISA</b></div><div class="ss-lbl">Recognised</div></div>
+      </div>
+      <div class="deliverables">
+        <div class="deliv-title">// ICS/OT Assessment Scope</div>
+        <ul class="deliv-list">
+          <li>Asset inventory and network topology documentation</li>
+          <li>Purdue Model / ISA-95 zone and conduit analysis</li>
+          <li>Remote access security assessment (VPNs, jump hosts)</li>
+          <li>Human-Machine Interface (HMI) security review</li>
+          <li>Historian and data historian exposure assessment</li>
+          <li>Vendor and supply chain risk assessment</li>
+          <li>Operator awareness training for OT environments</li>
+        </ul>
+      </div>
+      <div class="svc-quote-box">
+        <p class="sqb-text">"RDDA detected staged attack infrastructure across six of our substations before execution. Their passive OT methodology meant zero operational disruption. We have worked with no other firm since."</p>
+        <div class="sqb-attr">Head of OT Security — National Energy Provider</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 08 COMPLIANCE ===================== -->
+<section id="compliance" class="svc-section">
+  <div class="svc-layout">
+    <div class="svc-left rev-l">
+      <div class="svc-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Service 08</div>
+      <h2 class="svc-title">Compliance<br><em>&amp; GRC</em></h2>
+      <p class="svc-desc">Compliance frameworks exist because regulators learned from real breaches. RDDA's GRC practice approaches certification not as a box-ticking exercise but as an opportunity to genuinely reduce risk — because we understand what the controls are designed to prevent and what happens when they fail.</p>
+      <p class="svc-desc">We have guided over 200 organisations through successful certification with <strong>zero failed audits</strong> in 8 years of operation.</p>
+      <div class="svc-features">
+        <div class="svc-feat">ISO 27001:2022 gap assessment, implementation support, and audit preparation</div>
+        <div class="svc-feat">SOC 2 Type I and Type II readiness and audit support</div>
+        <div class="svc-feat">PCI DSS v4.0 gap assessment (QSA company)</div>
+        <div class="svc-feat">HIPAA security rule assessment and remediation guidance</div>
+        <div class="svc-feat">NIS2 Directive and DORA compliance gap analysis</div>
+        <div class="svc-feat">FCA Cyber Resilience framework and CBEST guidance</div>
+        <div class="svc-feat">NIST Cybersecurity Framework (CSF) maturity assessment</div>
+      </div>
+      <div class="svc-btns">
+        <a href="index.html#contact" class="btn-red">Request Assessment</a>
+        <a href="pricing.html" class="btn-ghost">View Pricing</a>
+      </div>
+    </div>
+    <div class="svc-right rev-r">
+      <div class="svc-stats">
+        <div class="ss-card"><div class="ss-val"><b>200+</b></div><div class="ss-lbl">Certifications Guided</div></div>
+        <div class="ss-card"><div class="ss-val">0<b>%</b></div><div class="ss-lbl">Failed Audits (8 yrs)</div></div>
+        <div class="ss-card"><div class="ss-val"><b>QSA</b></div><div class="ss-lbl">PCI DSS Company</div></div>
+        <div class="ss-card"><div class="ss-val"><b>12+</b></div><div class="ss-lbl">Frameworks Covered</div></div>
+      </div>
+      <div class="deliverables">
+        <div class="deliv-title">// GRC Deliverables</div>
+        <ul class="deliv-list">
+          <li>Gap analysis report against chosen framework(s)</li>
+          <li>Prioritised remediation roadmap with effort estimates</li>
+          <li>Policy and procedure templates aligned to framework requirements</li>
+          <li>Evidence collection guides for auditor submission</li>
+          <li>Pre-audit readiness assessment (mock audit)</li>
+          <li>Ongoing compliance monitoring and advisory retainer</li>
+        </ul>
+      </div>
+      <div class="tool-tags">
+        <span class="tool-tag">ISO 27001</span><span class="tool-tag">SOC 2</span><span class="tool-tag">PCI DSS</span><span class="tool-tag">HIPAA</span><span class="tool-tag">NIS2</span><span class="tool-tag">DORA</span><span class="tool-tag">NIST CSF</span><span class="tool-tag">CBEST</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THREAT COVERAGE ===================== -->
+<section id="coverage">
+  <div class="coverage-intro reveal">
+    <div class="sec-tag">What We Defend Against</div>
+    <h2 class="sec-title">Threat <em>Coverage</em></h2>
+    <p class="body-p" style="margin-top:1rem">Every RDDA service is designed to identify and neutralise threats across all major attack domains. Below is a map of the threat categories our services cover.</p>
+  </div>
+  <div class="coverage-grid stag">
+    <div class="cov-card"><div class="cov-domain">Network &amp; Infrastructure</div><div class="cov-title">Network Attack Surface</div><div class="cov-tags"><span class="cov-tag">SQL Injection</span><span class="cov-tag">SSRF</span><span class="cov-tag">XXE</span><span class="cov-tag">RCE</span><span class="cov-tag">Open Ports</span><span class="cov-tag">Misconfigs</span><span class="cov-tag">Weak Auth</span></div></div>
+    <div class="cov-card"><div class="cov-domain">Application Security</div><div class="cov-title">Web &amp; API Threats</div><div class="cov-tags"><span class="cov-tag">XSS</span><span class="cov-tag">CSRF</span><span class="cov-tag">IDOR</span><span class="cov-tag">Auth Bypass</span><span class="cov-tag">Business Logic</span><span class="cov-tag">Injection</span><span class="cov-tag">SSTI</span></div></div>
+    <div class="cov-card"><div class="cov-domain">Identity &amp; Access</div><div class="cov-title">Identity Attacks</div><div class="cov-tags"><span class="cov-tag">Credential Stuffing</span><span class="cov-tag">Pass-the-Hash</span><span class="cov-tag">Kerberoasting</span><span class="cov-tag">MFA Bypass</span><span class="cov-tag">Privilege Escalation</span></div></div>
+    <div class="cov-card"><div class="cov-domain">Social Engineering</div><div class="cov-title">Human Attack Vectors</div><div class="cov-tags"><span class="cov-tag">Spear Phishing</span><span class="cov-tag">Vishing</span><span class="cov-tag">Pretexting</span><span class="cov-tag">BEC</span><span class="cov-tag">Watering Hole</span><span class="cov-tag">Supply Chain</span></div></div>
+    <div class="cov-card"><div class="cov-domain">Physical Security</div><div class="cov-title">Physical Attack Vectors</div><div class="cov-tags"><span class="cov-tag">Tailgating</span><span class="cov-tag">Lock Bypass</span><span class="cov-tag">Device Implant</span><span class="cov-tag">Badge Cloning</span><span class="cov-tag">Dumpster Diving</span><span class="cov-tag">Insider Threat</span></div></div>
+    <div class="cov-card"><div class="cov-domain">Ransomware &amp; Malware</div><div class="cov-title">Destructive Threats</div><div class="cov-tags"><span class="cov-tag">Ransomware</span><span class="cov-tag">Wipers</span><span class="cov-tag">Backdoors</span><span class="cov-tag">RATs</span><span class="cov-tag">Rootkits</span><span class="cov-tag">Stealers</span><span class="cov-tag">Bootkits</span></div></div>
+    <div class="cov-card"><div class="cov-domain">Cloud &amp; Container</div><div class="cov-title">Cloud-Native Threats</div><div class="cov-tags"><span class="cov-tag">IAM Abuse</span><span class="cov-tag">Container Escape</span><span class="cov-tag">IMDS Attacks</span><span class="cov-tag">Bucket Exposure</span><span class="cov-tag">Serverless Injection</span></div></div>
+    <div class="cov-card"><div class="cov-domain">Nation-State</div><div class="cov-title">Advanced Persistent Threats</div><div class="cov-tags"><span class="cov-tag">APT28</span><span class="cov-tag">APT29</span><span class="cov-tag">Lazarus</span><span class="cov-tag">Volt Typhoon</span><span class="cov-tag">FIN7</span><span class="cov-tag">Scattered Spider</span></div></div>
+    <div class="cov-card"><div class="cov-domain">Operational Technology</div><div class="cov-title">ICS / SCADA Threats</div><div class="cov-tags"><span class="cov-tag">Triton/TRISIS</span><span class="cov-tag">Industroyer</span><span class="cov-tag">PLC Attacks</span><span class="cov-tag">HMI Compromise</span><span class="cov-tag">Protocol Abuse</span></div></div>
+  </div>
+</section>
+
+<!-- ===================== STANDARDS COVERED ===================== -->
+<section id="standards">
+  <div class="reveal">
+    <div class="sec-tag">Frameworks &amp; Standards</div>
+    <h2 class="sec-title">We Work To<br><em>Your Framework</em></h2>
+    <p class="body-p" style="max-width:600px;margin-top:1rem">All RDDA assessments and deliverables can be mapped to your regulatory and compliance framework of choice — or to multiple frameworks simultaneously.</p>
+  </div>
+  <div class="std-grid stag">
+    <div class="std-card"><div class="std-badge">MITRE ATT&amp;CK</div><div class="std-full">All offensive findings mapped to ATT&amp;CK techniques for direct SOC integration</div></div>
+    <div class="std-card"><div class="std-badge">ISO 27001</div><div class="std-full">Information Security Management System standard — Annex A control coverage mapping</div></div>
+    <div class="std-card"><div class="std-badge">NIST CSF</div><div class="std-full">National Institute of Standards and Technology Cybersecurity Framework (v2.0)</div></div>
+    <div class="std-card"><div class="std-badge">PCI DSS v4</div><div class="std-full">Payment Card Industry Data Security Standard — QSA company with v4.0 expertise</div></div>
+    <div class="std-card"><div class="std-badge">SOC 2</div><div class="std-full">AICPA Trust Services Criteria — Type I and Type II audit support</div></div>
+    <div class="std-card"><div class="std-badge">OWASP</div><div class="std-full">OWASP Top 10, WSTG, MSTG / MASVS, API Top 10 — full coverage</div></div>
+    <div class="std-card"><div class="std-badge">NIS2</div><div class="std-full">EU Network and Information Security Directive 2 — essential and important entity compliance</div></div>
+    <div class="std-card"><div class="std-badge">DORA</div><div class="std-full">Digital Operational Resilience Act — ICT risk and TLPT testing requirements</div></div>
+    <div class="std-card"><div class="std-badge">HIPAA</div><div class="std-full">Health Insurance Portability and Accountability Act — Security Rule assessment</div></div>
+    <div class="std-card"><div class="std-badge">TIBER-EU</div><div class="std-full">ECB intelligence-led red team testing for EU financial market infrastructure</div></div>
+    <div class="std-card"><div class="std-badge">CBEST</div><div class="std-full">Bank of England intelligence-led cyber testing for UK financial infrastructure</div></div>
+    <div class="std-card"><div class="std-badge">IEC 62443</div><div class="std-full">Industrial cybersecurity standard for OT/ICS environments and supply chains</div></div>
+  </div>
+</section>
+
+<!-- ===================== INDUSTRY VERTICALS ===================== -->
+<section id="verticals">
+  <div class="reveal">
+    <div class="sec-tag">Industry Expertise</div>
+    <h2 class="sec-title">Built for <em>Your Sector</em></h2>
+    <p class="body-p" style="max-width:620px;margin-top:1rem">Security is not generic. The threats facing a central bank are different from those facing a hospital — and the controls that matter are different too. RDDA has dedicated vertical practices for every major sector we serve.</p>
+  </div>
+  <div class="vert-grid stag">
+    <div class="vert-card"><div class="vert-icon">🏦</div><div class="vert-name">Financial Services</div><div class="vert-desc">Banks, insurance, payments, and capital markets. Real-time fraud detection, TIBER-EU and CBEST red teaming, PCI DSS, and FCA compliance.</div><div class="vert-regs">TIBER-EU · CBEST · PCI DSS · FCA · DORA</div></div>
+    <div class="vert-card"><div class="vert-icon">⚡</div><div class="vert-name">Energy &amp; Utilities</div><div class="vert-desc">Power generation, oil &amp; gas, water treatment, and grid operators. ICS/OT specialist methodology, NERC CIP, and NIS2 compliance.</div><div class="vert-regs">NERC CIP · IEC 62443 · NIS2 · NIST SP 800-82</div></div>
+    <div class="vert-card"><div class="vert-icon">🏥</div><div class="vert-name">Healthcare</div><div class="vert-desc">Hospitals, pharmaceutical, medical device, and health data platforms. Ransomware prevention, patient data protection, and HIPAA compliance.</div><div class="vert-regs">HIPAA · GDPR · NIS2 · DSPT · CQC</div></div>
+    <div class="vert-card"><div class="vert-icon">🏛</div><div class="vert-name">Government &amp; Defence</div><div class="vert-desc">Ministries, agencies, defence contractors, and NATO-aligned organisations. SC/DV-cleared analysts, classified environment experience.</div><div class="vert-regs">JSP 440 · NCSC CAF · NIST 800-53 · FedRAMP</div></div>
+    <div class="vert-card"><div class="vert-icon">💻</div><div class="vert-name">Technology &amp; SaaS</div><div class="vert-desc">Product companies, cloud platforms, and enterprise software vendors. SDL integration, supply chain security, and bug bounty programme design.</div><div class="vert-regs">SOC 2 · ISO 27001 · OWASP · CWE</div></div>
+    <div class="vert-card"><div class="vert-icon">📡</div><div class="vert-name">Telecoms &amp; Media</div><div class="vert-desc">Mobile networks, ISPs, broadcast infrastructure, and content platforms. SS7/Diameter security, subscriber data protection, and OFCOM compliance.</div><div class="vert-regs">OFCOM · SS7 Security · NIS2 · GDPR</div></div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section id="process">
+  <div class="process-hd reveal">
+    <div class="sec-tag">Engagement Methodology</div>
+    <h2 class="sec-title">How Every<br><em>Engagement Works</em></h2>
+  </div>
+  <div class="steps stag">
+    <div class="step"><div class="step-n">01</div><div class="step-name">Scoping</div><p class="step-desc">Free call to define attack surface, objectives, and rules of engagement. No obligations.</p></div>
+    <div class="step"><div class="step-n">02</div><div class="step-name">Proposal</div><p class="step-desc">Fixed-fee written proposal with detailed methodology, deliverables, and timeline within 48 hours.</p></div>
+    <div class="step"><div class="step-n">03</div><div class="step-name">Execution</div><p class="step-desc">Senior operator-led delivery. Real-time critical finding notifications throughout.</p></div>
+    <div class="step"><div class="step-n">04</div><div class="step-name">Reporting</div><p class="step-desc">Executive + technical report with prioritised remediation roadmap and PoC evidence.</p></div>
+    <div class="step"><div class="step-n">05</div><div class="step-name">Remediation</div><p class="step-desc">Guided remediation support and free retest validation to confirm all risks closed.</p></div>
+  </div>
+</section>
+
+<!-- ===================== CASE STUDIES ===================== -->
+<section id="cases">
+  <div class="reveal">
+    <div class="sec-tag">Case Studies</div>
+    <h2 class="sec-title">Proven <em>Results</em></h2>
+    <p class="body-p" style="max-width:600px;margin-top:1rem">A selection of documented engagements — names withheld under NDA, outcomes verified.</p>
+  </div>
+  <div class="cases-grid stag">
+    <div class="case-card">
+      <div class="case-ind">Financial Services</div>
+      <h3 class="case-title">$47M Wire Fraud Blocked via Supply Chain Compromise Discovery</h3>
+      <div class="case-res">Nation-state pivot and rogue insider identified within 38 minutes of engagement</div>
+      <div class="case-res">Legal-grade forensic evidence package delivered within 6 hours</div>
+      <div class="case-res">$47M transfer blocked before settlement window closed</div>
+      <span class="case-svc">Incident Response</span>
+    </div>
+    <div class="case-card">
+      <div class="case-ind">Critical Infrastructure</div>
+      <h3 class="case-title">ICS Zero-Day Campaign Detected Across 6 Power Substations</h3>
+      <div class="case-res">Staged attack detected across 6 substations before execution</div>
+      <div class="case-res">Custom YARA signatures deployed within 4 hours of discovery</div>
+      <div class="case-res">Zero operational disruption; coordinated with national CERT</div>
+      <span class="case-svc">ICS/OT Security · Threat Intelligence</span>
+    </div>
+    <div class="case-card">
+      <div class="case-ind">Healthcare Enterprise</div>
+      <h3 class="case-title">LockBit 3.0 Contained Across 14-Hospital Network in 22 Minutes</h3>
+      <div class="case-res">LockBit 3.0 variant contained within 22 minutes of SOC alert</div>
+      <div class="case-res">Zero patient data exfiltrated; zero ransom paid</div>
+      <div class="case-res">Full recovery and hardening completed in 72 hours</div>
+      <span class="case-svc">SOC as a Service · Incident Response</span>
+    </div>
+    <div class="case-card">
+      <div class="case-ind">Global Bank</div>
+      <h3 class="case-title">Red Team Exposed Domain Admin Path Invisible for 9 Months</h3>
+      <div class="case-res">Domain admin achieved via forgotten legacy service account in 6 hours</div>
+      <div class="case-res">Blue team notified at debrief — zero detection during 3-week campaign</div>
+      <div class="case-res">Detection capability overhauled; SIEM rules rebuilt post-engagement</div>
+      <span class="case-svc">Red Team Operations</span>
+    </div>
+    <div class="case-card">
+      <div class="case-ind">Cloud-Native Technology Firm</div>
+      <h3 class="case-title">AWS IAM Privilege Escalation Path to Root in Production Environment</h3>
+      <div class="case-res">Complex 5-hop IAM privilege escalation path discovered in CSPM review</div>
+      <div class="case-res">Production S3 bucket with customer PII found publicly accessible</div>
+      <div class="case-res">Both issues remediated and verified before SOC 2 audit commenced</div>
+      <span class="case-svc">Cloud Security · Compliance</span>
+    </div>
+    <div class="case-card">
+      <div class="case-ind">Government Ministry</div>
+      <h3 class="case-title">Spear-Phishing Campaign Against Ministry Staff — 100% Staff Capture Rate</h3>
+      <div class="case-res">Bespoke pretext achieved credential capture from 100% of targeted staff in simulation</div>
+      <div class="case-res">Subsequent awareness training reduced susceptibility to 8% in 3 months</div>
+      <div class="case-res">MFA bypass technique discovered; immediately patched and remediated</div>
+      <span class="case-svc">Red Team Operations · Compliance</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section id="cta-band">
+  <h2 class="cta-title">Ready to Work With<br>Operators, Not Salespeople?</h2>
+  <p class="cta-sub">Every engagement starts with a free scoping call. No pressure, no boilerplate proposals — just an honest conversation about what your environment needs and how we can help.</p>
+  <div class="cta-acts">
+    <a href="index.html#contact" class="btn-white">Request a Free Scoping Call</a>
+    <a href="pricing.html" class="btn-white-ghost">View Pricing →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+        <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+      </div>
+      <p class="foot-desc">Elite global cybersecurity. Protecting the world's most critical organizations from the most advanced threats — 24 hours a day, 365 days a year.</p>
+      <div class="foot-certs">
+        <span class="foot-cert">ISO 27001</span><span class="foot-cert">CREST</span><span class="foot-cert">SOC 2 II</span><span class="foot-cert">GDPR</span><span class="foot-cert">FedRAMP</span>
+      </div>
+      <div class="foot-socials">
+        <a href="https://linkedin.com/company/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+        <a href="https://twitter.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="Twitter">Tw</a>
+        <a href="https://github.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="GitHub">Gh</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul class="foot-links">
+        <li><a href="#pentest" style="color:var(--red)">Penetration Testing</a></li>
+        <li><a href="#redteam">Red Team Operations</a></li>
+        <li><a href="#soc">SOC as a Service</a></li>
+        <li><a href="#ti">Threat Intelligence</a></li>
+        <li><a href="#ir">Incident Response</a></li>
+        <li><a href="#cloud">Cloud Security</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <ul class="foot-links">
+        <li><a href="about.html">About RDDA</a></li>
+        <li><a href="about.html#team">Leadership Team</a></li>
+        <li><a href="#cases">Case Studies</a></li>
+        <li><a href="about.html#global">Global Presence</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html#careers-cta">Careers</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#threat-intel">Threat Intelligence Blog</a></li>
+        <li><a href="index.html#threat-intel">Security Advisories</a></li>
+        <li><a href="#ti">CVE Research</a></li>
+        <li><a href="#compliance">White Papers</a></li>
+        <li><a href="vulnerability-disclosure.html">Vulnerability Disclosure</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 <b>RDD Agency</b> — Razi Digital Agency Ltd. All rights reserved. Registered in England &amp; Wales.</span>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="vulnerability-disclosure.html">Vulnerability Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,[tabindex]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hov');ring.classList.add('hov')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hov');ring.classList.remove('hov')});
+});
+
+/* NAVBAR */
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>40));
+
+/* HAMBURGER */
+const ham=document.getElementById('navHam'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');ham.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mob-lnk').forEach(l=>l.addEventListener('click',()=>{
+  mob.classList.remove('open');ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+
+/* FLOATING DISMISS */
+document.getElementById('hireDismiss').addEventListener('click',()=>document.getElementById('hire-float').style.display='none');
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:0.08});
+document.querySelectorAll('.reveal,.rev-l,.rev-r,.stag').forEach(el=>obs.observe(el));
+
+/* ACCORDION */
+document.querySelectorAll('.method-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.method-item');
+    const wasOpen=item.classList.contains('open');
+    // Close siblings
+    btn.closest('.method-list').querySelectorAll('.method-item').forEach(i=>i.classList.remove('open'));
+    document.querySelectorAll('.method-q').forEach(b=>b.setAttribute('aria-expanded','false'));
+    if(!wasOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}
+  });
+});
+</script>
+</body>
+</html>
