@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RDD Agency Clients — Trusted by 500+ enterprise and government clients across 47 countries. Case studies, testimonials, and sector coverage from the world's leading cybersecurity firm.">
+<meta name="keywords" content="RDD Agency clients, cybersecurity case studies, enterprise cybersecurity, government cybersecurity, Razi Digital Agency clients, RDDA testimonials">
+<meta name="author" content="RDD Agency — Razi Digital Agency">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Clients — RDD Agency | Trusted by 500+ Enterprises Worldwide">
+<meta property="og:description" content="Case studies, testimonials, and sector coverage from 500+ enterprise and government clients across 47 countries.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rddagency.com/clients">
+<link rel="canonical" href="https://www.rddagency.com/clients">
+<title>Clients — RDD Agency | Trusted by 500+ Enterprises Worldwide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"RDD Agency Clients",
+  "description":"RDD Agency serves 500+ enterprise and government clients across 47 countries including financial institutions, critical infrastructure operators, healthcare systems, and government agencies.",
+  "provider":{"@type":"Organization","name":"RDD Agency","url":"https://www.rddagency.com"},
+  "review":[
+    {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Chief Information Security Officer"},"reviewBody":"RDD Agency identified a persistent threat actor inside our network that had evaded our internal team for nine months."},
+    {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Director of IT Security"},"reviewBody":"During a live ransomware incident, RDD had analysts on a call within 11 minutes."}
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E01A1A;--red-dark:#A01010;--red-glow:rgba(224,26,26,.15);
+  --black:#0A0A0A;--black-2:#111;--black-3:#181818;--black-4:#222;
+  --white:#F5F5F0;--white-dim:rgba(245,245,240,.72);--white-mute:rgba(245,245,240,.35);
+  --border:rgba(245,245,240,.1);--border-red:rgba(224,26,26,.4);
+  --green:#4EC94E;--amber:#E8A020;
+  --mono:'Space Mono',monospace;--sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+a,button{cursor:pointer!important;pointer-events:auto!important}
+input,textarea,select{cursor:text!important}
+select{cursor:pointer!important}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--red-dark);border-radius:2px}
+
+/* CURSOR */
+#cursor,#cursor-ring{position:fixed;border-radius:50%;pointer-events:none!important;z-index:99999;transform:translate(-50%,-50%)}
+#cursor{width:10px;height:10px;background:var(--red);z-index:100000;transition:width .15s,height .15s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,26,26,.5);z-index:99999;transition:width .2s,height .2s,border-color .2s}
+#cursor.hov{width:14px;height:14px;background:var(--red-dark)}
+#cursor-ring.hov{width:50px;height:50px;border-color:var(--red);border-width:2px}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pulseCta{0%{box-shadow:0 0 0 0 rgba(224,26,26,.7)}70%{box-shadow:0 0 0 14px rgba(224,26,26,0)}100%{box-shadow:0 0 0 0 rgba(224,26,26,0)}}
+@keyframes pulseOrb{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.12);opacity:.7}}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes fillBar{from{width:0}}
+@keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+.rev-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.rev-l.vis{opacity:1;transform:none}
+.rev-r{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease}
+.rev-r.vis{opacity:1;transform:none}
+.stag>*{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.stag.vis>*{opacity:1;transform:none}
+.stag.vis>*:nth-child(1){transition-delay:.04s}
+.stag.vis>*:nth-child(2){transition-delay:.12s}
+.stag.vis>*:nth-child(3){transition-delay:.20s}
+.stag.vis>*:nth-child(4){transition-delay:.28s}
+.stag.vis>*:nth-child(5){transition-delay:.36s}
+.stag.vis>*:nth-child(6){transition-delay:.44s}
+.stag.vis>*:nth-child(7){transition-delay:.52s}
+.stag.vis>*:nth-child(8){transition-delay:.60s}
+.stag.vis>*:nth-child(9){transition-delay:.68s}
+
+/* HELPERS */
+section{padding:5.5rem 4rem;position:relative}
+.sec-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.sec-tag::before{content:'';display:inline-block;width:26px;height:1px;background:var(--red)}
+.sec-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,4.5vw,4.2rem);text-transform:uppercase;line-height:.95;color:var(--white)}
+.sec-title em{color:var(--red);font-style:normal}
+.body-p{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85}
+.body-p strong{color:var(--white);font-weight:600}
+.btn-red{background:var(--red);color:#fff;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.2rem;text-decoration:none;display:inline-block;transition:all .2s;border:none;cursor:pointer!important}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.2rem;text-decoration:none;display:inline-block;border:1px solid var(--border);transition:all .2s;cursor:pointer!important}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;z-index:2}
+.nav-logo-mark{width:38px;height:38px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:13px;letter-spacing:.05em;color:#fff;clip-path:polygon(0 0,100% 0,100% 74%,88% 100%,0 100%)}
+.nav-logo-text{font-family:var(--cond);font-weight:900;font-size:1.05rem;letter-spacing:.12em;color:var(--white);text-transform:uppercase}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:2rem;z-index:2}
+.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;padding:.3rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
+.nav-links a:hover,.nav-links a.nav-active{color:var(--white)}
+.nav-links a:hover::after,.nav-links a.nav-active::after{width:100%}
+.nav-links a.nav-active{color:var(--red)}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:.6rem 1.4rem!important;display:inline-block!important;transform:skewX(-8deg);transition:background .2s,transform .2s!important}
+.nav-cta span{display:inline-block;transform:skewX(8deg)}
+.nav-cta:hover{background:var(--red-dark)!important;transform:skewX(-8deg) scale(1.04)!important}
+.nav-cta::after{display:none!important}
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;z-index:9002}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.99);z-index:9001;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--cond);font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mob-menu a:hover{color:var(--red)}
+
+/* FLOATING HIRE */
+#hire-float{position:fixed;bottom:2rem;right:2rem;z-index:8500;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.hire-btn{background:var(--red);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:.6rem;animation:pulseCta 2s infinite;white-space:nowrap;border:none}
+.hire-btn:hover{background:var(--red-dark);animation:none;transform:scale(1.05)}
+.hire-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1s infinite;flex-shrink:0;pointer-events:none}
+.hire-dismiss{background:var(--black-4);border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.6rem;padding:.28rem .65rem;cursor:pointer!important;transition:color .2s}
+.hire-dismiss:hover{color:var(--white)}
+
+/* ===================== HERO ===================== */
+#hero{min-height:80vh;display:flex;align-items:center;padding:8rem 4rem 5rem;background:var(--black-2);position:relative;overflow:hidden}
+#hero::before{content:'CLIENTS';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(7rem,20vw,20rem);color:rgba(245,245,240,.025);white-space:nowrap;pointer-events:none;letter-spacing:.06em}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,245,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,245,240,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-orb{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(224,26,26,.1) 0%,transparent 70%);top:-150px;right:-150px;animation:pulseOrb 7s ease-in-out infinite;pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;width:100%;animation:fadeUp .8s .1s ease both}
+.breadcrumb{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.breadcrumb a{color:var(--white-mute);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{color:var(--red)}
+.hero-blink{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite;flex-shrink:0;pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);border:1px solid var(--border-red);padding:.38rem .9rem;margin-bottom:1.8rem}
+h1.hero-title{font-family:var(--cond);font-weight:900;font-size:clamp(3rem,6.5vw,6.5rem);line-height:.9;text-transform:uppercase;color:var(--white);margin-bottom:2rem}
+h1.hero-title em{color:var(--red);font-style:normal;display:block}
+.hero-sub{font-size:1.05rem;font-weight:300;color:var(--white-dim);max-width:540px;line-height:1.8;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap}
+/* hero right — big stat stack */
+.hero-stats-stack{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.hs-card{background:var(--black-3);padding:1.8rem 1.5rem;border-top:2px solid transparent;transition:border-color .3s}
+.hs-card:hover{border-top-color:var(--red)}
+.hs-num{font-family:var(--cond);font-weight:900;font-size:2.8rem;line-height:1;color:var(--white)}
+.hs-num b{color:var(--red)}
+.hs-lbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);margin-top:.3rem}
+.hs-trend{font-family:var(--mono);font-size:.6rem;color:var(--green);margin-top:.2rem}
+
+/* MARQUEE */
+.marquee-band{padding:1.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--black)}
+.marq-track{display:flex;gap:3rem;animation:marq 30s linear infinite;width:max-content}
+.marq-item{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);white-space:nowrap}
+.marq-item::after{content:'//';color:var(--red);margin-left:2rem}
+
+/* ===================== CLIENT TRUST STRIP ===================== */
+#trust-strip{background:var(--black);padding:4rem 4rem}
+.trust-intro{text-align:center;margin-bottom:3rem}
+.trust-intro p{font-size:1rem;font-weight:300;color:var(--white-mute);line-height:1.8;margin-top:.8rem;max-width:600px;margin-left:auto;margin-right:auto}
+.sector-logos{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border)}
+.sector-logo{background:var(--black-2);padding:2rem 1rem;display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1rem;letter-spacing:.1em;color:var(--white-mute);text-transform:uppercase;border-top:2px solid transparent;transition:all .3s;text-align:center;line-height:1.4}
+.sector-logo:hover{border-top-color:var(--red);color:var(--white);background:var(--black-3)}
+/* Satisfied bar */
+.trust-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:1px}
+.tb-stat{background:var(--black-2);padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.25rem}
+.tb-num{font-family:var(--cond);font-weight:900;font-size:2.4rem;color:var(--white);line-height:1}
+.tb-num b{color:var(--red)}
+.tb-lbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute)}
+.tb-bar{height:3px;background:var(--black-4);margin-top:.8rem;border-radius:2px;overflow:hidden}
+.tb-fill{height:100%;background:var(--red);border-radius:2px;animation:fillBar 2s ease both}
+
+/* ===================== SECTOR DEEP DIVE ===================== */
+#sectors{background:var(--black-2)}
+.sector-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:3.5rem;overflow-x:auto;scrollbar-width:none}
+.sector-tabs::-webkit-scrollbar{display:none}
+.stab{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 1.6rem;background:transparent;border:none;color:var(--white-mute);cursor:pointer!important;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.stab:hover{color:var(--white)}
+.stab.active{color:var(--white);border-bottom-color:var(--red)}
+.stab-panel{display:none;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+.stab-panel.active{display:grid}
+.sp-left{display:flex;flex-direction:column;gap:1.5rem}
+.sp-sector-tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.sp-title{font-family:var(--cond);font-weight:900;font-size:clamp(1.8rem,3vw,2.8rem);text-transform:uppercase;color:var(--white);line-height:1}
+.sp-title em{color:var(--red);font-style:normal}
+.sp-desc{font-size:.97rem;font-weight:300;color:var(--white-dim);line-height:1.85}
+.sp-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.sp-stat{background:var(--black-3);padding:1.2rem 1.1rem}
+.sp-stat-val{font-family:var(--cond);font-weight:900;font-size:1.8rem;color:var(--white);line-height:1}
+.sp-stat-val b{color:var(--red)}
+.sp-stat-lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-top:.25rem}
+.sp-regs{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.sp-reg{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;padding:.22rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.sp-right{display:flex;flex-direction:column;gap:1.5rem}
+.sp-challenges{background:var(--black-3);border:1px solid var(--border);padding:1.8rem}
+.spc-title{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:1rem}
+.spc-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.spc-list li{font-size:.9rem;font-weight:300;color:var(--white-dim);padding-left:1.4rem;position:relative;line-height:1.65}
+.spc-list li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:.75rem;top:.12rem}
+.sp-case{background:var(--black-2);border:1px solid var(--border-red);padding:1.8rem}
+.sp-case-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.sp-case-title{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white);margin-bottom:.8rem;line-height:1.2}
+.sp-case-res{display:flex;align-items:flex-start;gap:.5rem;font-family:var(--mono);font-size:.68rem;color:var(--white-dim);margin-bottom:.4rem;line-height:1.5}
+.sp-case-res::before{content:'✓';color:var(--green);flex-shrink:0;font-weight:700}
+
+/* ===================== CASE STUDIES ===================== */
+#cases{background:var(--black)}
+.cases-filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:3rem}
+.cf-btn{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.38rem .9rem;border:1px solid var(--border);color:var(--white-mute);background:transparent;cursor:pointer!important;transition:all .2s}
+.cf-btn:hover,.cf-btn.active{border-color:var(--red);color:var(--red);background:rgba(224,26,26,.06)}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.case-card{background:var(--black-2);padding:2.2rem 1.8rem;border-top:2px solid transparent;transition:all .3s;display:flex;flex-direction:column}
+.case-card:hover{border-top-color:var(--red)}
+.case-card[data-hidden]{display:none}
+.case-ind{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+.case-title{font-family:var(--cond);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:var(--white);margin-bottom:.9rem;line-height:1.2;flex:1}
+.case-res{display:flex;align-items:flex-start;gap:.5rem;font-family:var(--mono);font-size:.68rem;color:var(--white-dim);margin-bottom:.4rem;line-height:1.5}
+.case-res::before{content:'→';color:var(--red);flex-shrink:0}
+.case-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;padding-top:.9rem;border-top:1px solid var(--border)}
+.case-svc-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;padding:.2rem .5rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.case-impact{font-family:var(--cond);font-weight:900;font-size:1.4rem;color:var(--red);margin-top:.8rem;line-height:1}
+.case-impact-lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-top:.15rem}
+
+/* ===================== TESTIMONIALS ===================== */
+#testimonials{background:var(--black-2)}
+.testi-layout{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:3.5rem}
+.testi-card{background:var(--black-2);padding:2.5rem 2rem}
+.testi-stars{display:flex;gap:.2rem;margin-bottom:1rem}
+.testi-star{color:var(--red);font-size:1rem}
+.testi-q{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.8;font-style:italic;margin-bottom:1.5rem;border-left:2px solid var(--red);padding-left:1.2rem}
+.testi-name{font-family:var(--cond);font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--white)}
+.testi-role{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute);margin-top:.2rem}
+.testi-sector{font-family:var(--mono);font-size:.6rem;padding:.18rem .5rem;border:1px solid var(--border);color:var(--red);text-transform:uppercase;display:inline-block;margin-top:.6rem;letter-spacing:.08em}
+/* Featured testimonial */
+.testi-featured{background:var(--black-3);border:1px solid var(--border-red);padding:2.8rem 2.4rem;grid-column:1/-1;position:relative;overflow:hidden}
+.testi-featured::before{content:'"';position:absolute;top:-.5rem;left:1.5rem;font-family:var(--cond);font-weight:900;font-size:8rem;color:rgba(224,26,26,.08);line-height:1;pointer-events:none}
+.tf-q{font-size:1.15rem;font-weight:300;color:var(--white-dim);line-height:1.85;font-style:italic;margin-bottom:1.8rem;position:relative;max-width:800px}
+.tf-attr{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.tf-av{width:52px;height:52px;background:var(--black-4);border:1px solid var(--border-red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1rem;color:var(--red);flex-shrink:0}
+.tf-name{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white)}
+.tf-role{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);margin-top:.2rem}
+
+/* ===================== RETENTION / SATISFACTION ===================== */
+#satisfaction{background:var(--black)}
+.sat-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.sat-metrics{display:flex;flex-direction:column;gap:2rem}
+.sat-metric{display:flex;flex-direction:column;gap:.5rem}
+.sat-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute)}
+.sat-bar-wrap{display:flex;align-items:center;gap:1rem}
+.sat-bar{flex:1;height:6px;background:var(--black-4);border-radius:3px;overflow:hidden}
+.sat-fill{height:100%;background:var(--red);border-radius:3px;animation:fillBar 1.8s ease both}
+.sat-pct{font-family:var(--cond);font-weight:900;font-size:1.4rem;color:var(--white);line-height:1;min-width:55px;text-align:right}
+.sat-pct b{color:var(--red)}
+.sat-right{display:flex;flex-direction:column;gap:1.5rem}
+.sat-quote{border-left:3px solid var(--red);padding:1.4rem 1.6rem;background:var(--black-2)}
+.sq-text{font-size:.97rem;font-weight:300;color:var(--white-dim);line-height:1.8;font-style:italic}
+.sq-attr{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.7rem}
+.retention-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.rs-card{background:var(--black-2);padding:1.6rem 1.4rem;text-align:center}
+.rs-num{font-family:var(--cond);font-weight:900;font-size:2.2rem;color:var(--white);line-height:1}
+.rs-num b{color:var(--red)}
+.rs-lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-top:.3rem}
+
+/* ===================== ONBOARDING PROCESS ===================== */
+#onboarding{background:var(--black-2)}
+.ob-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.ob-step{background:var(--black-2);padding:2rem 1.6rem;border-top:2px solid transparent;transition:border-color .3s}
+.ob-step:hover{border-top-color:var(--red)}
+.ob-step-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.ob-step-name{font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.ob-step-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.7}
+.ob-step-time{font-family:var(--mono);font-size:.62rem;color:var(--red);margin-top:.7rem;letter-spacing:.08em}
+
+/* ===================== WHAT CLIENTS SAY ABOUT COMPETITORS ===================== */
+#why-us{background:var(--black)}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.comparison-table{width:100%;border-collapse:collapse;margin-top:1.5rem}
+.comparison-table th{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--border-red);background:var(--black-2)}
+.comparison-table th:first-child{color:var(--white-mute);width:40%}
+.comparison-table th.rdd-col{color:var(--red)}
+.comparison-table th.typ-col{color:var(--white-mute)}
+.comparison-table td{padding:.85rem 1rem;border-bottom:1px solid var(--border);font-size:.87rem;font-weight:300;color:var(--white-dim);vertical-align:top}
+.comparison-table td.rdd-col{background:rgba(224,26,26,.04)}
+.comparison-table tr:hover td{background:var(--black-2)}
+.check-yes{color:var(--green);font-size:1rem}
+.check-no{color:var(--white-mute);font-size:.9rem}
+.why-quotes{display:flex;flex-direction:column;gap:1.5rem}
+.wq-card{background:var(--black-2);border:1px solid var(--border);padding:1.8rem;border-left:2px solid var(--red)}
+.wq-text{font-size:.93rem;font-weight:300;color:var(--white-dim);line-height:1.8;font-style:italic;margin-bottom:.8rem}
+.wq-attr{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--white-mute)}
+.wq-attr b{color:var(--red)}
+
+/* ===================== PARTNERSHIP PROGRAMME ===================== */
+#partnership{background:var(--black-2)}
+.partner-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.pt-card{background:var(--black-2);padding:2.2rem 1.8rem;border-top:2px solid transparent;transition:all .3s}
+.pt-card.featured{background:var(--black-3);border-top-color:var(--red)}
+.pt-type{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.7rem}
+.pt-name{font-family:var(--cond);font-weight:900;font-size:1.6rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.pt-desc{font-size:.9rem;font-weight:300;color:var(--white-dim);line-height:1.75;margin-bottom:1.2rem}
+.pt-features{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.5rem}
+.pt-feat{font-size:.87rem;font-weight:300;color:var(--white-dim);padding-left:1.4rem;position:relative;line-height:1.55}
+.pt-feat::before{content:'✓';position:absolute;left:0;color:var(--red);font-size:.8rem;font-weight:700}
+
+/* CTA BAND */
+#cta-band{background:var(--red);padding:5.5rem 4rem;text-align:center;position:relative;overflow:hidden}
+#cta-band::before{content:'JOIN 500+';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(3rem,9vw,11rem);color:rgba(0,0,0,.07);white-space:nowrap;pointer-events:none;letter-spacing:.04em}
+.cta-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,5vw,5rem);text-transform:uppercase;color:#fff;line-height:.95;margin-bottom:1.4rem;position:relative}
+.cta-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.82);margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.75;position:relative}
+.cta-acts{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;position:relative}
+.btn-white{background:#fff;color:var(--black)!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;display:inline-block;transition:all .2s;cursor:pointer!important}
+.btn-white:hover{background:var(--black);color:#fff!important}
+.btn-white-ghost{background:transparent;color:#fff!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.4rem;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,.45);transition:all .2s;cursor:pointer!important}
+.btn-white-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.cta-urgency{font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.65);margin-top:1.5rem;letter-spacing:.08em;position:relative}
+.cta-urgency b{color:#fff}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--border);padding:4.5rem 4rem 2.5rem}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-logo{display:flex;align-items:center;gap:.75rem}
+.foot-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75;max-width:275px}
+.foot-certs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.foot-cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;padding:.28rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.foot-socials{display:flex;gap:.65rem;margin-top:.5rem}
+.foot-social{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important}
+.foot-social:hover{border-color:var(--red);color:var(--red)}
+.foot-col h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1.3rem;display:block;opacity:1}
+.foot-col .foot-links{display:flex;flex-direction:column;gap:.65rem;list-style:none}
+.foot-col .foot-links a{font-size:.87rem;font-weight:300;color:var(--white-mute);text-decoration:none;transition:color .2s;display:block;cursor:pointer!important;opacity:1}
+.foot-col .foot-links a:hover{color:var(--red)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute)}
+.foot-copy b{color:var(--red);font-weight:400}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:color .2s;cursor:pointer!important}
+.foot-legal a:hover{color:var(--red)}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .sector-logos{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:1024px){
+  section{padding:5rem 2.5rem}
+  nav{padding:1.3rem 2.5rem}
+  #hero{padding:8rem 2.5rem 4.5rem}
+  #cta-band,#trust-strip{padding:5rem 2.5rem}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-stats-stack{display:none}
+  .stab-panel.active{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr 1fr}
+  .testi-layout{grid-template-columns:1fr}
+  .testi-featured{grid-column:auto}
+  .sat-layout{grid-template-columns:1fr}
+  .why-layout{grid-template-columns:1fr}
+  .partner-tiers{grid-template-columns:1fr 1fr}
+  .ob-steps{grid-template-columns:1fr 1fr}
+  .trust-bar{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  section{padding:4rem 1.25rem}
+  nav{padding:1.1rem 1.25rem}
+  #hero{padding:7rem 1.25rem 4rem}
+  #trust-strip{padding:4rem 1.25rem}
+  #cta-band{padding:4.5rem 1.25rem}
+  footer{padding:3.5rem 1.25rem 2rem}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .sector-logos{grid-template-columns:1fr 1fr}
+  .trust-bar{grid-template-columns:1fr 1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .ob-steps{grid-template-columns:1fr 1fr}
+  .partner-tiers{grid-template-columns:1fr}
+  .retention-stats{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  #hire-float{bottom:1rem;right:1rem}
+  .hire-btn{font-size:.65rem;padding:.75rem 1.2rem}
+  .sp-stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .ob-steps{grid-template-columns:1fr}
+  .trust-bar{grid-template-columns:1fr}
+  h1.hero-title{font-size:2.8rem}
+  .sector-logos{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- FLOATING HIRE -->
+<div id="hire-float">
+  <a href="index.html#contact" class="hire-btn"><span class="hire-dot"></span>Hire Us Now</a>
+  <button class="hire-dismiss" id="hireDismiss">Dismiss</button>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="RDD Agency Home">
+    <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+    <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Main navigation">
+    <a href="services.html">Services</a>
+    <a href="about.html#mvv">Why RDD</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="clients.html" class="nav-active">Clients</a>
+    <a href="about.html#team">Team</a>
+    <a href="index.html#contact" class="nav-cta"><span>Get Protected</span></a>
+  </div>
+  <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="services.html" class="mob-lnk">Services</a>
+  <a href="about.html#mvv" class="mob-lnk">Why RDD</a>
+  <a href="pricing.html" class="mob-lnk">Pricing</a>
+  <a href="clients.html" class="mob-lnk" style="color:var(--red)">Clients</a>
+  <a href="about.html#team" class="mob-lnk">Team</a>
+  <a href="index.html#contact" class="mob-lnk" style="color:var(--red)">Get Protected →</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" role="banner">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-orb" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Clients</span>
+      </nav>
+      <div class="hero-tag"><span class="hero-blink" aria-hidden="true"></span>500+ Clients · 47 Countries · 98% Retention</div>
+      <h1 class="hero-title">
+        Trusted By<br>
+        <em>The Ones Who</em><br>
+        Cannot Fail
+      </h1>
+      <p class="hero-sub">From central banks and sovereign wealth funds to critical infrastructure operators and Fortune 500 technology companies — RDDA protects the organisations that the world depends on. These are their stories.</p>
+      <div class="hero-actions">
+        <a href="#cases" class="btn-red">View Case Studies</a>
+        <a href="#testimonials" class="btn-ghost">Read Testimonials</a>
+      </div>
+    </div>
+    <div class="hero-stats-stack stag">
+      <div class="hs-card"><div class="hs-num">500<b>+</b></div><div class="hs-lbl">Active Enterprise Clients</div><div class="hs-trend">↑ 48 new this year</div></div>
+      <div class="hs-card"><div class="hs-num">98<b>%</b></div><div class="hs-lbl">Client Retention Rate</div><div class="hs-trend">Industry avg: 71%</div></div>
+      <div class="hs-card"><div class="hs-num">$2.<b>1B</b></div><div class="hs-lbl">Losses Prevented</div><div class="hs-trend">Documented &amp; verified</div></div>
+      <div class="hs-card"><div class="hs-num">4.9<b>/5</b></div><div class="hs-lbl">Average Client Rating</div><div class="hs-trend">Based on 412 reviews</div></div>
+      <div class="hs-card"><div class="hs-num">47</div><div class="hs-lbl">Countries Served</div><div class="hs-trend">6 continents active</div></div>
+      <div class="hs-card"><div class="hs-num">8<b>yrs</b></div><div class="hs-lbl">Longest Client Relationship</div><div class="hs-trend">Since founding in 2016</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marq-track">
+    <span class="marq-item">Financial Services</span><span class="marq-item">Central Banks</span><span class="marq-item">Critical Infrastructure</span><span class="marq-item">Government Agencies</span><span class="marq-item">Healthcare Systems</span><span class="marq-item">Technology Enterprises</span><span class="marq-item">Defence Contractors</span><span class="marq-item">Energy &amp; Utilities</span><span class="marq-item">Telecoms &amp; Media</span><span class="marq-item">Financial Services</span><span class="marq-item">Central Banks</span><span class="marq-item">Critical Infrastructure</span><span class="marq-item">Government Agencies</span><span class="marq-item">Healthcare Systems</span><span class="marq-item">Technology Enterprises</span><span class="marq-item">Defence Contractors</span><span class="marq-item">Energy &amp; Utilities</span><span class="marq-item">Telecoms &amp; Media</span>
+  </div>
+</div>
+
+<!-- ===================== TRUST STRIP ===================== -->
+<section id="trust-strip">
+  <div class="trust-intro reveal">
+    <div class="sec-tag" style="justify-content:center">Sectors We Serve</div>
+    <h2 class="sec-title" style="text-align:center">Trusted Across <em>Every</em> Industry</h2>
+    <p>Our clients represent the full spectrum of enterprise and government operations — from systemically important financial institutions to national power grids, from Fortune 500 technology companies to ministries of defence.</p>
+  </div>
+  <div class="sector-logos stag">
+    <div class="sector-logo">Financial<br>Services</div>
+    <div class="sector-logo">Central<br>Banks</div>
+    <div class="sector-logo">Government<br>&amp; Defence</div>
+    <div class="sector-logo">Healthcare<br>Systems</div>
+    <div class="sector-logo">Energy &amp;<br>Utilities</div>
+    <div class="sector-logo">Technology<br>Enterprise</div>
+    <div class="sector-logo">Critical<br>Infrastructure</div>
+    <div class="sector-logo">Defence<br>Contractors</div>
+    <div class="sector-logo">Telecoms<br>&amp; Media</div>
+    <div class="sector-logo">Insurance<br>&amp; Fintech</div>
+    <div class="sector-logo">Education<br>&amp; Research</div>
+    <div class="sector-logo">Sovereign<br>Wealth Funds</div>
+  </div>
+  <div class="trust-bar stag">
+    <div class="tb-stat"><div class="tb-num">500<b>+</b></div><div class="tb-lbl">Active Clients</div><div class="tb-bar"><div class="tb-fill" style="width:90%"></div></div></div>
+    <div class="tb-stat"><div class="tb-num">98<b>%</b></div><div class="tb-lbl">Retention Rate</div><div class="tb-bar"><div class="tb-fill" style="width:98%;animation-delay:.2s"></div></div></div>
+    <div class="tb-stat"><div class="tb-num">47</div><div class="tb-lbl">Countries</div><div class="tb-bar"><div class="tb-fill" style="width:75%;animation-delay:.4s"></div></div></div>
+    <div class="tb-stat"><div class="tb-num">4.9<b>/5</b></div><div class="tb-lbl">Client Satisfaction</div><div class="tb-bar"><div class="tb-fill" style="width:98%;animation-delay:.6s"></div></div></div>
+  </div>
+</section>
+
+<!-- ===================== SECTOR DEEP DIVE ===================== -->
+<section id="sectors">
+  <div class="reveal">
+    <div class="sec-tag">Client Sectors</div>
+    <h2 class="sec-title">Deep Expertise in <em>Your Industry</em></h2>
+    <p class="body-p" style="max-width:620px;margin-top:1rem">Select your sector to see the specific threats we address, the regulatory frameworks we support, and the documented outcomes we have delivered.</p>
+  </div>
+  <div class="sector-tabs" role="tablist" style="margin-top:2.5rem">
+    <button class="stab active" role="tab" aria-selected="true"  data-tab="finance">Financial Services</button>
+    <button class="stab"        role="tab" aria-selected="false" data-tab="govt">Government &amp; Defence</button>
+    <button class="stab"        role="tab" aria-selected="false" data-tab="health">Healthcare</button>
+    <button class="stab"        role="tab" aria-selected="false" data-tab="energy">Energy &amp; Utilities</button>
+    <button class="stab"        role="tab" aria-selected="false" data-tab="tech">Technology</button>
+    <button class="stab"        role="tab" aria-selected="false" data-tab="infra">Critical Infrastructure</button>
+  </div>
+
+  <!-- FINANCE -->
+  <div class="stab-panel active" id="tab-finance" role="tabpanel">
+    <div class="sp-left">
+      <div class="sp-sector-tag">Financial Services</div>
+      <h3 class="sp-title">Banking, Insurance<br>&amp; <em>Capital Markets</em></h3>
+      <p class="sp-desc">Financial institutions are the most targeted organisations on earth. Real-time fraud systems, core banking infrastructure, trading platforms, and the personal data of millions of customers make them priority targets for nation-states, organised crime, and ransomware operators simultaneously.</p>
+      <p class="sp-desc">RDDA serves central banks, global investment banks, insurers, payment processors, and fintech platforms. We understand the unique combination of regulatory pressure, operational sensitivity, and adversary sophistication this sector faces.</p>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-val">180<b>+</b></div><div class="sp-stat-lbl">Financial Clients</div></div>
+        <div class="sp-stat"><div class="sp-stat-val">$1.<b>4B</b></div><div class="sp-stat-lbl">Fraud Prevented</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>TIBER</b></div><div class="sp-stat-lbl">EU Qualified</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>CBEST</b></div><div class="sp-stat-lbl">Approved</div></div>
+      </div>
+      <div class="sp-regs"><span class="sp-reg">TIBER-EU</span><span class="sp-reg">CBEST</span><span class="sp-reg">PCI DSS v4</span><span class="sp-reg">FCA</span><span class="sp-reg">DORA</span><span class="sp-reg">SWIFT CSP</span><span class="sp-reg">MAS TRM</span></div>
+    </div>
+    <div class="sp-right">
+      <div class="sp-challenges">
+        <div class="spc-title">// Primary Threats in Financial Services</div>
+        <ul class="spc-list">
+          <li>SWIFT and wire transfer fraud via business email compromise and insider access</li>
+          <li>Core banking system compromise for account manipulation and data theft</li>
+          <li>Trading platform manipulation and market data integrity attacks</li>
+          <li>Ransomware and destructive malware targeting financial market continuity</li>
+          <li>Third-party / supply chain attacks on technology vendors and payment processors</li>
+          <li>Credential stuffing and account takeover at scale</li>
+          <li>Nation-state reconnaissance of systemically important financial institutions</li>
+        </ul>
+      </div>
+      <div class="sp-case">
+        <div class="sp-case-tag">Case Study — Global Bank, Zürich</div>
+        <div class="sp-case-title">$47M Wire Fraud Blocked in 38 Minutes</div>
+        <div class="sp-case-res">Nation-state actor pivot via compromised supply chain vendor identified</div>
+        <div class="sp-case-res">Complete forensic timeline reconstructed; legal-grade evidence delivered in 6 hours</div>
+        <div class="sp-case-res">$47M transfer blocked before SWIFT settlement window closed</div>
+        <div class="sp-case-res">Full incident report accepted by FCA and insurers with no further investigation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOVERNMENT -->
+  <div class="stab-panel" id="tab-govt" role="tabpanel">
+    <div class="sp-left">
+      <div class="sp-sector-tag">Government &amp; Defence</div>
+      <h3 class="sp-title">Ministries, Agencies<br>&amp; <em>Defence</em></h3>
+      <p class="sp-desc">Government and defence clients operate under some of the highest threat levels of any sector — facing persistent, well-resourced nation-state actors with long-term strategic objectives including espionage, disruption, and influence operations.</p>
+      <p class="sp-desc">RDDA's senior analysts hold UK SC clearances (DV available on request) and have direct experience supporting classified government cyber programmes. We operate within the strict legal and operational constraints of government environments.</p>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-val">60<b>+</b></div><div class="sp-stat-lbl">Government Clients</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>SC/DV</b></div><div class="sp-stat-lbl">Cleared Analysts</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>NATO</b></div><div class="sp-stat-lbl">Aligned TTPs</div></div>
+        <div class="sp-stat"><div class="sp-stat-val">12</div><div class="sp-stat-lbl">Governments Served</div></div>
+      </div>
+      <div class="sp-regs"><span class="sp-reg">JSP 440</span><span class="sp-reg">NCSC CAF</span><span class="sp-reg">NIST 800-53</span><span class="sp-reg">FedRAMP</span><span class="sp-reg">ISM</span><span class="sp-reg">ISO 27001</span></div>
+    </div>
+    <div class="sp-right">
+      <div class="sp-challenges">
+        <div class="spc-title">// Primary Threats in Government &amp; Defence</div>
+        <ul class="spc-list">
+          <li>Nation-state espionage targeting classified and sensitive government systems</li>
+          <li>Persistent access operations by APT groups with multi-year dwell times</li>
+          <li>Influence operations and disinformation infrastructure compromise</li>
+          <li>Defence supply chain attacks targeting tier-2 and tier-3 contractors</li>
+          <li>Insider threat — both malicious and negligent — in high-clearance environments</li>
+          <li>Physical security breaches targeting sensitive facilities</li>
+          <li>Critical national infrastructure attacks via government-connected systems</li>
+        </ul>
+      </div>
+      <div class="sp-case">
+        <div class="sp-case-tag">Case Study — Government Ministry, UK</div>
+        <div class="sp-case-title">Spear-Phishing Simulation: 100% Staff Capture Leads to Security Overhaul</div>
+        <div class="sp-case-res">Bespoke pretexting campaign achieved credential capture from all targeted staff</div>
+        <div class="sp-case-res">MFA bypass technique discovered and immediately patched</div>
+        <div class="sp-case-res">Subsequent awareness training reduced susceptibility to 8% within 3 months</div>
+        <div class="sp-case-res">Complete NCSC CAF assessment delivered; all control gaps remediated before audit</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTHCARE -->
+  <div class="stab-panel" id="tab-health" role="tabpanel">
+    <div class="sp-left">
+      <div class="sp-sector-tag">Healthcare</div>
+      <h3 class="sp-title">Hospitals, Pharma<br>&amp; <em>Health Systems</em></h3>
+      <p class="sp-desc">Healthcare is the sector most targeted by ransomware, and the consequences are uniquely severe — compromised systems do not just mean data loss, they mean delayed patient care and direct risk to human life. RDDA takes this responsibility with total seriousness.</p>
+      <p class="sp-desc">We serve NHS Trusts, private hospital groups, pharmaceutical companies, medical device manufacturers, and health data platforms. Our non-disruptive methodology means operational continuity is never compromised during testing.</p>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-val">75<b>+</b></div><div class="sp-stat-lbl">Healthcare Clients</div></div>
+        <div class="sp-stat"><div class="sp-stat-val">0</div><div class="sp-stat-lbl">Patient Data Breached Under SOC</div></div>
+        <div class="sp-stat"><div class="sp-stat-val">22<b>min</b></div><div class="sp-stat-lbl">Fastest Ransomware Containment</div></div>
+        <div class="sp-stat"><div class="sp-stat-val">$0</div><div class="sp-stat-lbl">Ransom Paid for Clients</div></div>
+      </div>
+      <div class="sp-regs"><span class="sp-reg">HIPAA</span><span class="sp-reg">GDPR</span><span class="sp-reg">DSPT</span><span class="sp-reg">NIS2</span><span class="sp-reg">CQC</span><span class="sp-reg">ISO 27001</span></div>
+    </div>
+    <div class="sp-right">
+      <div class="sp-challenges">
+        <div class="spc-title">// Primary Threats in Healthcare</div>
+        <ul class="spc-list">
+          <li>Ransomware attacks targeting hospital systems and patient records</li>
+          <li>Medical device vulnerability exploitation for lateral movement</li>
+          <li>PACS and imaging system compromise and data exfiltration</li>
+          <li>Third-party vendor access exploitation in integrated health systems</li>
+          <li>Intellectual property theft targeting pharmaceutical R&amp;D</li>
+          <li>Business email compromise for fraudulent invoice payments</li>
+          <li>Supply chain attacks against healthcare IT vendors</li>
+        </ul>
+      </div>
+      <div class="sp-case">
+        <div class="sp-case-tag">Case Study — 14-Hospital Network, UK</div>
+        <div class="sp-case-title">LockBit 3.0 Contained in 22 Minutes — Zero Ransom Paid</div>
+        <div class="sp-case-res">LockBit 3.0 ransomware variant contained within 22 minutes of SOC detection</div>
+        <div class="sp-case-res">Patient care uninterrupted; no records exfiltrated; clinical systems fully preserved</div>
+        <div class="sp-case-res">Zero ransom paid — complete recovery via clean backup restoration in 72 hours</div>
+        <div class="sp-case-res">ICO notified within 72 hours; no regulatory action taken against the organisation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENERGY -->
+  <div class="stab-panel" id="tab-energy" role="tabpanel">
+    <div class="sp-left">
+      <div class="sp-sector-tag">Energy &amp; Utilities</div>
+      <h3 class="sp-title">Power, Oil &amp; Gas,<br>&amp; <em>Water Systems</em></h3>
+      <p class="sp-desc">Energy infrastructure is among the most attractive targets for nation-state actors seeking strategic disruption capability. The convergence of IT and OT networks — often with decades-old SCADA and control systems — creates unique and complex attack surfaces that require genuine specialist expertise.</p>
+      <p class="sp-desc">RDDA's ICS/OT team has directly worked on incident response following some of the most significant energy sector attacks of the past decade, and brings that hard-won operational knowledge to every engagement.</p>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-val">45<b>+</b></div><div class="sp-stat-lbl">Energy Clients</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>IEC</b></div><div class="sp-stat-lbl">62443 Aligned</div></div>
+        <div class="sp-stat"><div class="sp-stat-val">0<b>%</b></div><div class="sp-stat-lbl">OT Disruption Rate</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>CISA</b></div><div class="sp-stat-lbl">Recognised</div></div>
+      </div>
+      <div class="sp-regs"><span class="sp-reg">NERC CIP</span><span class="sp-reg">IEC 62443</span><span class="sp-reg">NIS2</span><span class="sp-reg">NIST SP 800-82</span><span class="sp-reg">ISO 27001</span></div>
+    </div>
+    <div class="sp-right">
+      <div class="sp-challenges">
+        <div class="spc-title">// Primary Threats in Energy &amp; Utilities</div>
+        <ul class="spc-list">
+          <li>Nation-state pre-positioning in OT networks for future destructive attacks</li>
+          <li>SCADA and HMI compromise targeting generation and distribution control</li>
+          <li>IT/OT boundary exploitation via poorly segmented industrial DMZ</li>
+          <li>Remote access compromise — VPNs and jump hosts with excessive privileges</li>
+          <li>Historian and data historian exposure enabling long-term surveillance</li>
+          <li>Supply chain attacks via third-party OT maintenance vendors</li>
+          <li>Physical security failures enabling direct access to control systems</li>
+        </ul>
+      </div>
+      <div class="sp-case">
+        <div class="sp-case-tag">Case Study — National Energy Provider</div>
+        <div class="sp-case-title">ICS Zero-Day Campaign Detected Across 6 Power Substations Pre-Execution</div>
+        <div class="sp-case-res">Staged attack infrastructure identified across 6 substations before execution window</div>
+        <div class="sp-case-res">Custom YARA signatures and detection rules deployed within 4 hours</div>
+        <div class="sp-case-res">Zero operational disruption to power generation or distribution</div>
+        <div class="sp-case-res">Coordinated disclosure with national CERT and government authorities</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECH -->
+  <div class="stab-panel" id="tab-tech" role="tabpanel">
+    <div class="sp-left">
+      <div class="sp-sector-tag">Technology</div>
+      <h3 class="sp-title">SaaS, Cloud Platforms<br>&amp; <em>Enterprise Tech</em></h3>
+      <p class="sp-desc">Technology companies face a unique dual threat: they are valuable targets for intellectual property theft and customer data exfiltration, and they are also potential vectors for supply chain attacks against their own customers. A compromised technology vendor is an entry point into every organisation that trusts it.</p>
+      <p class="sp-desc">RDDA has worked with technology companies ranging from early-stage SaaS platforms to global cloud providers, helping them build security that scales with their product and earns the trust of enterprise buyers.</p>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-val">120<b>+</b></div><div class="sp-stat-lbl">Technology Clients</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>SOC2</b></div><div class="sp-stat-lbl">Audit Ready</div></div>
+        <div class="sp-stat"><div class="sp-stat-val">3</div><div class="sp-stat-lbl">Cloud Platforms Covered</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>API</b></div><div class="sp-stat-lbl">Security Specialists</div></div>
+      </div>
+      <div class="sp-regs"><span class="sp-reg">SOC 2</span><span class="sp-reg">ISO 27001</span><span class="sp-reg">OWASP</span><span class="sp-reg">CWE</span><span class="sp-reg">GDPR</span><span class="sp-reg">CCPA</span></div>
+    </div>
+    <div class="sp-right">
+      <div class="sp-challenges">
+        <div class="spc-title">// Primary Threats in Technology</div>
+        <ul class="spc-list">
+          <li>Application layer vulnerabilities exploited for customer data exfiltration</li>
+          <li>Cloud infrastructure misconfigurations exposing production environments</li>
+          <li>CI/CD pipeline compromise for supply chain attack via software updates</li>
+          <li>API abuse and broken authorisation enabling mass data access</li>
+          <li>Intellectual property theft targeting source code repositories</li>
+          <li>Insider threat from developers with excessive production access</li>
+          <li>Third-party component vulnerabilities (log4j-style supply chain exposure)</li>
+        </ul>
+      </div>
+      <div class="sp-case">
+        <div class="sp-case-tag">Case Study — Cloud-Native SaaS Platform</div>
+        <div class="sp-case-title">AWS IAM Escalation to Root Found Before SOC 2 Audit</div>
+        <div class="sp-case-res">5-hop IAM privilege escalation path to AWS root discovered in CSPM review</div>
+        <div class="sp-case-res">Production S3 bucket containing customer PII found publicly accessible</div>
+        <div class="sp-case-res">Both critical issues remediated and verified before SOC 2 audit commenced</div>
+        <div class="sp-case-res">SOC 2 Type II achieved with zero control exceptions on first attempt</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFRASTRUCTURE -->
+  <div class="stab-panel" id="tab-infra" role="tabpanel">
+    <div class="sp-left">
+      <div class="sp-sector-tag">Critical Infrastructure</div>
+      <h3 class="sp-title">Transport, Water<br>&amp; <em>Telecoms</em></h3>
+      <p class="sp-desc">Critical infrastructure operators — transport networks, water treatment, telecoms providers, and port authorities — sit at the intersection of physical and cyber risk. An attack on these systems is not merely a business problem; it is a public safety and national security event.</p>
+      <p class="sp-desc">RDDA works with critical infrastructure operators under NIS2, the UK Cyber Assessment Framework, and sector-specific regulatory requirements, providing the specialist expertise these environments require.</p>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-val">40<b>+</b></div><div class="sp-stat-lbl">Infra Clients</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>NIS2</b></div><div class="sp-stat-lbl">Compliant</div></div>
+        <div class="sp-stat"><div class="sp-stat-val"><b>CAF</b></div><div class="sp-stat-lbl">NCSC Aligned</div></div>
+        <div class="sp-stat"><div class="sp-stat-val">0<b>%</b></div><div class="sp-stat-lbl">Disruption Rate</div></div>
+      </div>
+      <div class="sp-regs"><span class="sp-reg">NIS2</span><span class="sp-reg">NCSC CAF</span><span class="sp-reg">IEC 62443</span><span class="sp-reg">OFCOM</span><span class="sp-reg">ORR</span><span class="sp-reg">ISO 27001</span></div>
+    </div>
+    <div class="sp-right">
+      <div class="sp-challenges">
+        <div class="spc-title">// Primary Threats in Critical Infrastructure</div>
+        <ul class="spc-list">
+          <li>Pre-positioning attacks establishing persistent access for future activation</li>
+          <li>Operational technology disruption targeting safety systems</li>
+          <li>Telecommunications network interception and subscriber data theft</li>
+          <li>Transport management system compromise affecting safety-critical operations</li>
+          <li>Water treatment system tampering for public health impact</li>
+          <li>Physical-cyber combined attacks targeting unmanned remote infrastructure</li>
+          <li>GPS and timing signal spoofing affecting synchronised infrastructure</li>
+        </ul>
+      </div>
+      <div class="sp-case">
+        <div class="sp-case-tag">Case Study — National Telecoms Provider</div>
+        <div class="sp-case-title">Red Team Reveals SS7 Lateral Movement Path to Subscriber Data</div>
+        <div class="sp-case-res">SS7 protocol exploitation path identified enabling silent subscriber location tracking</div>
+        <div class="sp-case-res">IT/OT lateral movement path to billing system discovered via legacy integration</div>
+        <div class="sp-case-res">Both attack paths remediated and verified before OFCOM security assessment</div>
+        <div class="sp-case-res">NIS2 gap assessment completed; all Annex requirements met before deadline</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CASE STUDIES ===================== -->
+<section id="cases">
+  <div class="reveal">
+    <div class="sec-tag">Documented Outcomes</div>
+    <h2 class="sec-title">Case <em>Studies</em></h2>
+    <p class="body-p" style="max-width:580px;margin-top:1rem">Every engagement below is real. Names are withheld under NDA. Outcomes are documented, verified, and available on request with appropriate authorisation.</p>
+  </div>
+  <div class="cases-filter stag" role="group" aria-label="Filter case studies by sector">
+    <button class="cf-btn active" data-filter="all">All Sectors</button>
+    <button class="cf-btn" data-filter="financial">Financial</button>
+    <button class="cf-btn" data-filter="healthcare">Healthcare</button>
+    <button class="cf-btn" data-filter="infrastructure">Infrastructure</button>
+    <button class="cf-btn" data-filter="government">Government</button>
+    <button class="cf-btn" data-filter="technology">Technology</button>
+    <button class="cf-btn" data-filter="energy">Energy</button>
+  </div>
+  <div class="cases-grid" id="casesGrid">
+
+    <article class="case-card" data-sector="financial" tabindex="0">
+      <div class="case-ind">Financial Services</div>
+      <h3 class="case-title">$47M Wire Fraud Blocked via Supply Chain Compromise Discovery</h3>
+      <div class="case-res">Nation-state pivot identified within 38 minutes of IR engagement</div>
+      <div class="case-res">Legal-grade forensic evidence delivered in 6 hours</div>
+      <div class="case-res">$47M transfer blocked before SWIFT settlement window closed</div>
+      <div class="case-impact">$47M<div class="case-impact-lbl">Prevented Loss</div></div>
+      <div class="case-meta"><span class="case-svc-tag">Incident Response</span><span class="case-svc-tag">Threat Intelligence</span></div>
+    </article>
+
+    <article class="case-card" data-sector="infrastructure" tabindex="0">
+      <div class="case-ind">Critical Infrastructure</div>
+      <h3 class="case-title">ICS Zero-Day Campaign Detected Across 6 Power Substations Pre-Execution</h3>
+      <div class="case-res">Staged attack detected before execution window opened</div>
+      <div class="case-res">YARA signatures deployed within 4 hours; zero operational disruption</div>
+      <div class="case-res">Coordinated with national CERT and government authorities</div>
+      <div class="case-impact">6 Sites<div class="case-impact-lbl">Protected From Attack</div></div>
+      <div class="case-meta"><span class="case-svc-tag">ICS/OT Security</span><span class="case-svc-tag">Threat Intel</span></div>
+    </article>
+
+    <article class="case-card" data-sector="healthcare" tabindex="0">
+      <div class="case-ind">Healthcare Enterprise</div>
+      <h3 class="case-title">LockBit 3.0 Contained Across 14-Hospital Network in 22 Minutes</h3>
+      <div class="case-res">Ransomware contained in 22 minutes — zero patient data exfiltrated</div>
+      <div class="case-res">Zero ransom paid; full recovery in 72 hours via clean backups</div>
+      <div class="case-res">ICO notified within 72 hours; no regulatory action taken</div>
+      <div class="case-impact">$0<div class="case-impact-lbl">Ransom Paid</div></div>
+      <div class="case-meta"><span class="case-svc-tag">SOC as a Service</span><span class="case-svc-tag">Incident Response</span></div>
+    </article>
+
+    <article class="case-card" data-sector="financial" tabindex="0">
+      <div class="case-ind">Global Investment Bank</div>
+      <h3 class="case-title">Red Team Exposes Domain Admin Path Invisible to SOC for 9 Months</h3>
+      <div class="case-res">Domain admin achieved via forgotten legacy service account in 6 hours</div>
+      <div class="case-res">Blue team had zero detections across the entire 3-week campaign</div>
+      <div class="case-res">SIEM detection rules rebuilt post-engagement; full purple team exercise delivered</div>
+      <div class="case-impact">9 Months<div class="case-impact-lbl">Undetected Exposure Closed</div></div>
+      <div class="case-meta"><span class="case-svc-tag">Red Team Operations</span></div>
+    </article>
+
+    <article class="case-card" data-sector="technology" tabindex="0">
+      <div class="case-ind">Cloud-Native SaaS Platform</div>
+      <h3 class="case-title">AWS IAM 5-Hop Privilege Escalation to Root Found Before SOC 2 Audit</h3>
+      <div class="case-res">Complex IAM privilege escalation chain discovered in CSPM review</div>
+      <div class="case-res">Production S3 bucket with customer PII found publicly accessible</div>
+      <div class="case-res">SOC 2 Type II achieved with zero control exceptions on first attempt</div>
+      <div class="case-impact">SOC 2<div class="case-impact-lbl">Zero Exceptions</div></div>
+      <div class="case-meta"><span class="case-svc-tag">Cloud Security</span><span class="case-svc-tag">Compliance</span></div>
+    </article>
+
+    <article class="case-card" data-sector="government" tabindex="0">
+      <div class="case-ind">Government Ministry</div>
+      <h3 class="case-title">Spear-Phishing Simulation: 100% Staff Credential Capture Rate</h3>
+      <div class="case-res">Bespoke pretext achieved credential capture from all targeted personnel</div>
+      <div class="case-res">MFA bypass technique discovered and immediately remediated</div>
+      <div class="case-res">Susceptibility reduced to 8% within 3 months via RDDA awareness training</div>
+      <div class="case-impact">92%<div class="case-impact-lbl">Susceptibility Reduction</div></div>
+      <div class="case-meta"><span class="case-svc-tag">Red Team</span><span class="case-svc-tag">Compliance</span></div>
+    </article>
+
+    <article class="case-card" data-sector="energy" tabindex="0">
+      <div class="case-ind">Oil &amp; Gas Major</div>
+      <h3 class="case-title">NERC CIP Compliance Achieved Across 23 Critical Cyber Assets</h3>
+      <div class="case-res">Comprehensive gap assessment against NERC CIP v7 across 23 CCAs</div>
+      <div class="case-res">47 compliance gaps identified; remediation roadmap delivered with effort estimates</div>
+      <div class="case-res">Full NERC CIP compliance achieved 6 weeks ahead of regulatory deadline</div>
+      <div class="case-impact">6 Weeks<div class="case-impact-lbl">Ahead of Deadline</div></div>
+      <div class="case-meta"><span class="case-svc-tag">ICS/OT</span><span class="case-svc-tag">Compliance</span></div>
+    </article>
+
+    <article class="case-card" data-sector="financial" tabindex="0">
+      <div class="case-ind">Central Bank, Gulf Region</div>
+      <h3 class="case-title">TIBER-EU Red Team — Critical Finding in SWIFT Alliance System</h3>
+      <div class="case-res">TIBER-EU qualified red team engagement spanning 8 weeks</div>
+      <div class="case-res">Critical authentication bypass in SWIFT Alliance software discovered and reported</div>
+      <div class="case-res">Vulnerability responsibly disclosed to SWIFT; patch deployed across all member banks</div>
+      <div class="case-impact">Global<div class="case-impact-lbl">SWIFT Network Protected</div></div>
+      <div class="case-meta"><span class="case-svc-tag">Red Team</span><span class="case-svc-tag">TIBER-EU</span></div>
+    </article>
+
+    <article class="case-card" data-sector="healthcare" tabindex="0">
+      <div class="case-ind">Pharmaceutical Enterprise</div>
+      <h3 class="case-title">Nation-State IP Theft Campaign Detected During Active R&amp;D Phase</h3>
+      <div class="case-res">APT41 indicators detected in R&amp;D network during active drug development phase</div>
+      <div class="case-res">Exfiltration of 2.3GB of research data halted mid-transfer and quarantined</div>
+      <div class="case-res">Full forensic investigation completed; law enforcement coordination managed</div>
+      <div class="case-impact">2.3GB<div class="case-impact-lbl">IP Exfiltration Halted</div></div>
+      <div class="case-meta"><span class="case-svc-tag">Incident Response</span><span class="case-svc-tag">Threat Intel</span></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="testimonials">
+  <div class="reveal">
+    <div class="sec-tag">Client Voice</div>
+    <h2 class="sec-title">What Our <em>Clients</em> Say</h2>
+    <p class="body-p" style="max-width:580px;margin-top:1rem">Verbatim extracts from client feedback, engagement debriefs, and formal reviews — shared with permission.</p>
+  </div>
+  <div class="testi-layout stag">
+
+    <!-- FEATURED -->
+    <div class="testi-featured">
+      <p class="tf-q">"We have engaged four different cybersecurity firms over the past decade. RDD Agency is the only one that has ever made us feel genuinely more secure — not just more compliant. The difference is that their people have actually been inside the adversary's playbook. When they tell you something is a critical risk, you believe them, because they can show you exactly how they would exploit it and exactly what the impact would be. That credibility is irreplaceable."</p>
+      <div class="tf-attr">
+        <div class="tf-av" aria-hidden="true">CJ</div>
+        <div>
+          <div class="tf-name">C. Jackson</div>
+          <div class="tf-role">Group Chief Information Security Officer · Global Financial Institution, New York</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+      <p class="testi-q">"During a live ransomware incident at 2am on a Saturday, RDD had a senior analyst on our call within 11 minutes. They had the malware contained in under 30 minutes. Their ThreatCore platform gave us visibility into the attack we simply did not have. We have been on the SOC retainer ever since."</p>
+      <div class="testi-name">Director of IT Security</div>
+      <div class="testi-role">Regional Energy Provider · Gulf Cooperation Council</div>
+      <span class="testi-sector">Energy</span>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+      <p class="testi-q">"We engaged RDD for a red team assessment ahead of a regulatory audit. Their report was the most detailed and actionable we have ever received. They found critical flaws that were subsequently verified by the regulator itself. The regulators asked who our security partners were — they were impressed."</p>
+      <div class="testi-name">Group Head of Cybersecurity</div>
+      <div class="testi-role">Multinational Telecom · Southeast Asia</div>
+      <span class="testi-sector">Telecoms</span>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+      <p class="testi-q">"RDDA identified a persistent threat actor inside our network that had evaded our internal team for nine months. The engagement changed our entire approach to threat detection. We have renewed our contract three years running and we never intend to change partners."</p>
+      <div class="testi-name">Chief Information Security Officer</div>
+      <div class="testi-role">Global Financial Institution · Zürich</div>
+      <span class="testi-sector">Financial Services</span>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+      <p class="testi-q">"The ICS assessment was conducted with absolute professionalism and zero disruption to our operations. Their passive methodology meant we could test our most sensitive systems without any operational risk. The findings were eye-opening and the remediation roadmap was immediately actionable."</p>
+      <div class="testi-name">Head of OT Security</div>
+      <div class="testi-role">National Power Grid Operator · Northern Europe</div>
+      <span class="testi-sector">Energy &amp; Utilities</span>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+      <p class="testi-q">"We needed ISO 27001 certification in four months to close a major enterprise contract. RDD Agency conducted our gap assessment, helped us implement the required controls, and prepared us for the audit. We passed first time. Without them it would not have been possible."</p>
+      <div class="testi-name">Chief Technology Officer</div>
+      <div class="testi-role">Series B SaaS Platform · London</div>
+      <span class="testi-sector">Technology</span>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+      <p class="testi-q">"After the LockBit incident, our board asked how we could prevent a recurrence. We moved our entire security operation to RDDA's SOC retainer. Fourteen months later we have had three attempted intrusions — all detected and contained within minutes. The board sleep better."</p>
+      <div class="testi-name">CEO</div>
+      <div class="testi-role">14-Hospital NHS Trust · United Kingdom</div>
+      <span class="testi-sector">Healthcare</span>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars"><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span></div>
+      <p class="testi-q">"The penetration test report from RDDA was unlike anything we had seen before. Each finding came with a clear explanation of business impact, a realistic attack narrative, and remediation guidance our developers could actually implement. No other firm has given us this quality of output."</p>
+      <div class="testi-name">VP of Engineering</div>
+      <div class="testi-role">Global Payments Platform · Singapore</div>
+      <span class="testi-sector">Fintech</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== RETENTION / SATISFACTION ===================== -->
+<section id="satisfaction">
+  <div class="sat-layout">
+    <div class="rev-l">
+      <div class="sec-tag">Client Satisfaction</div>
+      <h2 class="sec-title">Why Clients <em>Stay</em></h2>
+      <p class="body-p" style="margin-top:1rem;margin-bottom:2rem">Our 98% retention rate is not a marketing number — it is the result of consistently delivering outcomes that matter to clients who have high standards and real alternatives. These are the metrics our clients report after engagement.</p>
+      <div class="sat-metrics">
+        <div class="sat-metric">
+          <span class="sat-label">Would recommend RDDA to peers</span>
+          <div class="sat-bar-wrap"><div class="sat-bar"><div class="sat-fill" style="width:98%"></div></div><span class="sat-pct">98<b>%</b></span></div>
+        </div>
+        <div class="sat-metric">
+          <span class="sat-label">Report improved security posture post-engagement</span>
+          <div class="sat-bar-wrap"><div class="sat-bar"><div class="sat-fill" style="width:97%;animation-delay:.15s"></div></div><span class="sat-pct">97<b>%</b></span></div>
+        </div>
+        <div class="sat-metric">
+          <span class="sat-label">Rate deliverable quality as "excellent"</span>
+          <div class="sat-bar-wrap"><div class="sat-bar"><div class="sat-fill" style="width:96%;animation-delay:.3s"></div></div><span class="sat-pct">96<b>%</b></span></div>
+        </div>
+        <div class="sat-metric">
+          <span class="sat-label">Renew or expand their engagement</span>
+          <div class="sat-bar-wrap"><div class="sat-bar"><div class="sat-fill" style="width:98%;animation-delay:.45s"></div></div><span class="sat-pct">98<b>%</b></span></div>
+        </div>
+        <div class="sat-metric">
+          <span class="sat-label">Rate analyst expertise as "world-class"</span>
+          <div class="sat-bar-wrap"><div class="sat-bar"><div class="sat-fill" style="width:99%;animation-delay:.6s"></div></div><span class="sat-pct">99<b>%</b></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-r">
+      <div class="sat-quote">
+        <p class="sq-text">"Before RDD Agency, we cycled through three different security firms in two years. None of them delivered what they promised. We have been with RDDA for four years now and in that time our security maturity has gone from 'reactive' to 'proactive.' That transformation has a measurable commercial value."</p>
+        <div class="sq-attr">CISO — Global Insurance Group, London · 4-year client</div>
+      </div>
+      <div class="retention-stats">
+        <div class="rs-card"><div class="rs-num">98<b>%</b></div><div class="rs-lbl">Annual Retention Rate</div></div>
+        <div class="rs-card"><div class="rs-num">4.9<b>/5</b></div><div class="rs-lbl">Average Satisfaction Score</div></div>
+        <div class="rs-card"><div class="rs-num">8<b>yr</b></div><div class="rs-lbl">Longest Client Relationship</div></div>
+        <div class="rs-card"><div class="rs-num">3.<b>2×</b></div><div class="rs-lbl">Average Engagement Expansion</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ONBOARDING ===================== -->
+<section id="onboarding">
+  <div class="reveal">
+    <div class="sec-tag">Becoming a Client</div>
+    <h2 class="sec-title">How to <em>Get Started</em></h2>
+    <p class="body-p" style="max-width:600px;margin-top:1rem">From first contact to active security in five steps. No sales pressure, no generic proposals — just a structured process designed to get you real security outcomes as fast as possible.</p>
+  </div>
+  <div class="ob-steps stag">
+    <div class="ob-step">
+      <div class="ob-step-num">Step 01</div>
+      <div class="ob-step-name">Initial Contact</div>
+      <p class="ob-step-desc">Submit an enquiry via our website, email, or call our enterprise line. We respond within 2 business hours to all new enquiries.</p>
+      <div class="ob-step-time">⏱ Response within 2 hours</div>
+    </div>
+    <div class="ob-step">
+      <div class="ob-step-num">Step 02</div>
+      <div class="ob-step-name">Free Scoping Call</div>
+      <p class="ob-step-desc">30–60 minute call with a senior analyst. We understand your environment, objectives, and constraints. No obligations. No sales pressure.</p>
+      <div class="ob-step-time">⏱ Within 48 hours of enquiry</div>
+    </div>
+    <div class="ob-step">
+      <div class="ob-step-num">Step 03</div>
+      <div class="ob-step-name">Written Proposal</div>
+      <p class="ob-step-desc">Fixed-fee proposal with detailed methodology, timeline, deliverables, and commercial terms. We do not issue generic proposals.</p>
+      <div class="ob-step-time">⏱ Within 48 hours of scoping call</div>
+    </div>
+    <div class="ob-step">
+      <div class="ob-step-num">Step 04</div>
+      <div class="ob-step-name">Agreement &amp; NDA</div>
+      <p class="ob-step-desc">Sign the Statement of Work and NDA. For SOC retainers, onboarding begins. For project engagements, a kickoff date is agreed.</p>
+      <div class="ob-step-time">⏱ Legal review typically 2–5 days</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY US vs OTHERS ===================== -->
+<section id="why-us">
+  <div class="why-layout">
+    <div class="rev-l">
+      <div class="sec-tag">Why Clients Choose RDDA</div>
+      <h2 class="sec-title">What Our Clients<br><em>Tell Us They Found</em></h2>
+      <p class="body-p" style="margin-top:1rem;margin-bottom:2rem">When clients switch to RDDA from a previous provider, we always ask what drove the change. These are the differences they consistently report.</p>
+      <table class="comparison-table" aria-label="RDDA vs typical cybersecurity firm comparison">
+        <thead>
+          <tr><th>Attribute</th><th class="rdd-col">RDD Agency</th><th class="typ-col">Typical Firm</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Led by former operators</td><td class="rdd-col"><span class="check-yes">✓</span> Always</td><td><span class="check-no">✗</span> Rarely</td></tr>
+          <tr><td>Manual penetration testing (not scanner output)</td><td class="rdd-col"><span class="check-yes">✓</span> 100%</td><td><span class="check-no">~</span> Mixed</td></tr>
+          <tr><td>Critical findings notified in real time</td><td class="rdd-col"><span class="check-yes">✓</span> Same day</td><td><span class="check-no">✗</span> At report delivery</td></tr>
+          <tr><td>Free retest after remediation</td><td class="rdd-col"><span class="check-yes">✓</span> Included</td><td><span class="check-no">✗</span> Usually extra cost</td></tr>
+          <tr><td>Fixed-fee pricing (no surprises)</td><td class="rdd-col"><span class="check-yes">✓</span> Always</td><td><span class="check-no">~</span> Often variable</td></tr>
+          <tr><td>2-hour incident response SLA</td><td class="rdd-col"><span class="check-yes">✓</span> Guaranteed</td><td><span class="check-no">~</span> Best effort</td></tr>
+          <tr><td>TIBER-EU / CBEST qualified</td><td class="rdd-col"><span class="check-yes">✓</span> Qualified</td><td><span class="check-no">✗</span> Usually not</td></tr>
+          <tr><td>Client retention rate</td><td class="rdd-col"><span style="color:var(--green);font-weight:700">98%</span></td><td><span style="color:var(--white-mute)">71% industry avg</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="why-quotes rev-r">
+      <div class="wq-card">
+        <p class="wq-text">"Our previous firm delivered a 200-page report and then disappeared. RDDA delivered a 60-page report where every single finding was verified, prioritised, and came with a remediation guide our team could actually execute. The quality difference was stark."</p>
+        <div class="wq-attr">CISO · <b>Manufacturing Enterprise, Germany</b> · Former client of Big-4 firm</div>
+      </div>
+      <div class="wq-card">
+        <p class="wq-text">"Our previous SOC provider's 'critical alert' was a port scan from a known scanner. RDDA's first week found a threat actor that had been in our network for 4 months. The difference in analyst capability is not incremental — it is categorical."</p>
+        <div class="wq-attr">Director of Security Operations · <b>Insurance Group, London</b></div>
+      </div>
+      <div class="wq-card">
+        <p class="wq-text">"When I asked our previous provider why they hadn't found a vulnerability that RDDA found in the first hour, they said it wasn't 'in scope.' RDDA found it because it was the most likely attack path — which is exactly what should drive scope, not the other way around."</p>
+        <div class="wq-attr">VP Engineering · <b>SaaS Platform, San Francisco</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARTNERSHIP ===================== -->
+<section id="partnership">
+  <div class="reveal">
+    <div class="sec-tag">Client Programmes</div>
+    <h2 class="sec-title">Partnership <em>Tiers</em></h2>
+    <p class="body-p" style="max-width:620px;margin-top:1rem">Our structured client programmes provide different levels of engagement, priority access, and commercial terms based on your security maturity and commitment level.</p>
+  </div>
+  <div class="partner-tiers stag">
+    <div class="pt-card">
+      <div class="pt-type">Project-Based</div>
+      <div class="pt-name">Assessed</div>
+      <p class="pt-desc">For organisations starting their security journey or requiring focused one-time assessments. No long-term commitment required.</p>
+      <div class="pt-features">
+        <div class="pt-feat">Access to all project-based services</div>
+        <div class="pt-feat">Fixed-fee engagement pricing</div>
+        <div class="pt-feat">Standard 30-day delivery SLA</div>
+        <div class="pt-feat">Dedicated engagement lead</div>
+        <div class="pt-feat">Free retest after remediation</div>
+      </div>
+      <a href="index.html#contact" class="btn-ghost" style="display:block;text-align:center">Get Started</a>
+    </div>
+    <div class="pt-card featured">
+      <div class="pt-type">Retainer Programme</div>
+      <div class="pt-name">Protected</div>
+      <p class="pt-desc">For organisations requiring ongoing security assurance and continuous protection. Priority access and dedicated resources.</p>
+      <div class="pt-features">
+        <div class="pt-feat">24/7/365 SOC monitoring included</div>
+        <div class="pt-feat">Dedicated senior analyst as security partner</div>
+        <div class="pt-feat">Priority incident response — 2-hour SLA</div>
+        <div class="pt-feat">Quarterly penetration tests included</div>
+        <div class="pt-feat">Monthly executive briefings</div>
+        <div class="pt-feat">20% discount on ad-hoc engagements</div>
+      </div>
+      <a href="pricing.html" class="btn-red" style="display:block;text-align:center">View Pricing</a>
+    </div>
+    <div class="pt-card">
+      <div class="pt-type">Strategic Partnership</div>
+      <div class="pt-name">Strategic</div>
+      <p class="pt-desc">For government agencies, critical infrastructure operators, and Fortune 500 enterprises requiring a true security partnership at scale.</p>
+      <div class="pt-features">
+        <div class="pt-feat">Everything in Protected, plus:</div>
+        <div class="pt-feat">Embedded analyst at client site</div>
+        <div class="pt-feat">Named partner on advisory board</div>
+        <div class="pt-feat">Early access to threat intelligence</div>
+        <div class="pt-feat">Custom SLAs and commercial terms</div>
+        <div class="pt-feat">Multi-year contract pricing</div>
+      </div>
+      <a href="index.html#contact" class="btn-ghost" style="display:block;text-align:center">Contact Enterprise Sales</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section id="cta-band">
+  <h2 class="cta-title">Join 500+ Organisations<br>That Trust RDDA</h2>
+  <p class="cta-sub">The first step is a free 30-minute scoping call with a senior analyst. No sales pressure, no generic proposals — just an honest conversation about your security needs.</p>
+  <div class="cta-acts">
+    <a href="index.html#contact" class="btn-white">Request a Free Scoping Call</a>
+    <a href="pricing.html" class="btn-white-ghost">View Pricing →</a>
+  </div>
+  <div class="cta-urgency">We onboard a maximum of <b>8 new enterprise clients per quarter.</b> Currently <b>3 slots remaining</b> for Q3 2025.</div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+        <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+      </div>
+      <p class="foot-desc">Elite global cybersecurity. Protecting the world's most critical organizations from the most advanced threats — 24 hours a day, 365 days a year.</p>
+      <div class="foot-certs">
+        <span class="foot-cert">ISO 27001</span><span class="foot-cert">CREST</span><span class="foot-cert">SOC 2 II</span><span class="foot-cert">GDPR</span><span class="foot-cert">FedRAMP</span>
+      </div>
+      <div class="foot-socials">
+        <a href="https://linkedin.com/company/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+        <a href="https://twitter.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="Twitter">Tw</a>
+        <a href="https://github.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="GitHub">Gh</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul class="foot-links">
+        <li><a href="services.html#pentest">Penetration Testing</a></li>
+        <li><a href="services.html#redteam">Red Team Operations</a></li>
+        <li><a href="services.html#soc">SOC as a Service</a></li>
+        <li><a href="services.html#ti">Threat Intelligence</a></li>
+        <li><a href="services.html#ir">Incident Response</a></li>
+        <li><a href="services.html#cloud">Cloud Security</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <ul class="foot-links">
+        <li><a href="about.html">About RDDA</a></li>
+        <li><a href="about.html#team">Leadership Team</a></li>
+        <li><a href="clients.html" style="color:var(--red)">Clients</a></li>
+        <li><a href="about.html#global">Global Presence</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html#careers-cta">Careers</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul class="foot-links">
+        <li><a href="index.html#threat-intel">Threat Intelligence Blog</a></li>
+        <li><a href="index.html#threat-intel">Security Advisories</a></li>
+        <li><a href="services.html#ti">CVE Research</a></li>
+        <li><a href="services.html#compliance">White Papers</a></li>
+        <li><a href="vulnerability-disclosure.html">Vulnerability Disclosure</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 <b>RDD Agency</b> — Razi Digital Agency Ltd. All rights reserved. Registered in England &amp; Wales.</span>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="vulnerability-disclosure.html">Vulnerability Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,[tabindex]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hov');ring.classList.add('hov')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hov');ring.classList.remove('hov')});
+});
+
+/* NAVBAR */
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>40));
+
+/* HAMBURGER */
+const ham=document.getElementById('navHam'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');ham.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mob-lnk').forEach(l=>l.addEventListener('click',()=>{
+  mob.classList.remove('open');ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+
+/* FLOATING DISMISS */
+document.getElementById('hireDismiss').addEventListener('click',()=>document.getElementById('hire-float').style.display='none');
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:0.08});
+document.querySelectorAll('.reveal,.rev-l,.rev-r,.stag').forEach(el=>obs.observe(el));
+
+/* SECTOR TABS */
+document.querySelectorAll('.stab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.stab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    document.querySelectorAll('.stab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');btn.setAttribute('aria-selected','true');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* CASE STUDY FILTER */
+document.querySelectorAll('.cf-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.cf-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.case-card').forEach(card=>{
+      if(f==='all'||card.dataset.sector===f){
+        card.removeAttribute('data-hidden');
+        card.style.display='flex';
+      }else{
+        card.setAttribute('data-hidden','');
+        card.style.display='none';
+      }
+    });
+    // Re-apply grid background fix
+    const grid=document.getElementById('casesGrid');
+    const visible=[...grid.querySelectorAll('.case-card:not([data-hidden])')];
+    if(visible.length===0){grid.style.background='none'}else{grid.style.background='var(--border)'}
+  });
+});
+</script>
+</body>
+</html>
