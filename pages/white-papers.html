@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RDD Agency White Papers — In-depth cybersecurity research, threat intelligence reports, technical guides, and industry analysis from the operators at Razi Digital Defence Agency.">
+<meta name="keywords" content="cybersecurity white papers, threat intelligence reports, penetration testing research, RDD Agency research, RDDA white papers, cybersecurity publications">
+<meta name="author" content="RDD Agency — Razi Digital Defence Agency">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="White Papers — RDD Agency | Cybersecurity Research & Intelligence">
+<meta property="og:description" content="Operator-written research from the front lines. Threat intelligence, technical analysis, and actionable security guidance from RDDA's elite team.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rddagency.com/white-papers">
+<link rel="canonical" href="https://www.rddagency.com/white-papers">
+<title>White Papers — RDD Agency | Cybersecurity Research & Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"RDD Agency White Papers",
+  "description":"Cybersecurity white papers, threat intelligence reports, and technical research from Razi Digital Defence Agency operators.",
+  "url":"https://www.rddagency.com/white-papers",
+  "publisher":{"@type":"Organization","name":"RDD Agency","url":"https://www.rddagency.com"}
+}
+</script>
+
+<style>
+/* ===== RESET & VARIABLES ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E01A1A;--red-dark:#A01010;--red-glow:rgba(224,26,26,.15);
+  --black:#0A0A0A;--black-2:#111;--black-3:#181818;--black-4:#222;
+  --white:#F5F5F0;--white-dim:rgba(245,245,240,.72);--white-mute:rgba(245,245,240,.35);
+  --border:rgba(245,245,240,.1);--border-red:rgba(224,26,26,.4);
+  --green:#4EC94E;--amber:#E8A020;--blue:#3B82F6;
+  --mono:'Space Mono',monospace;--sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+a,button{cursor:pointer!important;pointer-events:auto!important}
+input,textarea{cursor:text!important}
+select{cursor:pointer!important}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--red-dark);border-radius:2px}
+
+/* ===== CURSOR ===== */
+#cursor,#cursor-ring{position:fixed;border-radius:50%;pointer-events:none!important;z-index:99999;transform:translate(-50%,-50%)}
+#cursor{width:10px;height:10px;background:var(--red);z-index:100000;transition:width .15s,height .15s}
+#cursor-ring{width:36px;height:36px;border:1.5px solid rgba(224,26,26,.5);z-index:99999;transition:width .2s,height .2s,border-color .2s}
+#cursor.hov{width:14px;height:14px;background:var(--red-dark)}
+#cursor-ring.hov{width:50px;height:50px;border-color:var(--red);border-width:2px}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pulseCta{0%{box-shadow:0 0 0 0 rgba(224,26,26,.7)}70%{box-shadow:0 0 0 14px rgba(224,26,26,0)}100%{box-shadow:0 0 0 0 rgba(224,26,26,0)}}
+@keyframes pulseOrb{0%,100%{transform:scale(1)}50%{transform:scale(1.1);opacity:.7}}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+.rev-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.rev-l.vis{opacity:1;transform:none}
+.rev-r{opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s ease}
+.rev-r.vis{opacity:1;transform:none}
+.stag>*{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.stag.vis>*{opacity:1;transform:none}
+.stag.vis>*:nth-child(1){transition-delay:.04s}
+.stag.vis>*:nth-child(2){transition-delay:.11s}
+.stag.vis>*:nth-child(3){transition-delay:.18s}
+.stag.vis>*:nth-child(4){transition-delay:.25s}
+.stag.vis>*:nth-child(5){transition-delay:.32s}
+.stag.vis>*:nth-child(6){transition-delay:.39s}
+.stag.vis>*:nth-child(7){transition-delay:.46s}
+.stag.vis>*:nth-child(8){transition-delay:.53s}
+
+/* ===== HELPERS ===== */
+section{padding:5.5rem 4rem;position:relative}
+.sec-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.sec-tag::before{content:'';display:inline-block;width:26px;height:1px;background:var(--red)}
+.sec-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,4.5vw,4.2rem);text-transform:uppercase;line-height:.95;color:var(--white)}
+.sec-title em{color:var(--red);font-style:normal}
+.body-p{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85}
+.btn-red{background:var(--red);color:#fff;font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.8rem;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;transition:all .2s;border:none;cursor:pointer!important}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:.8rem 1.8rem;text-decoration:none;display:inline-block;border:1px solid var(--border);transition:all .2s;cursor:pointer!important}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+
+/* ===== NAVBAR ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.97);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;z-index:2}
+.nav-logo-mark{width:38px;height:38px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:13px;letter-spacing:.05em;color:#fff;clip-path:polygon(0 0,100% 0,100% 74%,88% 100%,0 100%)}
+.nav-logo-text{font-family:var(--cond);font-weight:900;font-size:1.05rem;letter-spacing:.12em;color:var(--white);text-transform:uppercase}
+.nav-logo-text span{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:2rem;z-index:2}
+.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--white-dim);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;padding:.3rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
+.nav-links a:hover,.nav-links a.nav-active{color:var(--white)}
+.nav-links a:hover::after,.nav-links a.nav-active::after{width:100%}
+.nav-links a.nav-active{color:var(--red)}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-family:var(--mono)!important;font-size:.7rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;padding:.6rem 1.4rem!important;display:inline-block!important;transform:skewX(-8deg);transition:background .2s,transform .2s!important}
+.nav-cta span{display:inline-block;transform:skewX(8deg)}
+.nav-cta:hover{background:var(--red-dark)!important;transform:skewX(-8deg) scale(1.04)!important}
+.nav-cta::after{display:none!important}
+.nav-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;z-index:9002}
+.nav-ham span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;border-radius:1px}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.99);z-index:9001;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--cond);font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--white);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mob-menu a:hover{color:var(--red)}
+
+/* ===== FLOATING HIRE ===== */
+#hire-float{position:fixed;bottom:2rem;right:2rem;z-index:8500;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
+.hire-btn{background:var(--red);color:#fff;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:.6rem;animation:pulseCta 2s infinite;white-space:nowrap;border:none}
+.hire-btn:hover{background:var(--red-dark);animation:none;transform:scale(1.05)}
+.hire-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1s infinite;flex-shrink:0;pointer-events:none}
+.hire-dismiss{background:var(--black-4);border:1px solid var(--border);color:var(--white-mute);font-family:var(--mono);font-size:.6rem;padding:.28rem .65rem;cursor:pointer!important;transition:color .2s}
+.hire-dismiss:hover{color:var(--white)}
+
+/* ===== HERO ===== */
+#hero{min-height:78vh;display:flex;align-items:center;padding:8rem 4rem 5rem;background:var(--black-2);position:relative;overflow:hidden}
+#hero::before{content:'RESEARCH';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(6rem,18vw,17rem);color:rgba(245,245,240,.025);white-space:nowrap;pointer-events:none;letter-spacing:.06em}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,245,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,245,240,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-orb{position:absolute;width:560px;height:560px;background:radial-gradient(circle,rgba(224,26,26,.1) 0%,transparent 70%);top:-140px;right:-140px;animation:pulseOrb 7s ease-in-out infinite;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:860px;animation:fadeUp .85s .1s ease both}
+.breadcrumb{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-mute);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.breadcrumb a{color:var(--white-mute);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{color:var(--red)}
+.hero-blink{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite;flex-shrink:0;pointer-events:none}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);border:1px solid var(--border-red);padding:.38rem .9rem;margin-bottom:1.8rem}
+h1.hero-title{font-family:var(--cond);font-weight:900;font-size:clamp(3rem,7vw,6.5rem);line-height:.9;text-transform:uppercase;color:var(--white);margin-bottom:2rem}
+h1.hero-title em{color:var(--red);font-style:normal;display:block}
+.hero-sub{font-size:1.05rem;font-weight:300;color:var(--white-dim);max-width:620px;line-height:1.8;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:3rem}
+/* Publication type pills */
+.pub-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.pub-pill{font-family:var(--mono);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border:1px solid var(--border);color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important}
+.pub-pill:hover{border-color:var(--red);color:var(--red)}
+
+/* ===== MARQUEE ===== */
+.marquee-band{padding:1.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--black)}
+.marq-track{display:flex;gap:3rem;animation:marq 28s linear infinite;width:max-content}
+.marq-item{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);white-space:nowrap}
+.marq-item::after{content:'//';color:var(--red);margin-left:2rem}
+
+/* ===== FEATURED PAPER ===== */
+#featured{background:var(--black)}
+.featured-paper{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--border);margin-top:3rem}
+.fp-visual{background:var(--black-2);padding:4rem 3rem;display:flex;flex-direction:column;justify-content:space-between;min-height:480px;position:relative;overflow:hidden}
+.fp-visual::before{content:'WP';position:absolute;bottom:-1rem;right:-1rem;font-family:var(--cond);font-weight:900;font-size:10rem;color:rgba(224,26,26,.06);line-height:1;pointer-events:none;letter-spacing:.05em}
+.fp-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);border:1px solid var(--border-red);padding:.28rem .65rem;margin-bottom:2rem;align-self:flex-start}
+.fp-num{font-family:var(--cond);font-weight:900;font-size:clamp(2.5rem,5vw,4.5rem);text-transform:uppercase;color:var(--white);line-height:.92;margin-bottom:1rem}
+.fp-num em{color:var(--red);font-style:normal;display:block}
+.fp-meta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:auto;padding-top:2rem}
+.fp-meta-item{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);padding:.2rem .55rem;border:1px solid var(--border)}
+.fp-content{background:var(--black-3);padding:3rem;display:flex;flex-direction:column;gap:1.5rem;justify-content:space-between}
+.fp-tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.fp-title{font-family:var(--cond);font-weight:900;font-size:clamp(1.5rem,2.5vw,2.2rem);text-transform:uppercase;color:var(--white);line-height:1.05}
+.fp-desc{font-size:.97rem;font-weight:300;color:var(--white-dim);line-height:1.85}
+.fp-toc{display:flex;flex-direction:column;gap:.5rem}
+.fp-toc-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);margin-bottom:.3rem}
+.fp-toc-item{font-size:.87rem;font-weight:300;color:var(--white-dim);padding-left:1.2rem;position:relative;line-height:1.6}
+.fp-toc-item::before{content:'→';position:absolute;left:0;color:var(--red);font-size:.75rem;top:.1rem}
+.fp-authors{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.fp-author-av{width:36px;height:36px;background:var(--black-4);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:.78rem;color:var(--red)}
+.fp-author-info{display:flex;flex-direction:column;gap:.1rem}
+.fp-author-name{font-family:var(--cond);font-weight:700;font-size:.88rem;text-transform:uppercase;color:var(--white)}
+.fp-author-role{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;color:var(--white-mute)}
+.fp-dl{background:var(--red);color:#fff;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.8rem 1.6rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:background .2s;border:none;cursor:pointer!important;align-self:flex-start}
+.fp-dl:hover{background:var(--red-dark)}
+
+/* ===== PAPERS LIBRARY ===== */
+#library{background:var(--black-2)}
+/* Filter bar */
+.filter-bar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.filter-group{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.filter-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute)}
+.filter-btn{font-family:var(--mono);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;padding:.32rem .8rem;border:1px solid var(--border);color:var(--white-mute);background:transparent;cursor:pointer!important;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{border-color:var(--red);color:var(--red);background:rgba(224,26,26,.06)}
+.filter-sep{width:1px;height:24px;background:var(--border);flex-shrink:0}
+/* Search box */
+.wp-search{background:var(--black-3);border:1px solid var(--border);color:var(--white);font-family:var(--mono);font-size:.72rem;padding:.6rem 1rem;outline:none;transition:border-color .2s;width:220px;cursor:text!important;letter-spacing:.04em}
+.wp-search:focus{border-color:var(--red)}
+.wp-search::placeholder{color:var(--white-mute)}
+/* Papers grid */
+.papers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.paper-card{background:var(--black-2);padding:2.2rem 1.8rem;border-top:2px solid transparent;transition:all .3s;display:flex;flex-direction:column;position:relative}
+.paper-card:hover{border-top-color:var(--red);background:var(--black-3)}
+.paper-card[data-hidden]{display:none}
+/* Type colour accent */
+.paper-card[data-type="white-paper"]{border-top-color:transparent}
+.paper-card[data-type="threat-report"]{border-left:2px solid rgba(224,26,26,.3)}
+.paper-card[data-type="advisory"]{border-left:2px solid rgba(232,160,32,.3)}
+.paper-card[data-type="research"]{border-left:2px solid rgba(59,130,246,.3)}
+/* Card content */
+.pc-type{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.2rem .5rem;display:inline-block;margin-bottom:.8rem;align-self:flex-start}
+.type-wp{background:rgba(224,26,26,.1);color:var(--red);border:1px solid var(--border-red)}
+.type-tr{background:rgba(232,160,32,.1);color:var(--amber);border:1px solid rgba(232,160,32,.3)}
+.type-adv{background:rgba(78,201,78,.1);color:var(--green);border:1px solid rgba(78,201,78,.3)}
+.type-res{background:rgba(59,130,246,.1);color:var(--blue);border:1px solid rgba(59,130,246,.3)}
+.pc-title{font-family:var(--cond);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:var(--white);line-height:1.15;margin-bottom:.7rem;flex:1}
+.pc-excerpt{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.7;margin-bottom:1.2rem}
+.pc-topics{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}
+.pc-topic{font-family:var(--mono);font-size:.57rem;letter-spacing:.08em;padding:.18rem .48rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.pc-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding-top:.9rem;border-top:1px solid var(--border);margin-top:auto}
+.pc-meta{font-family:var(--mono);font-size:.6rem;color:var(--white-mute);letter-spacing:.06em}
+.pc-meta b{color:var(--white-dim)}
+.pc-dl-btn{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);background:transparent;border:1px solid var(--border-red);padding:.28rem .7rem;cursor:pointer!important;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+.pc-dl-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
+/* Pagination-style count */
+.papers-count{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;color:var(--white-mute);margin-bottom:1rem}
+.papers-count b{color:var(--white)}
+
+/* ===== SERIES ===== */
+#series{background:var(--black)}
+.series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.series-card{background:var(--black);padding:2.2rem 1.8rem;border-top:2px solid transparent;transition:all .3s}
+.series-card:hover{border-top-color:var(--red);background:var(--black-2)}
+.series-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.series-name{font-family:var(--cond);font-weight:900;font-size:1.35rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem;line-height:1}
+.series-desc{font-size:.88rem;font-weight:300;color:var(--white-mute);line-height:1.75;margin-bottom:1rem}
+.series-count{font-family:var(--mono);font-size:.62rem;color:var(--red);display:flex;align-items:center;gap:.4rem}
+.series-entries{display:flex;flex-direction:column;gap:.4rem;margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--border)}
+.series-entry{font-size:.83rem;font-weight:300;color:var(--white-dim);padding-left:1.2rem;position:relative;line-height:1.55;cursor:pointer!important;transition:color .2s}
+.series-entry:hover{color:var(--white)}
+.series-entry::before{content:'→';position:absolute;left:0;color:var(--red);font-size:.73rem;top:.1rem}
+
+/* ===== STATS BAND ===== */
+#stats-band{background:var(--black-2);padding:4rem 4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border)}
+.stat-box{background:var(--black-2);padding:2rem 1.5rem;text-align:center}
+.stat-box:hover{background:var(--black-3)}
+.sb-num{font-family:var(--cond);font-weight:900;font-size:2.6rem;color:var(--white);line-height:1}
+.sb-num b{color:var(--red)}
+.sb-lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white-mute);margin-top:.3rem}
+
+/* ===== AUTHORS ===== */
+#authors{background:var(--black)}
+.authors-intro{max-width:650px;margin-bottom:3.5rem}
+.authors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.author-card{background:var(--black);padding:2rem 1.8rem;border-top:2px solid transparent;transition:border-color .3s;display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:start}
+.author-card:hover{border-top-color:var(--red)}
+.author-av{width:60px;height:60px;background:var(--black-4);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:900;font-size:1.1rem;color:var(--red);flex-shrink:0}
+.author-name{font-family:var(--cond);font-weight:700;font-size:1.05rem;text-transform:uppercase;color:var(--white)}
+.author-role{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.2rem}
+.author-count{font-family:var(--mono);font-size:.6rem;color:var(--white-mute);margin-top:.5rem}
+.author-topics{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
+.author-topic{font-family:var(--mono);font-size:.57rem;letter-spacing:.08em;padding:.18rem .48rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+
+/* ===== NEWSLETTER ===== */
+#newsletter{background:var(--black-2)}
+.nl-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.nl-left{display:flex;flex-direction:column;gap:1.4rem}
+.nl-left p{font-size:1rem;font-weight:300;color:var(--white-dim);line-height:1.85}
+.nl-features{display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem}
+.nl-feat{font-size:.9rem;font-weight:300;color:var(--white-dim);padding-left:1.5rem;position:relative;line-height:1.6}
+.nl-feat::before{content:'✓';position:absolute;left:0;color:var(--green);font-size:.85rem;font-weight:700;top:.05rem}
+.nl-form{background:var(--black-3);border:1px solid var(--border);padding:2.5rem}
+.nl-form-title{font-family:var(--cond);font-weight:700;font-size:1.3rem;text-transform:uppercase;color:var(--white);margin-bottom:.5rem}
+.nl-form-sub{font-size:.87rem;font-weight:300;color:var(--white-mute);margin-bottom:1.8rem;line-height:1.6}
+.nl-inputs{display:flex;flex-direction:column;gap:1rem}
+.nl-input{background:var(--black-4);border:1px solid var(--border);color:var(--white);font-family:var(--sans);font-size:.9rem;font-weight:300;padding:.78rem 1rem;outline:none;transition:border-color .2s;width:100%;cursor:text!important}
+.nl-input:focus{border-color:var(--red)}
+.nl-input::placeholder{color:var(--white-mute)}
+.nl-select{background:var(--black-4);border:1px solid var(--border);color:var(--white);font-family:var(--sans);font-size:.9rem;font-weight:300;padding:.78rem 1rem;outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none;cursor:pointer!important}
+.nl-select option{background:var(--black-4)}
+.nl-select:focus{border-color:var(--red)}
+.nl-checkboxes{display:flex;flex-direction:column;gap:.6rem;margin-top:.3rem}
+.nl-check-label{display:flex;align-items:center;gap:.7rem;font-size:.85rem;font-weight:300;color:var(--white-dim);cursor:pointer!important}
+.nl-check-label input[type="checkbox"]{width:15px;height:15px;accent-color:var(--red);cursor:pointer!important;flex-shrink:0}
+.nl-submit{background:var(--red);color:#fff;font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.8rem;border:none;cursor:pointer!important;width:100%;transition:background .2s;margin-top:.5rem}
+.nl-submit:hover{background:var(--red-dark)}
+.nl-legal{font-family:var(--mono);font-size:.58rem;color:var(--white-mute);line-height:1.6;margin-top:.8rem;letter-spacing:.04em}
+.nl-legal a{color:var(--red);text-decoration:none}
+
+/* ===== CTA BAND ===== */
+#cta-band{background:var(--red);padding:5.5rem 4rem;text-align:center;position:relative;overflow:hidden}
+#cta-band::before{content:'KNOWLEDGE';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(3rem,9vw,11rem);color:rgba(0,0,0,.07);white-space:nowrap;pointer-events:none;letter-spacing:.04em}
+.cta-title{font-family:var(--cond);font-weight:900;font-size:clamp(2.2rem,5vw,5rem);text-transform:uppercase;color:#fff;line-height:.95;margin-bottom:1.4rem;position:relative}
+.cta-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.82);margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.75;position:relative}
+.cta-acts{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;position:relative}
+.btn-white{background:#fff;color:var(--black)!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;display:inline-block;transition:all .2s;cursor:pointer!important}
+.btn-white:hover{background:var(--black);color:#fff!important}
+.btn-white-ghost{background:transparent;color:#fff!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.4rem;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,.45);transition:all .2s;cursor:pointer!important}
+.btn-white-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+
+/* ===== FOOTER ===== */
+footer{background:var(--black);border-top:1px solid var(--border);padding:4.5rem 4rem 2.5rem}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.foot-brand{display:flex;flex-direction:column;gap:1rem}
+.foot-logo{display:flex;align-items:center;gap:.75rem}
+.foot-desc{font-size:.87rem;font-weight:300;color:var(--white-mute);line-height:1.75;max-width:275px}
+.foot-certs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.foot-cert{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;padding:.28rem .55rem;border:1px solid var(--border);color:var(--white-mute);text-transform:uppercase}
+.foot-socials{display:flex;gap:.65rem;margin-top:.5rem}
+.foot-social{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:all .2s;cursor:pointer!important}
+.foot-social:hover{border-color:var(--red);color:var(--red)}
+.foot-col h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1.3rem;display:block;opacity:1}
+.foot-col .foot-links{display:flex;flex-direction:column;gap:.65rem;list-style:none}
+.foot-col .foot-links a{font-size:.87rem;font-weight:300;color:var(--white-mute);text-decoration:none;transition:color .2s;display:block;cursor:pointer!important;opacity:1}
+.foot-col .foot-links a:hover{color:var(--red)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--white-mute)}
+.foot-copy b{color:var(--red);font-weight:400}
+.foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.foot-legal a{font-family:var(--mono);font-size:.63rem;color:var(--white-mute);text-decoration:none;transition:color .2s;cursor:pointer!important}
+.foot-legal a:hover{color:var(--red)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1200px){
+  .papers-grid{grid-template-columns:1fr 1fr}
+  .series-grid{grid-template-columns:1fr 1fr}
+  .stats-row{grid-template-columns:repeat(3,1fr)}
+  .authors-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:1024px){
+  section{padding:5rem 2.5rem}
+  nav{padding:1.3rem 2.5rem}
+  #hero,#stats-band{padding:8rem 2.5rem 4.5rem}
+  #stats-band{padding:4rem 2.5rem}
+  #cta-band{padding:5rem 2.5rem}
+  .featured-paper{grid-template-columns:1fr}
+  .nl-layout{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .series-grid{grid-template-columns:1fr}
+  .authors-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  section{padding:4rem 1.25rem}
+  nav{padding:1.1rem 1.25rem}
+  #hero{padding:7rem 1.25rem 4rem}
+  #stats-band{padding:3.5rem 1.25rem}
+  #cta-band{padding:4.5rem 1.25rem}
+  footer{padding:3.5rem 1.25rem 2rem}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .papers-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .authors-grid{grid-template-columns:1fr}
+  .author-card{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  #hire-float{bottom:1rem;right:1rem}
+  .hire-btn{font-size:.65rem;padding:.75rem 1.2rem}
+  .filter-bar{flex-direction:column;align-items:flex-start}
+  .wp-search{width:100%}
+}
+@media(max-width:480px){
+  .stats-row{grid-template-columns:1fr}
+  h1.hero-title{font-size:2.7rem}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- FLOATING HIRE -->
+<div id="hire-float">
+  <a href="index.html#contact" class="hire-btn"><span class="hire-dot"></span>Hire Us Now</a>
+  <button class="hire-dismiss" id="hireDismiss">Dismiss</button>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="RDD Agency Home">
+    <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+    <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Main navigation">
+    <a href="services.html">Services</a>
+    <a href="about.html#mvv">Why RDD</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="clients.html">Clients</a>
+    <a href="white-papers.html" class="nav-active">Research</a>
+    <a href="index.html#contact" class="nav-cta"><span>Get Protected</span></a>
+  </div>
+  <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="services.html" class="mob-lnk">Services</a>
+  <a href="about.html#mvv" class="mob-lnk">Why RDD</a>
+  <a href="pricing.html" class="mob-lnk">Pricing</a>
+  <a href="clients.html" class="mob-lnk">Clients</a>
+  <a href="white-papers.html" class="mob-lnk" style="color:var(--red)">Research</a>
+  <a href="index.html#contact" class="mob-lnk" style="color:var(--red)">Get Protected →</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" role="banner">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-orb" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">White Papers</span>
+    </nav>
+    <div class="hero-eyebrow"><span class="hero-blink" aria-hidden="true"></span>Research &amp; Intelligence Library</div>
+    <h1 class="hero-title">
+      Intelligence From
+      <em>The Front Lines</em>
+    </h1>
+    <p class="hero-sub">Every paper, report, and advisory in this library is written by RDDA operators who have done the work described — not analysts who read about it. We publish what we find in the field so that defenders everywhere can be better prepared.</p>
+    <div class="hero-actions">
+      <a href="#library" class="btn-red">Browse All Papers ↓</a>
+      <a href="#newsletter" class="btn-ghost">Subscribe for Updates</a>
+    </div>
+    <div class="pub-pills" role="list" aria-label="Publication type navigation">
+      <a href="#library" class="pub-pill" data-type-filter="white-paper">White Papers</a>
+      <a href="#library" class="pub-pill" data-type-filter="threat-report">Threat Reports</a>
+      <a href="#library" class="pub-pill" data-type-filter="advisory">Security Advisories</a>
+      <a href="#library" class="pub-pill" data-type-filter="research">Technical Research</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marq-track">
+    <span class="marq-item">Threat Intelligence</span><span class="marq-item">Nation-State TTPs</span><span class="marq-item">Ransomware Analysis</span><span class="marq-item">Red Team Tradecraft</span><span class="marq-item">Cloud Attack Paths</span><span class="marq-item">Zero-Day Research</span><span class="marq-item">OT/ICS Security</span><span class="marq-item">Supply Chain Risk</span><span class="marq-item">AI &amp; Security</span><span class="marq-item">Incident Forensics</span><span class="marq-item">Threat Intelligence</span><span class="marq-item">Nation-State TTPs</span><span class="marq-item">Ransomware Analysis</span><span class="marq-item">Red Team Tradecraft</span><span class="marq-item">Cloud Attack Paths</span><span class="marq-item">Zero-Day Research</span><span class="marq-item">OT/ICS Security</span><span class="marq-item">Supply Chain Risk</span><span class="marq-item">AI &amp; Security</span><span class="marq-item">Incident Forensics</span>
+  </div>
+</div>
+
+<!-- ===================== FEATURED PAPER ===================== -->
+<section id="featured">
+  <div class="reveal">
+    <div class="sec-tag">Latest Publication</div>
+    <h2 class="sec-title">Featured <em>Release</em></h2>
+  </div>
+  <div class="featured-paper">
+    <div class="fp-visual">
+      <div>
+        <div class="fp-badge"><span class="hero-blink" aria-hidden="true"></span>New — June 2025</div>
+        <h3 class="fp-num">Volt Typhoon<br><em>2025:</em><br>Inside the<br>Pre-Positioned Threat</h3>
+      </div>
+      <div class="fp-meta">
+        <span class="fp-meta-item">White Paper</span>
+        <span class="fp-meta-item">48 Pages</span>
+        <span class="fp-meta-item">Critical Infrastructure</span>
+        <span class="fp-meta-item">Nation-State</span>
+        <span class="fp-meta-item">MITRE ATT&amp;CK Mapped</span>
+      </div>
+    </div>
+    <div class="fp-content">
+      <div>
+        <div class="fp-tag">RDDA Threat Intelligence Report — WP-2025-001</div>
+        <h3 class="fp-title">Volt Typhoon 2025: Pre-Positioning, Living-off-the-Land, and the Five-Year Infrastructure Play</h3>
+        <p class="fp-desc">RDDA's threat intelligence team tracked Volt Typhoon activity across 14 critical infrastructure networks over an 18-month period, uncovering a campaign of unprecedented patience and sophistication. This paper documents the TTPs, the infrastructure choices, the dwell times, and — critically — how defenders can detect and evict this threat actor before their pre-positioned access is activated.</p>
+        <div class="fp-toc">
+          <div class="fp-toc-label">// Contents</div>
+          <div class="fp-toc-item">Volt Typhoon 2025 campaign overview and attribution confidence</div>
+          <div class="fp-toc-item">Living-off-the-land binaries (LOLBins) used for persistent access</div>
+          <div class="fp-toc-item">OT network targeting methodology and substation access patterns</div>
+          <div class="fp-toc-item">Detection signatures and YARA rules (full rules appendix)</div>
+          <div class="fp-toc-item">Evasion techniques and why standard EDR fails</div>
+          <div class="fp-toc-item">Recommended defensive architecture changes</div>
+        </div>
+      </div>
+      <div>
+        <div class="fp-authors">
+          <div class="fp-author-av" aria-hidden="true">SF</div>
+          <div class="fp-author-info">
+            <div class="fp-author-name">S. Farooqi</div>
+            <div class="fp-author-role">Chief Threat Intelligence Analyst, RDDA</div>
+          </div>
+          <div class="fp-author-av" aria-hidden="true">AK</div>
+          <div class="fp-author-info">
+            <div class="fp-author-name">A. Karim</div>
+            <div class="fp-author-role">Head of Red Team Operations, RDDA</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;display:flex;gap:.8rem;flex-wrap:wrap">
+          <a href="#newsletter" class="fp-dl">↓ Download Free PDF</a>
+          <a href="#newsletter" class="btn-ghost" style="font-size:.72rem;padding:.75rem 1.4rem">Subscribe for Access</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS BAND ===================== -->
+<section id="stats-band">
+  <div class="stats-row stag">
+    <div class="stat-box"><div class="sb-num">47<b>+</b></div><div class="sb-lbl">Publications</div></div>
+    <div class="stat-box"><div class="sb-num">12<b>K+</b></div><div class="sb-lbl">Downloads (2024)</div></div>
+    <div class="stat-box"><div class="sb-num">340<b>+</b></div><div class="sb-lbl">Operators Contributing</div></div>
+    <div class="stat-box"><div class="sb-num">18</div><div class="sb-lbl">CVEs Disclosed via RDDA Research</div></div>
+    <div class="stat-box"><div class="sb-num">8<b>yrs</b></div><div class="sb-lbl">Of Continuous Publication</div></div>
+  </div>
+</section>
+
+<!-- ===================== LIBRARY ===================== -->
+<section id="library">
+  <div class="reveal">
+    <div class="sec-tag">Full Library</div>
+    <h2 class="sec-title">Browse All <em>Publications</em></h2>
+    <p class="body-p" style="max-width:600px;margin-top:1rem">All papers are free to download for registered subscribers. Subscribe via the form below to access the full library.</p>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar" role="group" aria-label="Filter publications">
+    <div class="filter-group">
+      <span class="filter-label">Type:</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="white-paper">White Papers</button>
+      <button class="filter-btn" data-filter="threat-report">Threat Reports</button>
+      <button class="filter-btn" data-filter="advisory">Advisories</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+    </div>
+    <div class="filter-sep" aria-hidden="true"></div>
+    <div class="filter-group">
+      <span class="filter-label">Topic:</span>
+      <button class="filter-btn" data-topic="all-t">All</button>
+      <button class="filter-btn" data-topic="ransomware">Ransomware</button>
+      <button class="filter-btn" data-topic="nation-state">Nation-State</button>
+      <button class="filter-btn" data-topic="cloud">Cloud</button>
+      <button class="filter-btn" data-topic="ot">OT/ICS</button>
+      <button class="filter-btn" data-topic="ai">AI Security</button>
+    </div>
+    <div class="filter-sep" aria-hidden="true"></div>
+    <input class="wp-search" type="text" id="wpSearch" placeholder="Search papers..." aria-label="Search publications">
+  </div>
+
+  <div class="papers-count"><b id="paperCount">47</b> publications</div>
+  <div class="papers-grid" id="papersGrid">
+
+    <!-- 1 -->
+    <article class="paper-card" data-type="white-paper" data-topic="nation-state" tabindex="0">
+      <span class="pc-type type-wp">White Paper</span>
+      <h3 class="pc-title">Volt Typhoon 2025: Pre-Positioning, Living-off-the-Land, and the Five-Year Infrastructure Play</h3>
+      <p class="pc-excerpt">18-month tracking of Volt Typhoon activity across 14 critical infrastructure networks. MITRE ATT&amp;CK mapped TTPs, detection rules, and defensive architecture recommendations.</p>
+      <div class="pc-topics"><span class="pc-topic">Volt Typhoon</span><span class="pc-topic">LOTL</span><span class="pc-topic">OT Security</span><span class="pc-topic">Detection</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>WP-2025-001</b> · June 2025 · 48pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="paper-card" data-type="threat-report" data-topic="ransomware" tabindex="0">
+      <span class="pc-type type-tr">Threat Report</span>
+      <h3 class="pc-title">LockBit 3.0 Post-Takedown: Rebranding, Resilience, and What the Healthcare Sector Needs to Know</h3>
+      <p class="pc-excerpt">Post-operation analysis of LockBit 3.0 infrastructure following the February 2024 NCA/FBI takedown. Tracks affiliate migration, new RaaS branding, and updated TTPs targeting healthcare.</p>
+      <div class="pc-topics"><span class="pc-topic">LockBit 3.0</span><span class="pc-topic">Ransomware</span><span class="pc-topic">Healthcare</span><span class="pc-topic">RaaS</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>TR-2025-003</b> · May 2025 · 32pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="paper-card" data-type="research" data-topic="cloud" tabindex="0">
+      <span class="pc-type type-res">Technical Research</span>
+      <h3 class="pc-title">Abusing AWS Cross-Account Trust Relationships: A Complete Attack Graph Methodology</h3>
+      <p class="pc-excerpt">Full technical walkthrough of how chained IAM role assumptions across AWS accounts can escalate to organisation-wide compromise. Includes detection logic and remediation guidance for each step.</p>
+      <div class="pc-topics"><span class="pc-topic">AWS</span><span class="pc-topic">IAM</span><span class="pc-topic">Privilege Escalation</span><span class="pc-topic">Cloud</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>TR-2025-002</b> · April 2025 · 26pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="paper-card" data-type="advisory" data-topic="all-t" tabindex="0">
+      <span class="pc-type type-adv">Security Advisory</span>
+      <h3 class="pc-title">Critical Authentication Bypass in Fortinet FortiOS SSL-VPN: CVE-2025-1942 Exploitation in the Wild</h3>
+      <p class="pc-excerpt">RDDA discovered active exploitation of CVE-2025-1942 across financial sector targets. This advisory covers the exploitation mechanism, IOCs, detection YARA rules, and emergency patch guidance.</p>
+      <div class="pc-topics"><span class="pc-topic">CVE-2025-1942</span><span class="pc-topic">Fortinet</span><span class="pc-topic">VPN</span><span class="pc-topic">Zero-Day</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>ADV-2025-001</b> · March 2025 · 14pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="paper-card" data-type="white-paper" data-topic="ai" tabindex="0">
+      <span class="pc-type type-wp">White Paper</span>
+      <h3 class="pc-title">LLM Security in Enterprise Deployments: Attack Surface Mapping for AI-Integrated Applications</h3>
+      <p class="pc-excerpt">Comprehensive threat modelling for enterprise LLM deployments. Covers prompt injection, jailbreaking, training data extraction, model inversion, and indirect injection via RAG pipelines.</p>
+      <div class="pc-topics"><span class="pc-topic">LLM Security</span><span class="pc-topic">Prompt Injection</span><span class="pc-topic">AI Red Team</span><span class="pc-topic">RAG</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>WP-2025-002</b> · March 2025 · 54pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="paper-card" data-type="threat-report" data-topic="nation-state" tabindex="0">
+      <span class="pc-type type-tr">Threat Report</span>
+      <h3 class="pc-title">APT29 FY2025: SVR Tradecraft Evolution — Targeting Cloud Identity Providers and MFA Bypass</h3>
+      <p class="pc-excerpt">RDDA tracked APT29 campaigns targeting Microsoft 365, Okta, and Azure AD across 8 NATO member state government networks. Detailed TTP analysis with detection use cases for Sentinel and Splunk.</p>
+      <div class="pc-topics"><span class="pc-topic">APT29</span><span class="pc-topic">SVR</span><span class="pc-topic">Azure AD</span><span class="pc-topic">MFA Bypass</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>TR-2025-001</b> · February 2025 · 41pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="paper-card" data-type="white-paper" data-topic="ot" tabindex="0">
+      <span class="pc-type type-wp">White Paper</span>
+      <h3 class="pc-title">Defending ICS/SCADA in the Age of IT/OT Convergence: A Practitioner's Architecture Guide</h3>
+      <p class="pc-excerpt">Practical defensive architecture for OT environments navigating IT/OT convergence. Covers Purdue Model updates, secure remote access, historian hardening, and detection-in-depth for operational networks.</p>
+      <div class="pc-topics"><span class="pc-topic">ICS/SCADA</span><span class="pc-topic">Purdue Model</span><span class="pc-topic">OT Detection</span><span class="pc-topic">IEC 62443</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>WP-2024-006</b> · December 2024 · 62pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="paper-card" data-type="research" data-topic="all-t" tabindex="0">
+      <span class="pc-type type-res">Technical Research</span>
+      <h3 class="pc-title">Kerberoasting at Scale: Why 73% of Enterprise Active Directory Environments Remain Vulnerable</h3>
+      <p class="pc-excerpt">Analysis of 200+ enterprise AD assessments reveals systemic misconfiguration patterns enabling Kerberoasting. Includes bulk remediation scripts, detection queries, and a maturity model for AD hardening.</p>
+      <div class="pc-topics"><span class="pc-topic">Active Directory</span><span class="pc-topic">Kerberoasting</span><span class="pc-topic">Detection</span><span class="pc-topic">Hardening</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>TR-2024-009</b> · November 2024 · 29pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="paper-card" data-type="white-paper" data-topic="ransomware" tabindex="0">
+      <span class="pc-type type-wp">White Paper</span>
+      <h3 class="pc-title">The Ransomware Economy in 2024: RaaS Ecosystem Analysis, Affiliate Networks, and Financial Flows</h3>
+      <p class="pc-excerpt">Deep-dive into the ransomware-as-a-service economy using dark web intelligence, blockchain analysis, and incident response data from 80+ cases. Maps the financial infrastructure and key actor relationships.</p>
+      <div class="pc-topics"><span class="pc-topic">RaaS</span><span class="pc-topic">Dark Web</span><span class="pc-topic">Blockchain</span><span class="pc-topic">Financial Crime</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>WP-2024-005</b> · October 2024 · 58pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="paper-card" data-type="advisory" data-topic="cloud" tabindex="0">
+      <span class="pc-type type-adv">Security Advisory</span>
+      <h3 class="pc-title">Azure Entra ID (AAD) Conditional Access Policy Bypass: Techniques and Enterprise Detection</h3>
+      <p class="pc-excerpt">Documented bypass techniques for Azure Conditional Access Policies discovered during red team engagements. Covers token theft, device compliance spoofing, and legacy authentication exploitation.</p>
+      <div class="pc-topics"><span class="pc-topic">Azure AD</span><span class="pc-topic">Conditional Access</span><span class="pc-topic">Token Theft</span><span class="pc-topic">Detection</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>ADV-2024-004</b> · September 2024 · 18pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 11 -->
+    <article class="paper-card" data-type="threat-report" data-topic="ransomware" tabindex="0">
+      <span class="pc-type type-tr">Threat Report</span>
+      <h3 class="pc-title">Scattered Spider FY2024: Social Engineering at Scale Targeting Telecom and Financial Sector Helpdesks</h3>
+      <p class="pc-excerpt">Comprehensive analysis of Scattered Spider's 2024 campaign evolution — moving beyond SIM swapping to sophisticated helpdesk social engineering targeting Fortune 500 identity providers.</p>
+      <div class="pc-topics"><span class="pc-topic">Scattered Spider</span><span class="pc-topic">Social Engineering</span><span class="pc-topic">Telecoms</span><span class="pc-topic">Identity</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>TR-2024-007</b> · August 2024 · 38pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 12 -->
+    <article class="paper-card" data-type="research" data-topic="cloud" tabindex="0">
+      <span class="pc-type type-res">Technical Research</span>
+      <h3 class="pc-title">Container Escape Techniques in Kubernetes: From Pod Compromise to Node Takeover</h3>
+      <p class="pc-excerpt">Full technical analysis of 12 container escape vectors observed in real-world Kubernetes penetration tests. Each technique includes PoC code, detection logic for Falco and Sysdig, and hardening guidance.</p>
+      <div class="pc-topics"><span class="pc-topic">Kubernetes</span><span class="pc-topic">Container Escape</span><span class="pc-topic">K8s Security</span><span class="pc-topic">Falco</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>TR-2024-006</b> · July 2024 · 44pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 13 -->
+    <article class="paper-card" data-type="white-paper" data-topic="nation-state" tabindex="0">
+      <span class="pc-type type-wp">White Paper</span>
+      <h3 class="pc-title">The Five Eyes Cyber Threat Landscape 2024: A Strategic Intelligence Assessment for Enterprise Security Teams</h3>
+      <p class="pc-excerpt">Annual strategic threat assessment covering nation-state activity attributed to China, Russia, Iran, and North Korea. Sector targeting analysis with specific TTPs and defensive priority recommendations.</p>
+      <div class="pc-topics"><span class="pc-topic">Nation-State</span><span class="pc-topic">Five Eyes</span><span class="pc-topic">Strategic Intel</span><span class="pc-topic">APT</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>WP-2024-004</b> · June 2024 · 71pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 14 -->
+    <article class="paper-card" data-type="advisory" data-topic="all-t" tabindex="0">
+      <span class="pc-type type-adv">Security Advisory</span>
+      <h3 class="pc-title">MOVEit Transfer SQL Injection (CVE-2023-34362): Post-Exploitation Patterns and Cl0p Infrastructure Analysis</h3>
+      <p class="pc-excerpt">RDDA's retrospective analysis of the MOVEit mass exploitation campaign. Documents Cl0p's automation pipeline, data exfiltration methodology, and victim selection logic derived from incident response engagements.</p>
+      <div class="pc-topics"><span class="pc-topic">MOVEit</span><span class="pc-topic">Cl0p</span><span class="pc-topic">Mass Exploitation</span><span class="pc-topic">DFIR</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>ADV-2024-002</b> · April 2024 · 22pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 15 -->
+    <article class="paper-card" data-type="research" data-topic="ai" tabindex="0">
+      <span class="pc-type type-res">Technical Research</span>
+      <h3 class="pc-title">AI-Generated Phishing at Scale: Detection Evasion, Personalisation Techniques, and Defensive Countermeasures</h3>
+      <p class="pc-excerpt">RDDA's red team evaluation of LLM-generated spear-phishing content against enterprise email security gateways. Tests 6 commercial gateways against AI-personalised content with click-rate analysis.</p>
+      <div class="pc-topics"><span class="pc-topic">AI Phishing</span><span class="pc-topic">Email Security</span><span class="pc-topic">LLM</span><span class="pc-topic">Social Engineering</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>TR-2024-004</b> · March 2024 · 33pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 16 -->
+    <article class="paper-card" data-type="white-paper" data-topic="ot" tabindex="0">
+      <span class="pc-type type-wp">White Paper</span>
+      <h3 class="pc-title">TRITON/TRISIS Lessons for 2024: Safety Instrumented System Attacks and the State of OT Resilience</h3>
+      <p class="pc-excerpt">Five-year retrospective on the TRITON attack and its implications for Safety Instrumented Systems globally. Assessment of current SIS security posture across energy sector clients.</p>
+      <div class="pc-topics"><span class="pc-topic">TRITON</span><span class="pc-topic">SIS</span><span class="pc-topic">OT Security</span><span class="pc-topic">Safety Systems</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>WP-2024-003</b> · February 2024 · 47pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 17 -->
+    <article class="paper-card" data-type="threat-report" data-topic="nation-state" tabindex="0">
+      <span class="pc-type type-tr">Threat Report</span>
+      <h3 class="pc-title">Lazarus Group Financial Sector Targeting: Cryptocurrency Theft Operations FY2023–2024</h3>
+      <p class="pc-excerpt">Detailed analysis of Lazarus Group's evolving cryptocurrency theft methodology — from exchange compromise to DeFi protocol attacks and NFT platform exploitation. Tracks $1.7B in attributed theft.</p>
+      <div class="pc-topics"><span class="pc-topic">Lazarus</span><span class="pc-topic">DPRK</span><span class="pc-topic">Cryptocurrency</span><span class="pc-topic">DeFi</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>TR-2024-002</b> · January 2024 · 36pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+    <!-- 18 -->
+    <article class="paper-card" data-type="white-paper" data-topic="all-t" tabindex="0">
+      <span class="pc-type type-wp">White Paper</span>
+      <h3 class="pc-title">Zero Trust Architecture Implementation: A Practitioner's Guide for Enterprise Security Teams</h3>
+      <p class="pc-excerpt">Practical, operator-written guide to Zero Trust implementation based on real-world deployments across 40+ enterprise clients. Covers identity, device, network, and workload trust enforcement.</p>
+      <div class="pc-topics"><span class="pc-topic">Zero Trust</span><span class="pc-topic">Identity</span><span class="pc-topic">Architecture</span><span class="pc-topic">NIST SP 800-207</span></div>
+      <div class="pc-footer">
+        <div class="pc-meta"><b>WP-2024-002</b> · January 2024 · 68pp</div>
+        <a href="#newsletter" class="pc-dl-btn">↓ PDF</a>
+      </div>
+    </article>
+
+  </div><!-- end papers-grid -->
+
+  <div style="text-align:center;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <p style="font-family:var(--mono);font-size:.7rem;color:var(--white-mute);letter-spacing:.08em;margin-bottom:1.2rem">Showing 18 of <b style="color:var(--white)">47</b> publications — subscribe for full library access</p>
+    <a href="#newsletter" class="btn-red">Subscribe for Full Access →</a>
+  </div>
+</section>
+
+<!-- ===================== SERIES ===================== -->
+<section id="series">
+  <div class="reveal">
+    <div class="sec-tag">Publication Series</div>
+    <h2 class="sec-title">Research <em>Series</em></h2>
+    <p class="body-p" style="max-width:620px;margin-top:1rem">Structured multi-paper series addressing major security domains. Each series is updated as new intelligence emerges or the threat landscape evolves.</p>
+  </div>
+  <div class="series-grid stag">
+
+    <div class="series-card">
+      <div class="series-num">Series 01</div>
+      <div class="series-name">State of the Nation-State</div>
+      <p class="series-desc">Annual and quarterly intelligence assessments covering the full spectrum of nation-state cyber activity — attribution analysis, campaign tracking, and strategic implications for enterprise defenders.</p>
+      <div class="series-count">8 publications · Updated quarterly</div>
+      <div class="series-entries">
+        <div class="series-entry">Five Eyes Threat Landscape 2024 (WP-2024-004)</div>
+        <div class="series-entry">Volt Typhoon 2025 Infrastructure Play (WP-2025-001)</div>
+        <div class="series-entry">APT29 Cloud Identity Targeting 2025 (TR-2025-001)</div>
+        <div class="series-entry">Lazarus Cryptocurrency Operations FY2023–24 (TR-2024-002)</div>
+      </div>
+    </div>
+
+    <div class="series-card">
+      <div class="series-num">Series 02</div>
+      <div class="series-name">Ransomware Intelligence Digest</div>
+      <p class="series-desc">Deep-dive analysis of the ransomware ecosystem — RaaS group profiles, affiliate network mapping, financial flows, and sector-specific targeting trends from RDDA incident response data.</p>
+      <div class="series-count">11 publications · Updated monthly</div>
+      <div class="series-entries">
+        <div class="series-entry">Ransomware Economy 2024: RaaS Analysis (WP-2024-005)</div>
+        <div class="series-entry">LockBit 3.0 Post-Takedown Analysis (TR-2025-003)</div>
+        <div class="series-entry">Scattered Spider FY2024 Campaign (TR-2024-007)</div>
+        <div class="series-entry">MOVEit/Cl0p Post-Exploitation Analysis (ADV-2024-002)</div>
+      </div>
+    </div>
+
+    <div class="series-card">
+      <div class="series-num">Series 03</div>
+      <div class="series-name">Red Team Tradecraft</div>
+      <p class="series-desc">Technical research from RDDA's red team practice — attack techniques, tooling analysis, detection evasion methods, and the countermeasures that actually work, written by the operators who build them.</p>
+      <div class="series-count">9 publications · Irregular release</div>
+      <div class="series-entries">
+        <div class="series-entry">Kerberoasting at Scale: AD Vulnerabilities (TR-2024-009)</div>
+        <div class="series-entry">AWS Cross-Account Trust Abuse (TR-2025-002)</div>
+        <div class="series-entry">Container Escape Techniques: K8s (TR-2024-006)</div>
+        <div class="series-entry">Azure Conditional Access Policy Bypass (ADV-2024-004)</div>
+      </div>
+    </div>
+
+    <div class="series-card">
+      <div class="series-num">Series 04</div>
+      <div class="series-name">OT/ICS Security Practitioner</div>
+      <p class="series-desc">Specialist content for OT and ICS security practitioners — architecture guides, threat analysis, and incident response frameworks built for operational environments where availability is non-negotiable.</p>
+      <div class="series-count">6 publications · Updated bi-annually</div>
+      <div class="series-entries">
+        <div class="series-entry">ICS/SCADA Architecture Guide (WP-2024-006)</div>
+        <div class="series-entry">TRITON/SIS Lessons for 2024 (WP-2024-003)</div>
+        <div class="series-entry">IEC 62443 Implementation Guide (WP-2023-008)</div>
+      </div>
+    </div>
+
+    <div class="series-card">
+      <div class="series-num">Series 05</div>
+      <div class="series-name">Cloud Attack &amp; Defence</div>
+      <p class="series-desc">Technical research series covering offensive and defensive cloud security — AWS, Azure, GCP attack paths, detection engineering for cloud environments, and secure architecture design principles.</p>
+      <div class="series-count">7 publications · Irregular release</div>
+      <div class="series-entries">
+        <div class="series-entry">AWS Cross-Account IAM Attack Graphs (TR-2025-002)</div>
+        <div class="series-entry">Azure Entra ID CAP Bypass Techniques (ADV-2024-004)</div>
+        <div class="series-entry">Kubernetes Container Escape Research (TR-2024-006)</div>
+      </div>
+    </div>
+
+    <div class="series-card">
+      <div class="series-num">Series 06</div>
+      <div class="series-name">AI &amp; Emerging Threat Vectors</div>
+      <p class="series-desc">New and emerging attack vectors at the frontier of security research — AI-assisted attacks, LLM security, deepfake fraud, quantum cryptography risks, and the tools defenders need to respond.</p>
+      <div class="series-count">4 publications · Irregular release</div>
+      <div class="series-entries">
+        <div class="series-entry">LLM Security in Enterprise Deployments (WP-2025-002)</div>
+        <div class="series-entry">AI-Generated Phishing at Scale (TR-2024-004)</div>
+        <div class="series-entry">Deepfake CFO Fraud: Detection Methods (ADV-2024-003)</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== AUTHORS ===================== -->
+<section id="authors">
+  <div class="authors-intro reveal">
+    <div class="sec-tag">Our Researchers</div>
+    <h2 class="sec-title">Written By <em>Operators</em></h2>
+    <p class="body-p" style="margin-top:1rem">Every paper in the RDDA library is authored by practitioners with direct field experience in the area they write about. No ghostwriting. No contract researchers. Operator-sourced intelligence only.</p>
+  </div>
+  <div class="authors-grid stag">
+    <div class="author-card">
+      <div class="author-av" aria-hidden="true">SF</div>
+      <div>
+        <div class="author-name">S. Farooqi</div>
+        <div class="author-role">Chief Threat Intelligence Analyst</div>
+        <div class="author-count">14 publications · Primary author: Threat Reports, Nation-State</div>
+        <div class="author-topics"><span class="author-topic">APT Attribution</span><span class="author-topic">DFIR</span><span class="author-topic">Ransomware</span><span class="author-topic">Malware</span></div>
+      </div>
+    </div>
+    <div class="author-card">
+      <div class="author-av" aria-hidden="true">AK</div>
+      <div>
+        <div class="author-name">A. Karim</div>
+        <div class="author-role">Head of Red Team Operations</div>
+        <div class="author-count">11 publications · Primary author: Red Team Tradecraft</div>
+        <div class="author-topics"><span class="author-topic">AD Attacks</span><span class="author-topic">Evasion</span><span class="author-topic">C2</span><span class="author-topic">Physical</span></div>
+      </div>
+    </div>
+    <div class="author-card">
+      <div class="author-av" aria-hidden="true">NN</div>
+      <div>
+        <div class="author-name">N. Naveed</div>
+        <div class="author-role">VP Cloud &amp; Infrastructure Security</div>
+        <div class="author-count">8 publications · Primary author: Cloud Attack &amp; Defence</div>
+        <div class="author-topics"><span class="author-topic">AWS</span><span class="author-topic">Azure</span><span class="author-topic">Kubernetes</span><span class="author-topic">IAM</span></div>
+      </div>
+    </div>
+    <div class="author-card">
+      <div class="author-av" aria-hidden="true">RH</div>
+      <div>
+        <div class="author-name">R. Hassan</div>
+        <div class="author-role">Principal OT Security Researcher</div>
+        <div class="author-count">6 publications · Primary author: OT/ICS Security</div>
+        <div class="author-topics"><span class="author-topic">SCADA</span><span class="author-topic">IEC 62443</span><span class="author-topic">TRITON</span><span class="author-topic">SIS</span></div>
+      </div>
+    </div>
+    <div class="author-card">
+      <div class="author-av" aria-hidden="true">KV</div>
+      <div>
+        <div class="author-name">K. Voss</div>
+        <div class="author-role">Senior AI Security Researcher</div>
+        <div class="author-count">4 publications · Primary author: AI &amp; Emerging Threats</div>
+        <div class="author-topics"><span class="author-topic">LLM Security</span><span class="author-topic">AI Red Team</span><span class="author-topic">Deepfakes</span><span class="author-topic">Prompt Injection</span></div>
+      </div>
+    </div>
+    <div class="author-card">
+      <div class="author-av" aria-hidden="true">MR</div>
+      <div>
+        <div class="author-name">M. Razi</div>
+        <div class="author-role">Founder &amp; CEO, RDDA</div>
+        <div class="author-count">4 publications · Strategic intelligence and annual threat assessments</div>
+        <div class="author-topics"><span class="author-topic">Strategic Intel</span><span class="author-topic">Nation-State</span><span class="author-topic">Policy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NEWSLETTER ===================== -->
+<section id="newsletter">
+  <div class="nl-layout">
+    <div class="nl-left rev-l">
+      <div class="sec-tag">Get Full Access</div>
+      <h2 class="sec-title">Subscribe to the<br><em>RDDA Research</em><br>Library</h2>
+      <p>All 47 publications are available free of charge to registered subscribers. Subscribe once and receive every new paper the moment it is published — directly to your inbox, before public release.</p>
+      <div class="nl-features">
+        <div class="nl-feat">Full access to all 47 published papers and advisories</div>
+        <div class="nl-feat">New publications delivered to your inbox on release day</div>
+        <div class="nl-feat">Monthly threat intelligence digest — curated by our analysts</div>
+        <div class="nl-feat">Early access to embargo-held research (24h before public)</div>
+        <div class="nl-feat">Exclusive webinars and analyst Q&amp;A sessions</div>
+        <div class="nl-feat">No spam, no marketing calls — unsubscribe at any time</div>
+      </div>
+      <div style="margin-top:1.5rem;padding:1.2rem 1.5rem;background:var(--black-2);border:1px solid var(--border);border-left:3px solid var(--red)">
+        <p style="font-family:var(--mono);font-size:.68rem;color:var(--white-dim);line-height:1.75;letter-spacing:.04em"><span style="color:var(--red)">// </span>Currently <strong style="color:var(--white)">12,400+</strong> security practitioners, CISOs, and analysts subscribed across 94 countries. New subscribers get instant access to the full library.</p>
+      </div>
+    </div>
+    <div class="nl-form rev-r">
+      <div class="nl-form-title">Create Free Account</div>
+      <div class="nl-form-sub">Takes 60 seconds. Instant access to all publications.</div>
+      <form class="nl-inputs" id="nlForm" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+          <input class="nl-input" type="text" id="nlFname" placeholder="First name" required>
+          <input class="nl-input" type="text" id="nlLname" placeholder="Last name" required>
+        </div>
+        <input class="nl-input" type="email" id="nlEmail" placeholder="Work email address" required>
+        <input class="nl-input" type="text" id="nlOrg" placeholder="Organisation / Company">
+        <select class="nl-select" id="nlRole">
+          <option value="">Your role...</option>
+          <option>CISO / Head of Security</option>
+          <option>Security Analyst / Engineer</option>
+          <option>Penetration Tester / Red Teamer</option>
+          <option>Threat Intelligence Analyst</option>
+          <option>Security Architect</option>
+          <option>IT Manager / Director</option>
+          <option>C-Suite (CEO, CTO, CFO)</option>
+          <option>Academic / Researcher</option>
+          <option>Other</option>
+        </select>
+        <div>
+          <p style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-mute);margin-bottom:.6rem">Interests (optional):</p>
+          <div class="nl-checkboxes">
+            <label class="nl-check-label"><input type="checkbox" value="ti"> Threat Intelligence &amp; Nation-State</label>
+            <label class="nl-check-label"><input type="checkbox" value="ransomware"> Ransomware &amp; Cybercrime</label>
+            <label class="nl-check-label"><input type="checkbox" value="redteam"> Red Team &amp; Offensive Security</label>
+            <label class="nl-check-label"><input type="checkbox" value="cloud"> Cloud Security</label>
+            <label class="nl-check-label"><input type="checkbox" value="ot"> OT / ICS Security</label>
+            <label class="nl-check-label"><input type="checkbox" value="ai"> AI &amp; Emerging Threats</label>
+          </div>
+        </div>
+        <button type="submit" class="nl-submit" id="nlSubmit">Get Instant Free Access →</button>
+        <div id="nlMsg" style="display:none;font-family:var(--mono);font-size:.7rem;margin-top:.5rem"></div>
+        <p class="nl-legal">By subscribing you agree to receive RDDA research publications and the monthly intelligence digest. Your data is processed in accordance with our <a href="privacy-policy.html">Privacy Policy</a> and is never shared with third parties. Unsubscribe at any time.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section id="cta-band">
+  <h2 class="cta-title">Intelligence Without<br>Action is Just Information</h2>
+  <p class="cta-sub">Our research tells you what the threat looks like. Our services make sure it cannot reach you. Talk to a senior analyst about turning this intelligence into protection.</p>
+  <div class="cta-acts">
+    <a href="index.html#contact" class="btn-white">Request a Security Briefing</a>
+    <a href="services.html" class="btn-white-ghost">View Our Services →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <div class="nav-logo-mark" aria-hidden="true">RDD</div>
+        <span class="nav-logo-text">RAZI DIGITAL <span>AGENCY</span></span>
+      </div>
+      <p class="foot-desc">Elite global cybersecurity. Protecting the world's most critical organizations from the most advanced threats — 24 hours a day, 365 days a year.</p>
+      <div class="foot-certs">
+        <span class="foot-cert">ISO 27001</span><span class="foot-cert">CREST</span><span class="foot-cert">SOC 2 II</span><span class="foot-cert">GDPR</span><span class="foot-cert">FedRAMP</span>
+      </div>
+      <div class="foot-socials">
+        <a href="https://linkedin.com/company/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="LinkedIn">Li</a>
+        <a href="https://twitter.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="Twitter">Tw</a>
+        <a href="https://github.com/rddagency" class="foot-social" target="_blank" rel="noopener" aria-label="GitHub">Gh</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <ul class="foot-links">
+        <li><a href="services.html#pentest">Penetration Testing</a></li>
+        <li><a href="services.html#redteam">Red Team Operations</a></li>
+        <li><a href="services.html#soc">SOC as a Service</a></li>
+        <li><a href="services.html#ti">Threat Intelligence</a></li>
+        <li><a href="services.html#ir">Incident Response</a></li>
+        <li><a href="services.html#cloud">Cloud Security</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <ul class="foot-links">
+        <li><a href="about.html">About RDDA</a></li>
+        <li><a href="about.html#team">Leadership Team</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="about.html#global">Global Presence</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html#careers-cta">Careers</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul class="foot-links">
+        <li><a href="white-papers.html" style="color:var(--red)">White Papers</a></li>
+        <li><a href="white-papers.html#library">Threat Reports</a></li>
+        <li><a href="white-papers.html#library">Security Advisories</a></li>
+        <li><a href="white-papers.html#series">Research Series</a></li>
+        <li><a href="vulnerability-disclosure.html">Vulnerability Disclosure</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 <b>RDD Agency</b> — Razi Digital Agency Ltd. All rights reserved. Registered in England &amp; Wales.</span>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="vulnerability-disclosure.html">Vulnerability Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,label,[tabindex]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hov');ring.classList.add('hov')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hov');ring.classList.remove('hov')});
+});
+
+/* NAVBAR */
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>40));
+
+/* HAMBURGER */
+const ham=document.getElementById('navHam'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{
+  const o=mob.classList.toggle('open');ham.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mob-lnk').forEach(l=>l.addEventListener('click',()=>{
+  mob.classList.remove('open');ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+
+/* FLOATING DISMISS */
+document.getElementById('hireDismiss').addEventListener('click',()=>document.getElementById('hire-float').style.display='none');
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:0.08});
+document.querySelectorAll('.reveal,.rev-l,.rev-r,.stag').forEach(el=>obs.observe(el));
+
+/* TYPE FILTER */
+let activeType='all', activeTopic='all-t';
+function applyFilters(){
+  const q=document.getElementById('wpSearch').value.toLowerCase().trim();
+  let vis=0;
+  document.querySelectorAll('.paper-card').forEach(card=>{
+    const matchType=activeType==='all'||card.dataset.type===activeType;
+    const matchTopic=activeTopic==='all-t'||card.dataset.topic===activeTopic||activeTopic==='all-t';
+    const text=(card.textContent||'').toLowerCase();
+    const matchQ=!q||text.includes(q);
+    if(matchType&&matchTopic&&matchQ){card.style.display='flex';card.removeAttribute('data-hidden');vis++}
+    else{card.style.display='none';card.setAttribute('data-hidden','')}
+  });
+  const cnt=document.getElementById('paperCount');
+  if(cnt)cnt.textContent=vis;
+  const grid=document.getElementById('papersGrid');
+  if(grid)grid.style.background=vis===0?'none':'var(--border)';
+}
+document.querySelectorAll('.filter-btn[data-filter]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');activeType=btn.dataset.filter;applyFilters();
+  });
+});
+document.querySelectorAll('.filter-btn[data-topic]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn[data-topic]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');activeTopic=btn.dataset.topic;applyFilters();
+  });
+});
+document.getElementById('wpSearch').addEventListener('input',applyFilters);
+
+/* Hero pills — scroll to library and pre-filter */
+document.querySelectorAll('.pub-pill[data-type-filter]').forEach(pill=>{
+  pill.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=pill.dataset.typeFilter;
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(b=>b.classList.remove('active'));
+    const btn=document.querySelector(`.filter-btn[data-filter="${t}"]`);
+    if(btn){btn.classList.add('active');activeType=t;applyFilters();}
+    document.getElementById('library').scrollIntoView({behavior:'smooth'});
+  });
+});
+
+/* NEWSLETTER */
+document.getElementById('nlForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const btn=document.getElementById('nlSubmit'),msg=document.getElementById('nlMsg');
+  if(!document.getElementById('nlEmail').value){
+    msg.style.display='block';msg.style.color='var(--red)';msg.textContent='// Error: Work email required.';return;
+  }
+  btn.textContent='Creating account...';btn.disabled=true;
+  setTimeout(()=>{
+    btn.textContent='Access Granted ✓';
+    msg.style.display='block';msg.style.color='var(--green)';
+    msg.textContent='// Account created. Check your inbox for the welcome email with download links for all 47 publications.';
+  },1400);
+});
+
+/* Series entries — scroll to library and search */
+document.querySelectorAll('.series-entry').forEach(e=>{
+  e.addEventListener('click',()=>{
+    const code=e.textContent.match(/\(([^)]+)\)/);
+    if(code){
+      document.getElementById('wpSearch').value=code[1];
+      applyFilters();
+      document.getElementById('library').scrollIntoView({behavior:'smooth'});
+    }
+  });
+});
+</script>
+</body>
+</html>
